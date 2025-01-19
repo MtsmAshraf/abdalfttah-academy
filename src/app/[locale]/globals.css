@@ -12,7 +12,7 @@
   margin: 0;
 }
 body{
-  background-color: rgb(255, 255, 255);
+  background-color: var(--bg-color);
   font-family: "poppins", sans-serif;
 }
 body.ar{
@@ -26,10 +26,12 @@ html{
   --main-light-color: #415ede;
   --overlay-bg: #000215;
   --main-gradient: linear-gradient(-45deg, var(--main-color) 50%, var(--main-light-color));
+  --main-inv-gradient: linear-gradient(45deg, var(--main-color) 50%, var(--main-light-color));
   --hero-gradient: linear-gradient(to left, var(--overlay-bg), #000);
-  --bg-color: #ffffff;
+  --bg-color: #eaeaea;
   --main-transition: all 0.2s 0s linear;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
+  --sec-shadow: 0 10px 20px -5px #333;
   --header-shadow: 0 -0.5rem 2rem var(--main-color);
 }
 ::selection{

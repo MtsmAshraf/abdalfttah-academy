@@ -1,0 +1,74 @@
+.timePeriod{
+    /* width: 100%; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: 80px;
+    position: relative;
+    width: 100%;
+}
+.timePeriod.inverted{
+    flex-direction: row-reverse;
+}
+.timePeriod::before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+}
+.timePeriod > div{
+    flex: 1;
+    height: fit-content;
+}
+.timePeriod .date span{
+    position: relative;
+    padding: 5px 0px;
+    text-align: center;
+    border-radius: 20px 0px 0px 20px;
+    background-color: var(--main-light-color);
+    background-image: var(--main-gradient);
+    color: #fff;
+    width: 300px;
+    float: right;
+    box-shadow: var(--sec-shadow);
+}
+.timePeriod.inverted .date span{
+    background-image: var(--main-inv-gradient);
+    float: left;
+    border-radius: 0px 20px 20px 0px;
+}
+.timePeriod .date span::before{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background-color: #000; */
+    height: 0%;
+    width: 0px;
+    border-width: 17px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--main-color) ;
+}
+.timePeriod.inverted .date span::before{
+    left: unset;
+    right: 100%;
+    border-color: transparent var(--main-color) transparent transparent;
+}
+.timePeriod .details{
+    /* padding: 5px 30px; */
+    flex: 1;
+    max-width: 50%;
+}
+.timePeriod.inverted .details{
+    text-align: right;
+}
+.timePeriod .details h3{
+    color: var(--main-color);
+}
