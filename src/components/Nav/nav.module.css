@@ -1,0 +1,117 @@
+.nav{
+    color: #fff;
+}
+.nav.ar{
+    font-size: 18px;
+}
+.nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.nav:not(.ar) ul li:not(:first-child){
+    /* border-left: 1px solid black; */
+}
+.nav.ar ul li:not(:last-child){
+    /* border-left: 1px solid black; */
+}
+.nav a{
+    transition: var(--main-transition);
+    padding: 5px 20px;
+    border-radius: 20px 0px;
+    position: relative;
+    overflow: hidden;
+}
+.nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-image: var(--main-gradient);
+    border-radius: 20px 0px;
+    z-index: -1;
+    transition: var(--main-transition);
+    transition-duration: 0.2s;
+}
+.nav a:hover::before, 
+.nav a:focus::before, 
+.nav a:focus-visible::before, 
+.nav a.active::before{
+    /* background-color: var(--main-color); */
+    left: unset;
+    right: 0;
+    width: 100%;
+    color: #fff;
+}
+.nav a:hover, 
+.nav a:focus, 
+.nav a:focus-visible, 
+.nav a.active{
+    box-shadow: var(--main-shadow);
+}
+.nav > div{
+    display: none;
+}
+@media (max-width: 992px) {
+    .nav{
+        font-size: 12px;
+    }
+    .nav:not(.ar) ul{
+        gap: 0;
+    }
+    .nav.ar{
+        font-size: 16px;
+    }
+}
+@media (max-width: 767px) {
+    .nav{
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 81px;
+        width: 400px;
+        /* width: 300px; */
+        text-align: center;
+        display: none;
+    }
+    .nav:has(ul.shown){
+        display: block;
+    }
+    .nav ul{
+        flex-direction: column;
+        background-color: var(--overlay-bg);
+        width: 100%;
+        border-radius: 20px 0px;
+        overflow: hidden;
+    }
+    .nav ul li{
+        border-radius: 20px 0px;
+        width: 100%;
+    }
+    .nav ul li a{ 
+        padding: 5px;
+        display: block;
+        border-radius: 20px 0px;
+        border-bottom: 1px solid var(--main-light-color);
+        isolation: isolate;
+    }
+    .nav a::before{
+        width: 100%;
+        opacity: 0;
+    }
+    .nav a:hover::before, 
+    .nav a:focus::before, 
+    .nav a:focus-visible::before, 
+    .nav a.active::before{
+       opacity: 1;
+    }
+    .nav a:hover, 
+    .nav a:focus, 
+    .nav a:focus-visible, 
+    .nav a.active{
+       box-shadow: none;
+    }
+}

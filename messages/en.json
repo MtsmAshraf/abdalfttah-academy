@@ -1,0 +1,19 @@
+{
+    "Header": {
+        "Nav": {
+            "0": "Home",
+            "1": "Courses",
+            "2": "Publications",
+            "3": "About Me",
+            "4": "Contact Me"
+        }
+    },
+    "HomePage":{
+        "Hero": {
+            "h2": "Learn Programming now in Arabic",
+            "p": "You won't need to master English to excel in programming and graduate as part of the Arab Programmers Generation project. All you need is to join the school on a learning journey that guarantees you'll reach your ambitions and beyond!",
+            "btn1": "Start Learning",
+            "btn2": "Contact Us"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.header{
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    /* border-bottom: 1px solid var(--main-light-color); */
+    z-index: 14;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    box-shadow: var(--header-shadow);
+    background-color: rgb( 0, 0, 0, 0.3);
+    /* background-image: var(--main-gradient); */
+    backdrop-filter: blur(100px);
+}
+.header > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header.ar > div{
+    direction: rtl;
+}
+.header .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.header .logo span{
+    font-size: 30px;
+    padding: 0;
+    font-family: "Comfortaa", sans-serif;
+}
+.header .logo span:nth-child(1){
+    color: #fff;
+}
+.header .logo span:nth-child(2){
+    color: var(--main-light-color);
+    font-size: 20px;
+}
+.header > div > button{
+    display: none;
+}
+.header > div > button span svg{
+    color: var(--main-light-color);
+    font-size: 30px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 992px) {
+    .header .logo span{
+        font-size: 24px;
+    }   
+    /* .header:not(.ar) > div > button{
+        display: block;
+    } */
+}
+@media (max-width: 767px) {
+    .header > div .langSwitch {
+        display: none;
+    }   
+    .header > div > button{
+        display: inline;
+    }
+    .header .logo span:nth-child(1){
+        font-size: 24px;
+    }
+    .header .logo span:nth-child(2){
+        font-size: 18px;
+    }
+}
