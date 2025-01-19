@@ -6,6 +6,7 @@
     gap: 80px;
     position: relative;
     width: 100%;
+    margin-top: 100px;
 }
 .timePeriod.inverted{
     flex-direction: row-reverse;
@@ -62,13 +63,32 @@
     border-color: transparent var(--main-color) transparent transparent;
 }
 .timePeriod .details{
-    /* padding: 5px 30px; */
     flex: 1;
     max-width: 50%;
+}
+.timePeriod .details > div{
+    background-color: #fff;
+    padding: 15px 30px;
+    border-radius: 0px 30px 30px;
+    box-shadow: var(--sec-light-shadow);
+    width: fit-content;
+}
+.timePeriod.inverted .details > div{
+    border-radius: 30px 0px 30px 30px;
+}
+.timePeriod .details > div > *{
+    margin-bottom: 5px;
+    display: block;
 }
 .timePeriod.inverted .details{
     text-align: right;
 }
 .timePeriod .details h3{
     color: var(--main-color);
+}
+.timePeriod .details p{
+    font-weight: bold;
+}
+.timePeriod .details h4{
+    font-weight: normal;
 }

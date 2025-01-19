@@ -27,11 +27,12 @@ html{
   --overlay-bg: #000215;
   --main-gradient: linear-gradient(-45deg, var(--main-color) 50%, var(--main-light-color));
   --main-inv-gradient: linear-gradient(45deg, var(--main-color) 50%, var(--main-light-color));
-  --hero-gradient: linear-gradient(to left, var(--overlay-bg), #000);
+  --hero-gradient: linear-gradient(to left,#000 , var(--main-color), #000);
   --bg-color: #eaeaea;
   --main-transition: all 0.2s 0s linear;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
   --sec-shadow: 0 10px 20px -5px #333;
+  --sec-light-shadow: 0 10px 20px -5px #888;
   --header-shadow: 0 -0.5rem 2rem var(--main-color);
 }
 ::selection{

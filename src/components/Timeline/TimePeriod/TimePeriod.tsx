@@ -2,20 +2,34 @@ import React from 'react'
 import styles from "./time-period.module.css"
 
 const TimePeriod = ({
-    inverted
+    inverted,
+    span,
+    h3,
+    h4,
+    p
 } : {
-    inverted: boolean
+    inverted: boolean,
+    span: string,
+    h3: string,
+    h4?: string,
+    p: string
 }) => {
   return (
     <div className={inverted ? styles.inverted + " " + styles.timePeriod : styles.timePeriod}>
         <div className={styles.date}>
             <span>
-                September 2017 - June 2021
+                {span}
             </span>
         </div>
         <div className={styles.details}>
-            <h3>Bachelor’s Degree in Biotechnology</h3>
-            <span>Ain Shams University, Egypt</span>
+            <div>
+                    
+                <h3>{h3}</h3>
+                <p>{p}</p>
+                {
+                    h4 && <h4>{h4}</h4>
+                }
+            </div>
         </div>
     </div>
   )
