@@ -1,0 +1,28 @@
+.mainLink{
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: var(--main-transition);
+    border: 1px solid var(--main-color);
+    box-shadow: var(--sec-shadow);
+}
+.mainLink{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+.mainLink:hover,
+.mainLink:focus,
+.mainLink:focus-visible{
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    box-shadow: var(--main-shadow);
+}
+.mainLink.inverted{
+    background-color: var(--bg-color);
+    color: var(--main-color);
+}
+.mainLink.inverted:hover,
+.mainLink.inverted:focus,
+.mainLink.inverted:focus-visible{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}

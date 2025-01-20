@@ -3,6 +3,7 @@ import React from 'react'
 import styles from "./hero.module.css" 
 import { Link } from '@/i18n/routing'
 import { useTranslations } from 'use-intl'
+import MainLink from '../MainLink/MainLink'
 
 
 const Hero = ({
@@ -19,12 +20,12 @@ const Hero = ({
                 <h2>{t("h2")}</h2>
                 <p>{t("p")}</p>
                 <div className={styles.btns}>
-                    <Link href={"/courses"}>
+                    <MainLink href={"/courses"}>
                         {t("btn1")}
-                    </Link>
-                    <Link href={"/contact"}>
+                    </MainLink>
+                    <MainLink inverted={true} href={"/contact"}>
                         {t("btn2")}
-                    </Link>
+                    </MainLink>
                 </div>
             </div>
             <div className={styles.img}>

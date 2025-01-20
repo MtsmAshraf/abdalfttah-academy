@@ -1,0 +1,129 @@
+.card{
+    background-color: #fff;
+    border-radius: 30px 4px;
+    transition: var(--main-transition);
+    position: relative;
+    height: fit-content;
+    isolation: isolate;
+    border-radius: 30px 6px;
+    overflow: hidden;
+}
+.card::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    border-radius: 30px 4px;
+    height: 100%;
+    width: 100%;
+    background-image: var(--main-gradient);
+    transition: var(--main-transition);
+    z-index: -1;
+    opacity: 0;
+}
+.card:hover::before{
+    opacity: 1;
+}
+.card *{
+    transition: var(--main-transition);
+}
+.card a > div:first-child{
+    height: 370px;
+    overflow: hidden;
+    box-shadow: var(--sec-light-shadow);
+}
+.card:hover a > div:first-child{
+    box-shadow: var(--main-shadow);
+}
+.card a > div:first-child img{
+    object-fit: cover;
+    height: 100%;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.card:hover a > div:first-child img{
+    transform: scale(1.04);
+}
+.card > a span{
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    background-color: var(--main-color);
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 1px solid var(--main-light-color);
+}
+.card:hover > a span{
+    /* background-color: var(--main-light-color);
+    color: #fff; */
+}
+.card > div{
+    text-align: center;
+    min-height: 50px;
+}
+.card > div h4{
+    /* margin-bottom: 5px; */
+    font-size: 20px;
+    background-color: var(--main-light-color);
+    background-image: var(--main-gradient);
+    color: #fff;
+    padding: 10px;
+    box-shadow: var(--sec-light-shadow);
+}
+.card:hover > div h4{
+    color: var(--main-color);
+    background-color: #fff;
+    background-image: none;
+    box-shadow: var(--main-shadow);
+}
+.card > div p{
+    /* margin-top: 15px; */
+    line-height: 1.6;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    /* margin-top: 15px; */
+    margin-bottom: 10px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    box-shadow: var(--sec-shadow);
+    background-color: var(--main-light-color);
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+/* .card:hover > div p{
+    background-color: #fff;
+    color: var(--main-color);
+    box-shadow: var(--main-shadow);
+} */
+.card > div > div{
+    /* background-color: #fff; */
+    box-shadow: var(--sec-light-shadow);
+    padding: 20px;
+}
+.card > div > div > a{
+    /* top: 50%;
+    transform: translateY(-50%); */
+    font-size: 14px;
+    padding: 5px 20px;
+    box-shadow: var(--sec-light-shadow) !important;
+    display: block;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card:hover > div > div > a,
+.card > div > div > a:hover,
+.card > div > div > a:focus,
+.card > div > div > a:focus-visible{
+    background-color: var(--main-color) !important;
+    background-color: #fff !important;
+    color: #000 !important;
+    box-shadow: var(--main-shadow) !important;
+}

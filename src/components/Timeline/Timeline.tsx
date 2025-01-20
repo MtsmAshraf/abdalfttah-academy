@@ -3,6 +3,7 @@ import styles from "./timeline.module.css"
 import TimePeriod from './TimePeriod/TimePeriod'
 import educationPeriods, { EducationPeriod } from './education'
 import experiencePeriods, { ExperiencePeriod } from './experience'
+import MainHeading from '../MainHeading/MainHeading'
 
 const Timeline = ({
     lo
@@ -16,7 +17,7 @@ const Timeline = ({
         <div className={styles.overlay}></div>
         <div className="container">
             <div className={styles.part}>
-                <h2>Education</h2>
+                <MainHeading>Education</MainHeading>
                 <div className={styles.cards}>
                     {
                         educationPeriods.map((period: EducationPeriod, index) => {
@@ -43,7 +44,7 @@ const Timeline = ({
                 </div>
             </div>
             <div className={styles.part}>
-                <h2>Research & Work Experience</h2>
+                <MainHeading>Research & Work Experience</MainHeading>
                 <div className={styles.cards}>
                     {
                         experiencePeriods.map((period: ExperiencePeriod, index) => {

@@ -1,0 +1,61 @@
+.coursesCards{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("../../../public/images/courses-bg.jpg");
+    position: relative;
+    isolation: isolate;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.coursesCards .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    opacity: 0.85;
+    z-index: -1;
+}
+.coursesCards > div:nth-of-type(2){
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px,1fr));
+    gap: 30px 50px;
+    margin-top: 30px;
+}
+
+.coursesCards > div:nth-of-type(2):has( > div:hover) > div img{
+    filter: grayscale(100%);
+}
+.coursesCards > div:nth-of-type(2) > div:hover img{
+    filter: grayscale(0%) !important;
+}
+
+.coursesCards > span{
+    display: block;
+    margin-top: 30px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: var(--sec-light-shadow);
+}
+.coursesCards > span > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.coursesCards > span > a:hover{
+    gap: 20px;
+}
+@media (max-width: 992px) {
+    .coursesCards > div:nth-of-type(2){
+        grid-template-columns: repeat(2, minmax(250px,1fr));
+    }
+}
+@media (max-width: 767px) {
+    .coursesCards > div:nth-of-type(2){
+        grid-template-columns: repeat(1, minmax(250px,1fr));
+    }
+}
