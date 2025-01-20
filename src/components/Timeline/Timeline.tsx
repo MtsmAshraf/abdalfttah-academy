@@ -9,6 +9,8 @@ const Timeline = ({
 }:{
     lo: string
 }) => {
+    let latestEduIndex = educationPeriods.length;
+    let latestExpIndex = experiencePeriods.length;
   return (
     <section className={styles.timeline}>
         <div className={styles.overlay}></div>
@@ -25,10 +27,19 @@ const Timeline = ({
                                     h3={period.degree}
                                     p={period.institute}
                                     inverted={index % 2 === 0 ? false : true}
+                                    index={index}
                                 />
                             )
                         })
                     }
+                    <TimePeriod
+                        span={""}
+                        h3={"period.degree"}
+                        p={"period.institute"}
+                        inverted={true}
+                        index={latestEduIndex}
+                        hidden={true}
+                    />
                 </div>
             </div>
             <div className={styles.part}>
@@ -44,10 +55,19 @@ const Timeline = ({
                                     h4={period.focus}
                                     p={period.institute}
                                     inverted={index % 2 === 0 ? false : true}
+                                    index={index}
                                 />
                             )
                         })
                     }
+                    <TimePeriod
+                        span={""}
+                        h3={"period.degree"}
+                        p={"period.institute"}
+                        inverted={true}
+                        index={latestExpIndex}
+                        hidden={true}
+                    />
                 </div>
             </div>
         </div>

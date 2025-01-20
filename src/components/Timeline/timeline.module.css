@@ -1,10 +1,11 @@
 .timeline{
     background-image: url("../../../public/images/edu-bg.jpg");
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     isolation: isolate;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 .timeline .overlay{
     position: absolute;
@@ -44,6 +45,8 @@
     color: #fff;
     padding: 5px 40px;
     box-shadow: var(--sec-shadow);
+    position: sticky;
+    top: 100px;
 }
 .timeline .part .cards{
     display: flex;
@@ -52,4 +55,9 @@
     justify-content: space-between;
     margin-top: 54px;
     min-height: calc(100vh - 100px - 54px);
+}
+@media (max-width: 767px) {
+    .timeline h2{
+        font-size: 24px;
+    }
 }

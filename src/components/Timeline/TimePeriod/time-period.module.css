@@ -4,9 +4,10 @@
     /* align-items: center; */
     justify-content: space-between;
     gap: 80px;
-    position: relative;
+    position: sticky;
     width: 100%;
-    margin-top: 100px;
+    margin-bottom: 50vh;
+    /* top: 60vh; */
 }
 .timePeriod.inverted{
     flex-direction: row-reverse;
@@ -29,13 +30,13 @@
 }
 .timePeriod .date span{
     position: relative;
-    padding: 5px 0px;
+    padding: 5px 30px;
     text-align: center;
     border-radius: 20px 0px 0px 20px;
     background-color: var(--main-light-color);
     background-image: var(--main-gradient);
     color: #fff;
-    width: 300px;
+    /* width: 300px; */
     float: right;
     box-shadow: var(--sec-shadow);
 }
@@ -91,4 +92,39 @@
 }
 .timePeriod .details h4{
     font-weight: normal;
+}
+@media (max-width: 767px) {
+    .timePeriod, .timePeriod.inverted{
+        flex-direction: column;
+        align-items: center;
+    }
+    .timePeriod::before{
+        top: 60px;
+    }
+    .timePeriod .date span,
+    .timePeriod.inverted .date span{
+        border-radius: 20px;
+    }
+    .timePeriod .date span::before{
+        display: none;
+    }
+    .timePeriod .details,
+    .timePeriod.inverted .details{
+        max-width: 100%;
+    }
+    .timePeriod .details > div,
+    .timePeriod.inverted .details > div{
+        border-radius: 30px;
+        text-align: center;
+    }
+    .timePeriod .details > div h3,
+    .timePeriod.inverted .details > div h3{
+        font-size: 16px;
+    }
+    .timePeriod .details > div h4,
+    .timePeriod.inverted .details > div h4,
+    .timePeriod .details > div p,
+    .timePeriod.inverted .details > div p{
+        font-size: 14px;
+    }
 }

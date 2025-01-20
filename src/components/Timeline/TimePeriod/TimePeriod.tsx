@@ -6,16 +6,20 @@ const TimePeriod = ({
     span,
     h3,
     h4,
-    p
+    p,
+    index,
+    hidden
 } : {
     inverted: boolean,
     span: string,
     h3: string,
     h4?: string,
-    p: string
+    p: string,
+    index: number,
+    hidden?: boolean
 }) => {
   return (
-    <div className={inverted ? styles.inverted + " " + styles.timePeriod : styles.timePeriod}>
+    <div style={{ top: `${(index + 1) * 200}px`, opacity: hidden ? "0" : "1" }} className={inverted ? styles.inverted + " " + styles.timePeriod : styles.timePeriod}>
         <div className={styles.date}>
             <span>
                 {span}
@@ -23,7 +27,6 @@ const TimePeriod = ({
         </div>
         <div className={styles.details}>
             <div>
-                    
                 <h3>{h3}</h3>
                 <p>{p}</p>
                 {
