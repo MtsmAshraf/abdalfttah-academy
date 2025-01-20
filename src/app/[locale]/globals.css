@@ -28,7 +28,8 @@ html{
   --main-gradient: linear-gradient(-45deg, var(--main-color) 50%, var(--main-light-color));
   --main-inv-gradient: linear-gradient(45deg, var(--main-color) 50%, var(--main-light-color));
   --hero-gradient: linear-gradient(to left,#000 , var(--main-color), #000);
-  --card-gradient: linear-gradient(to left,var(--main-color) 0%, var(--main-light-color) 50%, var(--main-color));
+  --card-gradient: linear-gradient(to left,var(--main-color) 0%, var(--main-light-color) 70%, var(--main-color));
+  --card-gradient: linear-gradient(to left,#000 0%, var(--main-light-color) 50%, #000);
   --bg-color: #eaeaea;
   --main-transition: all 0.2s 0s linear;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
