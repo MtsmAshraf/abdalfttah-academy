@@ -1,8 +1,16 @@
-import React from 'react'
+import CoursesCards from '@/components/CoursesCards/CoursesCards'
+import React, { use } from 'react'
 
-const Courses = () => {
-  return (
-    <div>Courses</div>
+const Courses = ({
+  params
+}: Readonly<{
+  params:  Promise<{locale: string}>
+}>) => {
+  const {locale} = use(params)
+  return (  
+    <section>
+      <CoursesCards lo={locale} all={true}></CoursesCards>
+    </section>
   )
 }
 

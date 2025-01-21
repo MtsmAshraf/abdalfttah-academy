@@ -10,9 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const CoursesCards = ({
-    lo
+    lo,
+    all
 } : {
-    lo: string
+    lo: string,
+    all?: boolean
 }) => {
   return (
     <section className={styles.coursesCards}>
@@ -23,7 +25,23 @@ const CoursesCards = ({
                 allCourses.map((course: Course,index: number) => {
                     return(
                         // index <= 14 &&
-                        index <= 2 &&
+                        !all && index <= 2 &&
+                        <Card key={course.id}>
+                            <Link href={"/"}>
+                                <div>
+                                    <Image src={course.src} alt={`${course.title} Course`}></Image>
+                                </div>
+                                <span>{course.category}</span>
+                            </Link>
+                                <div>
+                                    <h4>{course.title}</h4>
+                                    <div>
+                                        <p>{course.price}</p>
+                                        <MainLink inverted href={"/"}>Enroll</MainLink>
+                                    </div>
+                                </div>
+                        </Card>
+                        || all &&
                         <Card key={course.id}>
                             <Link href={"/"}>
                                 <div>
@@ -43,12 +61,15 @@ const CoursesCards = ({
                 })
             }
         </div>
-        <span>
-            <MainLink href={"/courses"}>
-                <span>Show More</span>
-                <FontAwesomeIcon icon={faArrowRight} />
-            </MainLink>
-        </span>
+        {
+            !all && 
+            <span>
+                <MainLink href={"/courses"}>
+                    <span>Show More</span>
+                    <FontAwesomeIcon icon={faArrowRight} />
+                </MainLink>
+            </span>
+        }
     </section>
   )
 }
