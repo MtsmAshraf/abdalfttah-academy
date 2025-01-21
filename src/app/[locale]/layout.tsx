@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 
 export const metadata: Metadata = {
@@ -29,8 +30,9 @@ export default async function RootLayout({
       <NextIntlClientProvider messages={messages}>
         <body className={locale === "ar" ? "ar" : "en"}>
           <Header lo={locale}></Header>
-          {children}
-        </body>
+            {children}
+          <Footer lo={locale}></Footer>
+          </body>
       </NextIntlClientProvider>
     </html>
   );
