@@ -1,17 +1,15 @@
 .timePeriod{
-    /* width: 100%; */
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     gap: 80px;
-    position: sticky;
+    position: relative;
     width: 100%;
     /* top: 60vh; */
-    margin-bottom: 50vh;
+    margin-bottom: 100px;
 }
 .timePeriod:last-child,
 .timePeriod:nth-last-child(2){
-    margin-bottom: 20vh;
+    /* margin-bottom: 20vh; */
 }
 .timePeriod.inverted{
     flex-direction: row-reverse;

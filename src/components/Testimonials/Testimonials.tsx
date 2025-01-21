@@ -25,6 +25,7 @@ const Testimonials = ({
   const t = useTranslations("HomePage")
   return (
     <section className={lo === "ar" ? styles.testimonials + " " + styles.ar : styles.testimonials}>
+        <div className={styles.overlay}></div>
         <div className="container">
             <MainHeading>
                 Testimonials
@@ -58,6 +59,9 @@ const Testimonials = ({
                                             </span>
                                             <span>
                                                 <FontAwesomeIcon icon={faQuoteRight} />
+                                            </span>
+                                            <span>
+                                                <Image src={testimonial.flagSrc} alt={"nationality flag"}></Image>
                                             </span>
                                         <div className={styles.img}>
                                             <Image src={testimonial.src} alt={`${testimonial.name} testimonial`}></Image>

@@ -33,14 +33,14 @@ const Timeline = ({
                             )
                         })
                     }
-                    <TimePeriod
+                    {/* <TimePeriod
                         span={""}
                         h3={"period.degree"}
                         p={"period.institute"}
                         inverted={true}
                         index={latestEduIndex}
                         hidden={true}
-                    />
+                    /> */}
                 </div>
             </div>
             <div className={styles.part}>
@@ -61,14 +61,14 @@ const Timeline = ({
                             )
                         })
                     }
-                    <TimePeriod
+                    {/* <TimePeriod
                         span={""}
                         h3={"period.degree"}
                         p={"period.institute"}
                         inverted={true}
                         index={latestExpIndex}
                         hidden={true}
-                    />
+                    /> */}
                 </div>
             </div>
         </div>
