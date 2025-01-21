@@ -2,8 +2,7 @@ import React from 'react'
 import styles from "./footer.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { faClock, faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { useTranslations } from 'next-intl'
+import { faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from '@/i18n/routing'
 
 const Footer = ({
@@ -33,35 +32,35 @@ const Footer = ({
             </div>
             </div>
             <div>
-            <h4>About Me</h4>
-            <div>
-                <div>
-                <span>
-                    <FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon>
-                </span>
-                <address>
-                    Place,
-                    <br />
-                    City,
-                    <br />
-                    Gov,
-                    <br />
-                    Country
-                </address>
-                </div>
-                <div>
-                <span>
-                    <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>
-                </span>
+                <h4>About Me</h4>
                 <div>
                     <div>
-                    <a href="tel:12354645789">12354645789</a>
-                    <br />
-                    <a href="tel:12354645789">12354645789</a>
+                        <span>
+                            <FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon>
+                        </span>
+                        <address>
+                            Place,
+                            <br />
+                            City,
+                            <br />
+                            Gov,
+                            <br />
+                            Country
+                        </address>
+                    </div>
+                    <div>
+                        <span>
+                            <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>
+                        </span>
+                        <div>
+                            <div>
+                            <a href="tel:12354645789">12354645789</a>
+                            <br />
+                            <a href="tel:12354645789">12354645789</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
             </div>
             <div>
             <h4>
