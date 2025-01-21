@@ -1,5 +1,5 @@
 .card{
-    background-color: #fff;
+    background-color: var(--sec-bg);
     border-radius: 30px 4px;
     transition: var(--main-transition);
     position: relative;

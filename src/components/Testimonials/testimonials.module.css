@@ -37,7 +37,7 @@
     gap: 10px;
 }
 .testimonials .swiper .btns button{
-    background-color: #fff;
+    background-color: var(--sec-bg);
     color: var(--text-color);
     width: 40px;
     height: 40px;
@@ -88,7 +88,7 @@
     height: 100px;
     font-size: 100px;
     z-index: 3;
-    color: #aaa;
+    color: var(--icon-color);
 }
 .testimonials .swiper .SwiperSlide > span:nth-of-type(1){
     transform: translateX(calc(-50% - 140px));

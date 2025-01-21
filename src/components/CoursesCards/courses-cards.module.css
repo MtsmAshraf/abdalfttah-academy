@@ -38,15 +38,16 @@
     width: fit-content;
     margin-right: auto;
     margin-left: auto;
-    box-shadow: var(--sec-light-shadow);
 }
 .coursesCards > span > a{
+    box-shadow: var(--sec-light-shadow);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 .coursesCards > span > a:hover{
+    background-color: var(--sec-bg);
     gap: 20px;
 }
 @media (max-width: 992px) {

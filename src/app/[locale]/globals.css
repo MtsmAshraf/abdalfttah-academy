@@ -22,7 +22,7 @@ html{
   scroll-behavior: smooth;
 }
 :root{
-  --main-color: #000531;
+  --main-color: #00031c;
   --main-light-color: #415ede;
   --overlay-bg: #000215;
   --main-gradient: linear-gradient(-45deg, var(--main-color) 50%, var(--main-light-color));
@@ -30,11 +30,13 @@ html{
   --hero-gradient: linear-gradient(to left,#000 , var(--main-color), #000);
   --card-gradient: linear-gradient(to left,#000 0%, var(--main-light-color) 50%, #000);
   --bg-color: #eaeaea;
+  --sec-bg: #fff;
   --main-transition: all 0.2s 0s linear;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
   --sec-shadow: 0 10px 20px -5px #333;
   --sec-light-shadow: 0 10px 20px -5px #888;
   --header-shadow: 0 -0.5rem 2rem var(--main-color);
+  --icon-color: #aaa;
 }
 ::selection{
   background-color: var(--main-color);
