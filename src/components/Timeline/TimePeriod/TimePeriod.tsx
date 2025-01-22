@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import styles from "./time-period.module.css"
 
 const TimePeriod = ({
@@ -18,8 +19,30 @@ const TimePeriod = ({
     index: number,
     hidden?: boolean
 }) => {
+    useEffect(() => {
+        const periods = document.querySelectorAll("div:has( > div:last-child > div > h3 + p)")
+        periods.forEach((period, index) => {
+            let fullOffsetTop = period.offsetTop + period.parentElement?.parentElement?.offsetTop + period.parentElement?.parentElement?.parentElement?.parentElement?.offsetTop
+            window.addEventListener("scroll", () => {
+            if(window.scrollY >= fullOffsetTop - 600){
+                period.style.cssText = `
+                    opacity: 1;
+                    transform: translateY(0);
+                    --period-passed-bg-color: #415ede;
+                    --period-passed-border-color: #415ede;
+                `
+                period.querySelectorAll("div").forEach((div) => {
+                    div.style.cssText = `
+                        opacity: 1 !important;
+                        transform: rotateZ(0deg) translateY(0) !important;
+                    `
+                })
+            }
+            })
+        })
+    },[])
   return (
-    <div style={{ opacity: hidden ? "0" : "1" }} className={inverted ? styles.inverted + " " + styles.timePeriod : styles.timePeriod}>
+    <div style={{ opacity: hidden ? "0" : "" }} className={inverted ? styles.inverted + " " + styles.timePeriod : styles.timePeriod}>
         <div className={styles.date}>
             <span>
                 {span}

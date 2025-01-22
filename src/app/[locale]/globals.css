@@ -32,11 +32,13 @@ html{
   --bg-color: #eaeaea;
   --sec-bg: #fff;
   --main-transition: all 0.2s 0s linear;
+  --animation-transition: all 0.8s 0s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
   --sec-shadow: 0 10px 20px -5px #333;
   --sec-light-shadow: 0 10px 20px -5px #888;
   --header-shadow: 0 -0.5rem 2rem var(--main-color);
   --icon-color: #aaa;
+  
 }
 ::selection{
   background-color: var(--main-color);

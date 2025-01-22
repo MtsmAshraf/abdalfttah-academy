@@ -15,7 +15,7 @@ const educationPeriods : EducationPeriod[] = [
     {
         id: "2",
         degree: "Master’s Degree in Multidisciplinary Research in Experimental Sciences",
-        date: "September 2023 - September 2024",
+        date: "Sep 2023 - Sep 2024",
         institute: "Universitat Pompeu Fabra, Barcelona, Spain"
     },
     {

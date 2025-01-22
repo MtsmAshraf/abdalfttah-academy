@@ -13,7 +13,7 @@ const Timeline = ({
     let latestEduIndex = educationPeriods.length;
     let latestExpIndex = experiencePeriods.length;
   return (
-    <section className={styles.timeline}>
+    <section id='timeline' className={styles.timeline}>
         <div className={styles.overlay}></div>
         <div className="container">
             <div className={styles.part}>
