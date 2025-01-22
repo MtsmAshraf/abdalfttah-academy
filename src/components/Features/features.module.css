@@ -116,7 +116,7 @@
     padding: 20px;
     z-index: 2;
 }
-.cards .card .cardContent h3{
+.cards .card .cardContent h4{
     font-size: 22px;
     color: var(--main-color);
 }
@@ -130,6 +130,22 @@
     justify-content: center;
     font-size: 100px;
     color: var(--main-color);
+    transition: var(--animation-transition);
+    animation: 
+        animation
+        2s 
+        cubic-bezier(0.785, 0.135, 0.15, 0.86) 
+        0s 
+        infinite 
+        alternate;
+}
+@keyframes animation {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
 }
 .cards .card .cardContent p{
     width: 80%;

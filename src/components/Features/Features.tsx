@@ -39,7 +39,7 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/585452f3-aa83-46be-85a8-29db19901dd6/ObAZV9IMOg.json" background="transparent" speed="3" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h3>AI Strategy and Consultancy</h3>
+                        <h4>AI Strategy and Consultancy</h4>
                         <p>
                             Providing expert advice on AI
                             implementation, optimization, and strategy development tailored to the
@@ -54,7 +54,7 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/b5d62c1d-dd20-4c76-ac15-a96fe0fe8746/hXXuSctsMr.json" background="transparent" speed="1" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h3>Custom AI Solutions</h3>
+                        <h4>Custom AI Solutions</h4>
                         <p>
                             Developing and deploying bespoke AI applications
                             designed to meet the specific challenges and objectives of our Omani
@@ -69,7 +69,7 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/6b5e72a3-6732-424b-ace2-4ce14411941e/MiEgcSw21O.json" background="transparent" speed="0.5" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h3>AI Products and Tools</h3>
+                        <h4>AI Products and Tools</h4>
                         <p>
                             Offering a suite of AI products and tools that
                             enhance operational efficiency, decision-making, and innovation within the
@@ -84,7 +84,7 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/764f198f-ccf1-41e1-9a58-a0710aacd47d/OHVHZmeTqY.json" background="transparent" speed="1" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h3>Capability Building</h3>
+                        <h4>Capability Building</h4>
                         <p>
                             Conducting workshops, courses, and training programs
                             to equip the Omani workforce with essential AI skills and knowledge.
