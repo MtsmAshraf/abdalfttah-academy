@@ -12,7 +12,7 @@ const Loader = () => {
         <div className={loaded ? "loading" + " " + "loaded" : "loading"}>
             <div className='push-pop loader'>
                 <div></div>
-                <div> </div>
+                <div></div>
             </div>
             {/* <div className='push-out loader'>
                 <div></div>
