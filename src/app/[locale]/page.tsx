@@ -1,6 +1,7 @@
 import CoursesCards from "@/components/CoursesCards/CoursesCards";
 import Features from "@/components/Features/Features";
 import Hero from "@/components/Hero/Hero";
+import Loader from "@/components/Loader/Loader";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Timeline from "@/components/Timeline/Timeline";
 import { use } from "react";
@@ -13,6 +14,7 @@ export default function Home({
   const {locale} = use(params)
   return (
     <main>
+      <Loader></Loader>
       <Hero lo={locale} />
       <Features />
       <Timeline lo={locale} />

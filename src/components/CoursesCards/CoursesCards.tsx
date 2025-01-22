@@ -28,6 +28,9 @@ const CoursesCards = ({
     }
     useEffect(() => {
         window.addEventListener("scroll", scrollCoursesiSection)
+        if(coursesCards.current.offsetTop <= (window.scrollY + 500)){
+            setCoursesScrolled(true)
+        }
     },[])
   return (
     <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>

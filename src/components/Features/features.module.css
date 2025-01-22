@@ -28,7 +28,7 @@
 .cards .card{
     background-color: rgba(8, 7, 7, 0.2);
     /* background-color: transparent; */
-    min-height: 5   00px;
+    /* min-height: 500px; */
     border-radius: 8px;
     position: relative;
     display: flex;

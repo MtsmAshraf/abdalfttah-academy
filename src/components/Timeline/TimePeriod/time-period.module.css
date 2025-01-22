@@ -145,6 +145,7 @@
 }
 .timePeriod .details h4{
     font-weight: normal;
+    font-size: 14px;
 }
 @media (max-width: 767px) {
     .timePeriod, .timePeriod.inverted{

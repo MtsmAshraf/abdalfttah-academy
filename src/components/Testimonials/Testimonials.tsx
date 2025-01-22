@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import styles from "./testimonials.module.css"
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -23,9 +23,21 @@ const Testimonials = ({
         parentEl: string
     }) => {
   const t = useTranslations("HomePage")
+  const testimonials: any = useRef(null)
+      const [testimonialsScrolled, setTestimonialsScrolled] = useState(false)
+      const scrollTestimonialsiSection = () => {
+          if(testimonials.current){
+              if(testimonials.current.offsetTop <= (window.scrollY + 500)){
+                setTestimonialsScrolled(true)
+              }
+          }
+      }
+      useEffect(() => {
+          window.addEventListener("scroll", scrollTestimonialsiSection)
+      },[])
   return (
-    <section className={lo === "ar" ? styles.testimonials + " " + styles.ar : styles.testimonials}>
-        <div className={styles.overlay}></div>
+    <section ref={testimonials} className={lo === "ar" ? styles.testimonials + " " + styles.ar : styles.testimonials}>
+        <div className={testimonialsScrolled ? styles.overlay + " " + styles.scrolled : styles.overlay }></div>
         <div className="container">
             <MainHeading>
                 Testimonials
