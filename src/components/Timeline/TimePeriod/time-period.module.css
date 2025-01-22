@@ -5,16 +5,16 @@
     position: relative;
     width: 100%;
     /* top: 60vh; */
-    margin-bottom: 150px;
     /* opacity: 0;
     transform: translateY(200px); */
     transition: var(--animation-transition);
     --period-passed-bg-color: #eaeaea;
     --period-passed-border-color: #00031c;
+    height: 200px;
 }
-.timePeriod:last-child,
-.timePeriod:nth-last-child(2){
+.timePeriod:not(:last-child){
     /* margin-bottom: 20vh; */
+    margin-bottom: 100px;
 }
 .timePeriod.inverted{
     flex-direction: row-reverse;
@@ -56,6 +56,9 @@
     transform-origin: right top;
 }
 @media (max-width: 767px) {
+    .timePeriod{
+        /* height: 300px; */
+    }
     .timePeriod > div:nth-of-type(1){
         transform: rotateZ(-0deg) translateY(-20px);
         transform-origin: right center;

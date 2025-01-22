@@ -7,22 +7,22 @@
 }
 .mainLink{
     background-color: var(--main-color);
-    color: var(--bg-color);
+    color: #fff;
 }
 .mainLink:hover,
 .mainLink:focus,
 .mainLink:focus-visible{
-    background-color: var(--bg-color);
+    background-color: #fff;
     color: var(--main-color);
     box-shadow: var(--main-shadow);
 }
 .mainLink.inverted{
-    background-color: var(--bg-color);
+    background-color: #fff;
     color: var(--main-color);
 }
 .mainLink.inverted:hover,
 .mainLink.inverted:focus,
 .mainLink.inverted:focus-visible{
     background-color: var(--main-color);
-    color: var(--bg-color);
+    color: #fff;
 }
