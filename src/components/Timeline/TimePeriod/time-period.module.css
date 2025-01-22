@@ -5,7 +5,7 @@
     position: relative;
     width: 100%;
     /* top: 60vh; */
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     /* opacity: 0;
     transform: translateY(200px); */
     transition: var(--animation-transition);
@@ -31,6 +31,7 @@
     border: 2px solid var(--period-passed-border-color);
     background-color: var(--period-passed-bg-color);
     transition: var(--animation-transition);
+    
 }
 .timePeriod > div{
     flex: 1;
