@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useRef, useState } from 'react'
 import Card from './Card/Card'
 import styles from "./courses-cards.module.css"
 import MainHeading from '../MainHeading/MainHeading'
@@ -16,8 +17,20 @@ const CoursesCards = ({
     lo: string,
     all?: boolean
 }) => {
+    const coursesCards: any = useRef(null)
+    const [coursesScrolled, setCoursesScrolled] = useState(false)
+    const scrollCoursesiSection = () => {
+        if(coursesCards.current){
+            if(coursesCards.current.offsetTop <= (window.scrollY + 500)){
+                setCoursesScrolled(true)
+            }
+        }
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", scrollCoursesiSection)
+    },[])
   return (
-    <section className={styles.coursesCards}>
+    <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>
         <MainHeading>Courses</MainHeading>
         <div className={styles.overlay}></div>
         <div className="container">
@@ -26,7 +39,7 @@ const CoursesCards = ({
                     return(
                         // index <= 14 &&
                         !all && index <= 2 &&
-                        <Card key={course.id}>
+                        <Card index={index} key={course.id}>
                             <Link href={"/"}>
                                 <div>
                                     <Image src={course.src} alt={`${course.title} Course`}></Image>
@@ -42,7 +55,7 @@ const CoursesCards = ({
                                 </div>
                         </Card>
                         || all &&
-                        <Card key={course.id}>
+                        <Card index={index} key={course.id}>
                             <Link href={"/"}>
                                 <div>
                                     <Image src={course.src} alt={`${course.title} Course`}></Image>

@@ -7,7 +7,6 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .coursesCards .overlay{
     position: absolute;
     left: 0;
@@ -31,7 +30,10 @@
 .coursesCards > div:nth-of-type(2) > div:hover img{
     filter: grayscale(0%) !important;
 }
-
+.coursesCards.scrolled > div:nth-of-type(2) > div{
+    transform: translateY(0px);
+    opacity: 1;
+}
 .coursesCards > span{
     display: block;
     margin-top: 30px;

@@ -16,7 +16,7 @@ export default function Home({
       <Hero lo={locale} />
       <Features />
       <Timeline lo={locale} />
-      <CoursesCards lo={locale} />
+      <CoursesCards lo={locale}/>
       <Testimonials lo={locale} parentEl={"home"} />
     </main>
   );

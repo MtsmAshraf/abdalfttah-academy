@@ -1,13 +1,15 @@
 .card{
     background-color: var(--sec-bg);
     border-radius: 30px 4px;
-    transition: var(--main-transition);
+    transition: var(--animation-transition);
     position: relative;
     height: fit-content;
     isolation: isolate;
     border-radius: 30px 6px;
     overflow: hidden;
     box-shadow: var(--sec-light-shadow);
+    transform: translateY(100px);
+    opacity: 0;
 }
 /* .card::before{
     position: absolute;
