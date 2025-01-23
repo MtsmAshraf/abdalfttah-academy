@@ -48,6 +48,6 @@
         font-size: 24px;
     }
     .timeline .part::before{
-        height: calc(100% - 200px - 200px + 60px );
+        height: calc(100% - 200px - 250px + 60px );
     }
 }

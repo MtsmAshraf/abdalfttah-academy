@@ -9,7 +9,7 @@
     position: relative;
     isolation: isolate;
     padding-top: 88px;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
     color: #fff;
 }
 .hero.ar{
@@ -91,6 +91,14 @@
 @media (max-width: 767px) {
     .hero{
         padding-top: 140px;
+    }
+    .hero .text h2{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .hero .text p{
+        font-size: 16px;
+        margin-bottom: 40px;
     }
     .hero iframe{
         height: 200px;

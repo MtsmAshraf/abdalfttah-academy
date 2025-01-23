@@ -81,6 +81,12 @@
     padding-left: 30px;
     position: relative;
 }
+@media (max-width: 600px) {
+    .testimonials .swiper .SwiperSlide{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
 .testimonials .swiper .SwiperSlide .img{
     width: 100px;
     height: 100px;
@@ -160,6 +166,12 @@
     }
     .testimonials .swiper .SwiperSlide > span:nth-of-type(2){
         transform: translateX(calc(-50% + 110px));
+    }
+    .testimonials:has(.overlay.scrolled) .swiper .SwiperSlide > span:nth-of-type(1){
+        transform: translateX(calc(-50% - 110px)) translateY(0);
+    }
+    .testimonials:has(.overlay.scrolled) .swiper .SwiperSlide > span:nth-of-type(2){
+        transform: translateX(calc(-50% + 110px)) translateY(0);
     }
 }
 .testimonials .swiper .SwiperSlide .img > img{

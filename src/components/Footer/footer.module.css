@@ -53,17 +53,24 @@
     padding-bottom: 40px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 .footer > div h4{
     color: #fff;
     margin-bottom: 10px;
 }
 .footer > div:nth-of-type(2) > div{
-    width: calc(100% / 3);
+    width: calc((100% - 40px) / 3);
 }
 @media (max-width: 600px) {
     .footer > div:nth-of-type(2) > div{
         text-align: center;
+    }
+    .footer > div:nth-of-type(2){
+        gap: 20px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }
 .footer > div:nth-of-type(2) div:nth-of-type(2) a{
@@ -71,11 +78,6 @@
 }
 .footer > div:nth-of-type(2) > div:nth-of-type(1) h4{
     padding-left: 20px;
-}
-@media (max-width: 600px) {
-    .footer > div:nth-of-type(2) > div:nth-of-type(1) h4{
-        text-align: left;
-    }
 }
 .footer > div:nth-of-type(2) > div:nth-of-type(1) a{
     width: fit-content;
@@ -87,6 +89,19 @@
     background-image: var(--main-gradient);
 } 
 
+@media (max-width: 600px) {
+    .footer > div:nth-of-type(2) > div{
+        width: calc((100% - 20px) / 2);
+    }
+    .footer > div:nth-of-type(2) > div:nth-of-type(1) h4{
+        padding-left: 0px;
+    }
+    .footer > div:nth-of-type(2) > div:nth-of-type(1) a{
+        text-wrap: nowrap;
+        text-align: center;
+        width: 100%;
+    }
+}
 .footer > div:nth-of-type(2) > div:not(:has(.socials)) > div{
     display: flex;
     flex-direction: column;
@@ -140,9 +155,9 @@
 }
 @media (max-width: 600px) {
     .footer .socials{
-        flex-direction: column;
         margin-right: auto;
         margin-left: auto;
+        justify-content: center;
     }
 }
 .footer .socials a:hover{
