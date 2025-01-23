@@ -4,7 +4,7 @@ import MainHeading from '../MainHeading/MainHeading'
 import PublicationsCard from './PublicationsCard/PublicationsCard'
 import Image from 'next/image'
 
-import img from "../../../public/images/publication-test.webp"
+import allPublications, { Publication } from './allPublications'
 
 
 const Publications = ({
@@ -18,64 +18,33 @@ const Publications = ({
             Publications
         </MainHeading>
         <div className="container">
-            <PublicationsCard>
-                <div>
-                    <Image src={img} alt='Publication Image'></Image>
-                </div>
-                <div>       
-                    <h4>
-                        Relapse to cocaine seeking is regulated by medial habenula NR4A2/NURR1 in mice
-                    </h4>
-                    <p>Jessica E. Childs* ,  Samuel Morabito* ,  Sudeshna Das ,  Caterina Santelli ,  Victoria Pham</p>
-                    <span>
-                        Cell Reports, 2024
-                    </span>
-                    <div>
-                        <button>ABS</button>
-                        <button>HTML</button>
-                        <button>PDF</button>
-                    </div>
-                </div>
-            </PublicationsCard>
-            <PublicationsCard inverted={true}>
-                <div>
-                    <Image src={img} alt='Publication Image'></Image>
-                </div>
-                <div>       
-                    <h4>
-                        Relapse to cocaine seeking is regulated
-                    </h4>
-                    <p>Caterina Santelli ,  Victoria Pham</p>
-                    <span>
-                        Cell Reports, 2024
-                    </span>
-                    <div>
-                        <button>ABS</button>
-                        <button>HTML</button>
-                        <button>PDF</button>
-                    </div>
-                </div>
-            </PublicationsCard>
-            <PublicationsCard>
-                <div>
-                    <Image src={img} alt='Publication Image'></Image>
-                </div>
-                <div>       
-                    <h4>
-                        {/* Relapse to cocaine seeking is regulated by medial habenula NR4A2/NURR1 in mice */}
-                        Relapse to cocaine seeking is regulated
-                        </h4>
-                    <p>Jessica E. Childs* ,  Samuel Morabito* ,  Sudeshna Das ,  Caterina Santelli ,  Victoria Pham</p>
-                    <span>
-                        Cell Reports, 2024
-                    </span>
-                    <div>
-                        <button>ABS</button>
-                        <button>HTML</button>
-                        <button>PDF</button>
-                    </div>
-                </div>
-            </PublicationsCard>
+            {
+                allPublications.map((publication: Publication, index: number) => {
+                    return(
+                        <PublicationsCard key={publication.id} inverted={index % 2 === 0 ? false : true}>
+                            <div>
+                                <Image src={publication.src} alt={`${publication.title} Publication Image`}></Image>
+                            </div>
+                            <div>       
+                                <h4>
+                                    {publication.title}
+                                </h4>
+                                <p>
+                                    {publication.authors.join(", ")}
+                                </p>
+                                <span>
+                                    {publication.date}
+                                </span>
+                                <div>
+                                    <button>ABS</button>
+                                    <button>HTML</button>
+                                    <button>PDF</button>
+                                </div>
+                            </div>
+                        </PublicationsCard>
+                    )
+                })
+            }
         </div>
     </section>
   )
