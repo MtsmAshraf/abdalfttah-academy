@@ -4,10 +4,27 @@
     margin-right: auto;
     margin-left: auto;
     font-size: 30px;
-    border-radius: 40px 0px;
     /* background-image: var(--main-gradient); */
     background-color: var(--main-color);
     color: #fff;
     padding: 5px 40px;
     box-shadow: var(--sec-shadow);
+    min-width: 100%;
+    transition: var(--animation-transition);
+    font-size: 100px;
+    border-radius: 0px;
+}
+.mainHeading.scrolled{
+    min-width: 200px;
+    font-size: 30px;
+    border-radius: 40px 0px;
+    opacity: 1;
+}
+@media (max-width: 767px) {
+    .mainHeading{
+        font-size: 50px;
+    }
+    .mainHeading.scrolled{
+        font-size: 30px;
+    }
 }

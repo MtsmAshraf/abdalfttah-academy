@@ -15,9 +15,9 @@ const Timeline = ({
   return (
     <section id='timeline' className={styles.timeline}>
         <div className={styles.overlay}></div>
+        <MainHeading>Education</MainHeading>
         <div className="container">
             <div className={styles.part}>
-                <MainHeading>Education</MainHeading>
                 <div className={styles.cards}>
                     {
                         educationPeriods.map((period: EducationPeriod, index) => {
@@ -43,33 +43,35 @@ const Timeline = ({
                     /> */}
                 </div>
             </div>
+        </div>
+        <MainHeading>Research & Work Experience</MainHeading>
+        <div className="container">
             <div className={styles.part}>
-                <MainHeading>Research & Work Experience</MainHeading>
-                <div className={styles.cards}>
-                    {
-                        experiencePeriods.map((period: ExperiencePeriod, index) => {
-                            return(
-                                <TimePeriod
-                                    key={period.id}
-                                    span={period.date}
-                                    h3={period.position}
-                                    h4={period.focus}
-                                    p={period.institute}
-                                    inverted={index % 2 === 0 ? false : true}
-                                    index={index}
-                                />
-                            )
-                        })
-                    }
-                    {/* <TimePeriod
-                        span={""}
-                        h3={"period.degree"}
-                        p={"period.institute"}
-                        inverted={true}
-                        index={latestExpIndex}
-                        hidden={true}
-                    /> */}
-                </div>
+                    <div className={styles.cards}>
+                        {
+                            experiencePeriods.map((period: ExperiencePeriod, index) => {
+                                return(
+                                    <TimePeriod
+                                        key={period.id}
+                                        span={period.date}
+                                        h3={period.position}
+                                        h4={period.focus}
+                                        p={period.institute}
+                                        inverted={index % 2 === 0 ? false : true}
+                                        index={index}
+                                    />
+                                )
+                            })
+                        }
+                        {/* <TimePeriod
+                            span={""}
+                            h3={"period.degree"}
+                            p={"period.institute"}
+                            inverted={true}
+                            index={latestExpIndex}
+                            hidden={true}
+                        /> */}
+                    </div>
             </div>
         </div>
     </section>

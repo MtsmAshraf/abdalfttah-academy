@@ -29,9 +29,9 @@
     content: "";
     left: 50%;
     transform: translateX(-50%);
-    top: 100px;
+    top: 0px;
     width: 2px;
-    height: calc(100% - 200px - 200px + 5px );
+    height: calc(100% - 100px - 200px + 5px );
     background-color: var(--main-color);
     z-index: -1;
 }
@@ -44,10 +44,10 @@
     min-height: calc(100vh - 100px - 54px);
 }
 @media (max-width: 767px) {
-    .timeline h2{
+    /* .timeline h2{
         font-size: 24px;
-    }
+    } */
     .timeline .part::before{
-        height: calc(100% - 200px - 250px + 60px );
+        height: calc(100% - 100px - 250px + 60px );
     }
 }

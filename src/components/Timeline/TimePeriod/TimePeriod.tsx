@@ -24,7 +24,8 @@ const TimePeriod = ({
         periods.forEach((period: HTMLElement | any) => {
             let fullOffsetTop = period.offsetTop + period.parentElement?.parentElement?.offsetTop + period.parentElement?.parentElement?.parentElement?.parentElement?.offsetTop
             window.addEventListener("scroll", () => {
-            if(window.scrollY >= fullOffsetTop - 600){
+            if(window.scrollY >= fullOffsetTop - 900){
+                console.log("PERIOD", fullOffsetTop)
                 period.style.cssText = `
                     opacity: 1;
                     transform: translateY(0);
