@@ -21,7 +21,7 @@ const TimePeriod = ({
 }) => {
     useEffect(() => {
         const periods = document.querySelectorAll("div:has( > div:last-child > div > h3 + p)")
-        periods.forEach((period, index) => {
+        periods.forEach((period: HTMLElement | any) => {
             let fullOffsetTop = period.offsetTop + period.parentElement?.parentElement?.offsetTop + period.parentElement?.parentElement?.parentElement?.parentElement?.offsetTop
             window.addEventListener("scroll", () => {
             if(window.scrollY >= fullOffsetTop - 600){
@@ -31,7 +31,7 @@ const TimePeriod = ({
                     --period-passed-bg-color: #415ede;
                     --period-passed-border-color: #415ede;
                 `
-                period.querySelectorAll("div").forEach((div) => {
+                period.querySelectorAll("div").forEach((div: HTMLElement | any) => {
                     div.style.cssText = `
                         opacity: 1 !important;
                         transform: rotateZ(0deg) translateY(0) !important;

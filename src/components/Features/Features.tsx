@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Features = () => {
    useEffect(() => {
-        const handleOnMouseMove = (e: React.MouseEvent) => {
+        const handleOnMouseMove = (e: HTMLElement | any) => {
             const {currentTarget: target} = e;
             const rect = target.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -19,8 +19,8 @@ const Features = () => {
         }
         
         
-        document.querySelectorAll('.card').forEach((card) => {
-            card.onmousemove = (e) => {
+        document.querySelectorAll('.card').forEach((card: HTMLElement | any) => {
+            card.onmousemove = (e: HTMLElement | any) => {
                 handleOnMouseMove(e);
             }
         })

@@ -13,8 +13,9 @@
   isolation: isolate;
   overflow: hidden;
   transition: var(--animation-transition);
-  transition-duration: 1s;
+  transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  transition-delay: 0.5s;
 }
 .loading.loaded{
   height: 0;
@@ -41,6 +42,10 @@
     width: 100px;
     position: relative;
     overflow: hidden;
+    transition: var(--main-transition);
+  }
+  .loading.loaded .push-pop{
+    opacity: 0;
   }
     .push-pop > div:nth-of-type(1) {
       height: 20px;
