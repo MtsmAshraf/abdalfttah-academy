@@ -41,7 +41,6 @@ html{
   --sec-light-shadow: 0 10px 20px -5px #888;
   --header-shadow: 0 -0.5rem 2rem var(--main-color);
   --icon-color: #aaa;
-  
 }
 ::selection{
   background-color: var(--main-color);

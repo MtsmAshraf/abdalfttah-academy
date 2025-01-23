@@ -1,0 +1,7 @@
+.publications{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.publications > div:nth-child(2){
+    padding-top: 40px;
+}

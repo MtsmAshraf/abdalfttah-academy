@@ -1,4 +1,5 @@
 .nav{
+    color: #000;
     color: #fff;
 }
 .nav.ar{
@@ -51,6 +52,7 @@
 .nav a:focus-visible, 
 .nav a.active{
     box-shadow: var(--main-shadow);
+    color: #fff;
 }
 .nav > div{
     display: none;
