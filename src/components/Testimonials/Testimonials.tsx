@@ -46,7 +46,7 @@ const Testimonials = ({
                 <Swiper
                     loop
                     autoplay={{
-                        delay: 5000
+                        delay: 7000,
                     }}
                     slidesPerView= {1}
                     spaceBetween={80}

@@ -17,9 +17,9 @@ export default function Home({
     <main>
       <Loader></Loader>
       <Hero lo={locale} />
+      <Timeline lo={locale} />
       <Publications lo={locale} />
       <Features />
-      <Timeline lo={locale} />
       <CoursesCards lo={locale}/>
       <Testimonials lo={locale} parentEl={"home"} />
     </main>
