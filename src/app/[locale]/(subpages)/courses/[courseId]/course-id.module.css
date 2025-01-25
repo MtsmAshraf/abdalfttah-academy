@@ -1,0 +1,14 @@
+.course{
+    padding-top: 100px;
+}
+.course > div:nth-child(2){
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.course .img{
+    height: 200px;
+}
+.course .img img{
+    object-fit: contain;
+    height: 100%;
+}

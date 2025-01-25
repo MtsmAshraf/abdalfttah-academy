@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "./time-period.module.css"
 
 const TimePeriod = ({
@@ -19,46 +19,57 @@ const TimePeriod = ({
     index: number,
     hidden?: boolean
 }) => {
-    useEffect(() => {
-        const periods = document.querySelectorAll("div:has( > div:last-child > div > h3 + p)")
-        periods.forEach((period: HTMLElement | any) => {
-            let fullOffsetTop = period.offsetTop + period.parentElement?.parentElement?.offsetTop + period.parentElement?.parentElement?.parentElement?.parentElement?.offsetTop
-            window.addEventListener("scroll", () => {
-            if(window.scrollY >= fullOffsetTop - 900){
-                period.style.cssText = `
-                    opacity: 1;
-                    transform: translateY(0);
-                    --period-passed-bg-color: #415ede;
-                    --period-passed-border-color: #415ede;
-                `
-                period.querySelectorAll("div").forEach((div: HTMLElement | any) => {
-                    div.style.cssText = `
-                        opacity: 1 !important;
-                        transform: rotateZ(0deg) translateY(0) !important;
-                    `
-                })
+
+    const period: any = useRef(null)
+    const [periodScrolled, setPeriodScrolled] = useState(false)
+    
+        function getOffsetTopRelativeToWindow(element: HTMLElement | any) {
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        return rect.top + scrollTop;
+    }
+    
+    const scrollPeriodiSection = () => {
+        if(period.current){
+            let headingOffsetTop = getOffsetTopRelativeToWindow(period.current)
+            if(headingOffsetTop <= (window.scrollY + 500)){
+                setPeriodScrolled(true)
             }
-            })
-        })
-    },[])
-  return (
-    <div style={{ opacity: hidden ? "0" : "" }} className={inverted ? styles.inverted + " " + styles.timePeriod : styles.timePeriod}>
-        <div className={styles.date}>
-            <span>
-                {span}
-            </span>
-        </div>
-        <div className={styles.details}>
-            <div>
-                <h3>{h3}</h3>
-                <p>{p}</p>
-                {
-                    h4 && <h4>{h4}</h4>
-                }
+        }
+    }
+
+    useEffect(() => {
+        let headingOffsetTop = getOffsetTopRelativeToWindow(period.current)
+        if(headingOffsetTop <= (window.scrollY + 500)){
+            setPeriodScrolled(true)
+        }
+        window.addEventListener("scroll", scrollPeriodiSection)
+    },[periodScrolled])
+
+    const classNames = [
+        inverted ? styles.inverted : null,
+        periodScrolled ? styles.scrolled : null,
+        styles.timePeriod
+    ]
+
+    return (
+        <div ref={period} className={classNames.join(" ")}>
+            <div className={styles.date}>
+                <span>
+                    {span}
+                </span>
+            </div>
+            <div className={styles.details}>
+                <div>
+                    <h3>{h3}</h3>
+                    <p>{p}</p>
+                    {
+                        h4 && <h4>{h4}</h4>
+                    }
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default TimePeriod

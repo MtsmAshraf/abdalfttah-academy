@@ -49,7 +49,7 @@ const CoursesCards = ({
                         // index <= 14 &&
                         !all && index <= 2 &&
                         <Card index={index} key={course.id}>
-                            <Link href={"/"}>
+                            <Link href={`/courses/${course.id}`}>
                                 <div>
                                     <Image src={course.src} alt={`${course.title} Course`}></Image>
                                 </div>
@@ -59,13 +59,13 @@ const CoursesCards = ({
                                     <h4>{course.title}</h4>
                                     <div>
                                         <p>{course.price}</p>
-                                        <MainLink inverted href={"/"}>Enroll</MainLink>
+                                        <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                     </div>
                                 </div>
                         </Card>
                         || all &&
                         <Card index={index} key={course.id}>
-                            <Link href={"/"}>
+                            <Link href={`/courses/${course.id}`}>
                                 <div>
                                     <Image src={course.src} alt={`${course.title} Course`}></Image>
                                 </div>
@@ -75,7 +75,7 @@ const CoursesCards = ({
                                     <h4>{course.title}</h4>
                                     <div>
                                         <p>{course.price}</p>
-                                        <MainLink inverted href={"/"}>Enroll</MainLink>
+                                        <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                     </div>
                                 </div>
                         </Card>

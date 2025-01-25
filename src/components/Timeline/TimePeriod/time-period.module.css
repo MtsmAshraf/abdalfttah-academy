@@ -12,6 +12,12 @@
     --period-passed-border-color: #00031c;
     height: 200px;
 }
+.timePeriod.scrolled{
+    opacity: 1;
+    transform: translateY(0);
+    --period-passed-bg-color: #415ede;
+    --period-passed-border-color: #415ede;
+}
 .timePeriod:not(:last-child){
     /* margin-bottom: 20vh; */
     margin-bottom: 100px;
@@ -54,6 +60,10 @@
 .timePeriod.inverted > div:nth-of-type(2){
     transform: rotateZ(-30deg);
     transform-origin: right top;
+}
+.timePeriod.scrolled > div{
+    opacity: 1 !important;
+    transform: rotateZ(0deg) translateY(0) !important;
 }
 @media (max-width: 767px) {
     .timePeriod{

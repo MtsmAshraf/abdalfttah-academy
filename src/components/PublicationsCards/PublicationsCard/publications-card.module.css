@@ -7,22 +7,43 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.publicationsCard:not(:last-child){
-}
 .publicationsCard.inverted{
     flex-direction: row-reverse;
 }
 .publicationsCard > div:first-of-type{ /* img div */
-    width: 160px;
     aspect-ratio: 3/4;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: var(--sec-light-shadow);
+    transition: var(--animation-transition);
+    width: 260px;
+    transform: translateX(200%);
+    z-index: 2;
+}
+.publicationsCard.inverted > div:first-of-type{
+    transform: translateX(-200%);
+}
+.publicationsCard.scrolled > div:first-of-type{
+    width: 160px;
+    transform: translateX(0%);
 }
 .publicationsCard > div:first-of-type img{
     border-radius: 30px;
     height: 100%;
     object-fit: cover; 
+}
+.publicationsCard > div:nth-of-type(2){
+    transition-delay: 0.2s;
+    transition: var(--animation-transition), opacity 0.8s 0.3s;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.publicationsCard.inverted > div:nth-of-type(2){
+    /* transform: translateY(100px); */
+}
+.publicationsCard.scrolled > div:nth-of-type(2){
+    opacity: 1;
+    transform: translateY(0px);
 }
 .publicationsCard > div:nth-of-type(2) h4{
     color: var(--main-color);
@@ -57,6 +78,9 @@
 @media (max-width: 767px) {
     .publicationsCard, .publicationsCard.inverted{
         flex-direction: column;
+    }
+    .publicationsCard div:first-of-type, .publicationsCard.inverted div:first-of-type{
+        transform: translateX(0px) !important;
     }
     .publicationsCard > div:nth-of-type(2){
         text-align: center;

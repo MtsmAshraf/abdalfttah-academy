@@ -1,5 +1,6 @@
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
 import React, { use } from 'react'
+import styles from "./course.module.css"
 
 const Courses = ({
   params
@@ -8,7 +9,7 @@ const Courses = ({
 }>) => {
   const {locale} = use(params)
   return (  
-    <section>
+    <section className={styles.courses}>
       <CoursesCards lo={locale} all={true}></CoursesCards>
     </section>
   )
