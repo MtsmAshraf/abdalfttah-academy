@@ -2,6 +2,9 @@
     padding-top: 80px;
     padding-bottom: 80px;
 }
+.publications.ar h2{
+    font-family: "Zain", sans-serif;
+}
 .publications > div:nth-child(2){
     padding-top: 40px;
 }

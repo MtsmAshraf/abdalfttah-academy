@@ -1,21 +1,23 @@
 import React from 'react'
-import styles from "./publications.module.css"
+import styles from "./publications-cards.module.css"
 import MainHeading from '../MainHeading/MainHeading'
 import PublicationsCard from './PublicationsCard/PublicationsCard'
 import Image from 'next/image'
 
 import allPublications, { Publication } from './allPublications'
+import { useTranslations } from 'next-intl'
 
 
-const Publications = ({
+const PublicationsCards = ({
     lo
 }: {
     lo: string
 }) => {
+    const t = useTranslations("Publications")
   return (
-    <section className={styles.publications}>
+    <section className={lo === "ar" ? styles.publications + " " + styles.ar : styles.publications}>
         <MainHeading>
-            Publications
+            {t("Heading")}
         </MainHeading>
         <div className="container">
             {
@@ -50,4 +52,4 @@ const Publications = ({
   )
 }
 
-export default Publications
+export default PublicationsCards

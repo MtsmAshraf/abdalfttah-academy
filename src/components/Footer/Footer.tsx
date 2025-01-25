@@ -4,15 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from '@/i18n/routing'
+import { useTranslations } from 'next-intl'
 
 const Footer = ({
   lo
 }: {
   lo: string,
 }) => {
-//   const t = useTranslations("Footer")
+  const t = useTranslations("Footer")
   return (
-    <footer className={lo === "en" ? styles.footer + " " + styles.en : styles.footer}>
+    <footer className={lo === "ar" ? styles.footer + " " + styles.ar : styles.footer}>
         <div className={styles.overlay}></div>
         <span>
         <Link className={styles.logo} href={"/"}>
@@ -22,30 +23,30 @@ const Footer = ({
         </span>
         <div className="container">
             <div>
-            <h4>Pages</h4>
+            <h4>{t("Pages.Heading")}</h4>
             <div>
-                <Link href={"/"}>Home</Link>
-                <Link href={`/courses`}>Courses</Link>
-                <Link href={`/publications`}>Publications</Link>
-                <Link href={`/about`}>About me</Link>
-                <Link href={`/contact`}>Contact</Link>
+                <Link href={"/"}>{t("Pages.Links.Home")}</Link>
+                <Link href={`/courses`}>{t("Pages.Links.Courses")}</Link>
+                <Link href={`/publications`}>{t("Pages.Links.Publications")}</Link>
+                <Link href={`/about`}>{t("Pages.Links.AboutMe")}</Link>
+                <Link href={`/contact`}>{t("Pages.Links.Contact")}</Link>
             </div>
             </div>
             <div>
-                <h4>About Me</h4>
+                <h4>{t("Address.Heading")}</h4>
                 <div>
                     <div>
                         <span>
                             <FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon>
                         </span>
                         <address>
-                            Place,
+                            {t("Address.Details.Address")},
                             <br />
-                            City,
+                            {t("Address.Details.City")},
                             <br />
-                            Gov,
+                            {t("Address.Details.Gov")},
                             <br />
-                            Country
+                            {t("Address.Details.Country")}
                         </address>
                     </div>
                     <div>
@@ -63,9 +64,7 @@ const Footer = ({
                 </div>
             </div>
             <div>
-            <h4>
-                Social Media
-            </h4>
+            <h4>{t("SocialMedia.Heading")}</h4>
             <div className={styles.socials}>
                 <a href="/" title='Facebook' target='_blank'>
                     <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
@@ -80,7 +79,9 @@ const Footer = ({
             </div>
         </div>
         <div className={styles.copyright}>
-            by &copy; <a href="https://moatasim-ashraf.netlify.app/" target='_blank'>Moatasim</a> 2025
+            by: &copy; <a href="https://moatasim-ashraf.netlify.app/" target='_blank'>
+                {t("DevFooter.Name")}
+            </a>  2025
         </div>
     </footer>
   )

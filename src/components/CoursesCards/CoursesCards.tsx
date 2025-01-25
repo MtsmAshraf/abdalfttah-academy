@@ -9,6 +9,7 @@ import Image from 'next/image'
 import MainLink from '../MainLink/MainLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { useTranslations } from 'next-intl'
 
 const CoursesCards = ({
     lo,
@@ -17,6 +18,9 @@ const CoursesCards = ({
     lo: string,
     all?: boolean
 }) => {
+
+    const t = useTranslations("Courses")
+
     const coursesCards: any = useRef(null)
     const [coursesScrolled, setCoursesScrolled] = useState(false)
     const scrollCoursesiSection = () => {
@@ -34,8 +38,10 @@ const CoursesCards = ({
     },[])
   return (
     <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>
-        <MainHeading>Courses</MainHeading>
-        <div className={styles.overlay}></div>
+        <MainHeading>
+            {t("Heading")}
+        </MainHeading>
+        <div className={lo === "ar" ? styles.overlay + " " + styles.ar : styles.overlay}></div>
         <div className="container">
             {
                 allCourses.map((course: Course,index: number) => {

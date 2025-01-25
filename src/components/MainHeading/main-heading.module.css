@@ -13,6 +13,7 @@
     transition: var(--animation-transition);
     font-size: 100px;
     border-radius: 0px;
+    max-width: 100%;
 }
 .mainHeading.scrolled{
     min-width: 200px;

@@ -27,10 +27,10 @@ const Features = () => {
    },[])
   return (
     <div id="features" className={styles.features}>
+        <MainHeading>
+            Features
+        </MainHeading>
         <div className="container">
-            <MainHeading>
-                Features
-            </MainHeading>
             <div className={styles.cards}>
                 <div className={styles.card + " " + "card"}>
                     <div className={styles.cardBorder}></div>

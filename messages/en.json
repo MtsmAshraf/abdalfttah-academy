@@ -15,5 +15,94 @@
             "btn1": "Start Learning",
             "btn2": "Contact Us"
         }
+    },
+    "TimeLine": {
+        "Education": {
+            "heading": "Education",
+            "dates": {
+                "0": "September 2017 - June 2021",
+                "1": "Sep 2023 - Sep 2024",
+                "2": "September 2024 - Present"
+            },
+            "details": {
+                "0": {
+                    "h3": "Bachelor’s Degree in Biotechnology",
+                    "p": "Ain Shams University, Egypt"
+                },
+                "1": {
+                    "h3": "Master’s Degree in Multidisciplinary Research in Experimental Sciences",
+                    "p": "Universitat Pompeu Fabra, Barcelona, Spain"
+                },
+                "2": {
+                    "h3": "PhD in Molecular Biosciences",
+                    "p": "Faculty of Medicine, Universidad Autónoma de Madrid (UAM), Spain"
+                }
+            }
+        },
+        "Experience": {
+            "heading": "Research & Work",
+            "dates": {
+                "0": "September 2021 - March 2022",
+                "1": "June 2022 - June 2024",
+                "2": "October 2023 - July 2024",
+                "3": "September 2024 - Present"
+            },
+            "details": {
+                "0": {
+                    "h3": "Intern",
+                    "p": "Helmholtz Munich, Germany",
+                    "h4": "Development of a cell communication algorithm."
+                },
+                "1": {
+                    "h3": "Computational Biologist",
+                    "p": "Center for Genomic Regulation (CRG), Barcelona, Spain",
+                    "h4": "Studied the impact of PARP inhibitors on breast cancer responders and non-responders."
+                },
+                "2": {
+                    "h3": "Master Thesis Researcher",
+                    "p": "Institute for Research in Biomedicine (IRB), Barcelona, Spain",
+                    "h4": "Studied Colorectal cancer (CRC) cell heterogeneity."
+                },
+                "3": {
+                    "h3": "PhD Researcher",
+                    "p": "National Cancer Research Center (CNIO), Madrid, Spain",
+                    "h4": "Studying molecular and cellular mechanisms of brain metastasis."
+                }
+            }
+        }
+    },
+    "Publications": {
+        "Heading": "Publications"
+    },
+    "Courses": {
+        "Heading": "Courses"
+    },
+    "Footer": {
+        "Pages": {
+            "Heading": "Pages",
+            "Links": {
+                "Home": "Home",
+                "Courses": "Courses",
+                "Publications": "Publications",
+                "AboutMe": "About Me",
+                "Contact": "Contact"
+            }
+        },
+        "Address": {
+            "Heading": "Address",
+            "Details":  {
+                "Address": "Address",
+                "City": "City",
+                "Gov": "Gov",
+                "Country": "Country"
+            }
+        },
+        "SocialMedia": {
+            "Heading": "Social Media"
+        },
+        "DevFooter": {
+            "Name": "Moatasim",
+            "Year": "2025"
+        }
     }
 }

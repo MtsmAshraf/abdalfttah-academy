@@ -38,10 +38,10 @@ const Testimonials = ({
   return (
     <section ref={testimonials} className={lo === "ar" ? styles.testimonials + " " + styles.ar : styles.testimonials}>
         <div className={testimonialsScrolled ? styles.overlay + " " + styles.scrolled : styles.overlay }></div>
-        <div className="container">
             <MainHeading>
                 Testimonials
             </MainHeading>
+            <div className="container">
             <div className={styles.swiper}>
                 <Swiper
                     loop

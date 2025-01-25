@@ -8,6 +8,18 @@
     overflow: hidden;
     /* padding-bottom: 100px; */
 }
+.timeline.ar{
+    font-family: "Zain", sans-serif;
+}
+.timeline h2{
+    text-wrap: nowrap;
+}
+.timeline.ar h3,
+.timeline.ar p,
+.timeline.ar h4{
+    direction: rtl;
+    /* text-align: left; */
+}
 .timeline .overlay{
     position: absolute;
     left: 0;

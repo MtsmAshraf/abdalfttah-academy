@@ -15,9 +15,6 @@ body{
   background-color: var(--bg-color);
   font-family: "poppins", sans-serif;
 }
-body.ar{
-  font-family: "Zain", sans-serif;
-}
 html{
   scroll-behavior: smooth;
 }

@@ -1,8 +1,16 @@
-import React from 'react'
+import PublicationsCards from '@/components/PublicationsCards/PublicationsCards'
+import React, { use } from 'react'
 
-const Publications = () => {
+const Publications = ({
+  params
+}: Readonly<{
+  params:  Promise<{locale: string}>
+}>) => {
+  const {locale} = use(params)
   return (
-    <div>Publications</div>
+    <section>
+      <PublicationsCards lo={locale}></PublicationsCards>
+    </section>
   )
 }
 

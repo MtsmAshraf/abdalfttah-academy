@@ -7,6 +7,9 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.coursesCards:has(.overlay.ar) h2{
+    font-family: "Zain", sans-serif;
+}
 .coursesCards .overlay{
     position: absolute;
     left: 0;
