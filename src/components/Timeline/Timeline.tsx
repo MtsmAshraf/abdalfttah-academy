@@ -12,6 +12,8 @@ const Timeline = ({
     lo: string
 }) => {
     const tr = useTranslations("TimeLine")
+    const tEdu = useTranslations("TimeLine.Education")
+    const tExp = useTranslations("TimeLine.Experience")
     return (
     <section id='timeline' className={lo === "ar" ? styles.timeline + " " + styles.ar : styles.timeline}>
         <div className={styles.overlay}></div>
@@ -21,13 +23,12 @@ const Timeline = ({
                 <div className={styles.cards}>
                     {
                         educationPeriods.map((period: EducationPeriod, index) => {
-                            const t = useTranslations("TimeLine.Education")
                             return(
                                 <TimePeriod
                                     key={period.id}
-                                    span={t(`dates.${index}`)}
-                                    h3={t(`details.${index}.h3`)}
-                                    p={t(`details.${index}.p`)}
+                                    span={tEdu(`dates.${index}`)}
+                                    h3={tEdu(`details.${index}.h3`)}
+                                    p={tEdu(`details.${index}.p`)}
                                     inverted={index % 2 === 0 ? false : true}
                                     index={index}
                                 />
@@ -51,14 +52,13 @@ const Timeline = ({
                     <div className={styles.cards}>
                         {
                             experiencePeriods.map((period: ExperiencePeriod, index) => {
-                                const t = useTranslations("TimeLine.Experience")
                                 return(
                                     <TimePeriod
                                         key={period.id}
-                                        span={t(`dates.${index}`)}
-                                        h3={t(`details.${index}.h3`)}
-                                        p={t(`details.${index}.p`)}
-                                        h4={t(`details.${index}.h4`)}
+                                        span={tExp(`dates.${index}`)}
+                                        h3={tExp(`details.${index}.h3`)}
+                                        p={tExp(`details.${index}.p`)}
+                                        h4={tExp(`details.${index}.h4`)}
                                         inverted={index % 2 === 0 ? false : true}
                                         index={index}
                                     />

@@ -30,7 +30,7 @@ const MainHeading = ({
         setMainHeadingScrolled(true)
       }
       window.addEventListener("scroll", scrollMainHeadingiSection)
-  },[])
+  },[mainHeadingScrolled])
   return (
     <h2 ref={mainHeading} className={mainHeadingScrolled ? styles.mainHeading + " " + styles.scrolled : styles.mainHeading}>{children}</h2>
   )
