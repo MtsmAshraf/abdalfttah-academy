@@ -19,7 +19,7 @@ const Header = ({
         <header className={lo === "ar" ? styles.header + " " + styles.ar : styles.header}>
             <div className="container">
                 <Link className={styles.logo} href={"/"}>
-                    <span>Abdalfattah</span>
+                    <span>Abdalfttah</span>
                     <span>Academy</span>
                 </Link>
                 <Nav shown={showNav} lo={lo}></Nav>

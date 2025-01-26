@@ -14,7 +14,6 @@ const Nav = ({
   }) => {
     const t = useTranslations("Header.Nav")
     const pathname = usePathname()
-    console.log(pathname.split("/")[2])
   return (
     <>
         <nav className={lo === "ar" ? styles.nav + " " + styles.ar : styles.nav}>
@@ -24,6 +23,9 @@ const Nav = ({
                 </li>
                 <li>
                     <Link className={pathname.split("/")[2] === "courses" ? styles.active : ""} href={'/courses'}>{t("1")}</Link>
+                </li>
+                <li>
+                    <Link className={pathname === `/${lo}/publications` ? styles.active : ""} href={'/publications'}>{t("2")}</Link>
                 </li>
                 <li>
                     <Link className={pathname === `/${lo}/about` ? styles.active : ""} href={'/about'}>{t("3")}</Link>

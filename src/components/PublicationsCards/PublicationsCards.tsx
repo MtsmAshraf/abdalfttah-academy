@@ -38,8 +38,7 @@ const PublicationsCards = ({
                                     {publication.date}
                                 </span>
                                 <div>
-                                    <button>ABS</button>
-                                    <button>HTML</button>
+                                    <button>Link</button>
                                     <button>PDF</button>
                                 </div>
                             </div>

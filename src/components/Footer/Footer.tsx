@@ -15,12 +15,12 @@ const Footer = ({
   return (
     <footer className={lo === "ar" ? styles.footer + " " + styles.ar : styles.footer}>
         <div className={styles.overlay}></div>
-        <span>
+        {/* <span>
         <Link className={styles.logo} href={"/"}>
             <span>Abdalfattah</span>
             <span>Academy</span>
         </Link>
-        </span>
+        </span> */}
         <div className="container">
             <div>
             <h4>{t("Pages.Heading")}</h4>

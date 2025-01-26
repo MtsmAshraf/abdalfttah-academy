@@ -47,7 +47,7 @@ const CoursesCards = ({
                 allCourses.map((course: Course,index: number) => {
                     return(
                         // index <= 14 &&
-                        !all && index <= 2 &&
+                        !all && index <= 3 &&
                         <Card index={index} key={course.id}>
                             <Link href={`/courses/${course.id}`}>
                                 <div>

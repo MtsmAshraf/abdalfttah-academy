@@ -59,9 +59,6 @@ a{
   text-decoration: none;
   color: unset;
 }
-svg{
-  /* position: relative; */
-}
 ::-webkit-scrollbar{
   width: 10px;
   background-color: var(--bg-color);
@@ -77,16 +74,19 @@ svg{
 }
 @media (min-width: 767px) {
   .container{
-    width: 750px;
+    width: 850px;
+    max-width: 95%;
   }
 }
 @media (min-width: 992px) {
   .container{
-    width: 980px;
+    width: 992px;
+    max-width: 95%;
   }
 }
 @media (min-width: 1200px) {
   .container{
-    width: 1180px;
+    width: 1400px;
+    max-width: 95%;
   }
 }

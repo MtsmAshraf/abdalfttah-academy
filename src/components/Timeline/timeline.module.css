@@ -20,6 +20,9 @@
     direction: rtl;
     /* text-align: left; */
 }
+.timeline.ar h3{
+    font-size: 22px;
+}
 .timeline .overlay{
     position: absolute;
     left: 0;

@@ -17,10 +17,10 @@ export default function Home({
     <main>
       <Loader></Loader>
       <Hero lo={locale} />
+      <CoursesCards lo={locale}/>
+      <Features />
       <Timeline lo={locale} />
       <Publications lo={locale} />
-      <Features />
-      <CoursesCards lo={locale}/>
       <Testimonials lo={locale} parentEl={"home"} />
     </main>
   );

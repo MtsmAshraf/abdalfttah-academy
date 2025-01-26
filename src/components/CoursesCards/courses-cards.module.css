@@ -22,7 +22,7 @@
 }
 .coursesCards > div:nth-of-type(2){
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px,1fr));
+    grid-template-columns: repeat(4, minmax(250px,1fr));
     gap: 50px 50px;
     margin-top: 30px;
 }
@@ -55,12 +55,17 @@
     background-color: var(--sec-bg);
     gap: 20px;
 }
+@media (max-width: 1250px) {
+    .coursesCards > div:nth-of-type(2){
+        grid-template-columns: repeat(3, minmax(250px,1fr));
+    }
+}
 @media (max-width: 992px) {
     .coursesCards > div:nth-of-type(2){
         grid-template-columns: repeat(2, minmax(250px,1fr));
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 650px) {
     .coursesCards > div:nth-of-type(2){
         grid-template-columns: repeat(1, minmax(250px,1fr));
     }

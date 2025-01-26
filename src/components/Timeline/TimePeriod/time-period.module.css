@@ -149,7 +149,6 @@
     display: block;
 }
 .timePeriod.inverted .details{
-    text-align: right;
 }
 .timePeriod .details h3{
     color: var(--main-color);
