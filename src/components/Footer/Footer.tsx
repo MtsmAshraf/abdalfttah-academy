@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from "./footer.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
-import { faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faGoogleScholar, faLinkedinIn, faOrcid, faTiktok, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
 
@@ -66,14 +66,29 @@ const Footer = ({
             <div>
             <h4>{t("SocialMedia.Heading")}</h4>
             <div className={styles.socials}>
-                <a href="/" title='Facebook' target='_blank'>
+                <a href="https://www.youtube.com/@MoAbdalfttah" title='Youtube' target='_blank'>
+                    <FontAwesomeIcon icon={faYoutube}></FontAwesomeIcon>
+                </a>
+                <a href="https://www.facebook.com/mohamed.abotreka.547" title='Facebook' target='_blank'>
                     <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
                 </a>
-                <a href="https://wa.me/+23123123123" title='Whatsapp' target='_blank'>
-                    <FontAwesomeIcon icon={faWhatsapp}></FontAwesomeIcon>
-                </a>
-                <a href="/" title='Linlkedin' target='_blank'>
+                <a href="https://www.linkedin.com/in/mohmed-ahmed/" title='Linlkedin' target='_blank'>
                     <FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon>
+                </a>
+                <a href="https://www.tiktok.com/@mo_abdalfttah?lang=ar" title='Whatsapp' target='_blank'>
+                    <FontAwesomeIcon icon={faTiktok}></FontAwesomeIcon>
+                </a>
+                <a href="https://scholar.google.com/citations?user=vTOa4sIAAAAJ&hl=ar" title='Google Scholar' target='_blank'>
+                    <FontAwesomeIcon icon={faGoogleScholar}></FontAwesomeIcon>
+                </a>
+                <a href="https://scholar.google.com/citations?user=vTOa4sIAAAAJ&hl=ar" title='ORCID' target='_blank'>
+                    <FontAwesomeIcon icon={faOrcid}></FontAwesomeIcon>
+                </a>
+                <a href="mailto:mohamed.biotech98@gmail.com" title='Gmail' target='_blank'>
+                    <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
+                </a>
+                <a href="https://x.com/mo_abdalfattah" title='X' target='_blank'>
+                    <FontAwesomeIcon icon={faXTwitter}></FontAwesomeIcon>
                 </a>
             </div>
             </div>

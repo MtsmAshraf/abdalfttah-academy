@@ -5,7 +5,6 @@
     margin-left: auto;
     font-size: 30px;
     /* background-image: var(--main-gradient); */
-    background-color: var(--main-heading-bg);
     color: var(--main-heading-text);
     padding: 5px 40px;
     box-shadow: var(--sec-shadow);
@@ -14,8 +13,10 @@
     font-size: 100px;
     border-radius: 0px;
     max-width: 100%;
-    text-transform: lowercase;
     text-transform: capitalize;
+    background-color: var(--main-heading-bg);
+    /* background-color: rgb(0, 94, 0);
+    background-color: rgb(177, 0, 0); */
 }
 .mainHeading.scrolled{
     min-width: 200px;
@@ -26,6 +27,7 @@
 @media (max-width: 767px) {
     .mainHeading{
         font-size: 50px;
+        max-width: 90%;
     }
     .mainHeading.scrolled{
         font-size: 30px;
