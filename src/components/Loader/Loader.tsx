@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import "./loader.css"
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 const Loader = () => {
     const [loaded, setLoaded] = useState(false)
     const [stopLoading, setStopLoading] = useState(false)
