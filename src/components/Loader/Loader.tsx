@@ -15,7 +15,6 @@ const Loader = () => {
     },[])
     return (
         <div className={loaded ? "loader" + " " + "loaded" : "loader"}>
-            
             <div className={stopLoading ? "dna" + " " + "stopped" : "dna"}>
                 <iframe src="https://lottie.host/embed/8b3e7d37-b2c8-44bd-aaeb-91fb1c07ee17/ajY8EOUq4v.lottie"></iframe>
             </div>

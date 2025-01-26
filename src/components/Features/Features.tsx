@@ -26,7 +26,7 @@ const Features = () => {
         })
    },[])
   return (
-    <div id="features" className={styles.features}>
+    <section id="features" className={styles.features}>
         <MainHeading>
             Features
         </MainHeading>
@@ -93,7 +93,7 @@ const Features = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

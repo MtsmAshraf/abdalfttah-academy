@@ -21,7 +21,8 @@
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
-    opacity: 0.95;
+    background-image: var(--overlay-gradient);
+    opacity: 0.97;
     z-index: -1;
     backdrop-filter: blur(20px);
 }
@@ -52,7 +53,7 @@
 }
 .testimonials .swiper .btns button{
     background-color: var(--sec-bg);
-    color: var(--text-color);
+    /* color: var(--text-color); */
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -214,7 +215,7 @@
     transform: translateX(-50%) translateY(0px);
 }
 .testimonials .pagination span{
-    background-color: var(--main-color);
+    background-color: var(--important-text-color);
 }
 .testimonials .swiper .SwiperSlide .text p{
     margin-bottom: 10px;

@@ -5,8 +5,8 @@
     margin-left: auto;
     font-size: 30px;
     /* background-image: var(--main-gradient); */
-    background-color: var(--main-color);
-    color: #fff;
+    background-color: var(--main-heading-bg);
+    color: var(--main-heading-text);
     padding: 5px 40px;
     box-shadow: var(--sec-shadow);
     min-width: 100%;

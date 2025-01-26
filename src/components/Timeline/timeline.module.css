@@ -1,5 +1,5 @@
 .timeline{
-    background-image: url("../../../public/images/edu-bg.jpg");
+    background-image: url("../../../public/images/footer-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -30,7 +30,8 @@
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
-    opacity: 0.9;
+    background-image: var(--overlay-gradient);
+    opacity: .97;
     z-index: -1;
 }
 .timeline .part{
@@ -47,7 +48,7 @@
     top: 0px;
     width: 2px;
     height: calc(100% - 100px - 200px + 5px );
-    background-color: var(--main-color);
+    background-color: var(--text-color);
     z-index: -1;
 }
 .timeline .part .cards{

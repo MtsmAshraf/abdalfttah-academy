@@ -3,9 +3,11 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    border-bottom: 1px solid var(--icon-color);
     padding-top: 30px;
     padding-bottom: 30px;
+}
+.publicationsCard:not(:last-of-type){
+    border-bottom: 1px solid var(--icon-color);
 }
 .publicationsCard.inverted{
     flex-direction: row-reverse;
@@ -46,7 +48,7 @@
     transform: translateY(0px);
 }
 .publicationsCard > div:nth-of-type(2) h4{
-    color: var(--main-color);
+    color: var(--important-text-color);
     margin-bottom: 5px;
 }
 .publicationsCard > div:nth-of-type(2) p{
@@ -59,20 +61,30 @@
     margin-top: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #000;
+    width: fit-content;
+    transition: var(--main-transition);
+}
+.publicationsCard > div:nth-of-type(2) div:hover{
+    border: 1px solid var(--important-text-color);
 }
 .publicationsCard > div:nth-of-type(2) button{
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 2px 5px;
+    padding: 5px 15px;
     text-align: center;
     transition: var(--main-transition);
+    background-color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+.publicationsCard > div:nth-of-type(2) button:first-of-type{
+    border-right: 1px solid #000;
 }
 .publicationsCard > div:nth-of-type(2) button:hover,
 .publicationsCard > div:nth-of-type(2) button:focus,
 .publicationsCard > div:nth-of-type(2) button:focus-visible,
 .publicationsCard > div:nth-of-type(2) button:active{
-    background-color: var(--main-color);
+    background-color: var(--important-text-color);
     color: #fff;
 }
 @media (max-width: 767px) {

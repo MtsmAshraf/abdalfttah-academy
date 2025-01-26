@@ -6,7 +6,7 @@
     box-shadow: var(--sec-shadow);
 }
 .mainLink{
-    background-color: var(--main-color);
+    background-color: var(--important-text-color);
     color: #fff;
 }
 .mainLink:hover,
@@ -23,6 +23,6 @@
 .mainLink.inverted:hover,
 .mainLink.inverted:focus,
 .mainLink.inverted:focus-visible{
-    background-color: var(--main-color);
+    background-color: var(--important-text-color);
     color: #fff;
 }

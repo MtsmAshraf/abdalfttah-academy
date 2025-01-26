@@ -1,6 +1,7 @@
 .publications{
     padding-top: 80px;
     padding-bottom: 80px;
+    background-image: var(--overlay-gradient);
 }
 .publications.ar h2{
     font-family: "Zain", sans-serif;

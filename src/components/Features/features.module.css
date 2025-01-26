@@ -1,5 +1,5 @@
 .features{
-    background-color: var(--sec-bg-color);
+    background-image: var(--overlay-gradient);
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -26,7 +26,7 @@
     
 }
 .cards .card{
-    background-color: rgba(8, 7, 7, 0.2);
+    background-color: var(--features-card-bg);
     /* background-color: transparent; */
     /* min-height: 500px; */
     border-radius: 8px;
@@ -118,7 +118,7 @@
 }
 .cards .card .cardContent h4{
     font-size: 22px;
-    color: var(--main-color);
+    color: var(--imortant-text-color);
 }
 .cards .card .cardContent span{
     /* height: 150px; */
@@ -129,7 +129,7 @@
     align-items: center;
     justify-content: center;
     font-size: 100px;
-    color: var(--main-color);
+    color: var(--imortant-text-color);
     transition: var(--animation-transition);
     animation: 
         animation

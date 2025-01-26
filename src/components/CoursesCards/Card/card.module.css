@@ -1,7 +1,7 @@
 .card{
     background-color: var(--sec-bg);
     border-radius: 30px 4px;
-    transition: var(--animation-transition);
+    transition: var(--main-transition);
     position: relative;
     height: fit-content;
     isolation: isolate;
@@ -27,6 +27,10 @@
 .card:hover::before{
     opacity: 1;
 } */
+.card:hover{
+    box-shadow: var(--main-shadow);
+    transform: scale(1.05) !important;
+} 
 .card *{
     transition: var(--main-transition);
 }
@@ -75,7 +79,7 @@
     background-size: 200%;
     color: #fff;
     padding: 10px;
-    box-shadow: var(--sec-light-shadow);
+    box-shadow: var(--header-shadow);
 }
 .card:hover > div h4{
     /* color: var(--main-color); */

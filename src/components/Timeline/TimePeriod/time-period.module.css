@@ -102,6 +102,7 @@
     /* width: 300px; */
     float: right;
     box-shadow: var(--sec-shadow);
+    border: 1px solid var(--main-light-color);
 }
 .timePeriod.inverted .date span{
     background-image: var(--main-inv-gradient);
@@ -117,18 +118,19 @@
     /* background-color: #000; */
     height: 0%;
     width: 0px;
-    border-width: 17px;
+    border-width: 19px;
     border-style: solid;
-    border-color: transparent transparent transparent var(--main-color) ;
+    border-color: transparent transparent transparent var(--important-text-color) ;
 }
 .timePeriod.inverted .date span::before{
     left: unset;
     right: 100%;
-    border-color: transparent var(--main-color) transparent transparent;
+    border-color: transparent var(--important-text-color) transparent transparent;
 }
 .timePeriod .details{
     flex: 1;
     max-width: 50%;
+    color: #000;
 }
 .timePeriod .details > div{
     background-color: #fff;
