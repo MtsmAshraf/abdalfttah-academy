@@ -13,10 +13,12 @@ import { useTranslations } from 'next-intl'
 
 const CoursesCards = ({
     lo,
-    all
+    all,
+    category
 } : {
     lo: string,
-    all?: boolean
+    all?: boolean,
+    category?: string
 }) => {
 
     const t = useTranslations("Courses")
@@ -39,47 +41,86 @@ const CoursesCards = ({
   return (
     <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>
         <MainHeading>
-            {t("Heading")}
+            {/* {t("Heading")} */}
+            {category ? category?.toLowerCase() : t("Heading")}
         </MainHeading>
         <div className={lo === "ar" ? styles.overlay + " " + styles.ar : styles.overlay}></div>
         <div className="container">
             {
                 allCourses.map((course: Course,index: number) => {
-                    return(
-                        // index <= 14 &&
-                        !all && index <= 3 &&
-                        <Card index={index} key={course.id}>
-                            <Link href={`/courses/${course.id}`}>
-                                <div>
-                                    <Image src={course.src} alt={`${course.title} Course`}></Image>
-                                </div>
-                                <span>{course.category}</span>
-                            </Link>
-                                <div>
-                                    <h4>{course.title}</h4>
+                    if(category){
+                        if(course.category.toLowerCase() === category.toLowerCase()){
+                            return(
+                                !all && index <= 3 &&
+                                <Card index={index} key={course.id}>
+                                    <Link href={`/courses/${course.id}`}>
+                                        <div>
+                                            <Image src={course.src} alt={`${course.title} Course`}></Image>
+                                        </div>
+                                        <span>{course.category}</span>
+                                    </Link>
+                                        <div>
+                                            <h4>{course.title}</h4>
+                                            <div>
+                                                <p>{course.price}</p>
+                                                <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                            </div>
+                                        </div>
+                                </Card>
+                                || all &&
+                                <Card index={index} key={course.id}>
+                                    <Link href={`/courses/${course.id}`}>
+                                        <div>
+                                            <Image src={course.src} alt={`${course.title} Course`}></Image>
+                                        </div>
+                                        <span>{course.category}</span>
+                                    </Link>
+                                        <div>
+                                            <h4>{course.title}</h4>
+                                            <div>
+                                                <p>{course.price}</p>
+                                                <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                            </div>
+                                        </div>
+                                </Card>
+                            )
+                        }
+                    }else if(!category){
+                        return(
+                            !all && index <= 3 &&
+                            <Card index={index} key={course.id}>
+                                <Link href={`/courses/${course.id}`}>
                                     <div>
-                                        <p>{course.price}</p>
-                                        <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                        <Image src={course.src} alt={`${course.title} Course`}></Image>
                                     </div>
-                                </div>
-                        </Card>
-                        || all &&
-                        <Card index={index} key={course.id}>
-                            <Link href={`/courses/${course.id}`}>
-                                <div>
-                                    <Image src={course.src} alt={`${course.title} Course`}></Image>
-                                </div>
-                                <span>{course.category}</span>
-                            </Link>
-                                <div>
-                                    <h4>{course.title}</h4>
+                                    <span>{course.category}</span>
+                                </Link>
                                     <div>
-                                        <p>{course.price}</p>
-                                        <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                        <h4>{course.title}</h4>
+                                        <div>
+                                            <p>{course.price}</p>
+                                            <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                        </div>
                                     </div>
-                                </div>
-                        </Card>
-                    )
+                            </Card>
+                            || all &&
+                            <Card index={index} key={course.id}>
+                                <Link href={`/courses/${course.id}`}>
+                                    <div>
+                                        <Image src={course.src} alt={`${course.title} Course`}></Image>
+                                    </div>
+                                    <span>{course.category}</span>
+                                </Link>
+                                    <div>
+                                        <h4>{course.title}</h4>
+                                        <div>
+                                            <p>{course.price}</p>
+                                            <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                        </div>
+                                    </div>
+                            </Card>
+                        )
+                    }
                 })
             }
         </div>

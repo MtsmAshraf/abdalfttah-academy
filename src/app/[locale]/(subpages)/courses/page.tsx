@@ -10,7 +10,9 @@ const Courses = ({
   const {locale} = use(params)
   return (  
     <section className={styles.courses}>
-      <CoursesCards lo={locale} all={true}></CoursesCards>
+      <CoursesCards lo={locale} all={true} category={"Advanced Biology"}></CoursesCards>
+      <CoursesCards lo={locale} all={true} category={"Data Analysis and Technologies"}></CoursesCards>
+      <CoursesCards lo={locale} all={true} category={"Basics"}></CoursesCards>
     </section>
   )
 }
