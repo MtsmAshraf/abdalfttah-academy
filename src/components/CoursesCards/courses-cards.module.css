@@ -37,7 +37,7 @@
 .coursesCards.scrolled > div:nth-of-type(2) > div{
     transform: translateY(0px);
     opacity: 1;
-}
+}   
 .coursesCards > span{
     display: block;
     margin-top: 30px;

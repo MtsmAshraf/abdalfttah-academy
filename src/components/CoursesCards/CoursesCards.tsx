@@ -40,7 +40,7 @@ const CoursesCards = ({
     },[])
   return (
     <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>
-        <MainHeading>
+        <MainHeading cat={category}>
             {/* {t("Heading")} */}
             {category ? category?.toLowerCase() : t("Heading")}
         </MainHeading>
@@ -57,7 +57,7 @@ const CoursesCards = ({
                                         <div>
                                             <Image src={course.src} alt={`${course.title} Course`}></Image>
                                         </div>
-                                        <span>{course.category}</span>
+                                        <span style={{backgroundColor: course.category.toLowerCase() === "data analysis and technologies" ? "rgb(0, 94, 0)" : course.category.toLowerCase() === "advanced biology" ? "rgb(177, 0, 0)" : "var(--main-color)"}}>{course.category}</span>
                                     </Link>
                                         <div>
                                             <h4>{course.title}</h4>
@@ -73,7 +73,7 @@ const CoursesCards = ({
                                         <div>
                                             <Image src={course.src} alt={`${course.title} Course`}></Image>
                                         </div>
-                                        <span>{course.category}</span>
+                                        <span style={{backgroundColor: course.category.toLowerCase() === "data analysis and technologies" ? "rgb(0, 94, 0)" : course.category.toLowerCase() === "advanced biology" ? "rgb(177, 0, 0)" : "var(--main-color)"}}>{course.category}</span>
                                     </Link>
                                         <div>
                                             <h4>{course.title}</h4>
@@ -93,7 +93,7 @@ const CoursesCards = ({
                                     <div>
                                         <Image src={course.src} alt={`${course.title} Course`}></Image>
                                     </div>
-                                    <span>{course.category}</span>
+                                    <span style={{backgroundColor: course.category.toLowerCase() === "data analysis and technologies" ? "rgb(0, 94, 0)" : course.category.toLowerCase() === "advanced biology" ? "rgb(177, 0, 0)" : "var(--main-color)"}}>{course.category}</span>
                                 </Link>
                                     <div>
                                         <h4>{course.title}</h4>
@@ -109,7 +109,7 @@ const CoursesCards = ({
                                     <div>
                                         <Image src={course.src} alt={`${course.title} Course`}></Image>
                                     </div>
-                                    <span>{course.category}</span>
+                                    <span style={{backgroundColor: course.category.toLowerCase() === "data analysis and technologies" ? "rgb(0, 94, 0)" : course.category.toLowerCase() === "advanced biology" ? "rgb(177, 0, 0)" : "var(--main-color)"}}>{course.category}</span>
                                 </Link>
                                     <div>
                                         <h4>{course.title}</h4>
