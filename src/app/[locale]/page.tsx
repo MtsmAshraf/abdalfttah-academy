@@ -15,7 +15,7 @@ export default function Home({
   const {locale} = use(params)
   return (
     <main>
-      <Loader></Loader>
+      {/* <Loader></Loader> */}
       <Hero lo={locale} />
       <CoursesCards lo={locale} />
       <Features />

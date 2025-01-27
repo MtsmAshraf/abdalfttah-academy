@@ -7,12 +7,12 @@ const Card = ({
     children: React.ReactNode,
     index: number,
 }) => {
-  const [delay, setDelay] = useState(1)
+  const [done, setDone] = useState(false)
   setTimeout(() => {
-    setDelay(0)
+    setDone(true)
   }, 2000);
   return (
-    <div style={{ transitionDelay: `${index * 0.1 * delay }s` }} className={styles.card}>
+    <div style={{ transitionDelay: `${ index * 0.1 }s` }} className={done ? styles.card + " " + styles.done : styles.card}>
         {children}
     </div>
   )

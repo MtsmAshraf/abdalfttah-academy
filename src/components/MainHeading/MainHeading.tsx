@@ -34,7 +34,7 @@ const MainHeading = ({
       window.addEventListener("scroll", scrollMainHeadingiSection)
   },[mainHeadingScrolled])
   return (
-    <h2 style={{ backgroundImage: cat ? "var(--main-heading-gradient)" : undefined }} ref={mainHeading} className={mainHeadingScrolled ? styles.mainHeading + " " + styles.scrolled : styles.mainHeading}>{children}</h2>
+    <h2 style={{ backgroundImage: cat ? "var(--main-heading-gradient-cat)" : undefined }} ref={mainHeading} className={mainHeadingScrolled ? styles.mainHeading + " " + styles.scrolled : styles.mainHeading}>{children}</h2>
   )
 }
 

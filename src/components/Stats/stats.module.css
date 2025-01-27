@@ -1,0 +1,34 @@
+.stats{
+    display: flex;
+    border-radius: 80px;
+    overflow: hidden;
+    background-image: var(--hero-gradient);
+    box-shadow: var(--main-shadow);
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid var(--main-light-color);
+    width: 100%;
+}
+.stats .box{
+    /* background-color: #fff; */
+    color: #fff;
+    padding: 10px 30px;
+    text-align: center;
+    width: 180px;
+}
+/* .stats .box:first-child{
+    padding-left: 40px;
+}
+.stats .box:last-child{
+    padding-right: 40px;
+} */
+.stats .box h4{
+    font-size: 20px;
+    color: var(--main-light-color);
+}
+.stats .box span{
+    font-size: 30px;
+}
+.stats .box p{
+    font-size: 12px;
+}
