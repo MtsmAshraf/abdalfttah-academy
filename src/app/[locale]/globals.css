@@ -31,6 +31,7 @@ html{
   --main-inv-gradient: linear-gradient(45deg, var(--main-color) 50%, var(--main-light-color));
   --hero-gradient: linear-gradient(to left,#000 , var(--main-color), #000);
   --card-gradient: linear-gradient(to left,#000 0%, var(--main-light-color) 50%, #000);
+  --main-heading-gradient: linear-gradient(to left,rgb(177, 0, 0) , rgb(203, 65, 65), rgb(177, 0, 0));
   --bg-color: #eaeaea;
   --sec-bg: #fff;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
@@ -56,6 +57,7 @@ html{
   --hero-gradient: linear-gradient(to left,#000 , var(--main-color), #000);
   --overlay-gradient: linear-gradient(to left,#000 , var(--main-color), #000);
   --card-gradient: linear-gradient(to left,#000 0%, var(--main-light-color) 50%, #000);
+  --main-heading-gradient: linear-gradient(to left,rgb(177, 0, 0) , rgb(203, 65, 65), rgb(177, 0, 0));
   --bg-color: #000421;
   --sec-bg: #fff;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);

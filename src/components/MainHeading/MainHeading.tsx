@@ -34,7 +34,7 @@ const MainHeading = ({
       window.addEventListener("scroll", scrollMainHeadingiSection)
   },[mainHeadingScrolled])
   return (
-    <h2 style={{backgroundColor: cat?.toLowerCase() === "data analysis and technologies" ? "rgb(0, 94, 0)" : cat?.toLowerCase() === "advanced biology" ? "rgb(177, 0, 0)" : "var(--main-heading-bg)"}} ref={mainHeading} className={mainHeadingScrolled ? styles.mainHeading + " " + styles.scrolled : styles.mainHeading}>{children}</h2>
+    <h2 style={{ backgroundImage: cat ? "var(--main-heading-gradient)" : undefined }} ref={mainHeading} className={mainHeadingScrolled ? styles.mainHeading + " " + styles.scrolled : styles.mainHeading}>{children}</h2>
   )
 }
 
