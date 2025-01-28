@@ -100,6 +100,14 @@
 .hero > div:nth-child(2) .img img{
     object-fit: contain;
     height: 90%;
+    transition: var(--animation-transition);
+    transition-delay: 0.4s;
+    opacity: 0;
+    transform: translateY(100%);
+}
+.hero.loaded > div:nth-child(2) .img img{
+    opacity: 1;
+    transform: translateY(0%);
 }
 .hero iframe{
     max-width: 100%;
