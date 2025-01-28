@@ -90,6 +90,9 @@
     }
 }
 @media (max-width: 600px) {
+    .publications > div:nth-of-type(1) .intro .text h1{
+        font-size: 40px;
+    }
     .publications > div:nth-of-type(1) .intro .img{
         width: 100%;
     }

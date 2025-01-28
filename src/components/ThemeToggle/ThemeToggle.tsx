@@ -23,6 +23,7 @@ export default function ThemeToggle({
   return (
     <button className={classNames.join(" ")}
         onClick={() => dispatch(toggleTheme())}
+        id={theme === "light" ? "light" : undefined}
     >
         {theme === "light" ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
     </button>

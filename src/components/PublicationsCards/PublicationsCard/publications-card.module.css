@@ -98,6 +98,12 @@
     background-color: var(--important-text-color);
     color: #fff;
 }
+@media (max-width: 1200px) {
+    .publicationsCard.scrolled > div:first-of-type{
+        transform: translateX(0%);
+        width: 25%;
+    }
+}
 @media (max-width: 992px) {
     .publicationsCard.scrolled > div:first-of-type{
         transform: translateX(0%);
@@ -132,6 +138,7 @@
 @media (max-width: 600px) {
     .publicationsCard, .publicationsCard.inverted{
         gap: 30px;
+        width: 100%;
     }
     .publicationsCard > div:nth-of-type(2){
         width: 100%;

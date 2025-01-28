@@ -35,7 +35,7 @@ const Hero = ({
     ]
 
   return (
-    <section id={theme === "light" ? "light" : undefined} ref={hero} className={classNames.join(" ")}>
+    <section ref={hero} className={classNames.join(" ")}>
         <div className={styles.overlay}></div>
         <div className="container">
             <div className={styles.text}>
