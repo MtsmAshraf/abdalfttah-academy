@@ -6,7 +6,8 @@ import Image from 'next/image'
 
 import allPublications, { Publication } from './allPublications'
 import { useTranslations } from 'next-intl'
-
+import MainLink from '../MainLink/MainLink'
+import intro from "../../../public/images/publications.jpg"
 
 const PublicationsCards = ({
     lo
@@ -16,9 +17,26 @@ const PublicationsCards = ({
     const t = useTranslations("Publications")
   return (
     <section className={lo === "ar" ? styles.publications + " " + styles.ar : styles.publications}>
+        
         <MainHeading>
             {t("Heading")}
         </MainHeading>
+        <div className="container">
+            <div className={styles.intro}>
+                <div className={styles.text}>
+                    <h1>
+                        PH.D Thesis
+                    </h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur magni sapiente beatae dolorum ipsa porro tempora ex repellendus ad, illo debitis reprehenderit exercitationem sed, cumque ducimus doloribus veniam omnis fuga!
+                    </p>
+                    <MainLink href='https://scholar.google.com/citations?user=vTOa4sIAAAAJ&hl=ar' target="_blank">Google Scholer</MainLink>
+                </div>
+                <div className={styles.img}>
+                    <Image src={intro} alt='Publication section intro image'></Image>
+                </div>
+            </div>
+        </div>
         <div className="container">
             {
                 allPublications.map((publication: Publication, index: number) => {

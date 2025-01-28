@@ -5,14 +5,16 @@ import styles from "./main-link.module.css"
 const MainLink = ({
   children,
   href,
-  inverted
+  inverted,
+  target
 } : {
   children: React.ReactNode,
   href: string,
-  inverted?: boolean
+  inverted?: boolean,
+  target?: string
 }) => {
   return (
-    <Link className={inverted ? styles.mainLink + " " + styles.inverted : styles.mainLink} href={href}>{children}</Link>
+    <Link className={inverted ? styles.mainLink + " " + styles.inverted : styles.mainLink} href={href} target={target}>{children}</Link>
   )
 }
 
