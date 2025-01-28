@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "./publications-cards.module.css"
 import MainHeading from '../MainHeading/MainHeading'
 import PublicationsCard from './PublicationsCard/PublicationsCard'
@@ -15,8 +16,41 @@ const PublicationsCards = ({
     lo: string
 }) => {
     const t = useTranslations("Publications")
+
+    
+        const publications: any = useRef(null)
+        const [publicationsScrolled, setPublicationsScrolled] = useState(false)
+      
+          function getOffsetTopRelativeToWindow(element: HTMLElement | any) {
+            const rect = element.getBoundingClientRect();
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            return rect.top + scrollTop;
+        }
+      
+        const scrollPublicationsiSection = () => {
+            if(publications.current){
+              let headingOffsetTop = getOffsetTopRelativeToWindow(publications.current)
+                if(headingOffsetTop <= (window.scrollY + 500)){
+                  setPublicationsScrolled(true)
+                }
+            }
+        }
+        useEffect(() => {
+            let headingOffsetTop = getOffsetTopRelativeToWindow(publications.current)
+            if(headingOffsetTop <= (window.scrollY + 500)){
+              setPublicationsScrolled(true)
+            }
+            window.addEventListener("scroll", scrollPublicationsiSection)
+        },[publicationsScrolled])
+    
+        const classNames = [
+            lo === "ar" ? styles.ar : null,
+            publicationsScrolled ? styles.scrolled : null,
+            styles.publications
+          ]
+
   return (
-    <section className={lo === "ar" ? styles.publications + " " + styles.ar : styles.publications}>
+    <section ref={publications} className={classNames.join(" ")}>
         
         <MainHeading>
             {t("Heading")}
