@@ -18,6 +18,7 @@
             "btn2": "Contact Us"
         },
         "Features": {
+            "heading": "Features",
             "0": {
                 "h4": "In-Depth Online Courses",
                 "p": "Learn biology and bioinformatics with in-depth understanding, real-world examples, and hands-on exercises to simplify complex concepts effectively."

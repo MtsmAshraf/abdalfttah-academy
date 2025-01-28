@@ -36,7 +36,7 @@ const Features = ({
   return (
     <section id="features" className={lo === "ar" ? styles.features + " " + styles.ar : styles.features}>
         <MainHeading>
-            Features
+            {t("heading")}
         </MainHeading>
         <div className="container">
             <div className={styles.cards}>

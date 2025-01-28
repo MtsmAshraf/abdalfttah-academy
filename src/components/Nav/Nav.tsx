@@ -30,9 +30,9 @@ const Nav = ({
                 <li>
                     <Link className={pathname === `/${lo}/about` ? styles.active : ""} href={'/about'}>{t("3")}</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link className={pathname === `/${lo}/contact` ? styles.active : ""} href={'/contact'}>{t("4")}</Link>
-                </li>
+                </li> */}
             </ul>
             <div>
                 <LangSwitch lo={lo}></LangSwitch>
