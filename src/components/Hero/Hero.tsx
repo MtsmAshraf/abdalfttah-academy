@@ -22,10 +22,7 @@ const Hero = ({
                 <h2>{t("h2")}</h2>
                 {/* <p>{t("p")}</p> */}
                 <p>
-                    Hi, I’m <span>Mohmed</span>, a passionate PhD candidate who finds true joy in sharing knowledge and helping others grow. From the very start of my journey, I’ve always believed that education is the key to unlocking potential—not just in myself, but in the countless students I’ve had the privilege to teach.
-                </p>
-                <p>
-                    Over the years, I’ve poured my heart into creating spaces where learning biology and bioinformatics becomes accessible, exciting, and empowering. I’ve taught thousands of students, guided master’s and PhD researchers across the globe, and witnessed the incredible spark of understanding in their eyes. Each of those moments has fueled my dedication to keep teaching and inspiring.
+                    {t("p1")}<span>{t("span")}</span>{t("p2")}
                 </p>
                 {/* <div className={styles.btns}>
                     <MainLink href={"/courses"}>
