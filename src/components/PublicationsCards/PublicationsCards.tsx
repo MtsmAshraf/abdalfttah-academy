@@ -58,10 +58,10 @@ const PublicationsCards = ({
             <div className={styles.intro}>
                 <div className={styles.text}>
                     <h1>
-                        PH.D Thesis
+                        Master Thesis
                     </h1>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur magni sapiente beatae dolorum ipsa porro tempora ex repellendus ad, illo debitis reprehenderit exercitationem sed, cumque ducimus doloribus veniam omnis fuga!
+                    During my master’s thesis, I investigated colorectal cancer heterogeneity using single-cell and spatial transcriptomics, uncovering cancer cell states like LGR5+ cancer stem cells, EMP1+ high-relapse cells, and proliferative states in distinct spatial niches. I also identified critical tumor-microenvironment interactions, including SPP1+ macrophages and FAP+ fibroblasts co-localizing near high-relapse cells, revealing a potential CCL15-CCR1 signaling circuit driving macrophage recruitment and tumor progression.
                     </p>
                     <MainLink href='https://scholar.google.com/citations?user=vTOa4sIAAAAJ&hl=ar' target="_blank">Google Scholer</MainLink>
                 </div>

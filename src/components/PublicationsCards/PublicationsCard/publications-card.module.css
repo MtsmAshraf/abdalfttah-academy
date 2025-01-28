@@ -98,6 +98,12 @@
     background-color: var(--important-text-color);
     color: #fff;
 }
+@media (max-width: 992px) {
+    .publicationsCard.scrolled > div:first-of-type{
+        transform: translateX(0%);
+        width: 35%;
+    }
+}
 @media (max-width: 767px) {
     .publicationsCard, .publicationsCard.inverted{
         flex-direction: column;
