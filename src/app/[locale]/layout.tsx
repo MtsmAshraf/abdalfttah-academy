@@ -7,9 +7,12 @@ import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
+import icon from "./favicon.ico"
+
 export const metadata: Metadata = {
   title: "Abdalfattah Academy",
   description: "Abdalfattah Academy official website",
+  icons: icon.src,
 };
 
 export default async function RootLayout({

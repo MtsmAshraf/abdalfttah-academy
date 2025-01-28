@@ -14,7 +14,7 @@
 html{
   scroll-behavior: smooth;
 }
-:root{
+:root:not(:has(#light)){
     /* dark */
   --main-color: #000421;
   --text-color: #fff;
@@ -80,6 +80,9 @@ html{
   --header-shadow: 0 -0.5rem 2rem var(--main-color);
   --icon-color: #aaa;
   --overlay-opacity: 0.95;
+  /* transitions */
+  --main-transition: all 0.2s 0s linear;
+  --animation-transition: all 0.8s 0s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 ::selection{
   background-color: var(--main-color);
