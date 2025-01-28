@@ -4,8 +4,13 @@ import styles from "./features.module.css"
 import MainHeading from "../MainHeading/MainHeading"
 import { faGear } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useTranslations } from "next-intl"
 
-const Features = () => {
+const Features = ({
+    lo
+} : {
+    lo: string
+}) => {
    useEffect(() => {
         const handleOnMouseMove = (e: HTMLElement | any) => {
             const {currentTarget: target} = e;
@@ -25,8 +30,11 @@ const Features = () => {
             }
         })
    },[])
+
+   const t = useTranslations("HomePage.Features")
+
   return (
-    <section id="features" className={styles.features}>
+    <section id="features" className={lo === "ar" ? styles.features + " " + styles.ar : styles.features}>
         <MainHeading>
             Features
         </MainHeading>
@@ -39,9 +47,9 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/585452f3-aa83-46be-85a8-29db19901dd6/ObAZV9IMOg.json" background="transparent" speed="3" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h4>In-Depth Online Courses</h4>
+                        <h4>{t("0.h4")}</h4>
                         <p>
-                        Learn biology and bioinformatics with in-depth understanding, real-world examples, and hands-on exercises to simplify complex concepts effectively.
+                            {t("0.p")}
                         </p>
                     </div>
                 </div> 
@@ -52,9 +60,9 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/b5d62c1d-dd20-4c76-ac15-a96fe0fe8746/hXXuSctsMr.json" background="transparent" speed="1" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h4>Personalized Academic Guidance</h4>
+                        <h4>{t("1.h4")}</h4>
                         <p>
-                        Tailored mentorship for master’s and PhD students, empowering you to achieve academic breakthroughs and excel in your research journey.
+                            {t("1.p")}
                         </p>
                     </div>
                 </div> 
@@ -65,9 +73,9 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/6b5e72a3-6732-424b-ace2-4ce14411941e/MiEgcSw21O.json" background="transparent" speed="0.5" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h4>Hands-On Bioinformatics Training</h4>
+                        <h4>{t("2.h4")}</h4>
                         <p>
-                        Master bioinformatics with practical training using real datasets, covering foundational and advanced skills for confident data analysis.
+                            {t("2.p")}
                         </p>
                     </div>
                 </div> 
@@ -78,9 +86,9 @@ const Features = () => {
                             <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/764f198f-ccf1-41e1-9a58-a0710aacd47d/OHVHZmeTqY.json" background="transparent" speed="1" loop autoplay></dotlottie-player> */}
                         </span>
-                        <h4>Data Analysis Services</h4>
+                        <h4>{t("3.h4")}</h4>
                         <p>
-                            Receive expert, customized analysis for your research, turning complex datasets into impactful insights and advancing your scientific work.
+                            {t("3.p")}
                         </p>
                     </div>
                 </div>

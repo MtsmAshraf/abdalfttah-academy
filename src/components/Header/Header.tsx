@@ -7,6 +7,7 @@ import styles from "./header.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark'
+import { useSelector } from 'react-redux'
 
 const Header = ({
     lo
@@ -14,6 +15,7 @@ const Header = ({
     lo: string
   }) => {
     const [showNav, setShowNav] = useState(false)
+
   return (
     <>
         <header className={lo === "ar" ? styles.header + " " + styles.ar : styles.header}>

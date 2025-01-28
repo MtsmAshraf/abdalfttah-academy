@@ -16,6 +16,24 @@
             "p2": ", a passionate PhD candidate who loves sharing knowledge and helping others grow. I believe education unlocks potential, not just for me but for the countless students I’ve taught. Over the years, I’ve created accessible and exciting spaces for learning biology and bioinformatics, guiding thousands of students and researchers worldwide. Every moment of understanding I’ve witnessed fuels my passion to keep teaching and inspiring others.",
             "btn1": "Start Learning",
             "btn2": "Contact Us"
+        },
+        "Features": {
+            "0": {
+                "h4": "In-Depth Online Courses",
+                "p": "Learn biology and bioinformatics with in-depth understanding, real-world examples, and hands-on exercises to simplify complex concepts effectively."
+            },
+            "1": {
+                "h4": "Personalized Academic Guidance",
+                "p": "Tailored mentorship for master’s and PhD students, empowering you to achieve academic breakthroughs and excel in your research journey."
+            },
+            "2": {
+                "h4": "Hands-On Bioinformatics Training",
+                "p": "Master bioinformatics with practical training using real datasets, covering foundational and advanced skills for confident data analysis."
+            },
+            "3": {
+                "h4": "Data Analysis Services",
+                "p": "Receive expert, customized analysis for your research, turning complex datasets into impactful insights and advancing your scientific work."
+            }
         }
     },
     "Stats": {

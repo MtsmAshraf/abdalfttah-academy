@@ -7,7 +7,6 @@ import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
-
 export const metadata: Metadata = {
   title: "Abdalfattah Academy",
   description: "Abdalfattah Academy official website",
@@ -27,13 +26,13 @@ export default async function RootLayout({
   const messages = await getMessages()
   return (
     <html lang={locale}>
-      <NextIntlClientProvider messages={messages}>
-        <body className={locale === "ar" ? "ar" : "en"}>
-          <Header lo={locale}></Header>
-            {children}
-          <Footer lo={locale}></Footer>
-          </body>
-      </NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <body className={locale === "ar" ? "ar" : "en"}>
+              <Header lo={locale}></Header>
+                {children}
+              <Footer lo={locale}></Footer>
+            </body>
+        </NextIntlClientProvider>
     </html>
   );
 }

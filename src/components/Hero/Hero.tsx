@@ -3,16 +3,20 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from "./hero.module.css" 
 // import { Link } from '@/i18n/routing'
 import { useTranslations } from 'use-intl'
-import MainLink from '../MainLink/MainLink'
 import Image from 'next/image'
 import heroImg from "../../../public/images/hero-img.png"
 import Stats from '../Stats/Stats'
+import { useSelector } from 'react-redux'
 
 const Hero = ({
     lo
 }:{
     lo: string
 }) => {
+
+    const theme = useSelector((state: any) => state.theme.theme);
+
+
     const t = useTranslations("HomePage.Hero")
     const hero = useRef(null);
     const [loaded, setLoaded] = useState(false)
@@ -31,7 +35,7 @@ const Hero = ({
     ]
 
   return (
-    <section ref={hero} className={classNames.join(" ")}>
+    <section id={theme === "light" ? "light" : undefined} ref={hero} className={classNames.join(" ")}>
         <div className={styles.overlay}></div>
         <div className="container">
             <div className={styles.text}>

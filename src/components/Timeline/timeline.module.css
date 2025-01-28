@@ -32,6 +32,7 @@
     background-color: var(--bg-color);
     background-image: var(--overlay-gradient);
     opacity: .97;
+    opacity: var(--overlay-opacity);
     z-index: -1;
 }
 .timeline .part{

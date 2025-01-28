@@ -23,6 +23,7 @@
     background-color: var(--bg-color);
     background-image: var(--overlay-gradient);
     opacity: 0.97;
+    opacity: var(--overlay-opacity);
     z-index: -1;
     backdrop-filter: blur(20px);
 }
