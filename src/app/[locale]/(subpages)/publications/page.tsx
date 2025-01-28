@@ -1,3 +1,4 @@
+import Loader from '@/components/Loader/Loader'
 import PublicationsCards from '@/components/PublicationsCards/PublicationsCards'
 import React, { use } from 'react'
 
@@ -10,6 +11,7 @@ const Publications = ({
   return (
     <section>
         <PublicationsCards lo={locale}/>
+        <Loader></Loader>
     </section>
   )
 }

@@ -35,7 +35,9 @@ const CoursesCards = ({
     useEffect(() => {
         window.addEventListener("scroll", scrollCoursesiSection)
         if(coursesCards.current.offsetTop <= (window.scrollY + 500)){
-            setCoursesScrolled(true)
+            setTimeout(() => {
+                setCoursesScrolled(true)
+            }, 1200);
         }
     },[])
   return (

@@ -29,7 +29,9 @@ const MainHeading = ({
   useEffect(() => {
       let headingOffsetTop = getOffsetTopRelativeToWindow(mainHeading.current)
       if(headingOffsetTop <= (window.scrollY + 500)){
-        setMainHeadingScrolled(true)
+        setTimeout(() => {
+          setMainHeadingScrolled(true)
+        }, 1200);
       }
       window.addEventListener("scroll", scrollMainHeadingiSection)
   },[mainHeadingScrolled])

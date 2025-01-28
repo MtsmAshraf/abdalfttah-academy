@@ -38,7 +38,9 @@ const PublicationsCards = ({
         useEffect(() => {
             let headingOffsetTop = getOffsetTopRelativeToWindow(publications.current)
             if(headingOffsetTop <= (window.scrollY + 500)){
-                setPublicationsScrolled(true)
+                setTimeout(() => {
+                    setPublicationsScrolled(true)
+                }, 1200);
             }
             window.addEventListener("scroll", scrollPublicationsiSection)
         },[publicationsScrolled])

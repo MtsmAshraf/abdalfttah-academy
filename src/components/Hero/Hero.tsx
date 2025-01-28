@@ -24,7 +24,7 @@ const Hero = ({
     useEffect(() => {
         setTimeout(() => {
             setLoaded(true)
-        }, 1000);
+        }, 1200);
     },[])
 
     

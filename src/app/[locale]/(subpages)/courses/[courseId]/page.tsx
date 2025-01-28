@@ -4,6 +4,7 @@ import allCourses, { Course } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
+import Loader from '@/components/Loader/Loader'
 
 const CourseId = ({
     params
@@ -28,7 +29,8 @@ const CourseId = ({
                 <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
             </div>
         </div>
-    </section>
+        <Loader></Loader>
+      </section>
   )
 }
 
