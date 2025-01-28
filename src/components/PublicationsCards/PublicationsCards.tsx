@@ -38,7 +38,7 @@ const PublicationsCards = ({
         useEffect(() => {
             let headingOffsetTop = getOffsetTopRelativeToWindow(publications.current)
             if(headingOffsetTop <= (window.scrollY + 500)){
-              setPublicationsScrolled(true)
+                setPublicationsScrolled(true)
             }
             window.addEventListener("scroll", scrollPublicationsiSection)
         },[publicationsScrolled])
@@ -51,7 +51,6 @@ const PublicationsCards = ({
 
   return (
     <section ref={publications} className={classNames.join(" ")}>
-        
         <MainHeading>
             {t("Heading")}
         </MainHeading>
@@ -77,7 +76,8 @@ const PublicationsCards = ({
                     return(
                         <PublicationsCard key={publication.id} inverted={index % 2 === 0 ? false : true}>
                             <div>
-                                <Image src={publication.src} alt={`${publication.title} Publication Image`}></Image>
+                                <Image src={publication.src} 
+                                alt={`${publication.title} Publication Image`} width={1000} height={1000}></Image>
                             </div>
                             <div>       
                                 <h4>
