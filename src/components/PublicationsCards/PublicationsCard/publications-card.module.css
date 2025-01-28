@@ -96,7 +96,7 @@
 .publicationsCard > div:nth-of-type(2) button:focus-visible,
 .publicationsCard > div:nth-of-type(2) button:active{
     background-color: var(--important-text-color);
-    color: #ffffff;
+    color: #fff;
 }
 @media (max-width: 992px) {
     .publicationsCard.scrolled > div:first-of-type{
