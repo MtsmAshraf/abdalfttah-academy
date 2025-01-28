@@ -10,6 +10,7 @@
     isolation: isolate;
     padding-bottom: 0px;
     color: #fff;
+    overflow: hidden;
 }
 .hero.ar{
     direction: rtl;
@@ -42,19 +43,42 @@
 .hero .text h2{
     font-size: 40px;
     margin-bottom: 10px;
+    transition: var(--animation-transition);
+    opacity: 0;
+    transform: translateY(50px);
 }
-.hero .text p{
+.hero.loaded .text h2{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.hero .text > p{
     margin-bottom: 20px;
     line-height: 1.8;
+    transition: var(--animation-transition);
+    transition-delay: 0.4s;
+    opacity: 0;
+    transform: translateX(-100px);
 }
 .hero.ar .text > p{
     font-size: 18px;
+    opacity: 0;
+    transform: translateX(100px);
+}
+.hero.loaded .text > p{
+    opacity: 1;
+    transform: translateX(0px);
 }
 .hero .text p span{
     background-image: var(--hero-span-gradient);
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px 0px;
+    transition: var(--animation-transition);
+    opacity: 0;
+    transition-delay: 1s;
+}
+.hero.loaded .text p span{
+    opacity: 1;
 }
 .hero .text .btns{
     display: flex;
@@ -114,7 +138,8 @@
     .hero > div:nth-child(2) .img{
         height: 400px;
     }
-    .hero .stats{
+    .hero .stats,
+    .hero.ar .stats{
         left: unset;
         right: unset;
         top: unset;

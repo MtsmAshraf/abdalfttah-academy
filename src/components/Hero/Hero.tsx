@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "./hero.module.css" 
 // import { Link } from '@/i18n/routing'
 import { useTranslations } from 'use-intl'
@@ -14,8 +14,24 @@ const Hero = ({
     lo: string
 }) => {
     const t = useTranslations("HomePage.Hero")
+    const hero = useRef(null);
+    const [loaded, setLoaded] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoaded(true)
+        }, 1000);
+    },[])
+
+    
+    const classNames = [
+        lo === "ar" ? styles.ar : null,
+        loaded ? styles.loaded : null,
+        styles.hero
+    ]
+
   return (
-    <section className={lo === "ar" ? styles.hero + " " + styles.ar : styles.hero}>
+    <section ref={hero} className={classNames.join(" ")}>
         <div className={styles.overlay}></div>
         <div className="container">
             <div className={styles.text}>

@@ -1,16 +1,35 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "./stats.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlay, faGraduationCap, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { useTranslations } from 'next-intl'
 
 const Stats = ({
     lo
 } : {
     lo: string
 }) => {
+    const t = useTranslations("Stats")
+    
+    const stats = useRef(null);
+    const [loaded, setLoaded] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoaded(true)
+        }, 1000);
+    },[])
+    
+    const classNames = [
+        lo === "ar" ? styles.ar : null,
+        loaded ? styles.loaded : null,
+        styles.stats
+    ]
+
   return (
-    <div className={lo === "ar" ? styles.stats + " " + styles.ar : styles.stats}>
+    <div ref={stats} className={classNames.join(" ")}>
         <div className={styles.box}>
             <span>
                 <FontAwesomeIcon icon={faCirclePlay} />
@@ -19,7 +38,7 @@ const Stats = ({
                 +350
             </h4>
             <p>
-                Videos
+                {t("Videos")}
             </p>
         </div>
         <div className={styles.box}>
@@ -30,7 +49,7 @@ const Stats = ({
                 +10
             </h4>
             <p>
-                Courses
+                {t("Courses")}
             </p>
         </div>
         <div className={styles.box}>
@@ -41,7 +60,7 @@ const Stats = ({
                 +1M
             </h4>
             <p>
-                Youtube views
+                {t("YoutubeViews")}
             </p>
         </div>
         <div className={styles.box}>
@@ -52,7 +71,7 @@ const Stats = ({
                 +20M
             </h4>
             <p>
-                Tiktok views
+                {t("TiktokViews")}
             </p>
         </div>
         <div className={styles.box}>
@@ -63,7 +82,7 @@ const Stats = ({
                 +40K
             </h4>
             <p>
-                Students
+                {t("Students")}
             </p>
         </div>
     </div>

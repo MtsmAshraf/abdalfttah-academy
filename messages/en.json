@@ -18,6 +18,13 @@
             "btn2": "Contact Us"
         }
     },
+    "Stats": {
+        "Videos": "Videos",
+        "Courses": "Courses",
+        "YoutubeViews": "Youtube views",
+        "TiktokViews": "Tiktok views",
+        "Students": "Students"
+    },
     "TimeLine": {
         "Education": {
             "heading": "Education",
