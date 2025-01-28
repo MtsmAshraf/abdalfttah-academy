@@ -118,7 +118,7 @@
     bottom: 60px;
     left: 40px;
     width: 800px;
-    max-width: 50%;
+    max-width: 60%;
 }
 .hero.ar .stats{
     right: 40px;
@@ -154,6 +154,7 @@
         left: 50%;
         bottom: 400px;
         transform: translate(-50%,0%);
+        max-width: 80%;
     }
 }
 @media (max-width: 992px) {
@@ -169,7 +170,7 @@
         width: fit-content;
     }
     .hero .stats{
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 @media (max-width: 767px) {
@@ -186,6 +187,9 @@
     }
     .hero iframe{
         height: 200px;
+    }
+    .hero .stats{
+        max-width: 90%;
     }
 }
 

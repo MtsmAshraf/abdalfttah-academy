@@ -5,8 +5,8 @@
     overflow: hidden;
     background-image: var(--hero-gradient);
     box-shadow: var(--main-shadow);
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid var(--main-light-color);
     transition: var(--animation-transition);
     transition-duration: 1s;
