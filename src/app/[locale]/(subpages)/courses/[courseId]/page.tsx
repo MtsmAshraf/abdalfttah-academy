@@ -144,7 +144,7 @@ const CourseId = ({
           </div>
         </div>
         <Testimonials lo={locale} parentEl='courses' />
-        {/* <Loader></Loader> */}
+        <Loader></Loader>
       </section>
   )
 }
