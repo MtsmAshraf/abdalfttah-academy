@@ -49,7 +49,16 @@ const CourseId = ({
                   <h5>6 Weeks</h5>
                 </li>
               </ul>
-              <ul className={styles.more}>
+            </div>
+          </div>
+          <div className={styles.scroll}>
+            <div className={styles.description}>
+              <h2>Desciption</h2>
+              <p>Welcome to the Introduction to Cancer Biology course! This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.</p>
+            </div>
+            <div>
+              
+            <ul className={styles.more}>
                 <li>
                   <span>Weekly Lecture:</span>
                   <p>One 3-hour session covering core concepts</p>
@@ -63,12 +72,6 @@ const CourseId = ({
                   <p>One 1-hour session available upon request for personalized guidance or deeper exploration of topics</p>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div className={styles.scroll}>
-            <div className={styles.description}>
-              <h2>Desciption</h2>
-              <p>Welcome to the Introduction to Cancer Biology course! This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.</p>
             </div>
             <div>
               This course aims to equip you with knowledge and insights that will enable you to understand and interpret cancer biology research effectively. The course materials, assignments, and interactive sessions are designed to ensure a solid grasp of key topics and the latest developments in the field.
