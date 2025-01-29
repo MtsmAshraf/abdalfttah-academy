@@ -44,7 +44,6 @@
     align-items: center;
     margin-bottom: 40px;
     max-height: calc(100% / 5);
-    background-color: red;
 }
 .course > div:nth-child(2) .fixed > div .basicUl li{
     width: calc(100% / 4);
