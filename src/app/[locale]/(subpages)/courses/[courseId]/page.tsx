@@ -1,3 +1,4 @@
+"use client"
 import React, { use } from 'react'
 import styles from "./course-id.module.css"
 import allCourses, { Course } from '@/components/CoursesCards/allCourses'
@@ -7,7 +8,8 @@ import altImg from "../../../../../../public/images/course.jpg"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar, faChevronDown, faClock, faLocationPin } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons'
+import MainLink from '@/components/MainLink/MainLink'
 
 const CourseId = ({
     params,
@@ -33,7 +35,6 @@ const CourseId = ({
             <div className={styles.img}>
               <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
             </div>
-            
             <div className={styles.overview}>
               <ul className={styles.basicUl}>
                 <li>
@@ -48,7 +49,17 @@ const CourseId = ({
                   <span><FontAwesomeIcon icon={faClock} /></span>
                   <h5>6 Weeks</h5>
                 </li>
+                <li>
+                  <span><FontAwesomeIcon icon={faDollar} /></span>
+                  <h5>{course.price}</h5>
+                </li>
               </ul>
+            </div>
+            <div className={styles.enroll}>
+              <MainLink href='/' >
+                <span>Enroll</span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </MainLink>
             </div>
           </div>
           <div className={styles.scroll}>
@@ -57,7 +68,6 @@ const CourseId = ({
               <p>Welcome to the Introduction to Cancer Biology course! This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.</p>
             </div>
             <div>
-              
             <ul className={styles.more}>
                 <li>
                   <span>Weekly Lecture:</span>
@@ -74,7 +84,9 @@ const CourseId = ({
               </ul>
             </div>
             <div>
-              This course aims to equip you with knowledge and insights that will enable you to understand and interpret cancer biology research effectively. The course materials, assignments, and interactive sessions are designed to ensure a solid grasp of key topics and the latest developments in the field.
+              <p>
+                This course aims to equip you with knowledge and insights that will enable you to understand and interpret cancer biology research effectively. The course materials, assignments, and interactive sessions are designed to ensure a solid grasp of key topics and the latest developments in the field.
+              </p>
             </div>
             <div>
               <h2>
@@ -100,46 +112,98 @@ const CourseId = ({
             </div>
             <div>
               <h2>Course Content</h2>
-              <ol className={styles.content}>
+              <ol className={styles.content} id='content'>
                 <li>
-                  <h3>
-                    <span>Introduction to Cancer </span><FontAwesomeIcon icon={faChevronDown} />
-                  </h3>
+                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                    Introduction to Cancer <FontAwesomeIcon icon={faChevronDown} />
+                  </button>
                   <ul>
-                    <li>What is cancer?</li>
-                    <li>Basic cell biology of cancer development</li>
-                    <li>Differences between normal cells and cancer cells</li>
-                    <li>Introduction to tumor progression</li>
+                    <li>
+                      <p>
+                        What is cancer?
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Basic cell biology of cancer development
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Differences between normal cells and cancer cells
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Introduction to tumor progression
+                      </p>
+                    </li>
                   </ul>
                 </li>
                 <li>
-                  <h3>
-                    <span>Basics of Cell Biology and the Cell Cycle </span><FontAwesomeIcon icon={faChevronDown} />
-                  </h3>
+                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                    Basics of Cell Biology and the Cell Cycle <FontAwesomeIcon icon={faChevronDown} />
+                  </button>
                   <ul>
-                    <li>Introduction to cell structure and function </li>
-                    <li>Overview of the cell cycle and its regulation</li>
-                    <li>How uncontrolled cell cycle leads to cancer</li>
+                    <li>
+                      <p>
+                        Introduction to cell structure and function 
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Overview of the cell cycle and its regulation
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        How uncontrolled cell cycle leads to cancer
+                      </p>
+                    </li>
                   </ul>
                 </li>
                 <li>
-                  <h3>
-                    <span>Tumor Types and Origins </span><FontAwesomeIcon icon={faChevronDown} />
-                  </h3>
+                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                    Tumor Types and Origins <FontAwesomeIcon icon={faChevronDown} />
+                  </button>
                   <ul>
-                    <li>Origin of tumors from normal tissues</li>
-                    <li>Classification of tumors: Benign vs. Malignant</li>
-                    <li>Histopathology and architecture of tumors</li>
-                    <li>Epithelial origin of carcinomas</li>
+                    <li>
+                      <p>
+                        Origin of tumors from normal tissues
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Classification of tumors: Benign vs. Malignant
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Histopathology and architecture of tumors
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Epithelial origin of carcinomas
+                      </p>
+                    </li>
                   </ul>
                 </li>
                 <li>
-                  <h3>
-                    <span>Hallmarks of Cancer </span><FontAwesomeIcon icon={faChevronDown} />
-                  </h3>
+                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                    Hallmarks of Cancer <FontAwesomeIcon icon={faChevronDown} />
+                  </button>
                   <ul>
-                    <li>The "Hallmarks of Cancer" framework by Hanahan and Weinberg</li>
-                    <li>Key traits of cancer cells: sustaining proliferative signaling, evading growth suppressors, resisting cell death, enabling replicative immortality, and more</li>
+                    <li>
+                      <p>
+                        The "Hallmarks of Cancer" framework by Hanahan and Weinberg
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Key traits of cancer cells: sustaining proliferative signaling, evading growth suppressors, resisting cell death, enabling replicative immortality, and more
+                      </p>
+                    </li>
                   </ul>
                 </li>
               </ol>

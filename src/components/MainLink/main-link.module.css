@@ -4,8 +4,6 @@
     transition: var(--main-transition);
     border: 1px solid var(--main-color);
     box-shadow: var(--sec-shadow);
-}
-.mainLink{
     background-color: var(--important-text-color);
     color: #fff;
 }
