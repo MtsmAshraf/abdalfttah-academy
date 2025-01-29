@@ -16,9 +16,10 @@
     position: sticky;
     top: 100px;
     left: 0;
+    min-height: calc((100dvh - 100px));
 }
 .course .img{
-    min-height: calc(( 100dvh - 200px ) / 2);
+    max-height: calc(100% / 2);
     height: 400px;
     border-radius: 30px;
     overflow: hidden;
@@ -42,7 +43,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    height: calc(( 100dvh - 200px ) / 6);
+    max-height: calc(100% / 5);
+    background-color: red;
 }
 .course > div:nth-child(2) .fixed > div .basicUl li{
     width: calc(100% / 4);
@@ -86,17 +88,31 @@
         flex-direction: column;
     }
     .course > div:nth-child(2) .fixed{
-        position: unset;
+        position: relative;
         margin-right: auto;
         margin-left: auto;
         border-bottom: 1px solid var(--main-light-color);
+        top: 0;
     }
     .course .img{
         height: 400px;
+        max-height: unset;
+    }
+}
+@media (max-width: 767px) {
+    .course > div:nth-child(2) .fixed{
+        min-height: unset;
+        height: fit-content;
+        padding-bottom: 80px;
     }
 }
 .course > div:nth-child(2) .fixed .enroll{
-    height: calc(( 100dvh - 200px ) / 6);
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    padding: 0;
+    height: fit-content;
 }
 .course > div:nth-child(2) .fixed .enroll > a{
     display: flex;
@@ -105,7 +121,6 @@
     gap: 10px;
     margin-left: auto;    
     margin-right: auto;    
-    margin-bottom: 20px;
 }
 .course > div:nth-child(2) .fixed .enroll > a:hover{
     gap: 20px;
