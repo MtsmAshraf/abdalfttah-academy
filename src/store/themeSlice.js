@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  theme: window.localStorage.getItem("abdalfttah-academy-theme") ? window.localStorage.getItem("abdalfttah-academy-theme") : "dark",
+  // theme: window.localStorage.getItem("abdalfttah-academy-theme") ? window.localStorage.getItem("abdalfttah-academy-theme") : "dark",
+  theme: "dark",
 };
 
 const themeSlice = createSlice({

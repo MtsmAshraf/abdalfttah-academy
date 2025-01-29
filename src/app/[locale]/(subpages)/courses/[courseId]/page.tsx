@@ -5,12 +5,14 @@ import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
 import Loader from '@/components/Loader/Loader'
+import Testimonials from '@/components/Testimonials/Testimonials'
 
 const CourseId = ({
-    params
+    params,
   }: Readonly<{
-    params:  Promise<{courseId: string}>
+    params:  Promise<{courseId: string, locale: string}>
   }>) => {
+    const {locale} = use(params)
     const {courseId} = use(params)
     const course: Course = allCourses.find((ele) => ele.id === courseId) || {
         id: "999",
@@ -29,6 +31,7 @@ const CourseId = ({
                 <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
             </div>
         </div>
+        <Testimonials lo={locale} parentEl='courses' />
         <Loader></Loader>
       </section>
   )

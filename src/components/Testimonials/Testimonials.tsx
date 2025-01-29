@@ -22,7 +22,7 @@ const Testimonials = ({
         lo: string,
         parentEl: string
     }) => {
-  const t = useTranslations("HomePage")
+  const t = useTranslations("Testimonial")
   const testimonials: any = useRef(null)
       const [testimonialsScrolled, setTestimonialsScrolled] = useState(false)
       const scrollTestimonialsiSection = () => {
@@ -39,7 +39,7 @@ const Testimonials = ({
     <section ref={testimonials} className={lo === "ar" ? styles.testimonials + " " + styles.ar : styles.testimonials}>
         <div className={testimonialsScrolled ? styles.overlay + " " + styles.scrolled : styles.overlay }></div>
             <MainHeading>
-                Testimonials
+                {t("heading")}
             </MainHeading>
             <div className="container">
             <div className={styles.swiper}>
@@ -80,11 +80,11 @@ const Testimonials = ({
                                         </div>
                                         <div className={styles.text}>
                                             <p>
-                                                {testimonial.text}
+                                                { testimonial.textAr && lo === "ar" ? testimonial.textAr : testimonial.text }
                                             </p>
                                             <div className={styles.clientInfo}>
                                                 <h4>{testimonial.name}</h4>
-                                                <span>{testimonial.title}</span>
+                                                <span>{testimonial.country}</span>
                                             </div>
                                         </div>
                                     </SwiperSlide>

@@ -132,5 +132,8 @@
             "Name": "Moatasim",
             "Year": "2025"
         }
+    },
+    "Testimonial": {
+        "heading": "Testimonials"
     }
 }

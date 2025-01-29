@@ -5,6 +5,7 @@ import MainHeading from "../MainHeading/MainHeading"
 import { faGear } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 const Features = ({
     lo
@@ -44,8 +45,12 @@ const Features = ({
                     <div className={styles.cardBorder}></div>
                     <div className={styles.cardContent}>
                         <span>
-                            <FontAwesomeIcon icon={faGear} />
                             {/* <dotlottie-player src="https://lottie.host/585452f3-aa83-46be-85a8-29db19901dd6/ObAZV9IMOg.json" background="transparent" speed="3" loop autoplay></dotlottie-player> */}
+                            <DotLottieReact
+                                src="https://lottie.host/687d115b-356f-42db-891c-4d10c1f88695/NalqJZNN7z.lottie"
+                                loop
+                                autoplay
+                            />
                         </span>
                         <h4>{t("0.h4")}</h4>
                         <p>
@@ -57,8 +62,10 @@ const Features = ({
                     <div className={styles.cardBorder}></div>
                     <div className={styles.cardContent}>
                         <span>
-                            <FontAwesomeIcon icon={faGear} />
+                            {/* <FontAwesomeIcon icon={faGear} /> */}
                             {/* <dotlottie-player src="https://lottie.host/b5d62c1d-dd20-4c76-ac15-a96fe0fe8746/hXXuSctsMr.json" background="transparent" speed="1" loop autoplay></dotlottie-player> */}
+                            <FontAwesomeIcon icon={faGear} />
+                            <FontAwesomeIcon icon={faGear} />
                         </span>
                         <h4>{t("1.h4")}</h4>
                         <p>
@@ -83,7 +90,12 @@ const Features = ({
                     <div className={styles.cardBorder}></div>
                     <div className={styles.cardContent}>
                         <span>
-                            <FontAwesomeIcon icon={faGear} />
+                            {/* <FontAwesomeIcon icon={faGear} /> */}
+                            <DotLottieReact
+                                src="https://lottie.host/8365c178-3fb7-45fb-9ed5-fd468cb87646/H5kL81hPDC.lottie"
+                                loop
+                                autoplay
+                            />
                             {/* <dotlottie-player src="https://lottie.host/764f198f-ccf1-41e1-9a58-a0710aacd47d/OHVHZmeTqY.json" background="transparent" speed="1" loop autoplay></dotlottie-player> */}
                         </span>
                         <h4>{t("3.h4")}</h4>

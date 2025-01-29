@@ -14,6 +14,9 @@
     opacity: 1;
     transform: translateY(0px);
 }
+.testimonials.ar{
+    font-family: "Zain", sans-serif;
+}
 .testimonials .overlay{
     position: absolute;
     left: 0;
@@ -38,7 +41,7 @@
 }
 .testimonials .swiper .btns{
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     left: 50%;
     display: flex;
     align-items: center;
@@ -82,6 +85,7 @@
     padding-right: 30px;
     padding-left: 30px;
     position: relative;
+    margin-bottom: 80px;
 }
 @media (max-width: 600px) {
     .testimonials .swiper .SwiperSlide{
@@ -188,7 +192,6 @@
     border: 1px solid var(--logo-color);
     padding: 20px;
     border-radius: 0px 60px 60px;
-    background-color: #fff;
     color: #fff;
     background-color: var(--main-color);
     background-image: var(--main-inv-gradient);
@@ -220,6 +223,10 @@
 }
 .testimonials .swiper .SwiperSlide .text p{
     margin-bottom: 10px;
+    line-height: 1.6;
+}
+.testimonials.ar .swiper .SwiperSlide .text p{
+    direction: rtl;
 }
 .testimonials .swiper .SwiperSlide .text span{
     font-size: 14px;
@@ -234,5 +241,10 @@
     }
     .testimonials .swiper .btns{
         bottom: -80px;
+    }
+}
+@media (max-width: 600px) {
+    .testimonials .swiper .SwiperSlide .text p{
+        font-size: 14px;        
     }
 }

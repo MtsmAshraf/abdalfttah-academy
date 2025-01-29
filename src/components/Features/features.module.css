@@ -135,15 +135,40 @@
     font-size: 100px;
     color: var(--imortant-text-color);
     transition: var(--animation-transition);
+    position: relative;
+}
+.cards .card .cardContent span svg{
+    object-fit: contain;
+}
+.cards .card:nth-child(2) .cardContent span svg{
+    /* height: 150px; */
+    /* background-color: red; */
+    transition: var(--animation-transition);
     animation: 
-        animation
+        rotating
         2s 
         cubic-bezier(0.785, 0.135, 0.15, 0.86) 
         0s 
         infinite 
         alternate;
 }
-@keyframes animation {
+.cards .card:nth-child(2) .cardContent span svg:nth-of-type(2){
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 24px;
+    animation: 
+        rotating
+        2s 
+        linear
+        0s 
+        infinite 
+        forwards;
+}
+.cards .card:nth-child(4) .cardContent span path{
+    fill: red !important;
+}
+@keyframes rotating {
     0%{
         transform: rotateZ(0deg);
     }
