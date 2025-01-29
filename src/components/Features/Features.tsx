@@ -77,7 +77,12 @@ const Features = ({
                     <div className={styles.cardBorder}></div>
                     <div className={styles.cardContent}>
                         <span>
-                            <FontAwesomeIcon icon={faGear} />
+                            {/* <DotLottieReact
+                                src="https://lottie.host/65fab352-bcd2-4005-bbbf-580c243cc6d2/xozCz19sZI.lottie"
+                                loop
+                                autoplay
+                            /> */}
+                            <iframe src="https://lottie.host/embed/65fab352-bcd2-4005-bbbf-580c243cc6d2/xozCz19sZI.lottie"></iframe>
                             {/* <dotlottie-player src="https://lottie.host/6b5e72a3-6732-424b-ace2-4ce14411941e/MiEgcSw21O.json" background="transparent" speed="0.5" loop autoplay></dotlottie-player> */}
                         </span>
                         <h4>{t("2.h4")}</h4>

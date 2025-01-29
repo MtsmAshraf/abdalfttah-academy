@@ -136,6 +136,7 @@
     color: var(--imortant-text-color);
     transition: var(--animation-transition);
     position: relative;
+    overflow: hidden;
 }
 .cards .card .cardContent span svg{
     object-fit: contain;
@@ -165,8 +166,9 @@
         infinite 
         forwards;
 }
-.cards .card:nth-child(4) .cardContent span path{
-    fill: red !important;
+.cards .card .cardContent span iframe{
+    border-width: 0;
+    height: 170px;
 }
 @keyframes rotating {
     0%{
