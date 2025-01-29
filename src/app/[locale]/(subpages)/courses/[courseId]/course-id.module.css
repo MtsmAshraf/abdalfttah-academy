@@ -16,7 +16,7 @@
     position: sticky;
     top: 100px;
     left: 0;
-    min-height: calc((100dvh - 100px));
+    height: calc((100dvh - 100px));
 }
 .course .img{
     max-height: calc(100% / 2);
@@ -92,6 +92,7 @@
         margin-left: auto;
         border-bottom: 1px solid var(--main-light-color);
         top: 0;
+        padding-bottom: 50px;
     }
     .course .img{
         height: 400px;
@@ -106,10 +107,6 @@
     }
 }
 .course > div:nth-child(2) .fixed .enroll{
-    position: absolute;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
     padding: 0;
     height: fit-content;
 }
