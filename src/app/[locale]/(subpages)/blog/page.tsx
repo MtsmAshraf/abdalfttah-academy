@@ -1,16 +1,19 @@
 import Loader from '@/components/Loader/Loader';
-import React from 'react'
+import React, { use } from 'react'
 
 import styles from "./blog.module.css"
-import MainHeading from '@/components/MainHeading/MainHeading';
+import BlogCards from './BlogCards/BlogCards';
 
-const Blog = () => {
+const Blog = ({
+  params
+}: Readonly<{
+  params: Promise<{locale: string}>
+}>) => {
+  const { locale } = use(params)
   return (
     <section className={styles.blog}>
-        <MainHeading>Blog</MainHeading>
-        <div className="container">
-          BLOG PAGE CONTENT IS GOING TO BE HERE
-        </div>
+        <BlogCards lo={locale}></BlogCards>
+        
         <Loader></Loader>
     </section>
   )
