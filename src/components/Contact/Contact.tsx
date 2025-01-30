@@ -57,7 +57,7 @@ const Contact = ({
                             +1224535565676
                         </h4>
                     </a>
-                    <a href='/' target='_blank'>
+                    <a href="mailto:mohamed.biotech98@gmail.com" target='_blank'>
                         <span>
                             <FontAwesomeIcon icon={faEnvelope} />
                         </span>
