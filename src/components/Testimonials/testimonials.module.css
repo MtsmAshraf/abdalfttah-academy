@@ -9,7 +9,7 @@
     transition: var(--animation-transition);
     opacity: 0;
     transform: translateY(100px);
-    height: 100vh;
+    min-height: 100vh;
 }
 .testimonials:has(.overlay.scrolled){
     opacity: 1;
@@ -33,7 +33,7 @@
 }
 .testimonials .swiper{
     margin-top: 40px;
-    min-height: 400px;
+    min-height: 350px;
     display: flex;
     align-items: center;
     position: relative;
@@ -81,7 +81,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    max-width: 100%;
+    width: 100%;
     height: fit-content;
     padding-right: 30px;
     padding-left: 30px;
@@ -185,7 +185,7 @@
     object-fit: contain;
 }
 .testimonials .swiper .SwiperSlide .text{
-    width: 600px;
+    width: 100%;
     max-width: 100%;
     /* flex: 1; */
     text-align: center;
@@ -232,9 +232,14 @@
 .testimonials .swiper .SwiperSlide .text span{
     font-size: 14px;
 }
+@media (max-width: 992px) {
+    .testimonials .swiper{
+        min-height: 450px;
+    }
+}
 @media (max-width: 767px) {
     .testimonials{
-        height: 110vh;
+        min-height: 110vh;
     }
     .testimonials h2{
         font-size: 30px;
@@ -248,6 +253,12 @@
     }
 }
 @media (max-width: 600px) {
+    .testimonials{
+        min-height: fit-content;
+    }
+    .testimonials .swiper{
+        min-height: 650px;
+    }
     .testimonials .swiper .SwiperSlide .text p{
         font-size: 14px;        
     }
