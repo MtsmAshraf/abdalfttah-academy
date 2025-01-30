@@ -1,14 +1,18 @@
-"use client"
 import Loader from '@/components/Loader/Loader';
 import React from 'react'
-import { useSelector } from 'react-redux';
+
+import styles from "./blog.module.css"
+import MainHeading from '@/components/MainHeading/MainHeading';
 
 const Blog = () => {
-  const theme = useSelector((state: any) => state.theme.theme);
   return (
-    <div id={theme === "light" ? "light" : ""} >
+    <section className={styles.blog}>
+        <MainHeading>Blog</MainHeading>
+        <div className="container">
+          BLOG PAGE CONTENT IS GOING TO BE HERE
+        </div>
         <Loader></Loader>
-    </div>
+    </section>
   )
 }
 

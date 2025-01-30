@@ -1,0 +1,9 @@
+.blog{
+    padding-top: 100px;
+}
+.blog > :nth-child(2){
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
