@@ -70,5 +70,6 @@
 @media (max-width: 650px) {
     .coursesCards > div:nth-of-type(2){
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px 10px;
     }
 }
