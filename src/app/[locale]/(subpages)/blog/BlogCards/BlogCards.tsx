@@ -1,5 +1,4 @@
 import React from 'react'
-import BlogCard from './BlogCard/blogCard'
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 import img from "../../../../../../public/images/course.jpg"
@@ -8,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import styles from "./blog-cards.module.css"
 import MainHeading from '@/components/MainHeading/MainHeading'
+import BlogCard from './BlogCard/BlogCard'
 
 const BlogCards = ({
     lo
