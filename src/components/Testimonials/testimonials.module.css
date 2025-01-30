@@ -9,6 +9,7 @@
     transition: var(--animation-transition);
     opacity: 0;
     transform: translateY(100px);
+    height: 100vh;
 }
 .testimonials:has(.overlay.scrolled){
     opacity: 1;
@@ -232,6 +233,9 @@
     font-size: 14px;
 }
 @media (max-width: 767px) {
+    .testimonials{
+        height: 110vh;
+    }
     .testimonials h2{
         font-size: 30px;
     }

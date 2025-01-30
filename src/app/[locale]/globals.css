@@ -85,8 +85,11 @@ html{
   --animation-transition: all 0.8s 0s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 ::selection{
-  background-color: var(--main-color);
+  background-color: var(--main-light-color);
   color: #fff;
+}
+:root:has(#light) ::selection{
+  background-color: var(--main-color);
 }
 body{
   background-color: var(--bg-color);

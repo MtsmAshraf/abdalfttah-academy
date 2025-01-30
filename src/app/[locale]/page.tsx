@@ -1,4 +1,5 @@
 "use client"
+import Contact from "@/components/Contact/Contact";
 import CoursesCards from "@/components/CoursesCards/CoursesCards";
 import Features from "@/components/Features/Features";
 import Hero from "@/components/Hero/Hero";

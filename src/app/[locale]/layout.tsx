@@ -8,6 +8,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 import icon from "./favicon.ico"
+import Contact from "@/components/Contact/Contact";
 
 export const metadata: Metadata = {
   title: "Abdalfattah Academy",
@@ -33,6 +34,7 @@ export default async function RootLayout({
           <body className={locale === "ar" ? "ar" : "en"}>
               <Header lo={locale}></Header>
                 {children}
+              <Contact lo={locale} />
               <Footer lo={locale}></Footer>
             </body>
         </NextIntlClientProvider>
