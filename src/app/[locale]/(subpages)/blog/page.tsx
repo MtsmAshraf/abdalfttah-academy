@@ -3,7 +3,7 @@ import Loader from '@/components/Loader/Loader';
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-const Contact = () => {
+const blog = () => {
   const theme = useSelector((state: any) => state.theme.theme);
   return (
     <div id={theme === "light" ? "light" : ""} >
@@ -12,4 +12,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default blog
