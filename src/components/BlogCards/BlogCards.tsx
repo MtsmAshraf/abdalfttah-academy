@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
-import img from "../../../../../../public/images/course.jpg"
+import img from "../../../public/images/course.jpg"
 import MainLink from '@/components/MainLink/MainLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +14,9 @@ const BlogCards = ({
 } : {
     lo: string
 }) => {
+
+    
+
   return (
     <section className={styles.blogCards}>
         <MainHeading>Blog</MainHeading>

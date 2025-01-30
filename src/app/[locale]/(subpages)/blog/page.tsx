@@ -2,7 +2,7 @@ import Loader from '@/components/Loader/Loader';
 import React, { use } from 'react'
 
 import styles from "./blog.module.css"
-import BlogCards from './BlogCards/BlogCards';
+import BlogCards from '@/components/BlogCards/BlogCards';
 
 const Blog = ({
   params

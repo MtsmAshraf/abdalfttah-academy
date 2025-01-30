@@ -1,0 +1,20 @@
+.blogCards{
+    padding-top: 100px;
+}
+.blogCards > :nth-child(2){
+    display: grid;
+    grid-template-columns: repeat(3,minmax(250px, 1fr));
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+@media (max-width: 992px) {
+    .blogCards > :nth-child(2){
+        grid-template-columns: repeat(2,minmax(250px, 1fr));
+    }
+}
+@media (max-width: 650px) {
+    .blogCards > :nth-child(2){
+        grid-template-columns: repeat(1,minmax(250px, 1fr));
+    }
+}
