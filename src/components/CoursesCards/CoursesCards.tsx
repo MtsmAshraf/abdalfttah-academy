@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import Card from './Card/Card'
 import styles from "./courses-cards.module.css"
 import MainHeading from '../MainHeading/MainHeading'
@@ -54,7 +54,7 @@ const CoursesCards = ({
                         if(course.category.toLowerCase() === category.toLowerCase()){
                             return(
                                 !all && index <= 3 &&
-                                <Card index={index} key={course.id}>
+                                    <Card index={index} key={course.id}>
                                     <Link href={`/courses/${course.id}`}>
                                         <div>
                                             <Image src={course.src} alt={`${course.title} Course`}></Image>
@@ -70,8 +70,9 @@ const CoursesCards = ({
                                             </div>
                                         </div>
                                 </Card>
+                                
                                 || all &&
-                                <Card index={index} key={course.id}>
+                                    <Card index={index} key={course.id}>
                                     <Link href={`/courses/${course.id}`}>
                                         <div>
                                             <Image src={course.src} alt={`${course.title} Course`}></Image>
@@ -87,12 +88,13 @@ const CoursesCards = ({
                                             </div>
                                         </div>
                                 </Card>
+                                
                             )
                         }
                     }else if(!category){
                         return(
                             !all && index <= 3 &&
-                            <Card index={index} key={course.id}>
+                                <Card index={index} key={course.id}>
                                 <Link href={`/courses/${course.id}`}>
                                     <div>
                                         <Image src={course.src} alt={`${course.title} Course`}></Image>
@@ -108,8 +110,9 @@ const CoursesCards = ({
                                         </div>
                                     </div>
                             </Card>
+                            
                             || all &&
-                            <Card index={index} key={course.id}>
+                                <Card index={index} key={course.id}>
                                 <Link href={`/courses/${course.id}`}>
                                     <div>
                                         <Image src={course.src} alt={`${course.title} Course`}></Image>
@@ -125,6 +128,7 @@ const CoursesCards = ({
                                         </div>
                                     </div>
                             </Card>
+                            
                         )
                     }
                 })

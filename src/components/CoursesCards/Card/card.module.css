@@ -1,17 +1,12 @@
 .card{
     background-color: var(--sec-bg);
     border-radius: 30px 4px;
-    transition: var(--animation-transition);
+    transition: var(--main-transition);
     position: relative;
     isolation: isolate;
     border-radius: 30px 6px;
     overflow: hidden;
     box-shadow: var(--sec-light-shadow);
-    transform: translateY(100px);
-    opacity: 0;
-}
-.card.done{
-    transition-delay: 0s !important;
 }
 /* .card::before{
     position: absolute;
