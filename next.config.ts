@@ -34,6 +34,13 @@ const nextConfig = {
                 pathname: '/files/uploaded/**',
                 search: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'flagcdn.com',
+                port: '',
+                pathname: '/**',
+                search: '',
+            },
         ],
     },
 };

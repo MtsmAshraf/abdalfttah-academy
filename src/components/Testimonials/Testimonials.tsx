@@ -64,6 +64,8 @@ const Testimonials = ({
                     >
                         {
                             allTestimonials.map((testimonial: Testimonial) => {
+                                const flag = `https://flagcdn.com/w2560/${testimonial.countryCode.toLocaleLowerCase()}.png`
+                                
                                 return(
                                     <SwiperSlide key={testimonial.id} className={styles.SwiperSlide}>
                                             <span>
@@ -73,7 +75,7 @@ const Testimonials = ({
                                                 <FontAwesomeIcon icon={faQuoteRight} />
                                             </span>
                                             <span>
-                                                <Image src={testimonial.flagSrc} alt={"nationality flag"}></Image>
+                                                <Image src={flag} alt={`${testimonial.country} flag`} width={2560} height={2560}></Image>
                                             </span>
                                         <div className={styles.img}>
                                             <Image src={testimonial.src} alt={`${testimonial.name} testimonial`}></Image>
