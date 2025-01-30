@@ -57,6 +57,9 @@
 .nav > div{
     display: none;
 }
+.nav button{
+    display: none;
+}
 @media (max-width: 992px) {
     .nav{
         font-size: 12px;
@@ -71,38 +74,58 @@
 @media (max-width: 767px) {
     .nav{
         position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 81px;
-        width: 400px;
+        right: 0;
+        top: 0px;
+        transform: translateX(110%);
+        width: 300px;
+        max-width: 50%;
+        height: 100dvh;
         /* width: 300px; */
         text-align: center;
-        display: none;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        border-left: 1px solid var(--main-light-color);
+        padding-top: 80px;
+        transition: var(--animation-transition);
+        transition-duration: 0.5s;
+        z-index: 6;
     }
+    .nav.ar{
+        left: 0;
+        right: unset;
+        transform: translateX(-110%);
+        border-right: 1px solid var(--main-light-color);
+        border-left: none;
+    }
+    .nav.shown,
     .nav:has(ul.shown){
-        display: block;
+        transform: translateX(0%);
     }
     .nav ul{
         flex-direction: column;
-        background-color: var(--overlay-bg);
+        /* background-color: var(--overlay-bg); */
         width: 100%;
-        border-radius: 20px 0px;
+        border-radius: 0px;
+        border-top: 1px solid var(--main-light-color);
         overflow: hidden;
     }
     .nav ul li{
-        border-radius: 20px 0px;
         width: 100%;
+        border-radius: 0px;
     }
     .nav ul li a{ 
-        padding: 5px;
+        padding: 10px;
+        background-color: transparent;
         display: block;
-        border-radius: 20px 0px;
+        border-radius: 0px;
         border-bottom: 1px solid var(--main-light-color);
         isolation: isolate;
     }
     .nav a::before{
         width: 100%;
         opacity: 0;
+        border-radius: 0px;
+        background-image: var(--hero-gradient);
     }
     .nav a:hover::before, 
     .nav a:focus::before, 
@@ -115,5 +138,30 @@
     .nav a:focus-visible, 
     .nav a.active{
        box-shadow: none;
+    }
+    .nav button{
+        display: unset;
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        background-image: var(--main-heading-gradient);
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 0px 6px 6px 0px;
+        font-size: 18px;
+    }
+    .nav.ar button{
+        left: unset;
+        right: 0px;
+        border-radius: 6px 0px 0px 6px;
+    }
+    .nav.ar button svg{
+        transform: rotateZ(-180deg);
+    }
+    .nav .langSwitch{
+        background-color: red;
+    }
+    .nav .langSwitch button{
+        display: flex !important;
     }
 }

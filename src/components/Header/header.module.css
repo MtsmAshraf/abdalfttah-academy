@@ -67,7 +67,12 @@
 }
 @media (max-width: 767px) {
     .header > div .langSwitch {
-        display: none;
+        position: absolute;
+        right: 60px;
+    }   
+    .header.ar > div .langSwitch {
+        left: 60px;
+        right: unset;
     }   
     .header > div > button{
         display: inline;

@@ -5,6 +5,10 @@ import styles from "./nav.module.css"
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import LangSwitch from '../Header/LangSwitch/LangSwitch'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleShowSideNav } from '@/store/showNavSlice'
 const Nav = ({
     lo,
     shown
@@ -14,21 +18,23 @@ const Nav = ({
   }) => {
     const t = useTranslations("Header.Nav")
     const pathname = usePathname()
+    const showSideNav = useSelector((state: any) => state.showSideNav.showSideNav);
+    const dispatch = useDispatch();
   return (
     <>
         <nav className={lo === "ar" ? styles.nav + " " + styles.ar : styles.nav}>
-            <ul className={shown ? styles.shown : ""}>
+            <ul className={showSideNav ? styles.shown : ""}>
                 <li>
-                    <Link className={pathname === `/${lo}` ? styles.active : ""} href={'/'}>{t("0")}</Link>
+                    <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}` ? styles.active : ""} href={'/'}>{t("0")}</Link>
                 </li>
                 <li>
-                    <Link className={pathname.split("/")[2] === "courses" ? styles.active : ""} href={'/courses'}>{t("1")}</Link>
+                    <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname.split("/")[2] === "courses" ? styles.active : ""} href={'/courses'}>{t("1")}</Link>
                 </li>
                 <li>
-                    <Link className={pathname === `/${lo}/publications` ? styles.active : ""} href={'/publications'}>{t("2")}</Link>
+                    <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}/publications` ? styles.active : ""} href={'/publications'}>{t("2")}</Link>
                 </li>
                 <li>
-                    <Link className={pathname === `/${lo}/about` ? styles.active : ""} href={'/about'}>{t("3")}</Link>
+                    <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}/about` ? styles.active : ""} href={'/about'}>{t("3")}</Link>
                 </li>
                 {/* <li>
                     <Link className={pathname === `/${lo}/contact` ? styles.active : ""} href={'/contact'}>{t("4")}</Link>
@@ -36,6 +42,13 @@ const Nav = ({
             </ul>
             <div>
                 <LangSwitch lo={lo}></LangSwitch>
+            </div>
+            <button
+                onClick={() => dispatch(toggleShowSideNav())}>
+                <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+            <div className={styles.langSwitch}>
+                <LangSwitch lo={lo} />
             </div>
         </nav>
     </>

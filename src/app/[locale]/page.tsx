@@ -8,7 +8,7 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import Timeline from "@/components/Timeline/Timeline";
 import { store } from "@/store/store";
-import { use } from "react";
+import { use, useEffect } from "react";
 import { Provider } from "react-redux";
 
 export default function Home({

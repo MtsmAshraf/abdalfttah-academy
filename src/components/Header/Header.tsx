@@ -7,7 +7,9 @@ import styles from "./header.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark'
-import { useSelector } from 'react-redux'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { store } from '@/store/store'
+import OpenSideNav from './openSideNav/openSideNav'
 
 const Header = ({
     lo
@@ -17,7 +19,7 @@ const Header = ({
     const [showNav, setShowNav] = useState(false)
 
   return (
-    <>
+    <Provider store={store}>
         <header className={lo === "ar" ? styles.header + " " + styles.ar : styles.header}>
             <div className="container">
                 <Link className={styles.logo} href={"/"}>
@@ -28,14 +30,10 @@ const Header = ({
                 <div className={styles.langSwitch}>
                   <LangSwitch lo={lo}></LangSwitch>
                 </div>
-                <button onClick={() => {setShowNav(!showNav)}}>
-                  <span>
-                    {showNav ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />  }
-                  </span>
-                </button>
+                <OpenSideNav />
             </div>
         </header>
-    </>
+    </Provider>
   )
 }
 
