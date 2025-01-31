@@ -112,7 +112,16 @@
         "AllPosts": "All Posts"
     },
     "Contact": {
-        "Heading": "Contact"
+        "Heading": "Contact",
+        "Address": {
+            "Heading": "Our Place",
+            "Details":  {
+                "Address": "address",
+                "City": "City",
+                "Gov": "Gov",
+                "Country": "Country"
+            }
+        }
     },
     "Testimonial": {
         "heading": "Testimonials"
