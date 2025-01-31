@@ -34,7 +34,7 @@ const Nav = ({
                     <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}/publications` ? styles.active : ""} href={'/publications'}>{t("2")}</Link>
                 </li>
                 <li>
-                    <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}/blog` ? styles.active : ""} href={'/blog'}>{t("3")}</Link>
+                    <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname.split("/")[2] === "blog" ? styles.active : ""} href={'/blog'}>{t("3")}</Link>
                 </li>
                 <li>
                     <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}/about` ? styles.active : ""} href={'/about'}>{t("4")}</Link>

@@ -9,96 +9,85 @@ import styles from "./blog-cards.module.css"
 import MainHeading from '@/components/MainHeading/MainHeading'
 import BlogCard from './BlogCard/BlogCard'
 
+import allBlogPosts, { BlogPost } from './allBlogPosts'
+
+
+
 const BlogCards = ({
-    lo
+    lo,
+    all
 } : {
-    lo: string
+    lo: string,
+    all?: boolean
 }) => {
-
-    
-
   return (
     <section className={styles.blogCards}>
-        <MainHeading>Blog</MainHeading>
+        <MainHeading>
+            {
+                all ? "Blog" : "More Posts"
+            }
+        </MainHeading>
         <div className="container">
-            <BlogCard lo={lo}>
-                <Link href={"/blog"}>
-                <h3>Blog Post Title</h3>
-                <span>
-                    <Image src={img} alt='blog img'></Image>
-                </span>
-                </Link>
-                <div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit maxime quaerat quo exercitationem est saepe blanditiis quas, placeat aspernatur unde dolorum possimus accusantium quam enim molestiae quasi nesciunt tempore atque.
-                </p>
+            {
+                allBlogPosts.map((post: BlogPost, index: number) => {
+                    return(
+                        all ? 
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/${post.id}`}>
+                                <h3>{post.title}</h3>
+                                <span>
+                                    <Image src={post.src} alt={`${post.title} blog image`}></Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>
+                                    {
+                                        post.brief
+                                    }
+                                </p>
+                                <MainLink href={`/blog/${post.id}`}>
+                                    <span>
+                                        Read More
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard> : 
+                        index < 3 && <BlogCard lo={lo}>
+                            <Link href={`/blog/${post.id}`}>
+                                <h3>{post.title}</h3>
+                                <span>
+                                    <Image src={post.src} alt={`${post.title} blog image`}></Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>
+                                    {
+                                        post.brief
+                                    }
+                                </p>
+                                <MainLink href={`/blog/${post.id}`}>
+                                    <span>
+                                        Read More
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard> 
+                    )
+                })
+            }
+        </div>
+        <div className={styles.moreBtn}>
+            {
+                !all && 
                 <MainLink href={"/blog"}>
                     <span>
-                    Read More
+                        All Posts
                     </span>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </MainLink>
-                </div>
-            </BlogCard>
-            <BlogCard lo={lo}>
-                <Link href={"/blog"}>
-                <h3>Blog Post Title</h3>
-                <span>
-                    <Image src={img} alt='blog img'></Image>
-                </span>
-                </Link>
-                <div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit maxime quaerat quo exercitationem est saepe blanditiis quas, placeat aspernatur unde dolorum possimus accusantium quam enim molestiae quasi nesciunt tempore atque.
-                </p>
-                <MainLink href={"/blog"}>
-                    <span>
-                    Read More
-                    </span>
-                    <FontAwesomeIcon icon={faArrowRight} />
-                </MainLink>
-                </div>
-            </BlogCard>
-            <BlogCard lo={lo}>
-                <Link href={"/blog"}>
-                <h3>Blog Post Title</h3>
-                <span>
-                    <Image src={img} alt='blog img'></Image>
-                </span>
-                </Link>
-                <div>
-                <p>
-                    Suscipit maxime quaerat quo exercitationem est saepe blanditiis quas, placeat aspernatur unde dolorum possimus accusantium quam enim molestiae quasi nesciunt tempore atque.
-                </p>
-                <MainLink href={"/blog"}>
-                    <span>
-                    Read More
-                    </span>
-                    <FontAwesomeIcon icon={faArrowRight} />
-                </MainLink>
-                </div>
-            </BlogCard>
-            <BlogCard lo={lo}>
-                <Link href={"/blog"}>
-                <h3>Blog Post Title</h3>
-                <span>
-                    <Image src={img} alt='blog img'></Image>
-                </span>
-                </Link>
-                <div>
-                <p>
-                    Suscipit maxime quaerat quo exercitationem est saepe blanditiis quas, placeat aspernatur unde dolorum possimus accusantium quam enim molestiae quasi nesciunt tempore atque.
-                </p>
-                <div>
-                    <MainLink href={"/blog"}>
-                    <span>
-                        Read More
-                    </span>
-                    <FontAwesomeIcon icon={faArrowRight} />
-                    </MainLink>
-                </div>
-                </div>
-            </BlogCard>
+            }
         </div>
     </section>
   )

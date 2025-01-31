@@ -12,7 +12,7 @@ const Blog = ({
   const { locale } = use(params)
   return (
     <section className={styles.blog}>
-        <BlogCards lo={locale}></BlogCards>
+        <BlogCards lo={locale} all></BlogCards>
         
         <Loader></Loader>
     </section>

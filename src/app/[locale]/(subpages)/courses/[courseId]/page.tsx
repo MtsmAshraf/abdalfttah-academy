@@ -10,6 +10,7 @@ import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
+import CoursesCards from '@/components/CoursesCards/CoursesCards'
 
 const CourseId = ({
     params,
@@ -210,6 +211,7 @@ const CourseId = ({
             </div>
           </div>
         </div>
+        <CoursesCards lo={locale}></CoursesCards>
         <Testimonials lo={locale} parentEl='courses' />
         <Loader></Loader>
       </section>

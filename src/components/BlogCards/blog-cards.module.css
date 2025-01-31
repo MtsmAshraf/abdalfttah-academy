@@ -1,11 +1,28 @@
 .blogCards{
+    background-image: var(--overlay-gradient);
     padding-top: 100px;
+    padding-bottom: 40px;
 }
 .blogCards > :nth-child(2){
     display: grid;
     grid-template-columns: repeat(3,minmax(250px, 1fr));
+    padding-top: 40px;
+    /* padding-bottom: 40px; */
+    gap: 20px;
+}
+.blogCards .moreBtn{
+    width: fit-content;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.blogCards .moreBtn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.blogCards .moreBtn a:hover{
     gap: 20px;
 }
 @media (max-width: 992px) {

@@ -1,0 +1,26 @@
+.post{
+    padding-top: 100px;
+    background-image: var(--overlay-gradient);
+}
+.post > :nth-child(2){
+    width: 800px;
+    max-width: 100%;
+}
+.post .img{
+    height: 400px;
+    width: 100%;
+    margin: 30px auto;
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: red;
+}
+.post .img img{
+    object-fit: cover;
+    height: 100%;
+}
+.post .body{
+    padding-bottom: 100px;
+}
+.post .body p{
+    text-align: justify;
+}
