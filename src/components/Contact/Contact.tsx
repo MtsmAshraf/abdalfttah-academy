@@ -13,7 +13,7 @@ const Contact = ({
 } : {
     lo: string
 }) => {
-    const t = useTranslations("Footer")
+    const t = useTranslations("Contact")
 
     const contact: any = useRef(null)
     const [contactScrolled, setContactScrolled] = useState(false)
@@ -37,7 +37,7 @@ const Contact = ({
 
   return (
     <section ref={contact} className={classNames.join(" ")}>
-        <MainHeading>Contact</MainHeading>
+        <MainHeading>{t("Heading")}</MainHeading>
         <div className="container">
             <div className={styles.info}>
                 <div>

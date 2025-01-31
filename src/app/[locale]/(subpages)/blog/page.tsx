@@ -10,8 +10,14 @@ const Blog = ({
   params: Promise<{locale: string}>
 }>) => {
   const { locale } = use(params)
+
+  const classNames = [
+    styles.blog,
+    locale === "ar" ? styles.ar : ""
+  ]
+
   return (
-    <section className={styles.blog}>
+    <section className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
         <BlogCards lo={locale} all></BlogCards>
         
         <Loader></Loader>

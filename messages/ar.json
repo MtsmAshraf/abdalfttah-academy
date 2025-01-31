@@ -105,6 +105,21 @@
     "Courses": {
         "Heading": "الدورات"
     },
+    "Contact": {
+        "Heading": "اتصل بنا",
+        "Address": {
+            "Heading": "مكاننا",
+            "Details":  {
+                "Address": "العنوان",
+                "City": "المدينة",
+                "Gov": "المحافظة",
+                "Country": "الدولة"
+            }
+        }
+    },
+    "Testimonial": {
+        "heading": "آراء المتعلمين"
+    },
     "Footer": {
         "Pages": {
             "Heading": "الصفحات",
@@ -132,8 +147,5 @@
             "Name": "معتصم",
             "Year": "٢٠٢٥"
         }
-    },
-    "Testimonial": {
-        "heading": "آراء المتعلمين"
     }
 }

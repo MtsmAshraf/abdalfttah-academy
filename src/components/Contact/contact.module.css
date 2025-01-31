@@ -13,6 +13,10 @@
     transition: var(--animation-transition);
     transition-delay: 0.7s;
 }
+.contact.ar{
+    direction: rtl;
+    font-family: "Zain", sans-serif;
+}
 .contact.scrolled > div:nth-child(2){
     opacity: 1;
     transform: translateY(0px);
@@ -47,6 +51,10 @@
     border-radius: 30px;
     padding-right: 20px;
 }
+.contact.ar > div:nth-child(2) .info > div:first-of-type a{
+    padding-right: 0px;
+    padding-left: 20px;
+}
 .contact > div:nth-child(2) .info > div:first-of-type a:hover{
     background-color: var(--features-card-bg);
 }
@@ -74,10 +82,22 @@
     transition: var(--animation-transition);
     transition-delay: 1.3s;
 }
+.contact.ar > div:nth-child(2) .info > div:first-of-type a h4{
+    border-left: none;
+    transform: translateX(40px);
+    padding-left: 0px;
+    border-right: 1px solid transparent;
+    padding-right: 20px;
+    direction: ltr;
+}
 .contact.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
     opacity: 1;
     transform: translateX(0px);
     border-left: 1px solid var(--icon-color);
+}
+.contact.ar.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
+    border-left: none;
+    border-right: 1px solid var(--icon-color);
 }
 .contact > div:nth-child(2) .info .address{
     display: flex;
@@ -97,6 +117,12 @@
     border-left: 1px solid var(--icon-color);
     padding-left: 20px;
     place-content: center;
+}
+.contact.ar > div:nth-child(2) .info .address address{
+    border-left: none;
+    padding-left: 0px;
+    border-right: 1px solid var(--icon-color);
+    padding-right: 20px;
 }
 .contact > div:nth-child(2) .location{
     height: 400px;
@@ -151,12 +177,17 @@
         padding: 20px;
         margin-bottom: 0;
     }
-    .contact > div:nth-child(2) .info > div:first-of-type a h4{
+    .contact > div:nth-child(2) .info > div:first-of-type a h4,
+    .contact.ar > div:nth-child(2) .info > div:first-of-type a h4{
         border-left: none;
         padding-left: 0;
+        border-right: none;
+        padding-right: 0;
     }
-    .contact.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
+    .contact.scrolled > div:nth-child(2) .info > div:first-of-type a h4,
+    .contact.ar.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
         border-left: none;
+        border-right: none;
     }
     .contact > div:nth-child(2) .location{
         /* height: 600px !important; */

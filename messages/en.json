@@ -105,6 +105,12 @@
     "Courses": {
         "Heading": "Courses"
     },
+    "Contact": {
+        "Heading": "Contact"
+    },
+    "Testimonial": {
+        "heading": "Testimonials"
+    },
     "Footer": {
         "Pages": {
             "Heading": "Pages",
@@ -132,8 +138,5 @@
             "Name": "Moatasim",
             "Year": "2025"
         }
-    },
-    "Testimonial": {
-        "heading": "Testimonials"
     }
 }

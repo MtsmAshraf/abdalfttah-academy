@@ -1,3 +1,7 @@
 .blog{
     background-image: var(--overlay-gradient);
 }
+.blog.ar{
+    direction: rtl;
+    font-family: "Zain", sans-serif;
+}
