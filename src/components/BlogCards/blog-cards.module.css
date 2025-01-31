@@ -10,6 +10,10 @@
     /* padding-bottom: 40px; */
     gap: 20px;
 }
+.blogCards.ar{
+    font-family: "Zain", sans-serif;
+    direction: rtl;
+}
 .blogCards .moreBtn{
     width: fit-content;
     margin-top: 40px;
@@ -21,6 +25,9 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+.blogCards.ar .moreBtn a svg{
+    transform: rotateZ(180deg);
 }
 .blogCards .moreBtn a:hover{
     gap: 20px;

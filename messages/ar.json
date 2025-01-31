@@ -105,6 +105,12 @@
     "Courses": {
         "Heading": "الدورات"
     },
+    "Blog": {
+        "HeadingAll": "المقالات",
+        "Heading": "مقالات أخرى",
+        "ReadMore": "اقرأ المزيد",
+        "AllPosts": "جميع المقالات"
+    },
     "Contact": {
         "Heading": "اتصل بنا",
         "Address": {

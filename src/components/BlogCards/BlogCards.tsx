@@ -10,6 +10,7 @@ import MainHeading from '@/components/MainHeading/MainHeading'
 import BlogCard from './BlogCard/BlogCard'
 
 import allBlogPosts, { BlogPost } from './allBlogPosts'
+import { useTranslations } from 'next-intl'
 
 
 
@@ -20,11 +21,18 @@ const BlogCards = ({
     lo: string,
     all?: boolean
 }) => {
+    const classNames = [
+        styles.blogCards,
+        lo === "ar" ? styles.ar : ""
+    ]
+
+    const t = useTranslations("Blog")
+
   return (
-    <section className={styles.blogCards}>
+    <section className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
         <MainHeading>
             {
-                all ? "Blog" : "More Posts"
+                all ? t("HeadingAll") : t("Heading")
             }
         </MainHeading>
         <div className="container">
@@ -47,7 +55,7 @@ const BlogCards = ({
                                 </p>
                                 <MainLink href={`/blog/${post.id}`}>
                                     <span>
-                                        Read More
+                                        {t("ReadMore")}
                                     </span>
                                     <FontAwesomeIcon icon={faArrowRight} />
                                 </MainLink>
@@ -68,7 +76,7 @@ const BlogCards = ({
                                 </p>
                                 <MainLink href={`/blog/${post.id}`}>
                                     <span>
-                                        Read More
+                                        {t("ReadMore")}
                                     </span>
                                     <FontAwesomeIcon icon={faArrowRight} />
                                 </MainLink>
@@ -83,7 +91,7 @@ const BlogCards = ({
                 !all && 
                 <MainLink href={"/blog"}>
                     <span>
-                        All Posts
+                        {t("AllPosts")}
                     </span>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </MainLink>

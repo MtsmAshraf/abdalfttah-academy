@@ -105,6 +105,12 @@
     "Courses": {
         "Heading": "Courses"
     },
+    "Blog": {
+        "HeadingAll": "Blog",
+        "Heading": "More Post",
+        "ReadMore": "Read More",
+        "AllPosts": "All Posts"
+    },
     "Contact": {
         "Heading": "Contact"
     },

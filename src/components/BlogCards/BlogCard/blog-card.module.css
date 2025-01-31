@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
 }
-.cardContent{
+.card .cardContent{
     width: calc(100% - 4px);
     height: calc(100% - 4px);
     background-color: var(--card-bg-semi-trans);
@@ -18,16 +18,16 @@
     padding-bottom: 70px;
     z-index: 2;
 }
-.cardContent:hover{
+.card .cardContent:hover{
     box-shadow: var(--main-shadow);
     /* transform: scale(1.02); */
 }
-.cardContent > a {
+.card .cardContent > a {
     position: relative;
     /* height: 200px;
     width: 100%; */
 }
-.cardContent > a h3{
+.card .cardContent > a h3{
     position: absolute;
     top: 10px;
     left: 20px;
@@ -42,28 +42,34 @@
     padding: 20px;
     color: #fff;
 }
-.cardContent > a span{
+.card.ar .cardContent > a h3{
+    font-size: 22px;
+}
+.card .cardContent > a span{
     height: 200px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.cardContent > a span img{
+.card .cardContent > a span img{
     height: 100%;
     object-fit: cover;
 }
-.cardContent > div{
+.card .cardContent > div{
     padding: 12px 20px;
     border-radius: 0px 0px 20px 20px;
 }
-.cardContent > div p{
+.card .cardContent > div p{
     font-size: 14px;
     line-height: 1.6;
 }
-.cardContent > div{
+.card.ar .cardContent > div p{
+    font-size: 16px;
 }
-.cardContent > div a{
+.card .cardContent > div{
+}
+.card .cardContent > div a{
     /* margin: auto 20px; */
     display: flex;
     align-items: center;
@@ -76,12 +82,18 @@
     bottom: 20px;
     transform: translateX(-50%);
 }
-.cardContent > div > a{
+.card .cardContent > div a{
+    font-size: 16px;
 }
-.cardContent > div a:hover,
-.cardContent > div a:focus,
-.cardContent > div a:focus-visible,
-.cardContent > div a:active{
+.card.ar .cardContent > div a svg{
+    transform: rotateZ(-180deg);
+}
+.card .cardContent > div > a{
+}
+.card .cardContent > div a:hover,
+.card .cardContent > div a:focus,
+.card .cardContent > div a:focus-visible,
+.card .cardContent > div a:active{
     gap: 15px;
 }
 
