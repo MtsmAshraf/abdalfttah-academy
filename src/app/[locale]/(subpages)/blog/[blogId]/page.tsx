@@ -19,7 +19,9 @@ const BlogId = ({
 
     const {locale} = use(params)
     const {blogId} = use(params)
-    const [postTitle, setPostTitle] = useState("Title")
+
+    type Title = string | undefined
+    const [postTitle, setPostTitle] = useState<Title>("Title")
 
     interface WordPressPost {
         id?: number;
@@ -70,18 +72,21 @@ const BlogId = ({
             const data = await response.json();
             console.log("POST", data)
             setPosts(data);
+            if(posts[parseInt(blogId)].title && posts[parseInt(blogId)].title.rendered){
+              setPostTitle(posts[parseInt(blogId)].title.rendered)
+            }
             } catch (error) {
             console.error('Error fetching post:', error);
             }
         }
-    
+        
         fetchPost();
       },[]);
       
 
   return(
     <section className={styles.post}>
-        <MainHeading>Title</MainHeading>
+        <MainHeading>{postTitle}</MainHeading>
         <div className="container">
             {
               posts.map((post: WordPressPost, index: number) => {
