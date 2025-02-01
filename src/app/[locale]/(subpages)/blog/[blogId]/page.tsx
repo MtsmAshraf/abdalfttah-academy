@@ -79,7 +79,7 @@ const BlogId = ({
 
   return(
     <section className={styles.post}>
-        <MainHeading>{posts[parseInt(blogId)].title ? posts[parseInt(blogId)].title?.rendered : Title}</MainHeading>
+        <MainHeading>{posts[parseInt(blogId)] ? posts[parseInt(blogId)].title?.rendered : Title}</MainHeading>
         <div className="container">
             {
               posts.map((post: WordPressPost, index: number) => {
