@@ -8,6 +8,7 @@ import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import BlogCards from '@/components/BlogCards/BlogCards'
 import Loader from '@/components/Loader/Loader'
+import DOMPurify from 'dompurify';
 
 const BlogId = ({
     params,
@@ -76,28 +77,31 @@ const BlogId = ({
       },[]);
       
 
+      const render = posts ? posts.map((post, index: number) => {
+        const cleanHTML = DOMPurify.sanitize(post.content?.rendered)
+        return(
+          post.id === parseInt(blogId) && 
+            <div key={index}>
+                <div className={styles.img}>
+                <Image loading='lazy' src={altImg} alt={`${post.title} post iamge`}></Image>
+                </div>
+                <div className={styles.body}>
+                    <div dangerouslySetInnerHTML={{ __html: cleanHTML}}/>
+                </div>
+            </div>
+        )
+      }) : <h2 className={styles.loading}>Loading...</h2> 
+
   return(
     <section className={styles.post}>
-        {/* <MainHeading>{post.title?.rendered}</MainHeading> */}
+        <MainHeading>{posts[0].title?.rendered}</MainHeading>
+        <div className="container">
             {
-              posts.map((post, index: number) => {
-                return(
-                  post.id === parseInt(blogId) && 
-                  <div className="container" key={index}>
-                    <div className={styles.img}>
-                      {/* <Image loading='lazy' src={post.src} alt={`${post.title} post iamge`}></Image> */}
-                      </div>
-                      <div className={styles.body}>
-                          <p>
-                              {post.author}
-                          </p>
-                      </div>
-                  </div> 
-                )
-              })
+              render
             }
+            </div> 
         <BlogCards lo={locale} />
-        {/* <Loader></Loader> */}
+        <Loader></Loader>
     </section>
   )
 }
