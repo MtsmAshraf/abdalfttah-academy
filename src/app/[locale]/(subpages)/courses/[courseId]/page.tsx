@@ -1,16 +1,18 @@
 "use client"
 import React, { use } from 'react'
 import styles from "./course-id.module.css"
-import allCourses, { Course } from '@/components/CoursesCards/allCourses'
+import allCourses, { Course, Person } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
+import userImg from "../../../../../../public/images/user.webp"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
+import Alumni from '@/components/Alumni/Alumni'
 
 const CourseId = ({
     params,
@@ -24,7 +26,17 @@ const CourseId = ({
         title: "",
         category: "",
         price: "",
-        src: altImg
+        src: altImg,
+        innerPage: {
+            people: [
+              {
+                id: "string",
+                name: "string",
+                title: "string",
+                src: userImg
+              }
+            ]
+        }
     }
   return (
     <section className={styles.course}>
@@ -211,6 +223,29 @@ const CourseId = ({
             </div>
           </div>
         </div>
+        <Alumni lo={locale}>
+          {
+            course.innerPage.people.map((person: Person, index: number) => {
+              const flagSrc = `https://flagcdn.com/w2560/${person.countryCode.toLocaleLowerCase()}.png`
+              return(
+                <div key={index}>
+                  <div>
+                    <div>
+                    <Image src={person.src} alt={`Alumni: ${person.name} picture`}  width={2560} height={2560}></Image>
+                    </div>
+                    <span>
+                      <Image src={flagSrc} alt={`${person.country} flag image`}  width={2560} height={2560}></Image>
+                    </span>
+                  </div>
+                  <div>
+                    <h4>{person.name}</h4>
+                    <span>{person.title} </span>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </Alumni>
         <CoursesCards lo={locale}></CoursesCards>
         <Testimonials lo={locale} parentEl='courses' />
         <Loader></Loader>
