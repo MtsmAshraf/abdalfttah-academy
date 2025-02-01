@@ -72,16 +72,19 @@ const BlogId = ({
             const data = await response.json();
             console.log("POST", data)
             setPosts(data);
-            if(posts[parseInt(blogId)].title && posts[parseInt(blogId)].title.rendered){
-              setPostTitle(posts[parseInt(blogId)].title.rendered)
-            }
             } catch (error) {
             console.error('Error fetching post:', error);
             }
         }
         
         fetchPost();
-      },[postTitle]);
+      },[]);
+
+      useEffect(() => {
+        if(posts[parseInt(blogId)].title && posts[parseInt(blogId)].title.rendered){
+          setPostTitle(posts[parseInt(blogId)].title.rendered)
+        }
+      }, [postTitle])
       
 
   return(
