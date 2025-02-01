@@ -123,6 +123,9 @@
             }
         }
     },
+    "Alumni": {
+        "Heading": "Alumni"
+    },
     "Testimonial": {
         "heading": "Testimonials"
     },

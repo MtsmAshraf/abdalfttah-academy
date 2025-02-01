@@ -3,6 +3,10 @@
     padding-bottom: 100px;
     background-image: var(--overlay-gradient);
 }
+.alumni.ar > :nth-child(1){
+    font-family: "Zain", sans-serif;
+    direction: rtl;
+}
 .alumni > :nth-child(2){
     margin-top: 30px;
     display: flex;

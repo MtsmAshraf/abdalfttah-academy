@@ -123,6 +123,9 @@
             }
         }
     },
+    "Alumni": {
+        "Heading": "الخريجين"
+    },
     "Testimonial": {
         "heading": "آراء المتعلمين"
     },
