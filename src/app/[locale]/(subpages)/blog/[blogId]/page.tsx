@@ -81,7 +81,7 @@ const BlogId = ({
         }
         
         fetchPost();
-      },[]);
+      },[postTitle]);
       
 
   return(
