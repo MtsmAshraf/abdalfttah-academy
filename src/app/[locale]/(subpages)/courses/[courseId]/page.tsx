@@ -33,7 +33,9 @@ const CourseId = ({
                 id: "string",
                 name: "string",
                 title: "string",
-                src: userImg
+                src: userImg,
+                country: "string",
+                countryCode: "string"
               }
             ]
         }
