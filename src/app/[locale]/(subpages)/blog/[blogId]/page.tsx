@@ -79,17 +79,11 @@ const BlogId = ({
         
         fetchPost();
       },[]);
-
-      useEffect(() => {
-        if(posts[parseInt(blogId)].title && posts[parseInt(blogId)].title.rendered){
-          setPostTitle(posts[parseInt(blogId)].title.rendered)
-        }
-      }, [postTitle])
       
 
   return(
     <section className={styles.post}>
-        <MainHeading>{postTitle}</MainHeading>
+        <MainHeading>Title</MainHeading>
         <div className="container">
             {
               posts.map((post: WordPressPost, index: number) => {
