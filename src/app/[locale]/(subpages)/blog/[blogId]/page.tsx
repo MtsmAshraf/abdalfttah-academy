@@ -62,7 +62,7 @@ const BlogId = ({
 
         useEffect(() => {
           console.log("REDNEDER")
-        async function fetchPost() {
+          async function fetchPost() {
             try {
             const response = await fetch(`https://biotech-informatics.com/wp-json/wp/v2/posts`); // Replace with your WordPress URL
             const data = await response.json();
@@ -79,7 +79,7 @@ const BlogId = ({
 
   return(
     <section className={styles.post}>
-        <MainHeading>{posts[parseInt(blogId)].title?.rendered}</MainHeading>
+        <MainHeading>{posts[parseInt(blogId)].title ? posts[parseInt(blogId)].title?.rendered : Title}</MainHeading>
         <div className="container">
             {
               posts.map((post: WordPressPost, index: number) => {
@@ -97,7 +97,7 @@ const BlogId = ({
                 )
               })
             }
-            </div> 
+          </div> 
         <BlogCards lo={locale} />
         {/* <Loader></Loader> */}
     </section>
