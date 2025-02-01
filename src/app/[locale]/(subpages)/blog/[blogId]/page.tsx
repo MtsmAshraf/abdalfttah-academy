@@ -34,7 +34,7 @@ const BlogId = ({
         status?: string;
         type?: string; // 'post', 'page', etc.
         link?: string;
-        title?: {
+        title: {
             rendered?: string;
         };
         content?: {
@@ -60,7 +60,7 @@ const BlogId = ({
     }
 
     
-    const [posts, setPosts] = useState<WordPressPost[]>([{id: 999999}]);
+    const [posts, setPosts] = useState<WordPressPost[]>([{id: 999999, title: {rendered: "title"}}]);
 
         useEffect(() => {
           console.log("REDNEDER")
@@ -76,14 +76,12 @@ const BlogId = ({
         }
     
         fetchPost();
-
-        setPostTitle( posts[parseInt(blogId)].title?.rendered || "Title")
       },[]);
       
 
   return(
     <section className={styles.post}>
-        <MainHeading>{postTitle}</MainHeading>
+        <MainHeading>Title</MainHeading>
         <div className="container">
             {
               posts.map((post: WordPressPost, index: number) => {
