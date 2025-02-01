@@ -19,6 +19,8 @@ const BlogId = ({
 
     const {locale} = use(params)
     const {blogId} = use(params)
+    const [postTitle, setPostTitle] = useState("Title")
+
     interface WordPressPost {
         id?: number;
         date?: string; // ISO 8601 format
@@ -74,12 +76,14 @@ const BlogId = ({
         }
     
         fetchPost();
+
+        setPostTitle( posts[parseInt(blogId)].title?.rendered || "Title")
       },[]);
       
 
   return(
     <section className={styles.post}>
-        <MainHeading>{posts[parseInt(blogId)] ? posts[parseInt(blogId)].title?.rendered : "Title"}</MainHeading>
+        <MainHeading>{postTitle}</MainHeading>
         <div className="container">
             {
               posts.map((post: WordPressPost, index: number) => {
