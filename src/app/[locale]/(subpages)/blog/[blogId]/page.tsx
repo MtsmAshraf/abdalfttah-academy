@@ -77,31 +77,29 @@ const BlogId = ({
       },[]);
       
 
-      const render = posts ? posts.map((post, index: number) => {
-        const cleanHTML = DOMPurify.sanitize(post.content?.rendered)
-        return(
-          post.id === parseInt(blogId) && 
-            <div key={index}>
-                <div className={styles.img}>
-                <Image loading='lazy' src={altImg} alt={`${post.title} post iamge`}></Image>
-                </div>
-                <div className={styles.body}>
-                    <div dangerouslySetInnerHTML={{ __html: cleanHTML}}/>
-                </div>
-            </div>
-        )
-      }) : <h2 className={styles.loading}>Loading...</h2> 
-
   return(
     <section className={styles.post}>
-        <MainHeading>{posts[0].title?.rendered}</MainHeading>
+        <MainHeading>{posts[parseInt(blogId)].title?.rendered}</MainHeading>
         <div className="container">
             {
-              render
+              posts.map((post: WordPressPost, index: number) => {
+                const cleanHTML = post.content && post.content.rendered ? DOMPurify.sanitize(post.content.rendered) : "";
+                return(
+                  post.id === parseInt(blogId) && 
+                    <div key={index}>
+                        <div className={styles.img}>
+                        <Image loading='lazy' src={altImg} alt={`${post.title} post iamge`}></Image>
+                        </div>
+                        <div className={styles.body}>
+                            <div dangerouslySetInnerHTML={{ __html: cleanHTML}}/>
+                        </div>
+                    </div>
+                )
+              })
             }
             </div> 
         <BlogCards lo={locale} />
-        <Loader></Loader>
+        {/* <Loader></Loader> */}
     </section>
   )
 }
