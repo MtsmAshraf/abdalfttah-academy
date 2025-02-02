@@ -12,7 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
-import Alumni from '@/components/Alumni/Alumni'
+import dynamic from 'next/dynamic'
+const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 const CourseId = ({
     params,
@@ -46,37 +47,6 @@ const CourseId = ({
             {course?.title}
         </MainHeading>
         <div className="container">
-          <div className={styles.fixed}>
-            <div className={styles.img}>
-              <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
-            </div>
-            <div className={styles.overview}>
-              <ul className={styles.basicUl}>
-                <li>
-                  <span><FontAwesomeIcon icon={faCalendar} /></span>
-                  <h5>25-01-2025</h5>
-                </li>
-                <li>
-                  <span><FontAwesomeIcon icon={faLocationPin} /></span>
-                  <h5>Online</h5>
-                </li>
-                <li>
-                  <span><FontAwesomeIcon icon={faClock} /></span>
-                  <h5>6 Weeks</h5>
-                </li>
-                <li>
-                  <span><FontAwesomeIcon icon={faDollar} /></span>
-                  <h5>{course.price}</h5>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.enroll}>
-              <MainLink href='/' >
-                <span>Enroll</span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </MainLink>
-            </div>
-          </div>
           <div className={styles.scroll}>
             <div className={styles.description}>
               <h2>Desciption</h2>
@@ -224,13 +194,45 @@ const CourseId = ({
               </ol>
             </div>
           </div>
+          <div className={styles.fixed}>
+            <div className={styles.img}>
+              <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
+            </div>
+            <div className={styles.overview}>
+              <ul className={styles.basicUl}>
+                <li>
+                  <span><FontAwesomeIcon icon={faCalendar} /></span>
+                  <h5>25-01-2025</h5>
+                </li>
+                <li>
+                  <span><FontAwesomeIcon icon={faLocationPin} /></span>
+                  <h5>Online</h5>
+                </li>
+                <li>
+                  <span><FontAwesomeIcon icon={faClock} /></span>
+                  <h5>6 Weeks</h5>
+                </li>
+                <li>
+                  <span><FontAwesomeIcon icon={faDollar} /></span>
+                  <h5>{course.price}</h5>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.enroll}>
+              <MainLink href='/' >
+                <span>Enroll</span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </MainLink>
+            </div>
+          </div>
         </div>
         <Alumni lo={locale}>
           {
             course.innerPage.people.map((person: Person, index: number) => {
               const flagSrc = `https://flagcdn.com/w2560/${person.countryCode.toLocaleLowerCase()}.png`
+              const delay = (Math.random() + 0.2).toFixed(2).toString()
               return(
-                <div key={index}>
+                <div style={{ transitionDelay: `${delay === "0" ? "0.1" : delay}s` }} key={index}>
                   <div>
                     <div>
                     <Image src={person.src} alt={`Alumni: ${person.name} picture`}  width={2560} height={2560}></Image>

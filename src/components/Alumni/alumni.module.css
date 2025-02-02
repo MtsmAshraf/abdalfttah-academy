@@ -18,9 +18,13 @@
     border-radius: 20px;
     text-align: center;
     width: 130px;
-    /* background-image: var(--overlay-gradient); */
-    /* border: 1px solid var(--main-light-color); */
-    /* color: #fff; */
+    transition: var(--animation-transition);
+    transform: translateY(10px);
+    opacity: 0;
+}
+.alumni.scrolled > :nth-child(2) > div{  /* person div */
+    transform: translateY(0px);
+    opacity: 1;
 }
 @media (max-width: 600px) {
     
