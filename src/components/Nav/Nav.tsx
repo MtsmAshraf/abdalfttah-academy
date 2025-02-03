@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import LangSwitch from '../Header/LangSwitch/LangSwitch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleShowSideNav } from '@/store/showNavSlice'
 const Nav = ({
@@ -45,7 +45,7 @@ const Nav = ({
             </div>
             <button
                 onClick={() => dispatch(toggleShowSideNav())}>
-                <FontAwesomeIcon icon={faArrowRight} />
+                <FontAwesomeIcon icon={faXmark} />
             </button>
             <div className={styles.langSwitch}>
                 <LangSwitch lo={lo} />
