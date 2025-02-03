@@ -1,16 +1,20 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import "./loader.css"
-const Loader = () => {
+const Loader = ({
+    delay
+} : {
+    delay?: number
+}) => {
     const [loaded, setLoaded] = useState(false)
     const [stopLoading, setStopLoading] = useState(false)
     useEffect(() => {
         setTimeout(() => {
             setLoaded(true)
-        }, 500);
+        }, 500 + (delay || 0));
         setTimeout(() => {
             setStopLoading(true)
-        }, 2000);
+        }, 2000 + (delay || 0));
     },[])
     return (
         <div className={loaded ? "loader" + " " + "loaded" : "loader"}>

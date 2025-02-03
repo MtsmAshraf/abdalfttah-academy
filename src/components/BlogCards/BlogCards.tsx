@@ -88,36 +88,36 @@ const BlogCards = ({
     useEffect(() => {
         async function fetchPosts() {
             try {
-            const response = await fetch('https://biotech-informatics.com/wp-json/wp/v2/posts'); // Replace with your WordPress URL
-            const data = await response.json();
-            setPosts(data);
-            if (data) { // Check if data exists
-                const mediaPromises = data.map(async (post: WordPressPost) => {
-                if (post.featured_media) {
-                    console.log("post.featured_media",post.featured_media)
-                    const mediaResponse = await fetch(
-                        `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
-                    );
-                    const resp = await mediaResponse.json();
-                    console.log("resp",resp)
-                    return resp;
-                    // return null; // No featured media
-                }
-                return null; // No featured media
-                });
-                const mediaData = await Promise.all(mediaPromises);
-                const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
-                if (media) {
-                    acc[media.id] = media;
-                }
-                return acc;
-                }, {});
-                setFeaturedMedia(mediaById);
-                console.log("featuredMedia",featuredMedia)
+                const response = await fetch('https://biotech-informatics.com/wp-json/wp/v2/posts'); // Replace with your WordPress URL
+                const data = await response.json();
+                setPosts(data);
+                if (data) { // Check if data exists
+                    const mediaPromises = data.map(async (post: WordPressPost) => {
+                    if (post.featured_media) {
+                        console.log("post.featured_media",post.featured_media)
+                        const mediaResponse = await fetch(
+                            `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
+                        );
+                        const resp = await mediaResponse.json();
+                        console.log("resp",resp)
+                        return resp;
+                        // return null; // No featured media
+                    }
+                    return null; // No featured media
+                    });
+                    const mediaData = await Promise.all(mediaPromises);
+                    const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
+                    if (media) {
+                        acc[media.id] = media;
+                    }
+                    return acc;
+                    }, {});
+                    setFeaturedMedia(mediaById);
+                    console.log("featuredMedia",featuredMedia)
+                    }
+            } catch (error) {
+                console.error('Error fetching posts:', error);
             }
-        } catch (error) {
-            console.error('Error fetching posts:', error);
-        }
     }
 
     fetchPosts();
