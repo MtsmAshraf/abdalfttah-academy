@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 import img from "../../../public/images/course.jpg"
@@ -33,6 +33,7 @@ const BlogCards = ({
 
     // const [posts, setPosts] = useState<WordPressPost[]>([]);
         const [posts, setPosts] = useState([]);
+        const [mediaId, setMediaId] = useState(0)
         const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
 
 
@@ -81,18 +82,26 @@ const BlogCards = ({
       }
 
     useEffect(() => {
+        console.log("posts sep", posts);
+    }, [posts]);
+
+    useEffect(() => {
         async function fetchPosts() {
-        try {
+            try {
             const response = await fetch('https://biotech-informatics.com/wp-json/wp/v2/posts'); // Replace with your WordPress URL
             const data = await response.json();
             setPosts(data);
             if (data) { // Check if data exists
                 const mediaPromises = data.map(async (post: WordPressPost) => {
                 if (post.featured_media) {
+                    console.log("post.featured_media",post.featured_media)
                     const mediaResponse = await fetch(
                         `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
                     );
-                    return await mediaResponse.json();
+                    const resp = await mediaResponse.json();
+                    console.log("resp",resp)
+                    return resp;
+                    // return null; // No featured media
                 }
                 return null; // No featured media
                 });
@@ -104,33 +113,19 @@ const BlogCards = ({
                 return acc;
                 }, {});
                 setFeaturedMedia(mediaById);
+                console.log("featuredMedia",featuredMedia)
             }
         } catch (error) {
             console.error('Error fetching posts:', error);
         }
-        }
-        
-    
-        fetchPosts();
+    }
+
+    fetchPosts();
     }, []);
 
     useEffect(() => {
-        console.log("posts sep", posts);
-    }, [posts]);
-
-        useEffect(() => {
-        async function fetchPosts() {
-            try {
-            const response = await fetch('https://biotech-informatics.com/wp-json/wp/v2/posts'); // Replace with your WordPress URL
-            const data = await response.json();
-            setPosts(data);
-            } catch (error) {
-            console.error('Error fetching posts:', error);
-            }
-        }
-    
-        fetchPosts();
-        }, []);
+        console.log("featuredMedia sep", featuredMedia);
+    }, [featuredMedia]);
     
 
   return (
@@ -142,6 +137,7 @@ const BlogCards = ({
         </MainHeading>
         <div className="container">
             {
+                posts.length > 0 ? 
                 posts.map((post: WordPressPost, index: number) => {
                     const cleanHTML = DOMPurify.sanitize(post.excerpt.rendered)
                     return(
@@ -150,10 +146,16 @@ const BlogCards = ({
                             <Link href={`/blog/${post.id}`}>
                                 <h3>{post.title.rendered}</h3>
                                 <span>
+                                    {
+                                        featuredMedia[post.featured_media] ? <Image 
+                                        src={featuredMedia[post.featured_media].source_url}
+                                        alt={`${post.title.rendered}`} width={2500} height={2500}>
+                                    </Image> :
                                     <Image 
-                                        src={featuredMedia[post.id] ? featuredMedia[post.featured_media].source_url : altImg}
-                                        alt={`${post.title.rendered}`}>
+                                        src={altImg}
+                                        alt={`${post.title.rendered}`} width={2500} height={2500}>
                                     </Image>
+                                    }
                                 </span>
                             </Link>
                             <div>
@@ -187,7 +189,130 @@ const BlogCards = ({
                             </div>
                         </BlogCard> 
                     )
-                })
+                }) : 
+                    <>
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/`}>
+                                <h3>...</h3>
+                                <span>
+                                    <Image 
+                                        src={altImg}
+                                        alt={`altImg`}>
+                                    </Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>...</p>
+                                <MainLink href={`/blog/`}>
+                                    <span>
+                                        ...
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard>
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/`}>
+                                <h3>...</h3>
+                                <span>
+                                    <Image 
+                                        src={altImg}
+                                        alt={`altImg`}>
+                                    </Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>...</p>
+                                <MainLink href={`/blog/`}>
+                                    <span>
+                                        ...
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard>
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/`}>
+                                <h3>...</h3>
+                                <span>
+                                    <Image 
+                                        src={altImg}
+                                        alt={`altImg`}>
+                                    </Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>...</p>
+                                <MainLink href={`/blog/`}>
+                                    <span>
+                                        ...
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard>
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/`}>
+                                <h3>...</h3>
+                                <span>
+                                    <Image 
+                                        src={altImg}
+                                        alt={`altImg`}>
+                                    </Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>...</p>
+                                <MainLink href={`/blog/`}>
+                                    <span>
+                                        ...
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard>
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/`}>
+                                <h3>...</h3>
+                                <span>
+                                    <Image 
+                                        src={altImg}
+                                        alt={`altImg`}>
+                                    </Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>...</p>
+                                <MainLink href={`/blog/`}>
+                                    <span>
+                                        ...
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard>
+                        <BlogCard lo={lo}>
+                            <Link href={`/blog/`}>
+                                <h3>...</h3>
+                                <span>
+                                    <Image 
+                                        src={altImg}
+                                        alt={`altImg`}>
+                                    </Image>
+                                </span>
+                            </Link>
+                            <div>
+                                <p>...</p>
+                                <MainLink href={`/blog/`}>
+                                    <span>
+                                        ...
+                                    </span>
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </MainLink>
+                            </div>
+                        </BlogCard>
+                    </>        
+                
             }
         </div>
         <div className={styles.moreBtn}>

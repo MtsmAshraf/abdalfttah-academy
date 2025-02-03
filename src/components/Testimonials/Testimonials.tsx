@@ -65,7 +65,6 @@ const Testimonials = ({
                         {
                             allTestimonials.map((testimonial: Testimonial) => {
                                 const flag = `https://flagcdn.com/w2560/${testimonial.countryCode.toLocaleLowerCase()}.png`
-                                
                                 return(
                                     <SwiperSlide key={testimonial.id} className={styles.SwiperSlide}>
                                             <span>

@@ -41,6 +41,13 @@ const nextConfig = {
                 pathname: '/**',
                 search: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'biotech-informatics.com',
+                port: '',
+                pathname: '/**',
+                search: '',
+            },
         ],
     },
 };

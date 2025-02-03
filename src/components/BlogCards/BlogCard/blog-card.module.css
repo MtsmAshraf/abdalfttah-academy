@@ -51,10 +51,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
 }
 .card .cardContent > a span img{
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .card .cardContent > div{
     padding: 12px 20px;
