@@ -82,7 +82,7 @@ const BlogCards = ({
       }
 
     useEffect(() => {
-        console.log("posts sep", posts);
+        console.log("posts sep", "posts");
     }, [posts]);
 
     useEffect(() => {
@@ -94,12 +94,10 @@ const BlogCards = ({
                 if (data) { // Check if data exists
                     const mediaPromises = data.map(async (post: WordPressPost) => {
                     if (post.featured_media) {
-                        console.log("post.featured_media",post.featured_media)
                         const mediaResponse = await fetch(
                             `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
                         );
                         const resp = await mediaResponse.json();
-                        console.log("resp",resp)
                         return resp;
                         // return null; // No featured media
                     }
@@ -113,7 +111,6 @@ const BlogCards = ({
                     return acc;
                     }, {});
                     setFeaturedMedia(mediaById);
-                    console.log("featuredMedia",featuredMedia)
                     }
             } catch (error) {
                 console.error('Error fetching posts:', error);
@@ -150,11 +147,11 @@ const BlogCards = ({
                                         featuredMedia[post.featured_media] ? <Image 
                                         src={featuredMedia[post.featured_media].source_url}
                                         alt={`${post.title.rendered}`} width={2500} height={2500}>
-                                    </Image> :
-                                    <Image 
-                                        src={altImg}
-                                        alt={`${post.title.rendered}`} width={2500} height={2500}>
-                                    </Image>
+                                        </Image> :
+                                        <Image 
+                                            src={altImg}
+                                            alt={`${post.title.rendered}`} width={2500} height={2500}>
+                                        </Image>
                                     }
                                 </span>
                             </Link>

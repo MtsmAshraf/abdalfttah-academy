@@ -48,7 +48,7 @@ const BlogId = ({
             protected?: boolean;
         };
         author?: number; // ID of the author
-        featured_media?: number; // ID of the featured media (image)
+        featured_media: number; // ID of the featured media (image)
         comment_status?: string;
         ping_status?: string;
         sticky?: boolean;
@@ -61,16 +61,43 @@ const BlogId = ({
         // ... potentially more properties depending on your WordPress setup
     }
 
+    interface WordPressMedia {
+      id: number;
+      source_url: string; // URL of the image
+      // ... other media properties (e.g., sizes, alt text)
+    }
     
-    const [posts, setPosts] = useState<WordPressPost[]>([{id: 999999, title: {rendered: "title"}}]);
+    const [posts, setPosts] = useState<WordPressPost[]>([{id: 999999, title: {rendered: "title"}, featured_media: parseInt("123123123123123")}]);
+    const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
 
         useEffect(() => {
           console.log("REDNEDER")
           async function fetchPost() {
             try {
-            const response = await fetch(`https://biotech-informatics.com/wp-json/wp/v2/posts`); // Replace with your WordPress URL
-            const data = await response.json();
-            console.log("POST", data)
+              const response = await fetch('https://biotech-informatics.com/wp-json/wp/v2/posts'); // Replace with your WordPress URL
+              const data = await response.json();
+              setPosts(data);
+              if (data) { // Check if data exists
+                  const mediaPromises = data.map(async (post: WordPressPost) => {
+                  if (post.featured_media) {
+                      const mediaResponse = await fetch(
+                          `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
+                      );
+                      const resp = await mediaResponse.json();
+                      return resp;
+                      // return null; // No featured media
+                  }
+                  return null; // No featured media
+                  });
+                  const mediaData = await Promise.all(mediaPromises);
+                  const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
+                  if (media) {
+                      acc[media.id] = media;
+                  }
+                  return acc;
+                  }, {});
+                  setFeaturedMedia(mediaById);
+                  }
             setPosts(data);
             } catch (error) {
             console.error('Error fetching post:', error);
@@ -79,20 +106,43 @@ const BlogId = ({
         
         fetchPost();
       },[]);
+      const [title, setTitle] = useState<string>()
+    
+      useEffect(() => {
+          console.log("pstssssssssss", posts)
+          posts.map( (post: WordPressPost) => (post.id === parseInt(blogId) ? setTitle(post.title.rendered) : setPostTitle("Title")) )
+      }, [featuredMedia]);
+        
       
 
   return(
     <section className={styles.post}>
-        <MainHeading>Title</MainHeading>
+        <MainHeading>
+          {title}
+        </MainHeading>
         <div className="container">
             {
-              posts.map((post: WordPressPost, index: number) => {
+              posts.map((p: WordPressPost, index: number) => {
+                const post: WordPressPost = p.id === parseInt(blogId) ? p : {id: 9999999999, title: {rendered: "Title"},featured_media: parseInt("123123123123123")}
                 const cleanHTML = post.content && post.content.rendered ? DOMPurify.sanitize(post.content.rendered) : "";
                 return(
-                  post.id === parseInt(blogId) && 
                     <div key={index}>
                         <div className={styles.img}>
-                        <Image loading='lazy' src={altImg} alt={`${post.title} post iamge`}></Image>
+                          {
+                            featuredMedia[post.featured_media] ?  
+                            <Image
+                              width={2500} height={2500}
+                              src={featuredMedia[post.featured_media].source_url}
+                              alt={`${post.title.rendered}`}>
+                            </Image>
+                            :
+                            <Image
+                              width={2500} height={2500}
+                              src={altImg}
+                              alt={`${post.title.rendered}`}>
+                            </Image> 
+                            }
+                       
                         </div>
                         <div className={styles.body}>
                             <div dangerouslySetInnerHTML={{ __html: cleanHTML}}/>
@@ -103,7 +153,7 @@ const BlogId = ({
             }
           </div> 
         <BlogCards lo={locale} />
-        {/* <Loader></Loader> */}
+        <Loader delay={12000}></Loader>
     </section>
   )
 }

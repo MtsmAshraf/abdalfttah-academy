@@ -1,7 +1,6 @@
 .post{
     padding-top: 100px;
     background-image: var(--overlay-gradient);
-    
 }
 .post > :nth-child(1){
     font-family: "Zain",sans-serif;
@@ -9,7 +8,6 @@
 }
 .post .loading{
     background-color: var(--main-light-color);
-    background-color: red;
     height: 400px;
     width: 400px;
 }
@@ -27,6 +25,7 @@
     margin: 30px auto;
     border-radius: 40px;
     overflow: hidden;
+    background-color: #fff;
 }
 .post .img img{
     object-fit: cover;
