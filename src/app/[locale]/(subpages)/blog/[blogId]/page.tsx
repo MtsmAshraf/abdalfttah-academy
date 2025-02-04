@@ -127,23 +127,24 @@ const BlogId = ({
                 const cleanHTML = post.content && post.content.rendered ? DOMPurify.sanitize(post.content.rendered) : "";
                 return(
                     <div key={index}>
-                        <div className={styles.img}>
                           {
                             featuredMedia[post.featured_media] ?  
-                            <Image
-                              width={2500} height={2500}
-                              src={featuredMedia[post.featured_media].source_url}
-                              alt={`${post.title.rendered}`}>
-                            </Image>
+                            <div className={styles.img}>
+                                <Image
+                                  width={2500} height={2500}
+                                  src={featuredMedia[post.featured_media].source_url}
+                                  alt={`${post.title.rendered}`}>
+                                </Image>
+                            </div>
                             :
-                            <Image
-                              width={2500} height={2500}
-                              src={altImg}
-                              alt={`${post.title.rendered}`}>
-                            </Image> 
-                            }
-                       
-                        </div>
+                            <div style={{ display: posts  ? "none": ""}} className={styles.img}>
+                              <Image
+                                width={2500} height={2500}
+                                src={altImg}
+                                alt={`${post.title.rendered}`}>
+                              </Image>
+                            </div>
+                          }
                         <div className={styles.body}>
                             <div dangerouslySetInnerHTML={{ __html: cleanHTML}}/>
                         </div>

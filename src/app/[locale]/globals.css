@@ -113,10 +113,16 @@ a{
   color: unset;
 }
 ::-webkit-scrollbar{
+  background-color: transparent;
   width: 10px;
-  background-color: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb{
+  background-color: transparent;
+}
+body:has(.loaded)::-webkit-scrollbar{
+  background-color: var(--bg-color);
+}
+body:has(.loaded)::-webkit-scrollbar-thumb{
   background-color: var(--important-text-color);
 }
 .container{
