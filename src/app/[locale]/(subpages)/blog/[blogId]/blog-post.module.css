@@ -82,6 +82,7 @@
 .post .body div p{
     margin-top: 10px !important;
     margin-bottom: 10px !important;
+    line-height: 1.8;
 }
 .post .body div ul{
     list-style: disc !important;

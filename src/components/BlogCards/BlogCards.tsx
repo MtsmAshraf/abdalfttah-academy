@@ -269,7 +269,8 @@ const BlogCards = ({
                 
             }
         </div>
-        <div className={styles.loadMore} style={{ display: full ? "none" : "block" }}>
+        {
+            all ?  <div className={styles.loadMore} style={{ display: full ? "none" : "block" }}>
             <button 
                 disabled={loading}
                 onClick={() => {fetchPosts(start,end)}}
@@ -278,7 +279,8 @@ const BlogCards = ({
                     t("LoadMore")
                 }    
             </button>
-        </div>
+        </div> : null
+        }
         <div className={styles.moreBtn}>
             {
                 !all && 
