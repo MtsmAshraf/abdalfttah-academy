@@ -34,6 +34,8 @@ const BlogCards = ({
     const [posts, setPosts] = useState<WordPressPost[]>([]);
     const [mediaId, setMediaId] = useState(0)
     const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
+    const [full, SetFull] = useState(false)
+    const [loading, SetLoading] = useState(false)
 
 
     interface WordPressPost {
@@ -84,12 +86,16 @@ const BlogCards = ({
     const [end, setEnd] = useState(3)
     
     async function fetchPosts(s: number, e: number) {
+    SetLoading(true)
     const perPage = e - s + 1; // Number of posts to fetch
     const offset = s - 1; // Offset should be 0-based
     console.log("start", start)
     console.log("end", end)
     console.log("perPage", perPage)
     console.log("offset", offset)
+    if(offset > 26 + 3){
+        SetFull(true)
+    }
     try {
         const response = await fetch(`https://biotech-informatics.com/wp-json/wp/v2/posts?per_page=${perPage}&offset=${offset}&_fields=id,title,excerpt,featured_media`); // Replace with your WordPress URL
         const data = await response.json();
@@ -114,6 +120,7 @@ const BlogCards = ({
             return acc;
             }, {});
             setFeaturedMedia({...featuredMedia, ...mediaById}); 
+            SetLoading(false)
             setStart(start + 4);
             setEnd(end + 4);
         }
@@ -126,7 +133,7 @@ const BlogCards = ({
     }, []);
 
     useEffect(() => {
-        console.log("posts sep", "posts");
+        console.log("posts sep", posts);
     }, [posts]);
 
 
@@ -262,10 +269,14 @@ const BlogCards = ({
                 
             }
         </div>
-        <div className={styles.loadMore}>
-            <button
-                onClick={() => {fetchPosts(start,end)}}>
-                Load More
+        <div className={styles.loadMore} style={{ display: full ? "none" : "block" }}>
+            <button 
+                disabled={loading}
+                onClick={() => {fetchPosts(start,end)}}
+            >
+                {
+                    t("LoadMore")
+                }    
             </button>
         </div>
         <div className={styles.moreBtn}>

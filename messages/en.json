@@ -109,7 +109,8 @@
         "HeadingAll": "Blog",
         "Heading": "More Post",
         "ReadMore": "Read More",
-        "AllPosts": "All Posts"
+        "AllPosts": "All Posts",
+        "LoadMore": "Load More"
     },
     "Contact": {
         "Heading": "Contact",

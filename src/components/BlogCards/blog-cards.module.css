@@ -32,6 +32,11 @@
     box-shadow: var(--sec-shadow);
     background-color: var(--important-text-color);
     color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+.blogCards.ar .loadMore button{
+    font-family: "Zain", sans-serif;
+    direction: rtl;
 }
 .blogCards .loadMore button:hover,
 .blogCards .loadMore button:focus,
