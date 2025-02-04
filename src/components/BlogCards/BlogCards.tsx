@@ -31,10 +31,9 @@ const BlogCards = ({
 
     const t = useTranslations("Blog")
 
-    // const [posts, setPosts] = useState<WordPressPost[]>([]);
-        const [posts, setPosts] = useState([]);
-        const [mediaId, setMediaId] = useState(0)
-        const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
+    const [posts, setPosts] = useState<WordPressPost[]>([]);
+    const [mediaId, setMediaId] = useState(0)
+    const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
 
 
     interface WordPressPost {
@@ -79,46 +78,57 @@ const BlogCards = ({
         id: number;
         source_url: string; // URL of the image
         // ... other media properties (e.g., sizes, alt text)
-      }
+    }
+
+    const [start, setStart] = useState(1)
+    const [end, setEnd] = useState(3)
+    
+    async function fetchPosts(s: number, e: number) {
+    const perPage = e - s + 1; // Number of posts to fetch
+    const offset = s - 1; // Offset should be 0-based
+    console.log("start", start)
+    console.log("end", end)
+    console.log("perPage", perPage)
+    console.log("offset", offset)
+    try {
+        const response = await fetch(`https://biotech-informatics.com/wp-json/wp/v2/posts?per_page=${perPage}&offset=${offset}&_fields=id,title,excerpt,featured_media`); // Replace with your WordPress URL
+        const data = await response.json();
+        setPosts([...posts, ...data]); 
+        if (data) { // Check if data exists
+            const mediaPromises = data.map(async (post: WordPressPost) => {
+            if (post.featured_media) {
+                const mediaResponse = await fetch(
+                    `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
+                );
+                const resp = await mediaResponse.json();
+                return resp;
+                // return null; // No featured media
+            }
+            return null; // No featured media
+            });
+            const mediaData = await Promise.all(mediaPromises);
+            const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
+            if (media) {
+                acc[media.id] = media;
+            }
+            return acc;
+            }, {});
+            setFeaturedMedia({...featuredMedia, ...mediaById}); 
+            setStart(start + 4);
+            setEnd(end + 4);
+        }
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+    }
+    }
+    useEffect(() => {
+        fetchPosts(start,end);
+    }, []);
 
     useEffect(() => {
         console.log("posts sep", "posts");
     }, [posts]);
 
-    useEffect(() => {
-        async function fetchPosts() {
-            try {
-                const response = await fetch('https://biotech-informatics.com/wp-json/wp/v2/posts'); // Replace with your WordPress URL
-                const data = await response.json();
-                setPosts(data);
-                if (data) { // Check if data exists
-                    const mediaPromises = data.map(async (post: WordPressPost) => {
-                    if (post.featured_media) {
-                        const mediaResponse = await fetch(
-                            `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
-                        );
-                        const resp = await mediaResponse.json();
-                        return resp;
-                        // return null; // No featured media
-                    }
-                    return null; // No featured media
-                    });
-                    const mediaData = await Promise.all(mediaPromises);
-                    const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
-                    if (media) {
-                        acc[media.id] = media;
-                    }
-                    return acc;
-                    }, {});
-                    setFeaturedMedia(mediaById);
-                    }
-            } catch (error) {
-                console.error('Error fetching posts:', error);
-            }
-    }
-
-    fetchPosts();
-    }, []);
 
     useEffect(() => {
         console.log("featuredMedia sep", featuredMedia);
@@ -248,69 +258,15 @@ const BlogCards = ({
                                 </MainLink>
                             </div>
                         </BlogCard>
-                        <BlogCard lo={lo}>
-                            <Link href={`/blog/`}>
-                                <h3>...</h3>
-                                <span>
-                                    <Image 
-                                        src={altImg}
-                                        alt={`altImg`}>
-                                    </Image>
-                                </span>
-                            </Link>
-                            <div>
-                                <p>...</p>
-                                <MainLink href={`/blog/`}>
-                                    <span>
-                                        ...
-                                    </span>
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                </MainLink>
-                            </div>
-                        </BlogCard>
-                        <BlogCard lo={lo}>
-                            <Link href={`/blog/`}>
-                                <h3>...</h3>
-                                <span>
-                                    <Image 
-                                        src={altImg}
-                                        alt={`altImg`}>
-                                    </Image>
-                                </span>
-                            </Link>
-                            <div>
-                                <p>...</p>
-                                <MainLink href={`/blog/`}>
-                                    <span>
-                                        ...
-                                    </span>
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                </MainLink>
-                            </div>
-                        </BlogCard>
-                        <BlogCard lo={lo}>
-                            <Link href={`/blog/`}>
-                                <h3>...</h3>
-                                <span>
-                                    <Image 
-                                        src={altImg}
-                                        alt={`altImg`}>
-                                    </Image>
-                                </span>
-                            </Link>
-                            <div>
-                                <p>...</p>
-                                <MainLink href={`/blog/`}>
-                                    <span>
-                                        ...
-                                    </span>
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                </MainLink>
-                            </div>
-                        </BlogCard>
                     </>        
                 
             }
+        </div>
+        <div className={styles.loadMore}>
+            <button
+                onClick={() => {fetchPosts(start,end)}}>
+                Load More
+            </button>
         </div>
         <div className={styles.moreBtn}>
             {

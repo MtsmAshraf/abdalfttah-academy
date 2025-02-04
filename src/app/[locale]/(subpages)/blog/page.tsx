@@ -19,7 +19,7 @@ const Blog = ({
   return (
     <section className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
         <BlogCards lo={locale} all></BlogCards>
-        <Loader delay={5000}></Loader>
+        <Loader delay={2000}></Loader>
     </section>
   )
 }

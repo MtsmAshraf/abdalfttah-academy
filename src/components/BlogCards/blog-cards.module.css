@@ -20,6 +20,26 @@
     margin-right: auto;
     margin-left: auto;
 }
+.blogCards .loadMore{
+    text-align: center;
+    margin-top: 40px;
+}
+.blogCards .loadMore button{
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: var(--main-transition);
+    border: 1px solid var(--main-color);
+    box-shadow: var(--sec-shadow);
+    background-color: var(--important-text-color);
+    color: #fff;
+}
+.blogCards .loadMore button:hover,
+.blogCards .loadMore button:focus,
+.blogCards .loadMore button:focus-visible{
+    background-color: #fff;
+    color: var(--main-color);
+    box-shadow: var(--main-shadow);
+}
 .blogCards .moreBtn a{
     display: flex;
     align-items: center;
