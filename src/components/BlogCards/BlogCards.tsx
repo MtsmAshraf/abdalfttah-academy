@@ -186,10 +186,16 @@ const BlogCards = ({
                             <Link href={`/blog/${post.id}`}>
                                 <h3>{post.title.rendered}</h3>
                                 <span>
-                                    <Image 
-                                        src={featuredMedia[post.id] ? featuredMedia[post.featured_media].source_url : altImg}
-                                        alt={`${post.title.rendered}`}>
-                                    </Image>
+                                    {
+                                        featuredMedia[post.featured_media] ? <Image 
+                                        src={featuredMedia[post.featured_media].source_url}
+                                        alt={`${post.title.rendered}`} width={2500} height={2500}>
+                                        </Image> :
+                                        <Image 
+                                            src={altImg}
+                                            alt={`${post.title.rendered}`} width={2500} height={2500}>
+                                        </Image>
+                                    }
                                 </span>
                             </Link>
                             <div>
