@@ -9,10 +9,11 @@ import userImg from "../../../../../../public/images/user.webp"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faChevronDown, faDollar, faHourglass1, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
 import dynamic from 'next/dynamic'
+import Insructor from '@/components/Insructor/Insructor'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 const CourseId = ({
@@ -141,6 +142,7 @@ const CourseId = ({
                 }
                 </ul>
             </div>
+            <Insructor></Insructor>
           </div>
           <div className={styles.fixed}>
             <div className={styles.img}>
@@ -157,7 +159,7 @@ const CourseId = ({
                   <h5>{course.innerPage.details.location}</h5>
                 </li>
                 <li>
-                  <span><FontAwesomeIcon icon={faClock} /></span>
+                  <span><FontAwesomeIcon icon={faHourglass1} /></span>
                   <h5>{course.innerPage.details.duration}</h5>
                 </li>
                 <li>

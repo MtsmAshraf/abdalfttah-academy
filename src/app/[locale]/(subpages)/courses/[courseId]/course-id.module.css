@@ -227,7 +227,8 @@
     margin-top: 10px;
     max-height: 0;
     overflow: hidden;
-    transition: var(--main-transition);
+    transition: var(--animation-transition);
+    transition-duration: 0.4s;
     background-color: var(--features-card-bg);
     border-radius: 0px 20px;
     padding: 0px 20px;
@@ -236,8 +237,9 @@
     padding: 10px 20px;
     max-height: 600px;
     margin-bottom: 20px;
-    transition: var(--animation-transition);
-    transition-duration: 0.4s;
+    /* transition: var(--animation-transition); */
+    /* transition-duration: 1s !important; */
+    transition-duration: 0.8s;
 }
 .course > div:nth-child(2) .scroll > div .content > li ul li{
     margin-bottom: 5px;

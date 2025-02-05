@@ -1,0 +1,134 @@
+.insructor{
+    border-top: 1px solid var(--main-light-color);
+    padding-top: 20px;
+}
+.insructor .details{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.insructor .details .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    width: 260px;
+}
+.insructor .details .img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    border: 1px solid var(--main-light-color);
+    box-shadow: var(--main-shadow);
+    background-color: var(--main-color);
+}
+.insructor .details .img img{
+    object-fit: contain;
+    height: 100%;
+}
+.insructor .details .profile h3{
+    color: var(--important-text-color);
+    color: #fff;
+    background-image: var(--main-heading-gradient);
+    padding: 2px 20px;
+    border-radius: 20px;
+    /* margin-bottom: 10px; */
+}
+.insructor .details .profile span{
+    font-size: 14px;
+}
+.insructor .details .text{
+}
+.insructor .details .text p{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    background-color: var(--features-card-bg);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    width: fit-content;
+}
+.insructor .details .text p span{
+    padding: 5px 20px 5px 10px;
+}
+.insructor .details .text div{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: var(--features-card-bg);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    width: fit-content;
+    /* gap: 10px; */
+}
+.insructor .details .text div{
+}
+.insructor .details .text div span{
+    padding: 5px 20px 5px 10px;
+}
+.insructor .details .text svg{
+    border: 1px solid var(--main-light-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    background-image: var(--main-heading-gradient);
+    color: #fff;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .insructor .details{
+        flex-direction: column;
+        align-items: center;
+    }
+    .insructor .details .profile{
+        width: 100%;
+    }
+    .insructor .details .text p,
+    .insructor .details .text div{
+        margin-right: auto;
+        margin-left: auto;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        background-color: transparent;
+    }
+    
+    .insructor .details .text p span,
+    .insructor .details .text div span{
+        background-color: var(--features-card-bg);
+        padding: 5px 20px !important;
+        border-radius: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .insructor .details{
+        flex-direction: column;
+        align-items: center;
+    }
+    .insructor .details .profile{
+        width: 100%;
+    }
+    .insructor .details .text p,
+    .insructor .details .text div{
+        margin-right: auto;
+        margin-left: auto;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        background-color: transparent;
+    }
+    
+    .insructor .details .text p span,
+    .insructor .details .text div span{
+        background-color: var(--features-card-bg);
+        padding: 5px 20px !important;
+        border-radius: 20px;
+    }
+}
