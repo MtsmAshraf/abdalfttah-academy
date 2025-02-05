@@ -50,85 +50,128 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image1,
         innerPage: {
-            heading: "Welcome to the DNA Structure and Analysis Course!",
-            description: "This course is designed to provide a comprehensive understanding of DNA as the fundamental molecule of life. From its historical discovery to its intricate structure and chemical properties, participants will explore how DNA functions as the genetic blueprint of all living organisms. Throughout the course, we will examine the experimental evidence supporting DNA as the genetic material, delve into the molecular architecture of nucleic acids, and analyze the key differences between DNA and RNA. By the end, participants will have a solid grasp of DNA's role in genetics, inheritance, and molecular biology.",
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
             why: [
-                "Gain a strong foundation in *DNA structure and function*, essential for understanding genetics and molecular biology.",
-                "Explore the *historical experiments* that led to the discovery of DNA as genetic material.",
-                "Understand the differences between *DNA and RNA*, and how they encode genetic information.",
-                "Learn about *nucleic acid chemistry, base pairing, and DNA stability* with real scientific examples.",
-                "Perfect for students, researchers, and professionals looking to strengthen their knowledge of molecular biology."
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
             ],
             content: [
                 {
-                    button: "Introduction to DNA Structure",
+                    button: "Introduction to DNA Replication",
                     subList: [
-                        "Characteristics of Genetic Material",
-                        "Replication, Storage, Expression, and Variation by Mutation"
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
                     ]
                 },
                 {
-                    button: "Historical Perspectives on Genetic Material",
+                    button: "Theoretical Models of DNA Replication",
                     subList: [
-                        "Early Theories: Protein vs. DNA as Genetic Material",
-                        "Avery, MacLeod, and McCarty Experiment",
-                        "Griffith’s Transformation Experiments",
-                        "Hershey-Chase Experiment"
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
                     ]
                 },
                 {
-                    button: "Evidence Supporting DNA as Genetic Material",
+                    button: "Experimental Evidence of DNA Replication",
                     subList: [
-                        "Transformation Experiments",
-                        "Transfection Studies",
-                        "Indirect and Direct Evidence in Eukaryotes"
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
                     ]
                 },
                 {
-                    button: "RNA as Genetic Material",
+                    button: "DNA Replication in Eukaryotes",
                     subList: [
-                        "Experimental Evidence of RNA in Viruses",
-                        "Role of Retroviruses and Reverse Transcription"
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
                     ]
                 },
                 {
-                    button: "Nucleic Acid Chemistry",
+                    button: "Origins, Forks, and Units of Replication",
                     subList: [
-                        "Structure of DNA and RNA",
-                        "Nucleotides, Nucleosides, and Phosphates",
-                        "Polynucleotides and DNA Stability"
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
                     ]
                 },
                 {
-                    button: "The DNA Double Helix",
+                    button: "DNA Synthesis Mechanisms in Bacteria",
                     subList: [
-                        "Chargaff’s Base Composition Studies",
-                        "X-ray Diffraction and Rosalind Franklin’s Contribution",
-                        "Watson and Crick Model of DNA Structure"
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
                     ]
                 },
                 {
-                    button: "Molecular Stability of DNA",
+                    button: "Key Enzymes and Proteins in DNA Replication",
                     subList: [
-                        "Hydrogen Bonding in Base Pairs",
-                        "Importance of Sugar-Phosphate Backbone",
-                        "Alternative DNA Forms (A-DNA, B-DNA, Z-DNA)"
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
                     ]
                 },
                 {
-                    button: "Structure of RNA and Its Types",
+                    button: "Initiation of DNA Synthesis",
                     subList: [
-                        "Ribosomal RNA (rRNA)",
-                        "Messenger RNA (mRNA)",
-                        "Transfer RNA (tRNA)"
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
                     ]
                 },
             ],
             who: [
-                "Undergraduate and graduate students* in biology, biotechnology, genetics, and related fields.",
-                "Researchers and professionals* seeking a refresher on DNA structure and analysis.",
-                "Science enthusiasts* curious about how genetic information is stored and transmitted.",
-                "Aspiring geneticists and bioinformaticians* who want a strong molecular foundation."
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
             ],
             people: [
                 {
@@ -221,6 +264,129 @@ const allCourses : Course[] = [
         price: "Free",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -312,6 +478,129 @@ const allCourses : Course[] = [
         price: "Coming Soon",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -403,6 +692,129 @@ const allCourses : Course[] = [
         price: "Upon Request",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -494,6 +906,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -585,6 +1120,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -676,6 +1334,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -767,6 +1548,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -858,6 +1762,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -949,6 +1976,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
@@ -1678,6 +2828,129 @@ const allCourses : Course[] = [
         price: "200.00$ USD",
         src: image2,
         innerPage: {
+            details: {
+                noOfVideos: "14",
+                duration: "4.5 hours",
+                location: "Online",
+                price: "Free"
+            },
+            heading: "Welcome to the DNA Replication Course!",
+            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            why: [
+                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            ],
+            content: [
+                {
+                    button: "Introduction to DNA Replication",
+                    subList: [
+                        "Importance of Genetic Continuity",
+                        "Semiconservative Replication",
+                        "DNA Synthesis Mechanisms"
+                    ]
+                },
+                {
+                    button: "Theoretical Models of DNA Replication",
+                    subList: [
+                        "Semiconservative Replication",
+                        "Conservative Replication",
+                        "Dispersive Replication"
+                    ]
+                },
+                {
+                    button: "Experimental Evidence of DNA Replication",
+                    subList: [
+                        "The Meselson–Stahl Experiment",
+                        "Isotopes in DNA Replication",
+                        "Buoyant Density Centrifugation"
+                    ]
+                },
+                {
+                    button: "DNA Replication in Eukaryotes",
+                    subList: [
+                        "Taylor–Woods–Hughes Experiment",
+                        "Autoradiography and Replication Evidence"
+                    ]
+                },
+                {
+                    button: "Origins, Forks, and Units of Replication",
+                    subList: [
+                        "Origin of Replication (oriC)",
+                        "Bidirectional Replication",
+                        "Bidirectional Replication"
+                    ]
+                },
+                {
+                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    subList: [
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Key Enzymes and Proteins in DNA Replication",
+                    subList: [
+                        "DNA Helicase and Unwinding of the Helix",
+                        "Single-Stranded Binding Proteins (SSBs)",
+                        "DNA Gyrase and Topoisomerases"
+                    ]
+                },
+                {
+                    button: "Initiation of DNA Synthesis",
+                    subList: [
+                        "RNA Primers and Primase Activity",
+                        "Continuous and Discontinuous DNA Synthesis",
+                        "Okazaki Fragments and Lagging Strand"
+                    ]
+                },
+                {
+                    button: "Concurrent Synthesis of Leading and Lagging Strands",
+                    subList: [
+                        "The Role of the Holoenzyme in Synthesis",
+                        "The Donut-Shaped Sliding DNA Clamp"
+                    ]
+                },
+                {
+                    button: "Proofreading and Mismatch Repair",
+                    subList: [
+                        "Error Rate in DNA Polymerase III",
+                        "Exonuclease Activity in Proofreading"
+                    ]
+                },
+                {
+                    button: "Eukaryotic DNA Replication",
+                    subList: [
+                        "Differences Between Prokaryotic and Eukaryotic Replication",
+                        "Multiple Replication Origins in Eukaryotes",
+                        "Role of Origin Recognition Complex (ORC)"
+                    ]
+                },
+                {
+                    button: "Regulation of DNA Replication",
+                    subList: [
+                        "Cell-Cycle Kinases and Replication Control",
+                        "Polymerase Switching Mechanism"
+                    ]
+                },
+                {
+                    button: "Telomeres and Chromosome End Replication",
+                    subList: [
+                        "Role of Telomeres in Stability and Replication",
+                        "Telomerase Function and Structure (TERC & TERT)",
+                        "Prevention of Chromosome Shortening"
+                    ]
+                },
+            ],
+            who: [
+                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
+                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
+                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
+                "*Anyone interested in the molecular basis of heredity and cell division."
+            ],
             people: [
                 {
                     id: "10",
