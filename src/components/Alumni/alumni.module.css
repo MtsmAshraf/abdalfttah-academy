@@ -12,12 +12,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; 
 }
 .alumni > :nth-child(2) > div{  /* person div */
     border-radius: 20px;
     text-align: center;
-    width: 130px;
+    width: calc(100% / 5);
     transition: var(--animation-transition);
     transform: translateY(10px);
     opacity: 0;
@@ -26,11 +25,21 @@
     transform: translateY(0px);
     opacity: 1;
 }
+@media (max-width: 992px) {
+    .alumni > :nth-child(2) > div{
+        width: calc(100% / 4);
+    }
+}
+@media (max-width: 767px) {
+    .alumni > :nth-child(2) > div{
+        width: calc(100% / 3);
+    }
+}
 @media (max-width: 600px) {
     
-.alumni > :nth-child(2) > div{  /* person div */
-    width: 100px;
-}
+    .alumni > :nth-child(2) > div{  /* person div */
+        width: calc(100% / 2);
+    }
 }
 .alumni > :nth-child(2) > div > div:first-child{  /* imgs div */
     margin: 20px auto 30px;
