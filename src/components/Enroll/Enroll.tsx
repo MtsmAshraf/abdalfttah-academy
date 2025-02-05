@@ -18,7 +18,7 @@ const Enroll = ({
                     <FontAwesomeIcon icon={faEye} />
                 </span>
                 <p>
-                    Watch the full course on <span>Youtube</span>
+                    Watch the full course on <a href={courseLink} target='_blank'>Youtube</a>
                 </p>
             </li>
             <li>

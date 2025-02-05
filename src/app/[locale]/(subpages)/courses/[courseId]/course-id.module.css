@@ -139,21 +139,6 @@
         border-right: none;
     }
 }
-.course > div:nth-child(2) .fixed .enroll{
-    padding: 0;
-    height: fit-content;
-}
-.course > div:nth-child(2) .fixed .enroll > a{
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    gap: 10px;
-    margin-left: auto;    
-    margin-right: auto;    
-}
-.course > div:nth-child(2) .fixed .enroll > a:hover{
-    gap: 20px;
-}
 .course > div:nth-child(2) .scroll > div{
     margin-bottom: 20px;
 }
@@ -301,4 +286,37 @@
     .course > div:nth-child(2) .scroll > div .content > li button{
         font-size: 18px;
     }
+}
+
+.enroll > a{
+    /* background-color: #ff0033; */
+    border: 1px solid #ff0033;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30px;
+    transition: var(--main-transition);
+}
+.enroll > a svg{
+    font-size: 30px;
+    transition: var(--main-transition);
+    color: #ff0033;
+}
+.enroll > a span{
+    transition: var(--main-transition);
+    font-size: 20px;
+}
+.enroll > a:hover{
+    background-color: #ff0033;
+    box-shadow: 0px 0px 8px 5px #ff1e4b;
+}
+.enroll > a:hover svg{
+    color: #fff;
+}
+.enroll > a:hover span{
+    color: #fff;
 }

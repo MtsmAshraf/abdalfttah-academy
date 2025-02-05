@@ -44,6 +44,7 @@
 .enroll ul li p a{
     color: var(--important-text-color);
     text-decoration: underline;
+    font-weight: bold;
 }
 .enroll ul li p a:hover{
     color: var(--main-light-color);

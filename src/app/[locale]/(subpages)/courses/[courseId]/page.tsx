@@ -9,12 +9,13 @@ import userImg from "../../../../../../public/images/user.webp"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faChevronDown, faDollar, faHourglass1, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faDollar, faHourglass1, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
 import dynamic from 'next/dynamic'
 import Insructor from '@/components/Insructor/Insructor'
 import Enroll from '@/components/Enroll/Enroll'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 const CourseId = ({
@@ -171,10 +172,10 @@ const CourseId = ({
               </ul>
             </div>
             <div className={styles.enroll}>
-              <MainLink href='/' >
-                <span>Enroll</span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </MainLink>
+              <a href={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"} target='_blank' >
+                <FontAwesomeIcon icon={faYoutube} />
+                <span>Start Learning!</span>
+              </a>
             </div>
           </div>
         </div>
