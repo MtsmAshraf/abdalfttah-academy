@@ -74,12 +74,12 @@ const Contact = ({
                         <FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon>
                     </span>
                     <address>
-                        {t("Address.Details.Address")}, {t("Address.Details.City")}, {t("Address.Details.Gov")}, {t("Address.Details.Country")}
+                        {t("Address.Details.City")}, {t("Address.Details.Country")}
                     </address>
                 </div>
             </div>
             <div className={styles.location}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220413.6213666704!2d31.54108708502556!3d30.323574977834625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f8075f7c0ecadb%3A0xc54596c9cf9f7c82!2s10th%20of%20Ramadan%20City%2C%20Al-Sharqia%20Governorate!5e0!3m2!1sen!2seg!4v1738217200490!5m2!1sen!2seg" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194347.47826877935!2d-3.844346296540949!3d40.438098610766225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid%2C%20Spain!5e0!3m2!1sen!2seg!4v1738731384484!5m2!1sen!2seg" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>

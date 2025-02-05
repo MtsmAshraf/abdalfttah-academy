@@ -117,10 +117,8 @@
         "Address": {
             "Heading": "Our Place",
             "Details":  {
-                "Address": "address",
-                "City": "City",
-                "Gov": "Gov",
-                "Country": "Country"
+                "City": "Madrid",
+                "Country": "Spain"
             }
         }
     },
@@ -144,10 +142,8 @@
         "Address": {
             "Heading": "Address",
             "Details":  {
-                "Address": "Address",
-                "City": "City",
-                "Gov": "Gov",
-                "Country": "Country"
+                "City": "Madrid",
+                "Country": "Spain"
             }
         },
         "SocialMedia": {

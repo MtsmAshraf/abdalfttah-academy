@@ -40,13 +40,7 @@ const Footer = ({
                             <FontAwesomeIcon icon={faLocationPin}></FontAwesomeIcon>
                         </span>
                         <address>
-                            {t("Address.Details.Address")},
-                            <br />
-                            {t("Address.Details.City")},
-                            <br />
-                            {t("Address.Details.Gov")},
-                            <br />
-                            {t("Address.Details.Country")}
+                            {t("Address.Details.City")}, {t("Address.Details.Country")}
                         </address>
                     </div>
                     <div>

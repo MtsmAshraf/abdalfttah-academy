@@ -117,10 +117,8 @@
         "Address": {
             "Heading": "مكاننا",
             "Details":  {
-                "Address": "العنوان",
-                "City": "المدينة",
-                "Gov": "المحافظة",
-                "Country": "الدولة"
+                "City": "مدريد",
+                "Country": "إسبانيا"
             }
         }
     },
@@ -144,10 +142,8 @@
         "Address": {
             "Heading": "مكاننا",
             "Details":  {
-                "Address": "العنوان",
-                "City": "المدينة",
-                "Gov": "المحافظة",
-                "Country": "الدولة"
+                "City": "مدريد",
+                "Country": "إسبانيا"
             }
         },
         "SocialMedia": {
