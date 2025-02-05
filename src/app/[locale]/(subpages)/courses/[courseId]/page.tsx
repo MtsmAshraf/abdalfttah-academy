@@ -14,6 +14,7 @@ import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
 import dynamic from 'next/dynamic'
 import Insructor from '@/components/Insructor/Insructor'
+import Enroll from '@/components/Enroll/Enroll'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 const CourseId = ({
@@ -143,6 +144,7 @@ const CourseId = ({
                 </ul>
             </div>
             <Insructor></Insructor>
+            <Enroll courseLink={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"}></Enroll>
           </div>
           <div className={styles.fixed}>
             <div className={styles.img}>

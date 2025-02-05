@@ -1,0 +1,82 @@
+.enroll{
+    padding-top: 20px;
+    border-top: 1px solid var(--main-light-color);
+}
+.enroll h2{
+    margin-right: auto;
+    margin-left: auto;
+}
+.enroll > p span{
+    font-weight: bold;
+    color: var(--important-text-color);
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.enroll ul{
+    margin-top: 20px;
+}
+.enroll ul li{
+    display: flex;
+    align-items: center;
+    background-color: var(--features-card-bg);
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+.enroll ul li > span{
+    background-image: var(--main-heading-gradient);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+}
+.enroll ul li p{
+    padding: 5px 20px 5px 10px;
+    width: calc(100% - 70px);
+}
+.enroll ul li p span{
+    font-weight: bold;
+    color: var(--important-text-color);
+}
+.enroll ul li p a{
+    color: var(--important-text-color);
+    text-decoration: underline;
+}
+.enroll ul li p a:hover{
+    color: var(--main-light-color);
+}
+.enroll > a{
+    /* background-color: #ff0033; */
+    border: 1px solid #ff0033;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30px;
+    transition: var(--main-transition);
+}
+.enroll > a svg{
+    font-size: 30px;
+    transition: var(--main-transition);
+    color: #ff0033;
+}
+.enroll > a span{
+    transition: var(--main-transition);
+    font-size: 20px;
+}
+.enroll > a:hover{
+    background-color: #ff0033;
+    box-shadow: 0px 0px 8px 5px #ff1e4b;
+}
+.enroll > a:hover svg{
+    color: #fff;
+}
+.enroll > a:hover span{
+    color: #fff;
+}

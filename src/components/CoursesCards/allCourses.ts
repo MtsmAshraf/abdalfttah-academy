@@ -38,6 +38,7 @@ export type Course = {
         content: Content[],
         who: string[],
         people: Person[],
+        courseLink?: string,
     }
 }
 
@@ -1538,7 +1539,7 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
-            ] 
+            ]
         }
     },
     {
@@ -2394,7 +2395,8 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
-            ] 
+            ],
+            courseLink: "https://youtube.com/playlist?list=PLC4LFcwOQGSH8NbGsisaJiyhxWQ5MVF1l&si=-sRgDZ6lddHRiync",
         }
     },
     {
@@ -2571,7 +2573,8 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
-            ] 
+            ],
+            courseLink: "https://youtube.com/playlist?list=PLC4LFcwOQGSFSXo72eTw04tf7DMzyeuj_&si=vvQCCsNUEnnxdro0",
         }
     },
     {
@@ -2818,7 +2821,8 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
-            ] 
+            ],
+            courseLink: "https://youtube.com/playlist?list=PLC4LFcwOQGSHGArTtrYu4U0iP9LbBEO_Z&si=dPNNVGF3WMzop-wu",
         }
     },
     {

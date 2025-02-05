@@ -41,6 +41,8 @@
     color: #fff;
     transition: var(--animation-transition);
     transition-duration: 0.5s;
+    font-family: "Zain", sans-serif;
+    direction: rtl;
 }
 .card .cardContent > a:hover h3{
     top: 100%;
@@ -58,10 +60,6 @@
     justify-content: center;
     background-color: #fff;
 }
-.card .cardContent > a span.placeholder img{
-    background-color: red;
-    height: 10px;
-}
 .card .cardContent > a span img{
     height: 100%;
     object-fit: contain;
@@ -73,6 +71,8 @@
 .card .cardContent > div p{
     font-size: 14px;
     line-height: 1.6;
+    font-family: "Zain", sans-serif;
+    direction: rtl;
 }
 .card.ar .cardContent > div p{
     font-size: 16px;

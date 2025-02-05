@@ -162,7 +162,7 @@
     background-image: var(--main-heading-gradient);
     width: fit-content;
     padding: 2px 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     color: #fff;
     font-size: 20px;
 }
