@@ -1,7 +1,7 @@
 "use client"
 import React, { use } from 'react'
 import styles from "./course-id.module.css"
-import allCourses, { Course, Person } from '@/components/CoursesCards/allCourses'
+import allCourses, { Content, Course, Person } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
@@ -9,7 +9,7 @@ import userImg from "../../../../../../public/images/user.webp"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faCalendar, faChevronDown, faClock, faDollar, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
 import dynamic from 'next/dynamic'
@@ -29,6 +29,22 @@ const CourseId = ({
         price: "",
         src: altImg,
         innerPage: {
+          details: {
+              noOfVideos: "999",
+              duration: "999",
+              location: "location",
+              price: "9999999"
+          },
+            heading: "heading",
+            description: "description",
+            why: ["String"],
+            content: [
+              {
+                button: "string",
+                subList: ["String"]
+              }
+            ],
+            who: ["String"],
             people: [
               {
                 id: "string",
@@ -49,149 +65,81 @@ const CourseId = ({
         <div className="container">
           <div className={styles.scroll}>
             <div className={styles.description}>
-              <h2>Desciption</h2>
-              <p>Welcome to the Introduction to Cancer Biology course! This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.</p>
-            </div>
-            <div>
-            <ul className={styles.more}>
-                <li>
-                  <span>Weekly Lecture:</span>
-                  <p>One 3-hour session covering core concepts</p>
-                </li>
-                <li>
-                  <span>Weekly Tutorial:</span>
-                  <p>One 1-hour session each week for in-depth discussions on advanced topics</p>
-                </li>
-                <li>
-                  <span>Weekly One-to-One Meetings:</span>
-                  <p>One 1-hour session available upon request for personalized guidance or deeper exploration of topics</p>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p>
-                This course aims to equip you with knowledge and insights that will enable you to understand and interpret cancer biology research effectively. The course materials, assignments, and interactive sessions are designed to ensure a solid grasp of key topics and the latest developments in the field.
-              </p>
+              <h2>{course.innerPage.heading}</h2>
+              <p>{course.innerPage.description}</p>
             </div>
             <div>
               <h2>
-                Who Can Join the Course?
-              </h2>
-              <ul className={styles.more}>
-                  <li>
-                    <span>Undergraduate and Graduate Students:</span>
-                    <p>Ideal for those studying biomedical sciences, biotechnology, or related fields.</p>
-                  </li>
-                  <li>
-                    <span>Early Career Researchers:</span>
-                    <p>Suitable for researchers new to cancer biology or those transitioning into this field.</p>
-                  </li>
-                  <li>
-                    <span>Enthusiastic Learners:</span>
-                    <p>Anyone with a passion for understanding the complexities of cancer at the cellular level.</p>
-                  </li>
+                Why Take This Course?
+                </h2>
+                <ul className={styles.more}>
+                  {
+                    course.innerPage.why.map((li: string, index: number) => {
+                      const splittedLi = li.split("*");
+                      const text1 = splittedLi[0];
+                      const boldText1 = splittedLi[1];
+                      const text2 = splittedLi[2];
+                      const boldText2 = splittedLi[3] ? splittedLi[3] : null;
+                      return(
+                        <li key={index}>
+                          <p>
+                            {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
+                          </p>
+                        </li>
+                      )
+                    })
+                  }
                 </ul>
-                <p>
-                  No prior experience in cancer research is required, though a basic understanding of Molecular Biology will be helpful!
-                </p>
             </div>
             <div>
               <h2>Course Content</h2>
               <ol className={styles.content} id='content'>
-                <li>
-                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                    Introduction to Cancer <FontAwesomeIcon icon={faChevronDown} />
-                  </button>
-                  <ul>
-                    <li>
-                      <p>
-                        What is cancer?
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Basic cell biology of cancer development
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Differences between normal cells and cancer cells
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Introduction to tumor progression
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                    Basics of Cell Biology and the Cell Cycle <FontAwesomeIcon icon={faChevronDown} />
-                  </button>
-                  <ul>
-                    <li>
-                      <p>
-                        Introduction to cell structure and function 
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Overview of the cell cycle and its regulation
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        How uncontrolled cell cycle leads to cancer
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                    Tumor Types and Origins <FontAwesomeIcon icon={faChevronDown} />
-                  </button>
-                  <ul>
-                    <li>
-                      <p>
-                        Origin of tumors from normal tissues
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Classification of tumors: Benign vs. Malignant
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Histopathology and architecture of tumors
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Epithelial origin of carcinomas
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                    Hallmarks of Cancer <FontAwesomeIcon icon={faChevronDown} />
-                  </button>
-                  <ul>
-                    <li>
-                      <p>
-                        The "Hallmarks of Cancer" framework by Hanahan and Weinberg
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Key traits of cancer cells: sustaining proliferative signaling, evading growth suppressors, resisting cell death, enabling replicative immortality, and more
-                      </p>
-                    </li>
-                  </ul>
-                </li>
+                {
+                  course.innerPage.content.map((part: Content, index: number) => {
+                    return(
+                      <li key={index}>
+                        <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                          {part.button} <FontAwesomeIcon icon={faChevronDown} />
+                        </button>
+                        <ul>
+                          {part.subList.map((li: string, index: number) => {
+                            return(
+                              <li key={index}>
+                                <p>
+                                  {li}
+                                </p>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      </li>
+                    )
+                  })
+                }
               </ol>
+            </div>
+            <div>
+              <h2>
+                Who Should Enroll?
+              </h2>
+              <ul className={styles.more}>
+                {
+                  course.innerPage.who.map((li: string, index: number) => {
+                    const splittedLi = li.split("*");
+                    const text1 = splittedLi[0];
+                    const boldText1 = splittedLi[1];
+                    const text2 = splittedLi[2];
+                    const boldText2 = splittedLi[3] ? splittedLi[3] : null;
+                    return(
+                      <li key={index}>
+                        <p>
+                          {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
+                        </p>
+                      </li>
+                    )
+                  })
+                }
+                </ul>
             </div>
           </div>
           <div className={styles.fixed}>
@@ -201,20 +149,20 @@ const CourseId = ({
             <div className={styles.overview}>
               <ul className={styles.basicUl}>
                 <li>
-                  <span><FontAwesomeIcon icon={faCalendar} /></span>
-                  <h5>25-01-2025</h5>
+                  <span><FontAwesomeIcon icon={faVideo} /></span>
+                  <h5>{course.innerPage.details.noOfVideos} Videos</h5>
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faLocationPin} /></span>
-                  <h5>Online</h5>
+                  <h5>{course.innerPage.details.location}</h5>
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faClock} /></span>
-                  <h5>6 Weeks</h5>
+                  <h5>{course.innerPage.details.duration}</h5>
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faDollar} /></span>
-                  <h5>{course.price}</h5>
+                  <h5>{course.innerPage.details.price}</h5>
                 </li>
               </ul>
             </div>

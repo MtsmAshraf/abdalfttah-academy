@@ -50,7 +50,7 @@
     text-align: center;
 }
 .course > div:nth-child(2) .fixed > div .basicUl li:not(:last-child){
-    border-right: 1px solid var(--text-color);
+    border-right: 1px solid var(--icon-color);
 }
 .course > div:nth-child(2) .fixed > div .basicUl li span{
     font-size: 30px;
@@ -76,7 +76,7 @@
     }
     .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(1),
     .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
-        border-bottom: 1px solid var(--text-color);
+        border-bottom: 1px solid var(--icon-color);
     }
     .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
         border-right: none;
@@ -84,7 +84,7 @@
 }
 @media (max-width: 992px) {
     .course > div:nth-child(2){
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .course > div:nth-child(2) .fixed{
         position: relative;
@@ -93,6 +93,24 @@
         border-bottom: 1px solid var(--main-light-color);
         top: 0;
         padding-bottom: 50px;
+        width: 100%;
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li{
+        width: calc(100% / 4);
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(1),
+    .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
+        border-right: none;
+        border-bottom: none;
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
+        border-right: none;
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li:not(:last-child){
+        border-right: none;
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li:not(:last-child){
+        border-right: 1px solid var(--icon-color);
     }
     .course .img{
         height: 400px;
@@ -104,6 +122,21 @@
         min-height: unset;
         height: fit-content;
         padding-bottom: 80px;
+    }
+}
+@media (max-width: 600px) {
+    .course > div:nth-child(2) .fixed > div .basicUl li{
+        width: calc(100% / 2);
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(1),
+    .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
+        border-bottom: 1px solid var(--icon-color);
+    }
+    .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
+        border-right: none;
     }
 }
 .course > div:nth-child(2) .fixed .enroll{
@@ -126,7 +159,17 @@
 }
 .course > div:nth-child(2) .scroll > div h2{
     margin-bottom: 16px;
-    text-decoration: underline;
+    background-image: var(--main-heading-gradient);
+    width: fit-content;
+    padding: 2px 20px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 20px;
+}
+.course > div:nth-child(2) .scroll .description h2{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
 .course > div:nth-child(2) .scroll p{
     line-height: 1.8;
@@ -168,6 +211,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     font-size: 18px;
+    text-align: left;
 }
 .course > div:nth-child(2) .scroll > div .content > li h3 svg{
     cursor: pointer;
