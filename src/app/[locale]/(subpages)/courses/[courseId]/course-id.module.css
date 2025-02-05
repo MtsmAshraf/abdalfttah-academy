@@ -175,7 +175,7 @@
     line-height: 1.8;
 }
 .course > div:nth-child(2) .more{
-    list-style: disc !important;
+    /* list-style: disc !important */
 }
 .course > div:nth-child(2) .more li{
     display: flex;
@@ -189,6 +189,7 @@
 
 .course > div:nth-child(2) .scroll > div .content{
     margin-left: 20px;
+    list-style: decimal !important;
 }
 @media (max-width: 992px) {
     
