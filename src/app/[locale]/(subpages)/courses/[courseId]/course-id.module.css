@@ -217,6 +217,7 @@
     cursor: pointer;
     font-size: 20px;
     transition: var(--animation-transition);
+    pointer-events: none;
 }
 .course > div:nth-child(2) .scroll > div .content li:has(.clicked) svg{
     transform: rotateZ(-180deg);
