@@ -5,7 +5,7 @@ import Image from 'next/image'
 import img from "../../../public/images/course.jpg"
 import MainLink from '@/components/MainLink/MainLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import styles from "./blog-cards.module.css"
 import MainHeading from '@/components/MainHeading/MainHeading'
 import BlogCard from './BlogCard/BlogCard'
@@ -14,7 +14,7 @@ import DOMPurify from 'dompurify';
 import allBlogPosts, { BlogPost } from './allBlogPosts'
 import { useTranslations } from 'next-intl'
 
-import altImg from "../../../public/images/course.jpg"
+import altImg from "../../../public/images/post-loading.jpg"
 
 
 const BlogCards = ({
@@ -159,7 +159,7 @@ const BlogCards = ({
                         <BlogCard key={post.id} lo={lo}>
                             <Link href={`/blog/${post.id}`}>
                                 <h3>{post.title.rendered}</h3>
-                                <span>
+                                <span className={featuredMedia[post.featured_media] ? "" : styles.placeholder}>
                                     {
                                         featuredMedia[post.featured_media] ? <Image 
                                         src={featuredMedia[post.featured_media].source_url}
@@ -281,9 +281,8 @@ const BlogCards = ({
                 disabled={loading}
                 onClick={() => {fetchPosts(start,end)}}
             >
-                {
-                    t("LoadMore")
-                }    
+                {!loading && t("LoadMore")} 
+                {loading && <FontAwesomeIcon icon={faSpinner} />}
             </button>
         </div> : null
         }

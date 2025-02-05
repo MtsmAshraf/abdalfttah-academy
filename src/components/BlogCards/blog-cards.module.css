@@ -37,6 +37,22 @@
 .blogCards.ar .loadMore button{
     font-family: "Zain", sans-serif;
     direction: rtl;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blogCards.ar .loadMore button svg{
+    animation: spinner 1s linear 0s infinite forwards;
+}
+@keyframes spinner {
+    0%{
+        transform: rotateZ(0);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
 }
 .blogCards .loadMore button:hover,
 .blogCards .loadMore button:focus,

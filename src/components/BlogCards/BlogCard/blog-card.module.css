@@ -58,6 +58,10 @@
     justify-content: center;
     background-color: #fff;
 }
+.card .cardContent > a span.placeholder img{
+    background-color: red;
+    height: 10px;
+}
 .card .cardContent > a span img{
     height: 100%;
     object-fit: contain;
