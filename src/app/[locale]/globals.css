@@ -99,6 +99,9 @@ body{
 ul{
   list-style: none;
 }
+li {
+  display: list-item;
+}
 img, video{
   max-width: 100%;
 }
