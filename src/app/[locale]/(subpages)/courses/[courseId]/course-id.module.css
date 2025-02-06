@@ -17,6 +17,13 @@
     top: 100px;
     left: 0;
     height: calc((100dvh - 100px));
+    transition: var(--animation-transition);
+    transform: translateX(-50px);
+    opacity: 0;
+}
+.course.loaded > div:nth-child(2) .fixed{
+    transform: translateX(0px);
+    opacity: 1;
 }
 .course .img{
     max-height: calc(100% / 2);
@@ -138,6 +145,15 @@
     .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
         border-right: none;
     }
+}
+.course > div:nth-child(2) .scroll{
+    transition: var(--animation-transition);
+    transform: translateX(50px);
+    opacity: 0;
+}
+.course.loaded > div:nth-child(2) .scroll{
+    transform: translateX(0px);
+    opacity: 1;
 }
 .course > div:nth-child(2) .scroll > div{
     margin-bottom: 20px;

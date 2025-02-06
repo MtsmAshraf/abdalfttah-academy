@@ -1,5 +1,5 @@
 "use client"
-import React, { use } from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import styles from "./course-id.module.css"
 import allCourses, { Content, Course, Person } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
@@ -23,6 +23,35 @@ const CourseId = ({
   }: Readonly<{
     params:  Promise<{courseId: string, locale: string}>
   }>) => {
+
+
+  const crs: any = useRef(null)
+  const [crsScrolled, setCrsScrolled] = useState(false)
+  
+  function getOffsetTopRelativeToWindow(element: HTMLElement | any) {
+      const rect = element.getBoundingClientRect();
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      return rect.top + scrollTop;
+  }
+  
+  const scrollCrsiSection = () => {
+  if(crs.current){
+      let headingOffsetTop = getOffsetTopRelativeToWindow(crs.current)
+      if(headingOffsetTop <= (window.scrollY + 500)){
+          setCrsScrolled(true)
+      }
+      }
+  }
+  useEffect(() => {
+      let headingOffsetTop = getOffsetTopRelativeToWindow(crs.current)
+      if(headingOffsetTop <= (window.scrollY + 500)){
+          setTimeout(() => {
+              setCrsScrolled(true)
+          }, 1800);
+      }
+      // window.addEventListener("scroll", scrollCrsiSection)
+  },[crsScrolled])
+
     const {locale} = use(params)
     const {courseId} = use(params)
     const course: Course = allCourses.find((ele) => ele.id === courseId) || {
@@ -60,8 +89,14 @@ const CourseId = ({
             ]
         }
     }
+
+    const classNames = [
+      styles.course,
+      crsScrolled ? styles.loaded : ''
+    ]
+
   return (
-    <section className={styles.course}>
+    <section ref={crs} className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
         <MainHeading>
             {course?.title}
         </MainHeading>
