@@ -16,7 +16,7 @@ const Insructor = () => {
                 </div>
                 <div>
                     <h3>Mohmed Abdalfttah</h3>
-                    <span>Instuctor</span>
+                    <span>Instructor</span>
                 </div>
             </div>
             <div className={styles.text}>
