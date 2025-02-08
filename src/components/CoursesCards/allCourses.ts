@@ -46,7 +46,7 @@ export type Course = {
 const allCourses : Course[] = [
     {
         id: "1",
-        title: "Cancer Biology",
+        title: "Intorduction to Cancer Biology",
         category: "Advanced Biology",
         price: "200.00$ USD",
         src: image1,
@@ -57,8 +57,8 @@ const allCourses : Course[] = [
                 location: "Online",
                 price: "Free"
             },
-            heading: "Welcome to the DNA Replication Course!",
-            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            heading: "Welcome to the Introduction to Cancer Biology Course!",
+            description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
             why: [
                 "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
                 "Explore the *key enzymes and molecular mechanisms* involved in replication.",
@@ -68,15 +68,28 @@ const allCourses : Course[] = [
             ],
             content: [
                 {
-                    button: "Introduction to DNA Replication",
+                    button: "Week one: *Fundamentals of Cancer Biology and Classification*",
                     subList: [
-                        "Importance of Genetic Continuity",
-                        "Semiconservative Replication",
-                        "DNA Synthesis Mechanisms"
+                        "What is Cancer?",
+                        "Basic Cell Biology of Cancer Development",
+                        "Basics of Cell Biology and the Cell Cycle",
+                        "Overview of the Cell Cycle and Its Regulation",
+                        "How Uncontrolled Cell Cycle Leads to Cancer",
+                        "Differences Between Normal Cells and Cancer Cells",
+                        "Understanding cancer prevalence, incidence, and survival rates",
+                        "Key trends in cancer statistics by type and region",
+                        "Origin of Tumors from Normal Tissues",
+                        "Tumors Originate from Various Specialized Cell Types",
+                        "Major Types of Cancer",
+                        "Classification of Tumors: Benign vs. Malignant",
+                        "Histopathology and Architecture of Tumors",
+                        "Epithelial Origin of Carcinomas",
+                        "Carcinomas and Epithelial Tissue Structure",
+                        "Other Tumor Types: Sarcomas, Hematopoietic, and Neuroectodermal Tumors"
                     ]
                 },
                 {
-                    button: "Theoretical Models of DNA Replication",
+                    button: "Week two: *Cancer Incidence and Causes*",
                     subList: [
                         "Semiconservative Replication",
                         "Conservative Replication",
@@ -84,7 +97,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Experimental Evidence of DNA Replication",
+                    button: "Week Three: *Cancers seem to develop progressively*",
                     subList: [
                         "The Meselson–Stahl Experiment",
                         "Isotopes in DNA Replication",
@@ -92,14 +105,14 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "DNA Replication in Eukaryotes",
+                    button: "Week four: 14 Hallmarks of Cancer",
                     subList: [
                         "Taylor–Woods–Hughes Experiment",
                         "Autoradiography and Replication Evidence"
                     ]
                 },
                 {
-                    button: "Origins, Forks, and Units of Replication",
+                    button: "Week five: Tumor Viruses and Genetic Factors in Cancer",
                     subList: [
                         "Origin of Replication (oriC)",
                         "Bidirectional Replication",
@@ -107,7 +120,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "DNA Synthesis Mechanisms in Bacteria",
+                    button: "Week six: *The Process and Impact of Cancer Metastasis*",
                     subList: [
                         "DNA Polymerases I, II, III, IV, and V",
                         "The DNA Pol III Holoenzyme",
@@ -115,64 +128,18 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Key Enzymes and Proteins in DNA Replication",
+                    button: "Week Seven: Cancer Treatments and Their Drugs",
                     subList: [
-                        "DNA Helicase and Unwinding of the Helix",
-                        "Single-Stranded Binding Proteins (SSBs)",
-                        "DNA Gyrase and Topoisomerases"
+                        "DNA Polymerases I, II, III, IV, and V",
+                        "The DNA Pol III Holoenzyme",
+                        "Sliding DNA Clamp"
                     ]
-                },
-                {
-                    button: "Initiation of DNA Synthesis",
-                    subList: [
-                        "RNA Primers and Primase Activity",
-                        "Continuous and Discontinuous DNA Synthesis",
-                        "Okazaki Fragments and Lagging Strand"
-                    ]
-                },
-                {
-                    button: "Concurrent Synthesis of Leading and Lagging Strands",
-                    subList: [
-                        "The Role of the Holoenzyme in Synthesis",
-                        "The Donut-Shaped Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Proofreading and Mismatch Repair",
-                    subList: [
-                        "Error Rate in DNA Polymerase III",
-                        "Exonuclease Activity in Proofreading"
-                    ]
-                },
-                {
-                    button: "Eukaryotic DNA Replication",
-                    subList: [
-                        "Differences Between Prokaryotic and Eukaryotic Replication",
-                        "Multiple Replication Origins in Eukaryotes",
-                        "Role of Origin Recognition Complex (ORC)"
-                    ]
-                },
-                {
-                    button: "Regulation of DNA Replication",
-                    subList: [
-                        "Cell-Cycle Kinases and Replication Control",
-                        "Polymerase Switching Mechanism"
-                    ]
-                },
-                {
-                    button: "Telomeres and Chromosome End Replication",
-                    subList: [
-                        "Role of Telomeres in Stability and Replication",
-                        "Telomerase Function and Structure (TERC & TERT)",
-                        "Prevention of Chromosome Shortening"
-                    ]
-                },
+                }
             ],
             who: [
-                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
-                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
-                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Undergraduate and Graduate Students:* Ideal for those studying biomedical sciences, biotechnology, or related fields.",
+                "*Early Career Researchers:* Suitable for researchers new to cancer biology or those transitioning into this field.",
+                "*Enthusiastic Learners:* Anyone with a passion for understanding the complexities of cancer at the cellular level."
             ],
             people: [
                 {
