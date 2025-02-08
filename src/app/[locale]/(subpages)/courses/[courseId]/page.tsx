@@ -1,7 +1,7 @@
 "use client"
 import React, { use, useEffect, useRef, useState } from 'react'
 import styles from "./course-id.module.css"
-import allCourses, { Content, Course, Person } from '@/components/CoursesCards/allCourses'
+import allCourses, { Content, ContentList, Course, Person, WhoNote } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
@@ -9,7 +9,7 @@ import userImg from "../../../../../../public/images/user.webp"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faDollar, faHourglass1, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faClock, faDollar, faHourglass1, faLocationPin, faVideo } from '@fortawesome/free-solid-svg-icons'
 import MainLink from '@/components/MainLink/MainLink'
 import CoursesCards from '@/components/CoursesCards/CoursesCards'
 import dynamic from 'next/dynamic'
@@ -140,12 +140,23 @@ const CourseId = ({
                           {part.button} <FontAwesomeIcon icon={faChevronDown} />
                         </button>
                         <ul>
-                          {part.subList.map((li: string, index: number) => {
+                          {part.subList.map((li: string | ContentList, index: number) => {
                             return(
                               <li key={index}>
-                                <p>
-                                  {li}
-                                </p>
+                                  {typeof(li) === "object" ? 
+                                    <>
+                                      <p>{li.heading}</p>
+                                      <ul>
+                                        {li.list.map((item: string, index) => {
+                                          return(
+                                            <li key={index}>
+                                              {item}
+                                            </li>
+                                          )
+                                        })}
+                                      </ul>
+                                    </>
+                                    : <p>{li}</p>}
                               </li>
                             )
                           })}
@@ -162,19 +173,29 @@ const CourseId = ({
               </h2>
               <ul className={styles.more}>
                 {
-                  course.innerPage.who.map((li: string, index: number) => {
-                    const splittedLi = li.split("*");
-                    const text1 = splittedLi[0];
-                    const boldText1 = splittedLi[1];
-                    const text2 = splittedLi[2];
-                    const boldText2 = splittedLi[3] ? splittedLi[3] : null;
-                    return(
-                      <li key={index}>
-                        <p>
-                          {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
-                        </p>
-                      </li>
-                    )
+                  course.innerPage.who.map((li: string | WhoNote, index: number) => {
+                    if(typeof(li) === "string"){
+                      const splittedLi = li.split("*");
+                      const text1 = splittedLi[0];
+                      const boldText1 = splittedLi[1];
+                      const text2 = splittedLi[2];
+                      const boldText2 = splittedLi[3] ? splittedLi[3] : null;
+                      return(
+                        <li key={index}>
+                          <p>
+                            - {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
+                          </p>
+                        </li>
+                      )
+                    }else if(typeof(li) === "object"){
+                      return(
+                        <li key={index}>
+                          <p>
+                            {li.note}
+                          </p>
+                        </li>
+                      )
+                    }
                   })
                 }
                 </ul>
@@ -189,8 +210,19 @@ const CourseId = ({
             <div className={styles.overview}>
               <ul className={styles.basicUl}>
                 <li>
-                  <span><FontAwesomeIcon icon={faVideo} /></span>
-                  <h5>{course.innerPage.details.noOfVideos} Videos</h5>
+                  {
+                    course.innerPage.details.noOfVideos ? 
+                    <>
+                      <span><FontAwesomeIcon icon={faVideo} /></span>
+                      <h5>{course.innerPage.details.noOfVideos} Videos</h5>
+                    </>
+                    :
+                    course.innerPage.details.when ? 
+                    <>
+                      <span><FontAwesomeIcon icon={faClock} /></span>
+                      <h5>{course.innerPage.details.when}</h5>
+                    </> : null
+                  }
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faLocationPin} /></span>

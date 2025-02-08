@@ -15,10 +15,15 @@ export type Person = {
 
 export type Content = {
     button: string,
-    subList: string[]
+    subList: (string | ContentList)[]
 }
-
-
+export type ContentList = {
+    heading: string,
+    list: string[]
+}
+export type WhoNote = {
+    note: string
+}
 export type Course = {
     id: string,
     title: string,
@@ -27,16 +32,17 @@ export type Course = {
     src: StaticImageData,
     innerPage: {
         details: {
-            noOfVideos: string,
-            duration: string,
-            location: string,
-            price: string
+            noOfVideos?: string,
+            when?: string,
+            duration?: string,
+            location?: string,
+            price?: string
         },
         heading: string,
         description: string,
         why: string[],
         content: Content[],
-        who: string[],
+        who: (string | WhoNote)[],
         people: Person[],
         courseLink?: string,
     }
@@ -52,10 +58,10 @@ const allCourses : Course[] = [
         src: image1,
         innerPage: {
             details: {
-                noOfVideos: "14",
+                when: "20-06-2025",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                price: "100 USD"
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
@@ -91,55 +97,155 @@ const allCourses : Course[] = [
                 {
                     button: "Week two: *Cancer Incidence and Causes*",
                     subList: [
-                        "Semiconservative Replication",
-                        "Conservative Replication",
-                        "Dispersive Replication"
+                        "Variability in Cancer Frequency Across Populations",
+                        "Global Variability in Cancer Incidence",
+                        "General Causes of Cancer",
+                        "Cancer Risk and Lifestyle Factors",
+                        "Historical Evidence of Cancer Associations",
+                        "Discovery of Radiation Effects",
+                        "Smoking and Cancer",
+                        "Coal Tar and Skin Cancer",
+                        "Viruses as Cancer Agents",
+                        "The Role of Genetics in Cancer",
+                        "Carcinogenesis and Mutagenesis"
                     ]
                 },
                 {
                     button: "Week Three: *Cancers seem to develop progressively*",
                     subList: [
-                        "The Meselson–Stahl Experiment",
-                        "Isotopes in DNA Replication",
-                        "Buoyant Density Centrifugation"
+                        "Normal Cells",
+                        "Hyperplasia",
+                        "Dysplasia",
+                        "Carcinoma in Situ",
+                        "Invasive Carcinoma",
+                        "Cancer Requires Multiple Mutations",
+                        "Single Mutation Initiation",
+                        "Accumulation of Chromosomal Alterations",
+                        "High Chromosomal Instability",
+                        "Gene Mutations",
+                        "Somatic Mutations",
+                        "Germline Mutations",
+                        "Two-Hit Hypothesis",
+                        "Types of DNA damage and common causes",
+                        "Mechanisms cells use to repair damaged DNA",
                     ]
                 },
                 {
                     button: "Week four: 14 Hallmarks of Cancer",
                     subList: [
-                        "Taylor–Woods–Hughes Experiment",
-                        "Autoradiography and Replication Evidence"
+                        "Sustaining Proliferative Signaling",
+                        "Evading Growth Suppressors",
+                        "Resisting Cell Death",
+                        "Tumor-Promoting Inflammation",
+                        "Enabling Replicative Immortality",
+                        "Senescent Cells",
+                        "Deregulating Cellular Metabolism",
+                        "Avoiding Immune Destruction",
+                        "Inducing or Accessing Vasculature",
+                        "Activating Invasion & Metastasis",
+                        "Unlocking Phenotypic Plasticity",
+                        "Genome Instability & Mutation",
+                        "Nonmutational Epigenetic Reprogramming",
+                        "Polymorphic Microbiomes",
                     ]
                 },
                 {
                     button: "Week five: Tumor Viruses and Genetic Factors in Cancer",
                     subList: [
-                        "Origin of Replication (oriC)",
-                        "Bidirectional Replication",
-                        "Bidirectional Replication"
+                        "The Role of Tumor Viruses in Cancer Research",
+                        "Early Hypotheses on Tumor Viruses",
+                        "Challenges to the Viral Theory of Cancer",
+                        "The Retrovirus Hypothesis and Cancer",
+                        "Human Cancer and Endogenous Retroviruses (ERVs)",
+                        "Why the Tumor Virus Hypothesis Failed",
+                        "Oncogenes: Drivers of Uncontrolled Growth",
+                        "Tumor Suppressor Genes: The Guardians Against Cancer",
                     ]
                 },
                 {
                     button: "Week six: *The Process and Impact of Cancer Metastasis*",
                     subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
+                        "What is Metastasis?",
+                        "Primary Tumors vs. Metastases",
+                        "The Danger of Metastasis",
+                        "Local Invasion",
+                        "Loss of Cell Adhesion",
+                        "Epithelial-to-Mesenchymal Transition (EMT)",
+                        "Degradation of Extracellular Matrix",
+                        "Intravasation",
+                        "Circulatory Survival",
+                        "Platelet Cloaking",
+                        "Immune Evasion",
+                        "Arrest at Distant Site",
+                        "Extravasation",
+                        "Survival in New Microenvironment",
+                        "Dormancy or Micrometastasis Formation",
+                        "Reactivation and Proliferation",
+                        "Angiogenesis",
+                        "Colonization and Organ-Specific Growth",
                     ]
                 },
                 {
                     button: "Week Seven: Cancer Treatments and Their Drugs",
                     subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
+                        {
+                            heading: "*Surgery & Radiation*",
+                            list:[
+                                "- *External Beam Radiation Therapy*"
+                            ]
+                        },
+                        {
+                            heading: "*Hormonal Therapy*",
+                            list:[
+                                "*Anti-Estrogen Agents* (Breast Cancer)",
+                                "*Anti-Testosterone Agents* (Prostate Cancer)"
+                            ]
+                        },
+                        {
+                            heading: "*Chemotherapy*",
+                            list:[
+                                "*DNA Replication Inhibitors*",
+                                "*Anti-Metabolites*: 5-FU, Capecitabine, Gemcitabine",
+                                "*Topoisomerase Inhibitors*: Etoposide, Irinotecan",
+                                "*DNA Intercalators*: Cisplatin, Cyclophosphamide, Doxorubicin"
+                            ]
+                        },
+                        {
+                            heading: "*Cell Division Inhibitors*",
+                            list:[
+                                "*Vinca Alkaloids*: Vincristine, Vinorelbine",
+                                "*Taxanes*: Paclitaxel, Docetaxel"
+                            ]
+                        },
+                        {
+                            heading: "*Targeted Therapy*",
+                            list:[
+                                "*VEGF Inhibitors*: Bevacizumab",
+                                "*EGFR Inhibitors*: Tarceva",
+                                "*HER2 Inhibitors*: Trastuzumab (Herceptin)",
+                                "*PARPi Inhibitors*: Olaparib`"
+                            ]
+                        },
+                        {
+                            heading: "*Immunotherapy*",
+                            list:[
+                                "*PD-1/PD-L1 Inhibitors*: Nivolumab, Pembrolizumab",
+                                "*CTLA-4 Inhibitors*: Ipilimumab (Yervoy)"
+                            ]
+                        }
                     ]
                 }
             ],
             who: [
+                {
+                    note: 'This course is open to anyone interested in cancer biology, especially:'
+                },
                 "*Undergraduate and Graduate Students:* Ideal for those studying biomedical sciences, biotechnology, or related fields.",
                 "*Early Career Researchers:* Suitable for researchers new to cancer biology or those transitioning into this field.",
-                "*Enthusiastic Learners:* Anyone with a passion for understanding the complexities of cancer at the cellular level."
+                "*Enthusiastic Learners:* Anyone with a passion for understanding the complexities of cancer at the cellular level.",
+                {
+                    note: 'No prior experience in cancer research is required, though a basic understanding of Molecular Biology will be helpful!'
+                },
             ],
             people: [
                 {

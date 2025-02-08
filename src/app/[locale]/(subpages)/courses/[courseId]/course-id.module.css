@@ -273,7 +273,7 @@
 }
 .course > div:nth-child(2) .scroll > div .content li:has(.clicked) ul{
     padding: 10px 20px;
-    max-height: 600px;
+    max-height: 1300px;
     margin-bottom: 20px;
     /* transition: var(--animation-transition); */
     /* transition-duration: 1s !important; */
