@@ -28,8 +28,8 @@ const Footer = ({
                 <Link href={"/"}>{t("Pages.Links.Home")}</Link>
                 <Link href={`/courses`}>{t("Pages.Links.Courses")}</Link>
                 <Link href={`/publications`}>{t("Pages.Links.Publications")}</Link>
+                <Link href={`/blog`}>{t("Pages.Links.Blog")}</Link>
                 <Link href={`/about`}>{t("Pages.Links.AboutMe")}</Link>
-                <Link href={`/contact`}>{t("Pages.Links.Contact")}</Link>
             </div>
             </div>
             <div>

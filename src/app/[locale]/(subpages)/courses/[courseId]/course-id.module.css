@@ -18,11 +18,11 @@
     left: 0;
     height: calc((100dvh - 100px));
     transition: var(--animation-transition);
-    transform: translateX(-50px);
+    transform: translate(10px, 50px);
     opacity: 0;
 }
 .course.loaded > div:nth-child(2) .fixed{
-    transform: translateX(0px);
+    transform: translate(0px,0px);
     opacity: 1;
 }
 .course .img{
@@ -101,6 +101,7 @@
         top: 0;
         padding-bottom: 50px;
         width: 100%;
+        transform: translate(0px, 100px);
     }
     .course > div:nth-child(2) .fixed > div .basicUl li{
         width: calc(100% / 4);
@@ -148,12 +149,17 @@
 }
 .course > div:nth-child(2) .scroll{
     transition: var(--animation-transition);
-    transform: translateX(50px);
+    transform: translate(-10px, 50px);
     opacity: 0;
 }
 .course.loaded > div:nth-child(2) .scroll{
-    transform: translateX(0px);
+    transform: translate(0px,0px);
     opacity: 1;
+}
+@media (max-width: 992px) {
+    .course > div:nth-child(2) .scroll{
+        transform: translate(-0px, 100px);
+    }
 }
 .course > div:nth-child(2) .scroll > div{
     margin-bottom: 20px;
