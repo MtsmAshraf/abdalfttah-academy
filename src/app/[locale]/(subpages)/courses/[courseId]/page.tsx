@@ -1,7 +1,7 @@
 "use client"
 import React, { use, useEffect, useRef, useState } from 'react'
 import styles from "./course-id.module.css"
-import allCourses, { Content, ContentList, Course, Person, WhoNote } from '@/components/CoursesCards/allCourses'
+import allCourses, { Content, ContentList, Course, OptionalDiv, OptionalDivContent, Person, WhoNote } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
@@ -106,6 +106,32 @@ const CourseId = ({
               <h2>{course.innerPage.heading}</h2>
               <p>{course.innerPage.description}</p>
             </div>
+            {
+              course.innerPage.divs ? course.innerPage.divs.map((div: OptionalDiv, ind: number) => {
+                return(
+                  <div key={ind}>
+                    <h2>{div.h2}</h2>
+                    {
+                      div.content.map((part:OptionalDivContent, index: number) => {
+                        return(
+                          <div key={index}>{
+                            <>
+                              <h3>{part.heading}</h3>
+                              <ul>{part.paragraphs.map((p: string, i: number) => {
+                                return(
+                                  <li key={i}>- {p}</li>
+                                )
+                              })}
+                              </ul>
+                            </>
+                          }</div>
+                        )
+                      })
+                    }
+                  </div>
+                )
+              }) : null
+            }
             <div>
               <h2>
                 Why Take This Course?
@@ -234,15 +260,17 @@ const CourseId = ({
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faDollar} /></span>
-                  <h5>{course.innerPage.details.price}</h5>
+                  <h5>{course.innerPage.details.price || "Free"}</h5>
                 </li>
               </ul>
             </div>
             <div className={styles.enroll}>
-              <a href={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"} target='_blank' >
-                <FontAwesomeIcon icon={faYoutube} />
-                <span>Start Learning!</span>
-              </a>
+                {
+                  !course.price &&  <a href={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"} target='_blank' >
+                  <FontAwesomeIcon icon={faYoutube} />
+                  <span>Start Learning!</span>
+                </a>
+                }
             </div>
           </div>
         </div>

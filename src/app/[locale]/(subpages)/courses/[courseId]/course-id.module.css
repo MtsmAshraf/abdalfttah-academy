@@ -178,6 +178,10 @@
     margin-left: auto;
     text-align: center;
 }
+.course > div:nth-child(2) .scroll > div h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .course > div:nth-child(2) .scroll p{
     line-height: 1.8;
 }

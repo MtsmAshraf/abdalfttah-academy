@@ -65,7 +65,7 @@ const CoursesCards = ({
                                         <div>
                                             <h4>{course.title}</h4>
                                             <div>
-                                                <p>{course.price}</p>
+                                                <p>{course.price || "Free"}</p>
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@ const CoursesCards = ({
                                         <div>
                                             <h4>{course.title}</h4>
                                             <div>
-                                                <p>{course.price}</p>
+                                                <p>{course.price || "Free"}</p>
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
                                         </div>
@@ -105,7 +105,7 @@ const CoursesCards = ({
                                     <div>
                                         <h4>{course.title}</h4>
                                         <div>
-                                            <p>{course.price}</p>
+                                            <p>{course.price || "Free"}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@ const CoursesCards = ({
                                     <div>
                                         <h4>{course.title}</h4>
                                         <div>
-                                            <p>{course.price}</p>
+                                            <p>{course.price || "Free"}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
                                     </div>

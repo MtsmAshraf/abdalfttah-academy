@@ -24,11 +24,19 @@ export type ContentList = {
 export type WhoNote = {
     note: string
 }
+export type OptionalDiv = {
+    h2: string,
+    content: OptionalDivContent[]
+}
+export type OptionalDivContent = {
+    heading: string,
+    paragraphs: string[]
+}
 export type Course = {
     id: string,
     title: string,
     category: string,
-    price: string,
+    price?: string,
     src: StaticImageData,
     innerPage: {
         details: {
@@ -40,6 +48,7 @@ export type Course = {
         },
         heading: string,
         description: string,
+        divs?: OptionalDiv[],
         why: string[],
         content: Content[],
         who: (string | WhoNote)[],
@@ -54,17 +63,39 @@ const allCourses : Course[] = [
         id: "1",
         title: "Intorduction to Cancer Biology",
         category: "Advanced Biology",
-        price: "200.00$ USD",
+        price: "100$ USD",
         src: image1,
         innerPage: {
             details: {
                 when: "20-06-2025",
-                duration: "4.5 hours",
+                duration: "8 weeks",
                 location: "Online",
                 price: "100 USD"
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
+            divs:[
+                {
+                    h2: "Course Structure",
+                    content: [
+                        {
+                            heading: "Preparation Phase* (*Daily for 10 Days)",
+                            paragraphs: [
+                                "Independent study to build foundational knowledge.",
+                                "Here you mention the three courses of (DNA Structure, DNA Replication, RNA Transcription)"
+                            ]
+                        },
+                        {
+                            heading: "Weekly Sessions",
+                            paragraphs: [
+                                "*Lecture (3 hours):* Covers core concepts in depth.",
+                                "*Tutorial (1 hour):* Focuses on advanced discussions and clarifications.",
+                                "*One-to-One Meeting (1 hour, optional):* Personalised guidance available upon request."
+                            ]
+                        },
+                    ],
+                }
+            ],
             why: [
                 "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
                 "Explore the *key enzymes and molecular mechanisms* involved in replication.",
@@ -335,14 +366,13 @@ const allCourses : Course[] = [
         id: "2",
         title: "Advanced Cancer Biology",
         category: "Advanced Biology",
-        price: "Free",
         src: image2,
         innerPage: {
             details: {
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -556,7 +586,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -770,7 +800,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -984,7 +1014,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -1198,7 +1228,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -1412,7 +1442,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -1626,7 +1656,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -1840,7 +1870,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -2054,7 +2084,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -2268,7 +2298,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
@@ -2483,7 +2513,7 @@ const allCourses : Course[] = [
                 noOfVideos: "19",
                 duration: "4 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Structure and Analysis Course!",
             description: "This course is designed to provide a comprehensive understanding of DNA as the fundamental molecule of life. From its historical discovery to its intricate structure and chemical properties, participants will explore how DNA functions as the genetic blueprint of all living organisms. Throughout the course, we will examine the experimental evidence supporting DNA as the genetic material, delve into the molecular architecture of nucleic acids, and analyze the key differences between DNA and RNA. By the end, participants will have a solid grasp of DNA's role in genetics, inheritance, and molecular biology.",
@@ -2661,7 +2691,7 @@ const allCourses : Course[] = [
                 noOfVideos: "19",
                 duration: "7 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the Transcription Course!",
             description: "This course is designed to provide an in-depth exploration of transcription, the first step in gene expression where genetic information is transcribed from DNA into RNA. We will cover the molecular machinery that drives transcription, including RNA polymerases, promoters, and regulatory elements. Participants will learn about the genetic code, RNA processing events like splicing and polyadenylation, and the differences between prokaryotic and eukaryotic transcription. By the end of the course, participants will have a strong understanding of how transcription is regulated and its crucial role in cellular function and gene expression.",
@@ -2909,7 +2939,7 @@ const allCourses : Course[] = [
                 noOfVideos: "14",
                 duration: "4.5 hours",
                 location: "Online",
-                price: "Free"
+                
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
