@@ -56,6 +56,7 @@ const CourseId = ({
     const {courseId} = use(params)
     const course: Course = allCourses.find((ele) => ele.id === courseId) || {
         id: "999",
+        enrollType: "",
         title: "",
         category: "",
         price: "",
@@ -69,7 +70,6 @@ const CourseId = ({
           },
             heading: "heading",
             description: "description",
-            why: ["String"],
             content: [
               {
                 button: "string",
