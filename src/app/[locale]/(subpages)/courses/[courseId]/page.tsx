@@ -237,37 +237,39 @@ const CourseId = ({
             <div className={styles.img}>
               <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
             </div>
-            <div className={styles.overview}>
-              <ul className={styles.basicUl}>
-                <li>
-                  {
-                    course.innerPage.details.noOfVideos ? 
-                    <>
-                      <span><FontAwesomeIcon icon={faVideo} /></span>
-                      <h5>{course.innerPage.details.noOfVideos} Videos</h5>
-                    </>
-                    :
-                    course.innerPage.details.when ? 
-                    <>
-                      <span><FontAwesomeIcon icon={faClock} /></span>
-                      <h5>{course.innerPage.details.when}</h5>
-                    </> : null
-                  }
-                </li>
-                <li>
-                  <span><FontAwesomeIcon icon={faLocationPin} /></span>
-                  <h5>{course.innerPage.details.location}</h5>
-                </li>
-                <li>
-                  <span><FontAwesomeIcon icon={faHourglass1} /></span>
-                  <h5>{course.innerPage.details.duration}</h5>
-                </li>
-                <li>
-                  <span><FontAwesomeIcon icon={faDollar} /></span>
-                  <h5>{course.innerPage.details.price || "Free"}</h5>
-                </li>
-              </ul>
-            </div>
+            {
+              course.enrollType === "free" || course.enrollType === "paid" &&  <div className={styles.overview}>
+                <ul className={styles.basicUl}>
+                  <li>
+                    {
+                      course.innerPage.details.noOfVideos ? 
+                      <>
+                        <span><FontAwesomeIcon icon={faVideo} /></span>
+                        <h5>{course.innerPage.details.noOfVideos} Videos</h5>
+                      </>
+                      :
+                      course.innerPage.details.when ? 
+                      <>
+                        <span><FontAwesomeIcon icon={faClock} /></span>
+                        <h5>{course.innerPage.details.when}</h5>
+                      </> : null
+                    }
+                  </li>
+                  <li>
+                    <span><FontAwesomeIcon icon={faLocationPin} /></span>
+                    <h5>{course.innerPage.details.location}</h5>
+                  </li>
+                  <li>
+                    <span><FontAwesomeIcon icon={faHourglass1} /></span>
+                    <h5>{course.innerPage.details.duration}</h5>
+                  </li>
+                  <li>
+                    <span><FontAwesomeIcon icon={faDollar} /></span>
+                    <h5>{course.innerPage.details.price || "Free"}</h5>
+                  </li>
+                </ul>
+              </div>
+            }
             <div className={styles.enroll}>
                 {
                   course.enrollType === "free" ?  
@@ -275,7 +277,8 @@ const CourseId = ({
                     <FontAwesomeIcon icon={faYoutube} />
                     <span>Start Learning!</span>
                   </a> :
-                  <a href="#enroll">Enroll</a>
+                  course.enrollType === "upon request" ? 
+                  <a href="#enroll">Request Course</a> : <a href="#enroll">Enroll</a>
                 }
             </div>
           </div>
