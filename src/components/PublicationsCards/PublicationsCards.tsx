@@ -4,11 +4,14 @@ import styles from "./publications-cards.module.css"
 import MainHeading from '../MainHeading/MainHeading'
 import PublicationsCard from './PublicationsCard/PublicationsCard'
 import Image from 'next/image'
-
+import { Worker, Viewer } from "@react-pdf-viewer/core";
 import allPublications, { Publication } from './allPublications'
 import { useTranslations } from 'next-intl'
 import MainLink from '../MainLink/MainLink'
 import intro from "../../../public/images/publications.jpg"
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const PublicationsCards = ({
     lo
@@ -51,6 +54,10 @@ const PublicationsCards = ({
         styles.publications
     ]
 
+
+    const [showModal, setShowModal] = useState(false);
+    const [pdfUrl, setPdfUrl] = useState("")
+
   return (
     <section ref={publications} className={classNames.join(" ")}>
         <MainHeading>
@@ -92,14 +99,32 @@ const PublicationsCards = ({
                                     {publication.date}
                                 </span>
                                 <div>
-                                    <button>Link</button>
-                                    <button>PDF</button>
+                                    <a href={publication.link} target='_blank'>Link</a>
+                                    <button
+                                        onClick={() => {setShowModal(true); setPdfUrl(publication.pdf)}}
+                                        >PDF
+                                    </button> 
                                 </div>
                             </div>
                         </PublicationsCard>
+                        
                     )
                 })
             }
+                {showModal && (
+                    <div className={styles.modal}>
+                        <div className={styles.inner}>
+                            <button
+                                onClick={() => setShowModal(false)}
+                            >
+                            <FontAwesomeIcon icon={faXmark} />
+                            </button>
+                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                                <Viewer fileUrl={pdfUrl} />
+                            </Worker>
+                        </div>
+                    </div>
+                )}
         </div>
     </section>
   )

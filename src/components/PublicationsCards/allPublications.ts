@@ -7,6 +7,8 @@ export type Publication = {
     authors: string[],
     date: string,
     src: string,
+    link: string,
+    pdf: string,
 }
 
 const allPublications : Publication[] = [
@@ -36,7 +38,9 @@ const allPublications : Publication[] = [
             "...Serra, V."
         ],
         date: "Cancer Research (2025)",
-        src: "https://www.purdue.edu/uns/images/2019/cancer-research.jpg"
+        src: "https://www.purdue.edu/uns/images/2019/cancer-research.jpg",
+        link: "https://www.biorxiv.org/content/10.1101/2024.03.01.582941v1",
+        pdf: "/2024.03.01.582941v1.full.pdf"
     },
     {
         id: "2",
@@ -51,7 +55,9 @@ const allPublications : Publication[] = [
             "... & Colome-Tatche, M."
         ],
         date: "Cell Reports, 2024",
-        src: "https://www.cshl.edu/wp-content/uploads/2018/02/bioarchive-logo.png"
+        src: "https://www.cshl.edu/wp-content/uploads/2018/02/bioarchive-logo.png",
+        link: "https://www.biorxiv.org/content/10.1101/2024.03.01.582941v1",
+        pdf: "/2024.03.01.582941v1.full.pdf"
     },
     {
         id: "3",
@@ -66,7 +72,9 @@ const allPublications : Publication[] = [
             "... & Zekri, A. R. N. "
         ],
         date: "Current issues in molecular biology (2022)",
-        src: "https://www.mdpi.com/files/uploaded/covers/cimb/big_cover-cimb-v45-i10.png"
+        src: "https://www.mdpi.com/files/uploaded/covers/cimb/big_cover-cimb-v45-i10.png",
+        link: "https://www.mdpi.com/1467-3045/44/3/90",
+        pdf: "/cimb-44-00090-with-cover.pdf"
     },
     {
         id: "4",
@@ -80,7 +88,9 @@ const allPublications : Publication[] = [
             "& Salem, T. Z"
         ],
         date: "Genes (2021)",
-        src: "https://www.mdpi.com/files/uploaded/covers/genes/big_cover-genes-v13-i4.png"
+        src: "https://www.mdpi.com/files/uploaded/covers/genes/big_cover-genes-v13-i4.png",
+        link: "https://www.mdpi.com/2073-4425/12/1/72",
+        pdf: "/genes-12-00072-with-cover.pdf"
     }
 ]
 

@@ -81,20 +81,27 @@
 .publicationsCard > div:nth-of-type(2) div:hover{
     border: 1px solid var(--important-text-color);
 }
+.publicationsCard > div:nth-of-type(2) a,
 .publicationsCard > div:nth-of-type(2) button{
     padding: 5px 15px;
     text-align: center;
     transition: var(--main-transition);
     background-color: #fff;
+    color: #000;
     font-family: "Poppins", sans-serif;
+    font-size: 14px;
 }
-.publicationsCard > div:nth-of-type(2) button:first-of-type{
+.publicationsCard > div:nth-of-type(2) a{
     border-right: 1px solid #000;
 }
 .publicationsCard > div:nth-of-type(2) button:hover,
 .publicationsCard > div:nth-of-type(2) button:focus,
 .publicationsCard > div:nth-of-type(2) button:focus-visible,
-.publicationsCard > div:nth-of-type(2) button:active{
+.publicationsCard > div:nth-of-type(2) button:active,
+.publicationsCard > div:nth-of-type(2) a:hover,
+.publicationsCard > div:nth-of-type(2) a:focus,
+.publicationsCard > div:nth-of-type(2) a:focus-visible,
+.publicationsCard > div:nth-of-type(2) a:active{
     background-color: var(--important-text-color);
     color: #fff;
 }
