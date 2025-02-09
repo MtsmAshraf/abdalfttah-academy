@@ -52,7 +52,7 @@ export type Course = {
         description: string,
         divs?: OptionalDiv[],
         why?: string[],
-        content: Content[],
+        content?: Content[],
         who: (string | WhoNote)[],
         people: Person[],
         courseLink?: string,
@@ -82,7 +82,7 @@ const allCourses : Course[] = [
                     h2: "Course Structure",
                     content: [
                         {
-                            heading: "Preparation Phase* (*Daily for 10 Days)",
+                            heading: "Preparation Phase (Daily for 10 Days)",
                             paragraphs: [
                                 "Independent study to build foundational knowledge.",
                                 "Here you mention the three courses of (DNA Structure, DNA Replication, RNA Transcription)"
@@ -1263,111 +1263,10 @@ const allCourses : Course[] = [
                     ]
                 }
             ],
-            content: [
-                {
-                    button: "Introduction to DNA Replication",
-                    subList: [
-                        "Importance of Genetic Continuity",
-                        "Semiconservative Replication",
-                        "DNA Synthesis Mechanisms"
-                    ]
-                },
-                {
-                    button: "Theoretical Models of DNA Replication",
-                    subList: [
-                        "Semiconservative Replication",
-                        "Conservative Replication",
-                        "Dispersive Replication"
-                    ]
-                },
-                {
-                    button: "Experimental Evidence of DNA Replication",
-                    subList: [
-                        "The Meselson–Stahl Experiment",
-                        "Isotopes in DNA Replication",
-                        "Buoyant Density Centrifugation"
-                    ]
-                },
-                {
-                    button: "DNA Replication in Eukaryotes",
-                    subList: [
-                        "Taylor–Woods–Hughes Experiment",
-                        "Autoradiography and Replication Evidence"
-                    ]
-                },
-                {
-                    button: "Origins, Forks, and Units of Replication",
-                    subList: [
-                        "Origin of Replication (oriC)",
-                        "Bidirectional Replication",
-                        "Bidirectional Replication"
-                    ]
-                },
-                {
-                    button: "DNA Synthesis Mechanisms in Bacteria",
-                    subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Key Enzymes and Proteins in DNA Replication",
-                    subList: [
-                        "DNA Helicase and Unwinding of the Helix",
-                        "Single-Stranded Binding Proteins (SSBs)",
-                        "DNA Gyrase and Topoisomerases"
-                    ]
-                },
-                {
-                    button: "Initiation of DNA Synthesis",
-                    subList: [
-                        "RNA Primers and Primase Activity",
-                        "Continuous and Discontinuous DNA Synthesis",
-                        "Okazaki Fragments and Lagging Strand"
-                    ]
-                },
-                {
-                    button: "Concurrent Synthesis of Leading and Lagging Strands",
-                    subList: [
-                        "The Role of the Holoenzyme in Synthesis",
-                        "The Donut-Shaped Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Proofreading and Mismatch Repair",
-                    subList: [
-                        "Error Rate in DNA Polymerase III",
-                        "Exonuclease Activity in Proofreading"
-                    ]
-                },
-                {
-                    button: "Eukaryotic DNA Replication",
-                    subList: [
-                        "Differences Between Prokaryotic and Eukaryotic Replication",
-                        "Multiple Replication Origins in Eukaryotes",
-                        "Role of Origin Recognition Complex (ORC)"
-                    ]
-                },
-                {
-                    button: "Regulation of DNA Replication",
-                    subList: [
-                        "Cell-Cycle Kinases and Replication Control",
-                        "Polymerase Switching Mechanism"
-                    ]
-                },
-                {
-                    button: "Telomeres and Chromosome End Replication",
-                    subList: [
-                        "Role of Telomeres in Stability and Replication",
-                        "Telomerase Function and Structure (TERC & TERT)",
-                        "Prevention of Chromosome Shortening"
-                    ]
-                },
-            ],
+            
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -1375,7 +1274,7 @@ const allCourses : Course[] = [
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
-                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
+                "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -1487,111 +1386,10 @@ const allCourses : Course[] = [
                     ]
                 }
             ],
-            content: [
-                {
-                    button: "Introduction to DNA Replication",
-                    subList: [
-                        "Importance of Genetic Continuity",
-                        "Semiconservative Replication",
-                        "DNA Synthesis Mechanisms"
-                    ]
-                },
-                {
-                    button: "Theoretical Models of DNA Replication",
-                    subList: [
-                        "Semiconservative Replication",
-                        "Conservative Replication",
-                        "Dispersive Replication"
-                    ]
-                },
-                {
-                    button: "Experimental Evidence of DNA Replication",
-                    subList: [
-                        "The Meselson–Stahl Experiment",
-                        "Isotopes in DNA Replication",
-                        "Buoyant Density Centrifugation"
-                    ]
-                },
-                {
-                    button: "DNA Replication in Eukaryotes",
-                    subList: [
-                        "Taylor–Woods–Hughes Experiment",
-                        "Autoradiography and Replication Evidence"
-                    ]
-                },
-                {
-                    button: "Origins, Forks, and Units of Replication",
-                    subList: [
-                        "Origin of Replication (oriC)",
-                        "Bidirectional Replication",
-                        "Bidirectional Replication"
-                    ]
-                },
-                {
-                    button: "DNA Synthesis Mechanisms in Bacteria",
-                    subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Key Enzymes and Proteins in DNA Replication",
-                    subList: [
-                        "DNA Helicase and Unwinding of the Helix",
-                        "Single-Stranded Binding Proteins (SSBs)",
-                        "DNA Gyrase and Topoisomerases"
-                    ]
-                },
-                {
-                    button: "Initiation of DNA Synthesis",
-                    subList: [
-                        "RNA Primers and Primase Activity",
-                        "Continuous and Discontinuous DNA Synthesis",
-                        "Okazaki Fragments and Lagging Strand"
-                    ]
-                },
-                {
-                    button: "Concurrent Synthesis of Leading and Lagging Strands",
-                    subList: [
-                        "The Role of the Holoenzyme in Synthesis",
-                        "The Donut-Shaped Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Proofreading and Mismatch Repair",
-                    subList: [
-                        "Error Rate in DNA Polymerase III",
-                        "Exonuclease Activity in Proofreading"
-                    ]
-                },
-                {
-                    button: "Eukaryotic DNA Replication",
-                    subList: [
-                        "Differences Between Prokaryotic and Eukaryotic Replication",
-                        "Multiple Replication Origins in Eukaryotes",
-                        "Role of Origin Recognition Complex (ORC)"
-                    ]
-                },
-                {
-                    button: "Regulation of DNA Replication",
-                    subList: [
-                        "Cell-Cycle Kinases and Replication Control",
-                        "Polymerase Switching Mechanism"
-                    ]
-                },
-                {
-                    button: "Telomeres and Chromosome End Replication",
-                    subList: [
-                        "Role of Telomeres in Stability and Replication",
-                        "Telomerase Function and Structure (TERC & TERT)",
-                        "Prevention of Chromosome Shortening"
-                    ]
-                },
-            ],
+            
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -1599,7 +1397,7 @@ const allCourses : Course[] = [
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
-                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
+                "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -1711,111 +1509,10 @@ const allCourses : Course[] = [
                     ]
                 }
             ],
-            content: [
-                {
-                    button: "Introduction to DNA Replication",
-                    subList: [
-                        "Importance of Genetic Continuity",
-                        "Semiconservative Replication",
-                        "DNA Synthesis Mechanisms"
-                    ]
-                },
-                {
-                    button: "Theoretical Models of DNA Replication",
-                    subList: [
-                        "Semiconservative Replication",
-                        "Conservative Replication",
-                        "Dispersive Replication"
-                    ]
-                },
-                {
-                    button: "Experimental Evidence of DNA Replication",
-                    subList: [
-                        "The Meselson–Stahl Experiment",
-                        "Isotopes in DNA Replication",
-                        "Buoyant Density Centrifugation"
-                    ]
-                },
-                {
-                    button: "DNA Replication in Eukaryotes",
-                    subList: [
-                        "Taylor–Woods–Hughes Experiment",
-                        "Autoradiography and Replication Evidence"
-                    ]
-                },
-                {
-                    button: "Origins, Forks, and Units of Replication",
-                    subList: [
-                        "Origin of Replication (oriC)",
-                        "Bidirectional Replication",
-                        "Bidirectional Replication"
-                    ]
-                },
-                {
-                    button: "DNA Synthesis Mechanisms in Bacteria",
-                    subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Key Enzymes and Proteins in DNA Replication",
-                    subList: [
-                        "DNA Helicase and Unwinding of the Helix",
-                        "Single-Stranded Binding Proteins (SSBs)",
-                        "DNA Gyrase and Topoisomerases"
-                    ]
-                },
-                {
-                    button: "Initiation of DNA Synthesis",
-                    subList: [
-                        "RNA Primers and Primase Activity",
-                        "Continuous and Discontinuous DNA Synthesis",
-                        "Okazaki Fragments and Lagging Strand"
-                    ]
-                },
-                {
-                    button: "Concurrent Synthesis of Leading and Lagging Strands",
-                    subList: [
-                        "The Role of the Holoenzyme in Synthesis",
-                        "The Donut-Shaped Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Proofreading and Mismatch Repair",
-                    subList: [
-                        "Error Rate in DNA Polymerase III",
-                        "Exonuclease Activity in Proofreading"
-                    ]
-                },
-                {
-                    button: "Eukaryotic DNA Replication",
-                    subList: [
-                        "Differences Between Prokaryotic and Eukaryotic Replication",
-                        "Multiple Replication Origins in Eukaryotes",
-                        "Role of Origin Recognition Complex (ORC)"
-                    ]
-                },
-                {
-                    button: "Regulation of DNA Replication",
-                    subList: [
-                        "Cell-Cycle Kinases and Replication Control",
-                        "Polymerase Switching Mechanism"
-                    ]
-                },
-                {
-                    button: "Telomeres and Chromosome End Replication",
-                    subList: [
-                        "Role of Telomeres in Stability and Replication",
-                        "Telomerase Function and Structure (TERC & TERT)",
-                        "Prevention of Chromosome Shortening"
-                    ]
-                },
-            ],
+            
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -1823,7 +1520,7 @@ const allCourses : Course[] = [
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
-                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
+                "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -1935,111 +1632,10 @@ const allCourses : Course[] = [
                     ]
                 }
             ],
-            content: [
-                {
-                    button: "Introduction to DNA Replication",
-                    subList: [
-                        "Importance of Genetic Continuity",
-                        "Semiconservative Replication",
-                        "DNA Synthesis Mechanisms"
-                    ]
-                },
-                {
-                    button: "Theoretical Models of DNA Replication",
-                    subList: [
-                        "Semiconservative Replication",
-                        "Conservative Replication",
-                        "Dispersive Replication"
-                    ]
-                },
-                {
-                    button: "Experimental Evidence of DNA Replication",
-                    subList: [
-                        "The Meselson–Stahl Experiment",
-                        "Isotopes in DNA Replication",
-                        "Buoyant Density Centrifugation"
-                    ]
-                },
-                {
-                    button: "DNA Replication in Eukaryotes",
-                    subList: [
-                        "Taylor–Woods–Hughes Experiment",
-                        "Autoradiography and Replication Evidence"
-                    ]
-                },
-                {
-                    button: "Origins, Forks, and Units of Replication",
-                    subList: [
-                        "Origin of Replication (oriC)",
-                        "Bidirectional Replication",
-                        "Bidirectional Replication"
-                    ]
-                },
-                {
-                    button: "DNA Synthesis Mechanisms in Bacteria",
-                    subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Key Enzymes and Proteins in DNA Replication",
-                    subList: [
-                        "DNA Helicase and Unwinding of the Helix",
-                        "Single-Stranded Binding Proteins (SSBs)",
-                        "DNA Gyrase and Topoisomerases"
-                    ]
-                },
-                {
-                    button: "Initiation of DNA Synthesis",
-                    subList: [
-                        "RNA Primers and Primase Activity",
-                        "Continuous and Discontinuous DNA Synthesis",
-                        "Okazaki Fragments and Lagging Strand"
-                    ]
-                },
-                {
-                    button: "Concurrent Synthesis of Leading and Lagging Strands",
-                    subList: [
-                        "The Role of the Holoenzyme in Synthesis",
-                        "The Donut-Shaped Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Proofreading and Mismatch Repair",
-                    subList: [
-                        "Error Rate in DNA Polymerase III",
-                        "Exonuclease Activity in Proofreading"
-                    ]
-                },
-                {
-                    button: "Eukaryotic DNA Replication",
-                    subList: [
-                        "Differences Between Prokaryotic and Eukaryotic Replication",
-                        "Multiple Replication Origins in Eukaryotes",
-                        "Role of Origin Recognition Complex (ORC)"
-                    ]
-                },
-                {
-                    button: "Regulation of DNA Replication",
-                    subList: [
-                        "Cell-Cycle Kinases and Replication Control",
-                        "Polymerase Switching Mechanism"
-                    ]
-                },
-                {
-                    button: "Telomeres and Chromosome End Replication",
-                    subList: [
-                        "Role of Telomeres in Stability and Replication",
-                        "Telomerase Function and Structure (TERC & TERT)",
-                        "Prevention of Chromosome Shortening"
-                    ]
-                },
-            ],
+            
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -2047,7 +1643,7 @@ const allCourses : Course[] = [
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
-                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
+                "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {

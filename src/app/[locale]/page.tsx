@@ -1,4 +1,5 @@
 "use client"
+import BlogCards from "@/components/BlogCards/BlogCards";
 import Contact from "@/components/Contact/Contact";
 import CoursesCards from "@/components/CoursesCards/CoursesCards";
 import Features from "@/components/Features/Features";
@@ -29,6 +30,7 @@ export default function Home({
             <Features lo={locale} />
             <Timeline lo={locale} />
             <Publications lo={locale} />
+            <BlogCards lo={locale} />
             <Testimonials lo={locale} parentEl={"home"} />
         </main>
       </Provider>

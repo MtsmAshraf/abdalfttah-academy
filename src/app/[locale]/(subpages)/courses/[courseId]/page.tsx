@@ -103,7 +103,7 @@ const CourseId = ({
         <div className="container">
           <div className={styles.scroll}>
             <div className={styles.description}>
-              <h2>{course.innerPage.heading}</h2>
+              <h2>Welcome to {course.title} Course!</h2>
               <p>{course.innerPage.description}</p>
             </div>
             {
@@ -160,44 +160,48 @@ const CourseId = ({
                   }
                 </ul>
             </div> */}
-            <div>
-              <h2>Course Content</h2>
-              <ol className={styles.content} id='content'>
-                {
-                  course.innerPage.content.map((part: Content, index: number) => {
-                    return(
-                      <li key={index}>
-                        <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                          {part.button} <FontAwesomeIcon icon={faChevronDown} />
-                        </button>
-                        <ul>
-                          {part.subList.map((li: string | ContentList, index: number) => {
-                            return(
-                              <li key={index}>
-                                  {typeof(li) === "object" ? 
-                                    <>
-                                      <p>{li.heading}</p>
-                                      <ul>
-                                        {li.list.map((item: string, index) => {
-                                          return(
-                                            <li key={index}>
-                                              {item}
-                                            </li>
-                                          )
-                                        })}
-                                      </ul>
-                                    </>
-                                    : <p>{li}</p>}
-                              </li>
-                            )
-                          })}
-                        </ul>
-                      </li>
-                    )
-                  })
-                }
-              </ol>
-            </div>
+            {
+              course.innerPage.content ? 
+              <div>
+                <h2>Course Content</h2>
+                <ol className={styles.content} id='content'>
+                  {
+                    course.innerPage.content?.map((part: Content, index: number) => {
+                      return(
+                        <li key={index}>
+                          <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                            {part.button} <FontAwesomeIcon icon={faChevronDown} />
+                          </button>
+                          <ul>
+                            {part.subList.map((li: string | ContentList, index: number) => {
+                              return(
+                                <li key={index}>
+                                    {typeof(li) === "object" ? 
+                                      <>
+                                        <p>{li.heading}</p>
+                                        <ul>
+                                          {li.list.map((item: string, index) => {
+                                            return(
+                                              <li key={index}>
+                                                {item}
+                                              </li>
+                                            )
+                                          })}
+                                        </ul>
+                                      </>
+                                      : <p>{li}</p>}
+                                </li>
+                              )
+                            })}
+                          </ul>
+                        </li>
+                      )
+                    })
+                  }
+                </ol>
+              </div>
+              : null
+            }
             <div>
               <h2>
                 Who Should Enroll?
