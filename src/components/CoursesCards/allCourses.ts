@@ -26,7 +26,8 @@ export type WhoNote = {
 }
 export type OptionalDiv = {
     h2: string,
-    content: OptionalDivContent[]
+    className?: string,
+    content: (OptionalDivContent | string)[]
 }
 export type OptionalDivContent = {
     heading: string,
@@ -34,6 +35,7 @@ export type OptionalDivContent = {
 }
 export type Course = {
     id: string,
+    enrollType: string,
     title: string,
     category: string,
     price?: string,
@@ -49,7 +51,7 @@ export type Course = {
         heading: string,
         description: string,
         divs?: OptionalDiv[],
-        why: string[],
+        why?: string[],
         content: Content[],
         who: (string | WhoNote)[],
         people: Person[],
@@ -61,6 +63,7 @@ export type Course = {
 const allCourses : Course[] = [
     {
         id: "1",
+        enrollType: "paid",
         title: "Intorduction to Cancer Biology",
         category: "Advanced Biology",
         price: "100$ USD",
@@ -95,13 +98,6 @@ const allCourses : Course[] = [
                         },
                     ],
                 }
-            ],
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
             ],
             content: [
                 {
@@ -364,6 +360,7 @@ const allCourses : Course[] = [
     },
     {
         id: "2",
+        enrollType: "free",
         title: "Advanced Cancer Biology",
         category: "Advanced Biology",
         src: image2,
@@ -376,12 +373,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -577,6 +579,7 @@ const allCourses : Course[] = [
     },
     {
         id: "3",
+        enrollType: "free",
         title: "Immune Oncology",
         category: "Advanced Biology",
         price: "Coming Soon",
@@ -590,12 +593,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -791,6 +799,7 @@ const allCourses : Course[] = [
     },
     {
         id: "4",
+        enrollType: "free",
         title: "Brain Tumors and Glial Cell Biology",
         category: "Advanced Biology",
         price: "Upon Request",
@@ -804,12 +813,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -1005,6 +1019,7 @@ const allCourses : Course[] = [
     },
     {
         id: "5",
+        enrollType: "free",
         title: "Basics of Colorectal Cancer (CRC)",
         category: "Advanced Biology",
         price: "200.00$ USD",
@@ -1018,12 +1033,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -1219,6 +1239,7 @@ const allCourses : Course[] = [
     },
     {
         id: "6",
+        enrollType: "upon request",
         title: "Circular RNA (CircRNA) Biology",
         category: "Advanced Biology",
         price: "200.00$ USD",
@@ -1232,12 +1253,15 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why Take a Personalized Course?",
+                    content: [
+                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                    ]
+                }
             ],
             content: [
                 {
@@ -1342,10 +1366,16 @@ const allCourses : Course[] = [
                 },
             ],
             who: [
-                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
-                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
-                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                {
+                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                },
+                {
+                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                },
+                "*Master's or PhD students* looking for structured, targeted learning.",
+                "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
+                "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
+                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -1433,6 +1463,7 @@ const allCourses : Course[] = [
     },
     {
         id: "7",
+        enrollType: "upon request",
         title: "RNA Sequencing",
         category: "Data Analysis and Technologies",
         price: "200.00$ USD",
@@ -1446,12 +1477,15 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why Take a Personalized Course?",
+                    content: [
+                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                    ]
+                }
             ],
             content: [
                 {
@@ -1556,10 +1590,16 @@ const allCourses : Course[] = [
                 },
             ],
             who: [
-                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
-                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
-                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                {
+                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                },
+                {
+                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                },
+                "*Master's or PhD students* looking for structured, targeted learning.",
+                "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
+                "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
+                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -1647,6 +1687,7 @@ const allCourses : Course[] = [
     },
     {
         id: "8",
+        enrollType: "upon request",
         title: "Single-Cell RNA Sequencing",
         category: "Data Analysis and Technologies",
         price: "200.00$ USD",
@@ -1660,12 +1701,15 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why Take a Personalized Course?",
+                    content: [
+                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                    ]
+                }
             ],
             content: [
                 {
@@ -1770,10 +1814,16 @@ const allCourses : Course[] = [
                 },
             ],
             who: [
-                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
-                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
-                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                {
+                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                },
+                {
+                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                },
+                "*Master's or PhD students* looking for structured, targeted learning.",
+                "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
+                "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
+                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -1861,6 +1911,7 @@ const allCourses : Course[] = [
     },
     {
         id: "9",
+        enrollType: "upon request",
         title: "Spatial Transcriptomics",
         category: "Data Analysis and Technologies",
         price: "200.00$ USD",
@@ -1874,12 +1925,15 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why Take a Personalized Course?",
+                    content: [
+                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                    ]
+                }
             ],
             content: [
                 {
@@ -1984,10 +2038,16 @@ const allCourses : Course[] = [
                 },
             ],
             who: [
-                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
-                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
-                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                {
+                    note: "This course is designed *specifically for master's and PhD students, not undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                },
+                {
+                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                },
+                "*Master's or PhD students* looking for structured, targeted learning.",
+                "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
+                "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
+                "*Not for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             people: [
                 {
@@ -2075,6 +2135,7 @@ const allCourses : Course[] = [
     },
     {
         id: "10",
+        enrollType: "free",
         title: "R Programming for Bioinformatics",
         category: "Data Analysis and Technologies",
         price: "200.00$ USD",
@@ -2088,12 +2149,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -2289,9 +2355,10 @@ const allCourses : Course[] = [
     },
     {
         id: "11",
+        enrollType: "free",
         title: "DNA Replication",
         category: "Basics",
-        price: "200.00$ USD",
+        price: "",
         src: image2,
         innerPage: {
             details: {
@@ -2302,12 +2369,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -2504,9 +2576,10 @@ const allCourses : Course[] = [
     },
     {
         id: "12",
+        enrollType: "free",
         title: "DNA Structure",
         category: "Basics",
-        price: "200.00$ USD",
+        price: "",
         src: image2,
         innerPage: {
             details: {
@@ -2517,12 +2590,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Structure and Analysis Course!",
             description: "This course is designed to provide a comprehensive understanding of DNA as the fundamental molecule of life. From its historical discovery to its intricate structure and chemical properties, participants will explore how DNA functions as the genetic blueprint of all living organisms. Throughout the course, we will examine the experimental evidence supporting DNA as the genetic material, delve into the molecular architecture of nucleic acids, and analyze the key differences between DNA and RNA. By the end, participants will have a solid grasp of DNA's role in genetics, inheritance, and molecular biology.",
-            why: [
-                "Gain a strong foundation in *DNA structure and function*, essential for understanding genetics and molecular biology.",
-                "Explore the *historical experiments* that led to the discovery of DNA as genetic material.",
-                "Understand the differences between *DNA and RNA*, and how they encode genetic information.",
-                "Learn about *nucleic acid chemistry, base pairing, and DNA stability* with real scientific examples.",
-                "Perfect for students, researchers, and professionals looking to strengthen their knowledge of molecular biology."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Gain a strong foundation in *DNA structure and function*, essential for understanding genetics and molecular biology.",
+                        "Explore the *historical experiments* that led to the discovery of DNA as genetic material.",
+                        "Understand the differences between *DNA and RNA*, and how they encode genetic information.",
+                        "Learn about *nucleic acid chemistry, base pairing, and DNA stability* with real scientific examples.",
+                        "Perfect for students, researchers, and professionals looking to strengthen their knowledge of molecular biology."
+                    ]
+                }
             ],
             content: [
                 {
@@ -2682,9 +2760,10 @@ const allCourses : Course[] = [
     },
     {
         id: "13",
+        enrollType: "free",
         title: "DNA Transcription",
         category: "Basics",
-        price: "200.00$ USD",
+        price: "",
         src: image2,
         innerPage: {
             details: {
@@ -2695,12 +2774,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the Transcription Course!",
             description: "This course is designed to provide an in-depth exploration of transcription, the first step in gene expression where genetic information is transcribed from DNA into RNA. We will cover the molecular machinery that drives transcription, including RNA polymerases, promoters, and regulatory elements. Participants will learn about the genetic code, RNA processing events like splicing and polyadenylation, and the differences between prokaryotic and eukaryotic transcription. By the end of the course, participants will have a strong understanding of how transcription is regulated and its crucial role in cellular function and gene expression.",
-            why: [
-                "Learn how genetic information is *transcribed from DNA to RNA*, a critical step in gene expression.",
-                "Understand the *molecular machinery* behind transcription, including *RNA polymerase and transcription factors*.",
-                "Explore the differences between *prokaryotic and eukaryotic transcription*.",
-                "Gain insights into *post-transcriptional modifications, including **splicing, polyadenylation, and RNA editing*.",
-                "Essential for those interested in *gene regulation, molecular genetics, and biotechnology applications*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn how genetic information is *transcribed from DNA to RNA*, a critical step in gene expression.",
+                        "Understand the *molecular machinery* behind transcription, including *RNA polymerase and transcription factors*.",
+                        "Explore the differences between *prokaryotic and eukaryotic transcription*.",
+                        "Gain insights into *post-transcriptional modifications, including **splicing, polyadenylation, and RNA editing*.",
+                        "Essential for those interested in *gene regulation, molecular genetics, and biotechnology applications*."
+                    ]
+                }
             ],
             content: [
                 {
@@ -2930,6 +3014,7 @@ const allCourses : Course[] = [
     },
     {
         id: "14",
+        enrollType: "free",
         title: "Introduction to Bioinformatics",
         category: "Basics",
         price: "200.00$ USD",
@@ -2943,12 +3028,17 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the DNA Replication Course!",
             description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            why: [
-                "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+            divs: [
+                {
+                    h2: "Why take this course?",
+                    content: [
+                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
+                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
+                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
+                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
+                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    ]
+                }
             ],
             content: [
                 {

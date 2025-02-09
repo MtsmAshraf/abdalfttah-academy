@@ -14,6 +14,7 @@
 }
 .enroll ul{
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .enroll ul li{
     display: flex;
@@ -49,9 +50,17 @@
 .enroll ul li p a:hover{
     color: var(--main-light-color);
 }
-.enroll > a{
+.enroll > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.enroll > div > a{
     /* background-color: #ff0033; */
-    border: 1px solid #ff0033;
     padding: 10px 30px;
     display: flex;
     align-items: center;
@@ -62,22 +71,53 @@
     border-radius: 30px;
     transition: var(--main-transition);
 }
-.enroll > a svg{
+.enroll > div > a.youtube{
+    border: 1px solid #ff0033;
+}
+.enroll > div > a.email{
+    border: 1px solid #3e65cf;
+}
+.enroll > div > a.whatsapp{
+    border: 1px solid #128c7e;
+}
+.enroll > div > a svg{
     font-size: 30px;
     transition: var(--main-transition);
+}
+.enroll > div > a.youtube svg{
+    /* border: 1px solid #ff0033; */
     color: #ff0033;
 }
-.enroll > a span{
+.enroll > div > a.email svg{
+    /* border: 1px solid #ff0033; */
+    color: #3e65cf;
+}
+.enroll > div > a.whatsapp svg{
+    /* border: 1px solid #ff0033; */
+    color: #128c7e;
+}
+.enroll > div > a span{
     transition: var(--main-transition);
     font-size: 20px;
 }
-.enroll > a:hover{
+.enroll > div > a:hover{
+    color: #fff;
+}
+.enroll > div > a.youtube:hover{
     background-color: #ff0033;
     box-shadow: 0px 0px 8px 5px #ff1e4b;
 }
-.enroll > a:hover svg{
+.enroll > div > a.email:hover{
+    background-color: #3e65cf;
+    box-shadow: 0px 0px 8px 5px #6589ea;
+}
+.enroll > div > a.whatsapp:hover{
+    background-color: #128c7e;
+    box-shadow: 0px 0px 8px 5px #31d2bf;
+}
+.enroll > div > a:hover svg{
     color: #fff;
 }
-.enroll > a:hover span{
+.enroll > div > a:hover span{
     color: #fff;
 }

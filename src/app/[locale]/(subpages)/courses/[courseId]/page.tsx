@@ -112,9 +112,14 @@ const CourseId = ({
                   <div key={ind}>
                     <h2>{div.h2}</h2>
                     {
-                      div.content.map((part:OptionalDivContent, index: number) => {
+                      div.content.map((part: OptionalDivContent | string, index: number) => {
                         return(
                           <div key={index}>{
+                            typeof(part) === "string" ? 
+                            <ul>
+                              <li>- {part}</li>
+                            </ul> 
+                            :
                             <>
                               <h3>{part.heading}</h3>
                               <ul>{part.paragraphs.map((p: string, i: number) => {
@@ -132,7 +137,7 @@ const CourseId = ({
                 )
               }) : null
             }
-            <div>
+            {/* <div>
               <h2>
                 Why Take This Course?
                 </h2>
@@ -154,7 +159,7 @@ const CourseId = ({
                     })
                   }
                 </ul>
-            </div>
+            </div> */}
             <div>
               <h2>Course Content</h2>
               <ol className={styles.content} id='content'>
@@ -214,10 +219,15 @@ const CourseId = ({
                         </li>
                       )
                     }else if(typeof(li) === "object"){
+                      const splittedNote = li.note.split("*");
+                      const text1 = splittedNote[0];
+                      const boldText1 = splittedNote[1];
+                      const text2 = splittedNote[2];
+                      const boldText2 = splittedNote[3] ? splittedNote[3] : null;
                       return(
                         <li key={index}>
                           <p>
-                            {li.note}
+                            {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
                           </p>
                         </li>
                       )
@@ -227,7 +237,7 @@ const CourseId = ({
                 </ul>
             </div>
             <Insructor></Insructor>
-            <Enroll courseLink={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"}></Enroll>
+            <Enroll courseName={course.title} enrollType={course.enrollType} courseLink={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"}></Enroll>
           </div>
           <div className={styles.fixed}>
             <div className={styles.img}>
@@ -266,10 +276,12 @@ const CourseId = ({
             </div>
             <div className={styles.enroll}>
                 {
-                  !course.price &&  <a href={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"} target='_blank' >
-                  <FontAwesomeIcon icon={faYoutube} />
-                  <span>Start Learning!</span>
-                </a>
+                  course.enrollType === "free" ?  
+                  <a className={styles.youtube} href={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"} target='_blank' >
+                    <FontAwesomeIcon icon={faYoutube} />
+                    <span>Start Learning!</span>
+                  </a> :
+                  <a href="#enroll">Enroll</a>
                 }
             </div>
           </div>
