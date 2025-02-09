@@ -222,7 +222,7 @@ const CourseId = ({
                     }else if(typeof(li) === "object"){
                       return(
                         <li key={index}>
-                          <BoldText text={`- ${li.note}`} />
+                          <BoldText text={`${li.note}`} />
                         </li>
                       )
                     }

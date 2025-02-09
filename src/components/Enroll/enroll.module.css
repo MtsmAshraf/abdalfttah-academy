@@ -50,6 +50,79 @@
 .enroll ul li p a:hover{
     color: var(--main-light-color);
 }
+.enroll.paid ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    cursor: pointer !important;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+.enroll.paid ul li {
+    /* flex: 1; */
+    height: 180px;
+    color: var(--text-color);
+    /* padding: 0; */
+    margin-bottom: 0 !important;
+    border-radius: 10px;
+    width: calc((100% - 120px) / 3); 
+}
+@media (max-width: 650px) {
+    .enroll.paid ul{
+        gap: 10px;
+        width: 100% !important;
+    } 
+    .enroll.paid ul li{
+        width: calc((100% - 20px) / 3); 
+    }
+}
+.enroll.paid ul li button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 20px; 
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+.enroll.paid ul li button:hover{
+    color: var(--bg-color);
+    background-color: var(--text-color);
+}
+.enroll.paid ul li button span{
+    color: var(--text-color);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-transition);
+}
+.enroll.paid ul li button span:has(img){
+}
+.enroll.paid ul li button h4{
+    color: var(--text-color);
+    transition: var(--main-transition);
+    font-size: 16px;
+}
+.enroll.paid ul li:hover button span,
+.enroll.paid ul li:hover button h4{
+    color: var(--bg-color);
+}
+.enroll.paid ul li button img{
+    width: 70%;
+    object-fit: contain;
+}
+.enroll.paid ul li button svg{
+    height: 100%;
+    width: 100%;
+}
 .enroll > div{
     display: flex;
     align-items: center;

@@ -271,7 +271,7 @@ const allCourses : Course[] = [
                 "*Early Career Researchers:* Suitable for researchers new to cancer biology or those transitioning into this field.",
                 "*Enthusiastic Learners:* Anyone with a passion for understanding the complexities of cancer at the cellular level.",
                 {
-                    note: 'No prior experience in cancer research is required, though a basic understanding of Molecular Biology will be helpful!'
+                    note: '*No prior experience in cancer research is required*, though a basic understanding of Molecular Biology will be helpful!'
                 },
             ],
             people: [
@@ -1242,12 +1242,12 @@ const allCourses : Course[] = [
         enrollType: "upon request",
         title: "Circular RNA (CircRNA) Biology",
         category: "Advanced Biology",
-        price: "200.00$ USD",
+        price: "upon request",
         src: image2,
         innerPage: {
             details: {
-                noOfVideos: "14",
-                duration: "4.5 hours",
+                noOfVideos: "Videos",
+                duration: "hours",
                 location: "Online",
                 
             },
@@ -1266,7 +1266,7 @@ const allCourses : Course[] = [
             
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -1365,7 +1365,7 @@ const allCourses : Course[] = [
         enrollType: "upon request",
         title: "RNA Sequencing",
         category: "Data Analysis and Technologies",
-        price: "200.00$ USD",
+        price: "upon request",
         src: image2,
         innerPage: {
             details: {
@@ -1389,7 +1389,7 @@ const allCourses : Course[] = [
             
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -1488,7 +1488,7 @@ const allCourses : Course[] = [
         enrollType: "upon request",
         title: "Single-Cell RNA Sequencing",
         category: "Data Analysis and Technologies",
-        price: "200.00$ USD",
+        price: "upon request",
         src: image2,
         innerPage: {
             details: {
@@ -1512,7 +1512,7 @@ const allCourses : Course[] = [
             
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
@@ -1611,7 +1611,7 @@ const allCourses : Course[] = [
         enrollType: "upon request",
         title: "Spatial Transcriptomics",
         category: "Data Analysis and Technologies",
-        price: "200.00$ USD",
+        price: "upon request",
         src: image2,
         innerPage: {
             details: {
@@ -1635,7 +1635,7 @@ const allCourses : Course[] = [
             
             who: [
                 {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates ❌. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
                 },
                 {
                     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."

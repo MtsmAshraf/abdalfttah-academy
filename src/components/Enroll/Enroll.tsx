@@ -1,8 +1,13 @@
 import React from 'react'
 import styles from "./enroll.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faQuestion, faRocket } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faQuestion, faRocket } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import instaPay from "../../../public/images/instapay.png"
+import vodafoneCash from "../../../public/images/vodafone-cash.png"
+
+
+import Image from 'next/image'
 const Enroll = ({
     courseName,
     courseLink,
@@ -63,9 +68,40 @@ const Enroll = ({
         )
     }else if(enrollType === "paid"){
         return (
-            <div id='enroll' className={styles.enroll}>
+            <div id='enroll' className={`${styles.enroll} ${styles.paid}`}>
                 <h2>How to enroll?</h2>
-                <p>U NEED TO PAY</p>
+                <ul>
+                    <li>
+                        <button>
+                            <span>
+                                <Image loading='lazy' width={2500} height={2500} src={vodafoneCash} alt='Vodafone Cash Logo'></Image>
+                            </span>
+                            <h4>
+                                Vodafone Cash
+                            </h4>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <span>
+                                <Image loading='lazy' width={2500} height={2500} src={instaPay} alt='InstaPay Logo'></Image>
+                            </span>
+                            <h4>
+                                InstaPay
+                            </h4>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <span>
+                                <FontAwesomeIcon icon={faMoneyBillTransfer}  />
+                            </span>
+                            <h4>
+                                Bank Transfer
+                            </h4>
+                        </button>
+                    </li>
+                </ul>
             </div>
         )
     }else if(enrollType === "upon request"){
