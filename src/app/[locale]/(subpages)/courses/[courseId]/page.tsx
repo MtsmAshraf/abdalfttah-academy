@@ -16,6 +16,7 @@ import dynamic from 'next/dynamic'
 import Insructor from '@/components/Insructor/Insructor'
 import Enroll from '@/components/Enroll/Enroll'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+import BoldText from '@/components/BoldText/BoldText'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 const CourseId = ({
@@ -104,7 +105,7 @@ const CourseId = ({
           <div className={styles.scroll}>
             <div className={styles.description}>
               <h2>Welcome to {course.title} Course!</h2>
-              <p>{course.innerPage.description}</p>
+              <BoldText text={course.innerPage.description} />
             </div>
             {
               course.innerPage.divs ? course.innerPage.divs.map((div: OptionalDiv, ind: number) => {
@@ -117,14 +118,14 @@ const CourseId = ({
                           <div key={index}>{
                             typeof(part) === "string" ? 
                             <ul>
-                              <li>- {part}</li>
+                              <li><BoldText text={`- ${part}`} /></li>
                             </ul> 
                             :
                             <>
-                              <h3>{part.heading}</h3>
+                              <h3><BoldText text={`${part.heading}`} /></h3>
                               <ul>{part.paragraphs.map((p: string, i: number) => {
                                 return(
-                                  <li key={i}>- {p}</li>
+                                  <li key={i}><BoldText text={`- ${p}`} /></li>
                                 )
                               })}
                               </ul>
@@ -170,7 +171,7 @@ const CourseId = ({
                       return(
                         <li key={index}>
                           <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                            {part.button} <FontAwesomeIcon icon={faChevronDown} />
+                          <BoldText text={part.button} /> <FontAwesomeIcon icon={faChevronDown} />
                           </button>
                           <ul>
                             {part.subList.map((li: string | ContentList, index: number) => {
@@ -178,18 +179,21 @@ const CourseId = ({
                                 <li key={index}>
                                     {typeof(li) === "object" ? 
                                       <>
-                                        <p>{li.heading}</p>
+                                        <BoldText text={li.heading} />
                                         <ul>
                                           {li.list.map((item: string, index) => {
                                             return(
                                               <li key={index}>
-                                                {item}
+                                              <BoldText text={item} />
+                                              {/* {item} */}
                                               </li>
                                             )
                                           })}
                                         </ul>
                                       </>
-                                      : <p>{li}</p>}
+                                      : 
+                                      <BoldText text={li} />
+                                      }
                                 </li>
                               )
                             })}
@@ -210,29 +214,15 @@ const CourseId = ({
                 {
                   course.innerPage.who.map((li: string | WhoNote, index: number) => {
                     if(typeof(li) === "string"){
-                      const splittedLi = li.split("*");
-                      const text1 = splittedLi[0];
-                      const boldText1 = splittedLi[1];
-                      const text2 = splittedLi[2];
-                      const boldText2 = splittedLi[3] ? splittedLi[3] : null;
                       return(
                         <li key={index}>
-                          <p>
-                            - {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
-                          </p>
+                          <BoldText text={`- ${li}`} />
                         </li>
                       )
                     }else if(typeof(li) === "object"){
-                      const splittedNote = li.note.split("*");
-                      const text1 = splittedNote[0];
-                      const boldText1 = splittedNote[1];
-                      const text2 = splittedNote[2];
-                      const boldText2 = splittedNote[3] ? splittedNote[3] : null;
                       return(
                         <li key={index}>
-                          <p>
-                            {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
-                          </p>
+                          <BoldText text={`- ${li.note}`} />
                         </li>
                       )
                     }

@@ -491,7 +491,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
@@ -711,7 +711,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
@@ -931,7 +931,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
@@ -1151,7 +1151,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
@@ -1863,7 +1863,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
@@ -2083,7 +2083,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
@@ -2742,7 +2742,7 @@ const allCourses : Course[] = [
                 "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
                 "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
                 "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division."
+                "*Anyone interested in the molecular basis of heredity and cell division.*"
             ],
             people: [
                 {
