@@ -137,23 +137,21 @@
 .card > div > div > a:hover,
 .card > div > div > a:focus,
 .card > div > div > a:focus-visible{
-    background-color: #fff !important;
     background-color: var(--main-color) !important;
-    color: #000 !important;
     color: #fff !important;
     box-shadow: var(--main-shadow) !important;
 }
 
 @media (max-width: 650px) {
+    .card{
+        border-radius: 20px 0px;
+    }
     .card a > div:first-child{
         height: 170px;
     }
     .card > div h4{
-        height: 10px;
-    }
-    .card > div h4{
-        height: 60px;
-        font-size: 14px;
+        height: 70px;
+        font-size: 12px;
     }
     .card > div > div{
         /* background-color: #fff; */
@@ -168,12 +166,17 @@
         font-size: 8px;
         padding: 2px 5px;
         top: 10px;
-        left: 10px;
+        left: 5px;
+        width: fit-content;
+        text-wrap: nowrap;
     }   
     .card > div p{
         padding: 2px 5px;
-        font-size: 10px;
+        font-size: 8px;
         top: 30px;
-        left: 10px;
+        left: 5px;
+    }
+    .card > div > div > a{
+        font-size: 10px !important;
     }
 }

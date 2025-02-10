@@ -17,6 +17,17 @@ const Enroll = ({
     courseLink?: string,
     enrollType: string,
 }) => {
+
+    async function handlePaymentSuccess(userEmail: string, userName: string, course: string) {
+        await fetch("/api/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: userEmail, name: userName , courseName: course }),
+        });
+    }
+
+
+
     if(enrollType === "free"){
         return (
             <div id='enroll' className={styles.enroll}>
@@ -72,7 +83,11 @@ const Enroll = ({
                 <h2>How to enroll?</h2>
                 <ul>
                     <li>
-                        <button>
+                        <button onClick={() => {handlePaymentSuccess(
+                            "mosda@gmail.com",
+                            "moatasim",
+                            courseName
+                        )}}>
                             <span>
                                 <Image loading='lazy' width={2500} height={2500} src={vodafoneCash} alt='Vodafone Cash Logo'></Image>
                             </span>
