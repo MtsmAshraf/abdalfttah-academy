@@ -1792,7 +1792,7 @@ const allCourses : Course[] = [
                     partLink:" https://www.youtube.com/watch?v=WJR_XjIrGVk&list=PLC4LFcwOQGSGg3YPtoTVAX1znRblEo-9j",
                     contentPieces: [
                         {
-                            button: "*Reading & importing data* from various sources.",
+                            button: "*Reading & importing data* from various sources",
                         },
                         {
                             button: "*Downloading biological datasets* from *UCSC and Pepper*",
@@ -1835,10 +1835,19 @@ const allCourses : Course[] = [
                             ]
                         },
                         {
-                            button: "*Relational Data & Joins:* Left/Right Join, Semi/Anti Join, Inner/Full Join",
+                            button: "*Relational Data & Joins*",
+                            subList: [
+                                "Left/Right Join",
+                                "Semi/Anti Join",
+                                "Inner/Full Join"
+                            ]
                         },
                         {
-                            button: "*Programming Basics:* Writing Functions, Iteration (Loops & Apply functions)"
+                            button: "*Programming Basics*",
+                            subList: [
+                                "Writing Functions", 
+                                "Iteration (Loops & Apply functions)"
+                            ]
                         }
                     ]
                 },
@@ -1849,13 +1858,27 @@ const allCourses : Course[] = [
                     partLink:"https://www.youtube.com/watch?v=yYryZKEuS8E&list=PLC4LFcwOQGSHbmds9_2ue9Z5kJY9hG71n",
                     contentPieces: [
                         {
-                            button: "*Descriptive Statistics:* Measures of Centrality, Variance, Standard Deviation",
+                            button: "*Descriptive Statistics*",
+                            subList: [
+                                "Measures of Centrality", 
+                                "Variance, Standard Deviation"
+                            ]
                         },
                         {
-                            button: "*Probability & Sampling:* Normal Distribution, Standard Error, Sampling Variability",
+                            button: "*Probability & Sampling*",
+                            subList: [
+                                "Normal Distribution",
+                                "Standard Error",
+                                "Sampling Variability"
+                            ]
                         },
                         {
-                            button: "*Resampling Techniques:* Bootstrapping, Virtual Resampling, Confidence Intervals",
+                            button: "*Resampling Techniques*",
+                            subList: [
+                                "Bootstrapping",
+                                "Virtual Resampling",
+                                "Confidence Intervals"
+                            ]
                         },
                         {
                             button: "Hypothesis Testing Methods",
