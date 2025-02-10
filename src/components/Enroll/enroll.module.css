@@ -69,6 +69,7 @@
     margin-bottom: 0 !important;
     border-radius: 10px;
     width: calc((100% - 120px) / 3); 
+    overflow: hidden;
 }
 @media (max-width: 650px) {
     .enroll.paid ul{

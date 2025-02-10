@@ -381,3 +381,34 @@
 .enroll > a:hover span{
     color: #fff;
 }
+.course .partDetails{
+    background-color: var(--text-color);
+    width: fit-content;
+    color: var(--bg-color);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.course .partDetails span{
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.course .partDetails span:not(:last-of-type){
+    border-right: 1px solid var(--bg-color);
+}
+.course .partDetails span a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.course .partDetails span svg{
+    font-size: 24px;
+    color: #ff0033;
+}

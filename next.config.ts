@@ -50,6 +50,12 @@ const nextConfig = {
             },
         ],
     },
+    webpack: (config: any, { isServer }: {isServer: any}) => {
+        if (isServer) {
+            config.externals = [...config.externals, "canvas"];
+        }
+        return config;
+    },
 };
  
 module.exports = withNextIntl(nextConfig);

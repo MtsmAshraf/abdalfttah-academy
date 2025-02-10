@@ -1,7 +1,7 @@
 "use client"
-import React, { use, useEffect, useRef, useState } from 'react'
+import React, { Fragment, use, useEffect, useRef, useState } from 'react'
 import styles from "./course-id.module.css"
-import allCourses, { Content, ContentList, Course, OptionalDiv, OptionalDivContent, Person, WhoNote } from '@/components/CoursesCards/allCourses'
+import allCourses, { Content, ContentList, Course, GeneralContent, OptionalDiv, OptionalDivContent, Person, WhoNote } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
 import altImg from "../../../../../../public/images/course.jpg"
@@ -165,44 +165,101 @@ const CourseId = ({
               course.innerPage.content ? 
               <div>
                 <h2>Course Content</h2>
-                <ol className={styles.content} id='content'>
-                  {
-                    course.innerPage.content?.map((part: Content, index: number) => {
-                      return(
-                        <li key={index}>
-                          <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
-                          <BoldText text={part.button} /> <FontAwesomeIcon icon={faChevronDown} />
-                          </button>
-                          <ul>
-                            {part.subList.map((li: string | ContentList, index: number) => {
+                {Object.keys(course.innerPage.content[0])[0] === "heading" ?  
+                  course.innerPage.content.map((part: any, index) => {
+                    return(
+                      <Fragment key={index}>
+                      <h2><BoldText text={part.heading} /> </h2>
+                      <div className={styles.partDetails}>
+                        <span>{part.vids} videos</span>
+                        <span>{part.duration}</span>
+                        <span><a href={part.partLink} target='_blank'><FontAwesomeIcon icon={faYoutube} /> Watch</a></span></div>
+                      <ol className={styles.content} id='content'>
+                        {
+                          part.contentPieces.map((piece: GeneralContent | Content | any, index: number) => {
                               return(
                                 <li key={index}>
-                                    {typeof(li) === "object" ? 
-                                      <>
-                                        <BoldText text={li.heading} />
-                                        <ul>
-                                          {li.list.map((item: string, index) => {
-                                            return(
-                                              <li key={index}>
-                                              <BoldText text={item} />
-                                              {/* {item} */}
-                                              </li>
-                                            )
-                                          })}
-                                        </ul>
-                                      </>
-                                      : 
-                                      <BoldText text={li} />
-                                      }
+                                  <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                                  <BoldText text={piece.button} /> {piece.subList && <FontAwesomeIcon icon={faChevronDown} />}
+                                  </button>
+                                  {
+                                    piece.subList &&
+                                    <ul>
+                                      {piece.subList.map((li: string | ContentList, index: number) => {
+                                        return(
+                                          <li key={index}>
+                                              {typeof(li) === "object" ? 
+                                                <>
+                                                  <BoldText text={li.heading} />  
+                                                  <ul>
+                                                    {li.list.map((item: string, index) => {
+                                                      return(
+                                                        <li key={index}>
+                                                        <BoldText text={item} />
+                                                        {/* {item} */}
+                                                        </li>
+                                                      )
+                                                    })}
+                                                  </ul>
+                                                </>
+                                                : 
+                                                <BoldText text={li} />
+                                                }
+                                          </li>
+                                        )
+                                      })}
+                                    </ul>
+                                  }
                                 </li>
                               )
-                            })}
-                          </ul>
-                        </li>
-                      )
+                          })
+                        }
+                      </ol>
+                      </Fragment>
+                      
+
+                    )
+                  })
+                : 
+                <ol className={styles.content} id='content'>
+                  {
+                    course.innerPage.content?.map((part: GeneralContent | Content | any, index: number) => {
+                        return(
+                          <li key={index}>
+                            <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                            <BoldText text={part.button} /> <FontAwesomeIcon icon={faChevronDown} />
+                            </button>
+                            <ul>
+                              {part.subList.map((li: string | ContentList, index: number) => {
+                                return(
+                                  <li key={index}>
+                                      {typeof(li) === "object" ? 
+                                        <>
+                                          <BoldText text={li.heading} />  
+                                          <ul>
+                                            {li.list.map((item: string, index) => {
+                                              return(
+                                                <li key={index}>
+                                                <BoldText text={item} />
+                                                {/* {item} */}
+                                                </li>
+                                              )
+                                            })}
+                                          </ul>
+                                        </>
+                                        : 
+                                        <BoldText text={li} />
+                                        }
+                                  </li>
+                                )
+                              })}
+                            </ul>
+                          </li>
+                        )
                     })
                   }
                 </ol>
+                }
               </div>
               : null
             }
@@ -238,14 +295,21 @@ const CourseId = ({
               <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
             </div>
             {
-              course.enrollType === "free" || course.enrollType === "paid" &&  <div className={styles.overview}>
+              (course.enrollType === "free" || course.enrollType === "paid") &&  <div className={styles.overview}>
                 <ul className={styles.basicUl}>
                   <li>
                     {
                       course.innerPage.details.noOfVideos ? 
                       <>
                         <span><FontAwesomeIcon icon={faVideo} /></span>
-                        <h5>{course.innerPage.details.noOfVideos} Videos</h5>
+                        <h5>{course.innerPage.details.noOfVideos} Videos 
+                          {
+                            course.innerPage.details.parts && <>
+                              {/* <br /> */}
+                              &nbsp; / {course.innerPage.details.parts} parts
+                            </>
+                          }
+                        </h5>
                       </>
                       :
                       course.innerPage.details.when ? 

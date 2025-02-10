@@ -13,13 +13,21 @@ export type Person = {
     countryCode: string
 }
 
-export type Content = {
-    button: string,
-    subList: (string | ContentList)[]
-}
 export type ContentList = {
     heading: string,
     list: string[]
+}
+export type Content = {
+    button: string,
+    subList?: (string | ContentList)[]
+}
+
+export type GeneralContent = {
+    heading: string,
+    vids:string,
+    duration: string,
+    partLink:string,
+    contentPieces: Content[]
 }
 export type WhoNote = {
     note: string
@@ -43,6 +51,7 @@ export type Course = {
     innerPage: {
         details: {
             noOfVideos?: string,
+            parts?: string,
             when?: string,
             duration?: string,
             location?: string,
@@ -52,7 +61,7 @@ export type Course = {
         description: string,
         divs?: OptionalDiv[],
         why?: string[],
-        content?: Content[],
+        content?: (Content | GeneralContent)[],
         who: (string | WhoNote)[],
         people: Person[],
         courseLink?: string,
@@ -1732,138 +1741,175 @@ const allCourses : Course[] = [
     {
         id: "10",
         enrollType: "free",
-        title: "R Programming for Bioinformatics",
+        title: "Data Analysis & Bioinformatics with R",
         category: "Data Analysis and Technologies",
-        price: "200.00$ USD",
+        price: "free",
         src: image2,
         innerPage: {
             details: {
-                noOfVideos: "14",
-                duration: "4.5 hours",
+                noOfVideos: "100",
+                parts: "6",
+                duration: "27 hours",
                 location: "Online",
                 
             },
+            courseLink: "https://www.youtube.com/watch?v=PI4kigc4i-g&list=PLC4LFcwOQGSEba8Uha5Hp7WBzU2T_RT_8",
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            divs: [
+            description: "Data analysis and bioinformatics are essential skills for researchers, scientists, and students working with biological data. This *free YouTube course* provides a structured approach to *learning R programming, focusing on **data types, visualization, statistical analysis, and genomic data processing*. Whether you’re new to R or looking to enhance your bioinformatics skills, this course is designed to *help you analyze, visualize, and interpret biological datasets efficiently*.",
+            content: [
                 {
-                    h2: "Why take this course?",
-                    content: [
-                        "Learn *step-by-step how DNA replicates*, ensuring genetic continuity in all living organisms.",
-                        "Explore the *key enzymes and molecular mechanisms* involved in replication.",
-                        "Understand the differences between *prokaryotic and eukaryotic DNA replication*.",
-                        "Discover the challenges of *telomere replication* and the role of *telomerase* in chromosome stability.",
-                        "Essential for anyone studying *cell biology, genetics, or molecular medicine*."
+                    heading: "*Part 1: Data Types & Structures*",
+                    vids:"8",
+                    duration: "1 hour 45 minutes",
+                    partLink:"https://www.youtube.com/watch?v=PI4kigc4i-g&list=PLC4LFcwOQGSEba8Uha5Hp7WBzU2T_RT_8",
+                    contentPieces: [
+                        {
+                            button: "*Data Types*",
+                            subList: [
+                                "Character",
+                                "Numeric",
+                                "Integer",
+                                "Logical",
+                                "Complex"
+                            ]
+                        },
+                        {
+                            button: "*Data Structures*",
+                            subList: [
+                                "Vector",
+                                "Factor",
+                                "Matrix",
+                                "Data Frame",
+                                "List"
+                            ]
+                        },
+                    ]
+                },
+                {
+                    heading: "*Part 2: Reading, Downloading & Installing Data & Packages*",
+                    vids:"8",
+                    duration: "1 hour 30 minutes",
+                    partLink:" https://www.youtube.com/watch?v=WJR_XjIrGVk&list=PLC4LFcwOQGSGg3YPtoTVAX1znRblEo-9j",
+                    contentPieces: [
+                        {
+                            button: "*Reading & importing data* from various sources.",
+                        },
+                        {
+                            button: "*Downloading biological datasets* from *UCSC and Pepper*",
+                        },
+                        {
+                            button: "Installing *R packages* from *CRAN, GitHub, and Bioconductor*",
+                        },
+                    ]
+                },
+                {
+                    heading: "*Part 3: Data Visualization*",
+                    vids:"11",
+                    duration: "3 hours 45 minutes",
+                    partLink:"https://www.youtube.com/watch?v=uumUZCAU_YQ&list=PLC4LFcwOQGSFqZgpvT76obvkph0SADHBk",
+                    contentPieces: [
+                        {
+                            button: "Creating *different types of plots* in R",
+                            subList: [
+                                "*Bar Plots, Histograms, Scatter Plots, Box Plots*",
+                                "*Density Plots, Violin Plots, Line Plots*",
+                                "*PCA (Principal Component Analysis), Heatmaps*"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "*Part 4: Data Transformation & Programming in R*",
+                    vids:"15",
+                    duration: "3 hours",
+                    partLink:"https://www.youtube.com/watch?v=G9MIKReLkwY&list=PLC4LFcwOQGSGTydn4NPPr76Pz2i-Xa2sX",
+                    contentPieces: [
+                        {
+                            button: "*Data manipulation & transformation* techniques",
+                            subList: [
+                                "Filtering, Selecting, Arranging, Mutating, Summarizing",
+                                "Spreading, Gathering, Separating, and Pulling data",
+                                "Integer",
+                                "Logical",
+                                "Complex"
+                            ]
+                        },
+                        {
+                            button: "*Relational Data & Joins:* Left/Right Join, Semi/Anti Join, Inner/Full Join",
+                        },
+                        {
+                            button: "*Programming Basics:* Writing Functions, Iteration (Loops & Apply functions)"
+                        }
+                    ]
+                },
+                {
+                    heading: "*Part 5: Basic Statistical Inference*",
+                    vids:"37",
+                    duration: "10 hours 30 minutes",
+                    partLink:"https://www.youtube.com/watch?v=yYryZKEuS8E&list=PLC4LFcwOQGSHbmds9_2ue9Z5kJY9hG71n",
+                    contentPieces: [
+                        {
+                            button: "*Descriptive Statistics:* Measures of Centrality, Variance, Standard Deviation",
+                        },
+                        {
+                            button: "*Probability & Sampling:* Normal Distribution, Standard Error, Sampling Variability",
+                        },
+                        {
+                            button: "*Resampling Techniques:* Bootstrapping, Virtual Resampling, Confidence Intervals",
+                        },
+                        {
+                            button: "Hypothesis Testing Methods",
+                            subList: [
+                                "*T-Test*",
+                                "*ANOVA (Analysis of Variance)*",
+                                "*Chi-Square Test*",
+                            ]
+                        },
+                    ]
+                },
+                {
+                    heading: "*Part 6: Introduction to Bioconductor & Genomic Data Analysis*",
+                    vids:"19",
+                    duration: "6 hours 30 minutes",
+                    partLink:"https://www.youtube.com/watch?v=n8mp3_GeHaQ&list=PLC4LFcwOQGSHi1KVjb_8WEdsCV36hLSLk",
+                    contentPieces: [
+                        {
+                            button: "*Introduction to Bioconductor*, a powerful tool for analyzing genomic data",
+                            subList: [
+                                "Character",
+                                "Numeric",
+                                "Integer",
+                                "Logical",
+                                "Complex"
+                            ]
+                        },
+                        {
+                            button: "*Genomic Annotation & Gene Ontology (GO) Analysis*",
+                        },
+                        {
+                            button: "*Multiple Sequence Alignment & Phylogenetic Tree Construction*",
+                        },
+                        {
+                            button: "*Quality Control for Sequencing Reads* (Trimming & Filtering Reads)",
+                        },
+                        {
+                            button: "*Working with Genomic Data in R*",
+                            subList: [
+                                "Introduction to *GenomicRanges* package",
+                                "Understanding the *SummarizedExperiment Object*",
+                            ]
+                        },
                     ]
                 }
             ],
-            content: [
-                {
-                    button: "Introduction to DNA Replication",
-                    subList: [
-                        "Importance of Genetic Continuity",
-                        "Semiconservative Replication",
-                        "DNA Synthesis Mechanisms"
-                    ]
-                },
-                {
-                    button: "Theoretical Models of DNA Replication",
-                    subList: [
-                        "Semiconservative Replication",
-                        "Conservative Replication",
-                        "Dispersive Replication"
-                    ]
-                },
-                {
-                    button: "Experimental Evidence of DNA Replication",
-                    subList: [
-                        "The Meselson–Stahl Experiment",
-                        "Isotopes in DNA Replication",
-                        "Buoyant Density Centrifugation"
-                    ]
-                },
-                {
-                    button: "DNA Replication in Eukaryotes",
-                    subList: [
-                        "Taylor–Woods–Hughes Experiment",
-                        "Autoradiography and Replication Evidence"
-                    ]
-                },
-                {
-                    button: "Origins, Forks, and Units of Replication",
-                    subList: [
-                        "Origin of Replication (oriC)",
-                        "Bidirectional Replication",
-                        "Bidirectional Replication"
-                    ]
-                },
-                {
-                    button: "DNA Synthesis Mechanisms in Bacteria",
-                    subList: [
-                        "DNA Polymerases I, II, III, IV, and V",
-                        "The DNA Pol III Holoenzyme",
-                        "Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Key Enzymes and Proteins in DNA Replication",
-                    subList: [
-                        "DNA Helicase and Unwinding of the Helix",
-                        "Single-Stranded Binding Proteins (SSBs)",
-                        "DNA Gyrase and Topoisomerases"
-                    ]
-                },
-                {
-                    button: "Initiation of DNA Synthesis",
-                    subList: [
-                        "RNA Primers and Primase Activity",
-                        "Continuous and Discontinuous DNA Synthesis",
-                        "Okazaki Fragments and Lagging Strand"
-                    ]
-                },
-                {
-                    button: "Concurrent Synthesis of Leading and Lagging Strands",
-                    subList: [
-                        "The Role of the Holoenzyme in Synthesis",
-                        "The Donut-Shaped Sliding DNA Clamp"
-                    ]
-                },
-                {
-                    button: "Proofreading and Mismatch Repair",
-                    subList: [
-                        "Error Rate in DNA Polymerase III",
-                        "Exonuclease Activity in Proofreading"
-                    ]
-                },
-                {
-                    button: "Eukaryotic DNA Replication",
-                    subList: [
-                        "Differences Between Prokaryotic and Eukaryotic Replication",
-                        "Multiple Replication Origins in Eukaryotes",
-                        "Role of Origin Recognition Complex (ORC)"
-                    ]
-                },
-                {
-                    button: "Regulation of DNA Replication",
-                    subList: [
-                        "Cell-Cycle Kinases and Replication Control",
-                        "Polymerase Switching Mechanism"
-                    ]
-                },
-                {
-                    button: "Telomeres and Chromosome End Replication",
-                    subList: [
-                        "Role of Telomeres in Stability and Replication",
-                        "Telomerase Function and Structure (TERC & TERT)",
-                        "Prevention of Chromosome Shortening"
-                    ]
-                },
-            ],
             who: [
-                "*Students in molecular biology, genetics, and medicine* who want to master DNA replication.",
-                "*Researchers and professionals* working in genomics, biotechnology, and bioinformatics.",
-                "*Science educators and teachers* looking for a structured way to explain DNA replication.",
-                "*Anyone interested in the molecular basis of heredity and cell division.*"
+                "*Beginners* wanting to learn R from scratch.",
+                "*Researchers & Biologists* working with genomic data.",
+                "*Data Scientists* interested in bioinformatics applications.",
+                "*Students* in life sciences, computational biology, or bioinformatics.",
+                {
+                    note: "No prior programming knowledge is required—just a passion for *learning and analyzing biological data*!"
+                }
             ],
             people: [
                 {
