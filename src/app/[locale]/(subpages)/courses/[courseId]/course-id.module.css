@@ -171,6 +171,7 @@
     padding: 2px 20px;
     border-radius: 20px;
     color: #fff;
+    margin-top: 40px;
     font-size: 20px;
 }
 .course > div:nth-child(2) .scroll .description h2{
@@ -398,6 +399,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
 }
 .course .partDetails span:not(:last-of-type){
     border-right: 1px solid var(--bg-color);
@@ -411,4 +413,18 @@
 .course .partDetails span svg{
     font-size: 24px;
     color: #ff0033;
+}
+@media (max-width: 767px) {
+    .course > div:nth-child(2) .scroll > div h2{
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+    .course .partDetails{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .course .partDetails span{
+        font-size: 12px;
+    }
 }
