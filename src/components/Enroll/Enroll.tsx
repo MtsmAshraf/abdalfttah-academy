@@ -81,6 +81,9 @@ const Enroll = ({
         return (
             <div id='enroll' className={`${styles.enroll} ${styles.paid}`}>
                 <h2>How to enroll?</h2>
+                <iframe src={`
+                    https://accept.paymob.com/api/acceptance/iframes/899396?payment_token=${"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TVRBeU1qZ3lPU3dpYm1GdFpTSTZJbWx1YVhScFlXd2lmUS5nTktfNTY2YWJOM0RGX1lueFZ2UlhwSktqbWJBMGZsSkdhcHQ5TmNESnA1Uks2cHBsWU04bEgxamN4ZGtJVzBWWVNxelJGNzFISHJUN25NM0hkOVUtUQ=="}
+                `}></iframe>
                 <ul>
                     <li>
                         <button onClick={() => {handlePaymentSuccess(

@@ -73,7 +73,7 @@ const allCourses : Course[] = [
     {
         id: "1",
         enrollType: "paid",
-        title: "Intorduction to Cancer Biology",
+        title: "Introduction to Cancer Biology",
         category: "Advanced Biology",
         price: "100$ USD",
         src: image1,
