@@ -71,12 +71,16 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
-    background-image: var(--main-heading-gradient);
+    /* background-image: var(--main-heading-gradient); */
     font-size: 30px;
     /* padding: 10px 30px; */
     border-radius: 30px;
     color: #fff;
     box-shadow: var(--main-light-shadow);
+    background-color: var(--text-color);
+    background-image: var(--hero-gradient);
+    /* color: var(--bg-color); */
+    
     text-align: center;
     width: 300px;
     max-width: 95%;

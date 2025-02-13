@@ -1895,11 +1895,11 @@ const allCourses : Course[] = [
                         {
                             button: "*Introduction to Bioconductor*, a powerful tool for analyzing genomic data",
                             subList: [
-                                "Genomic Annotation & Gene Ontology (GO) Analysis",
+                                "*Genomic Annotation & Gene Ontology (GO) Analysis*",
                                 "*Multiple Sequence Alignment & Phylogenetic Tree Construction*",
                                 "*Quality Control for Sequencing Reads* (Trimming & Filtering Reads)",
                                 {
-                                    heading: "Working with Genomic Data in R:",
+                                    heading: "Working with *Genomic Data* in R:",
                                     list: [
                                         "Introduction to *GenomicRanges* package",
                                         "Understanding the *Summarized Experiment Object*",
