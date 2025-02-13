@@ -36,10 +36,8 @@ const Card = ({
     ]
     const handleComingSoon = () => {
         setShowComingSoon(true)
-        console.log("SOON",showComingSoon)
         setTimeout(() => {
             setShowComingSoon(false)
-            console.log("SOON",showComingSoon)
         }, 3000);
     }
   return (

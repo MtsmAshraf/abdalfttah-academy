@@ -80,7 +80,6 @@
     background-color: var(--text-color);
     background-image: var(--hero-gradient);
     /* color: var(--bg-color); */
-    
     text-align: center;
     width: 300px;
     max-width: 95%;
@@ -106,19 +105,19 @@
     transition: var(--animation-transition);
     transform: translateX(-50%) translateY(-50%);
 }
-.coursesCards .commingSoon p:first-child{
+.coursesCards .commingSoon p:first-of-type{
     top: 50%;
 }
-.coursesCards .commingSoon p:last-child{
+.coursesCards .commingSoon p:last-of-type{
     top: 150%;
     opacity: 0;
 }
-.coursesCards:has(div[show-modal="true"]) .commingSoon p:first-child{
+.coursesCards:has(div[show-modal="true"]) .commingSoon p:first-of-type{
     opacity: 0;
     transition-delay: 1.5s;
     top: -150%;
 }
-.coursesCards:has(div[show-modal="true"]) .commingSoon p:last-child{
+.coursesCards:has(div[show-modal="true"]) .commingSoon p:last-of-type{
     transition-delay: 1.5s;
     opacity: 1;
     top: 50%;

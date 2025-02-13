@@ -104,35 +104,77 @@ const CourseId = ({
         <div className="container">
           <div className={styles.scroll}>
             <div className={styles.description}>
-              <h2>Welcome to {course.title} Course!</h2>
-              <BoldText text={course.innerPage.description} />
+              {
+                locale === "ar" && course.innerPage.descriptionAr? 
+                <>
+                  <h2 className={styles.welcomeAr}>مرحبًا بك في دورة {course.title}!</h2>
+                  <BoldText text={course.innerPage.descriptionAr || course.innerPage.description } />
+                </>
+                : 
+                <>
+                  <h2>Welcome to {course.title} Course!</h2>
+                  <BoldText text={course.innerPage.description} />
+                </>
+              }
+              
             </div>
             {
               course.innerPage.divs ? course.innerPage.divs.map((div: OptionalDiv, ind: number) => {
                 return(
                   <div key={ind}>
-                    <h2>{div.h2}</h2>
                     {
-                      div.content.map((part: OptionalDivContent | string, index: number) => {
-                        return(
-                          <div key={index}>{
-                            typeof(part) === "string" ? 
-                            <ul>
-                              <li><BoldText text={`- ${part}`} /></li>
-                            </ul> 
-                            :
-                            <>
-                              <h3><BoldText text={`${part.heading}`} /></h3>
-                              <ul>{part.paragraphs.map((p: string, i: number) => {
-                                return(
-                                  <li key={i}><BoldText text={`- ${p}`} /></li>
-                                )
-                              })}
-                              </ul>
-                            </>
-                          }</div>
-                        )
-                      })
+                      locale === "ar" && div.contentAr ?  
+                      <>
+                        <h2>{div.h2Ar}</h2>
+                        {
+                          div.contentAr.map((part: OptionalDivContent | string, index: number) => {
+                            return(
+                              <div key={index}>{
+                                typeof(part) === "string" ? 
+                                <ul>
+                                  <li><BoldText text={`- ${part}`} /></li>
+                                </ul> 
+                                :
+                                <>
+                                  <h3><BoldText text={`${part.heading}`} /></h3>
+                                  <ul>{part.paragraphs.map((p: string, i: number) => {
+                                    return(
+                                      <li key={i}><BoldText text={`- ${p}`} /></li>
+                                    )
+                                  })}
+                                  </ul>
+                                </>
+                              }</div>
+                            )
+                          })
+                        }
+                      </>
+                      : 
+                      <>
+                        <h2>{div.h2}</h2>
+                        {
+                          div.content.map((part: OptionalDivContent | string, index: number) => {
+                            return(
+                              <div key={index}>{
+                                typeof(part) === "string" ? 
+                                <ul>
+                                  <li><BoldText text={`- ${part}`} /></li>
+                                </ul> 
+                                :
+                                <>
+                                  <h3><BoldText text={`${part.heading}`} /></h3>
+                                  <ul>{part.paragraphs.map((p: string, i: number) => {
+                                    return(
+                                      <li key={i}><BoldText text={`- ${p}`} /></li>
+                                    )
+                                  })}
+                                  </ul>
+                                </>
+                              }</div>
+                            )
+                          })
+                        }
+                      </>
                     }
                   </div>
                 )
@@ -264,31 +306,55 @@ const CourseId = ({
               : null
             }
             <div>
-              <h2>
-                Who Should Enroll?
-              </h2>
+              {
+                locale === "ar"  && course.innerPage.whoAr ? 
+                <h2>
+                  من يمكنه طلب هذه الدورات؟
+                </h2> 
+                : 
+                <h2>
+                  Who Should Enroll?
+                </h2>
+              }
               <ul className={styles.more}>
                 {
-                  course.innerPage.who.map((li: string | WhoNote, index: number) => {
-                    if(typeof(li) === "string"){
-                      return(
-                        <li key={index}>
-                          <BoldText text={`- ${li}`} />
-                        </li>
-                      )
-                    }else if(typeof(li) === "object"){
-                      return(
-                        <li key={index}>
-                          <BoldText text={`${li.note}`} />
-                        </li>
-                      )
-                    }
-                  })
+                  locale === "ar" && course.innerPage.whoAr ? 
+                    course.innerPage.whoAr.map((li: string | WhoNote, index: number) => {
+                      if(typeof(li) === "string"){
+                        return(
+                          <li key={index}>
+                            <BoldText text={`- ${li}`} />
+                          </li>
+                        )
+                      }else if(typeof(li) === "object"){
+                        return(
+                          <li key={index}>
+                            <BoldText text={`${li.note}`} />
+                          </li>
+                        )
+                      }
+                    })
+                  :
+                    course.innerPage.who.map((li: string | WhoNote, index: number) => {
+                      if(typeof(li) === "string"){
+                        return(
+                          <li key={index}>
+                            <BoldText text={`- ${li}`} />
+                          </li>
+                        )
+                      }else if(typeof(li) === "object"){
+                        return(
+                          <li key={index}>
+                            <BoldText text={`${li.note}`} />
+                          </li>
+                        )
+                      }
+                    })
                 }
                 </ul>
             </div>
-            <Insructor></Insructor>
-            <Enroll courseName={course.title} enrollType={course.enrollType} courseLink={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"}></Enroll>
+            <Insructor lo={locale} showAr={course.innerPage.whoAr ? true : false}></Insructor>
+            <Enroll lo={locale} showAr={course.innerPage.whoAr ? true : false} courseName={course.title} enrollType={course.enrollType} courseLink={course.innerPage.courseLink ? course.innerPage.courseLink : "https://www.youtube.com/@MoAbdalfttah"}></Enroll>
           </div>
           <div className={styles.fixed}>
             <div className={styles.img}>
@@ -342,7 +408,9 @@ const CourseId = ({
                     <span>Start Learning!</span>
                   </a> :
                   course.enrollType === "upon request" ? 
-                  <a href="#enroll">Request Course</a> : <a href="#enroll">Enroll</a>
+                  <a href="#enroll">{
+                    locale === "ar" && course.innerPage.whoAr ? "اطلب الدورة" : "Request Course" 
+                  }</a> : <a href="#enroll">Enroll</a>
                 }
             </div>
           </div>

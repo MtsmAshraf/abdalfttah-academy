@@ -39,12 +39,9 @@
     justify-content: center;
     align-items: center;
     perspective-origin: center center;
-    box-shadow: var(--main-light-shadow);
-    transition: var(--main-transition);
-}
-.cards .card:hover{
     box-shadow: var(--card-hover-shadow);
-}
+    transition: var(--main-transition);
+}   
 .cards .card:hover{
     transform: rotateX(var(--mouse-y-deg)) rotateY(var(--mouse-x-deg));
 }

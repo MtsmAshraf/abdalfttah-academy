@@ -2,6 +2,10 @@
     padding-top: 100px;
     background-image: var(--overlay-gradient);
 }
+.course:has(.welcomeAr){
+    direction: rtl;
+    font-family: "Zain", sans-serif;
+}
 .course > div:nth-child(2){
     margin-top: 30px;
     margin-bottom: 30px;
