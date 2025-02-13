@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import styles from "./enroll.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faQuestion, faRocket } from '@fortawesome/free-solid-svg-icons'
@@ -25,8 +26,99 @@ const Enroll = ({
             body: JSON.stringify({ email: userEmail, name: userName , courseName: course }),
         });
     }
+    type Method = {
+        logo: string,
+        name_ar: string,
+        name_en: string,
+        paymentId: number,
+        redirect: string,
+    }
+    const [methods, setMethods] = useState<Method[]>([])
+    const [payment, setPayment] = useState<any>()
+
+    async function getMethods() {
+        var myHeaders = new Headers();
+        myHeaders.append("content-type", "application/json");
+        myHeaders.append("Authorization", "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88");
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
 
 
+        await fetch("https://staging.fawaterk.com/api/v2/getPaymentmethods", {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88"
+            },
+            redirect: 'follow'
+        })
+        .then(response => (response.json()))
+        .then(result => {
+            console.log(result.data)
+            setMethods(result.data)
+            excutePayment(result.data[0].paymentId)
+            // console.log("result.data[0].paymentId", result.data[0].paymentId)
+        })
+        .catch(error => console.log('error', error));
+
+    }
+
+
+    async function excutePayment(id: number) {
+        var axios = require('axios');
+        var data = JSON.stringify({
+        "payment_method_id": id,
+        "cartTotal": "5000",
+        "currency": "EGP",
+        "customer": {
+            "first_name": "test",
+            "last_name": "test",
+            "email": "test@test.test",
+            "phone": "01000000000",
+            "address": "test address"
+        },
+        "redirectionUrls": {
+            "successUrl": "https://dev.fawaterk.com/success",
+            "failUrl": "https://dev.fawaterk.com/fail",
+            "pendingUrl": "https://dev.fawaterk.com/pending"
+        },
+        "cartItems": [
+            {
+            "name": courseName,
+            "price": "5000",
+            "quantity": "1"
+            }
+        ]
+        });
+
+        var config = {
+        method: 'post',
+        url: 'https://staging.fawaterk.com/api/v2/invoiceInitPay',
+        headers: { 
+            'Authorization': 'Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88', 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+
+        axios(config)
+        .then(function (response: any) {
+            console.log(response.data.data);
+            setPayment(response.data.data)
+        })
+        .catch(function (error: Error) {
+            console.log(error);
+        });
+    }
+
+    useEffect(() => {
+        getMethods()
+        console.log(methods)
+    },[])
 
     if(enrollType === "free"){
         return (
@@ -81,9 +173,22 @@ const Enroll = ({
         return (
             <div id='enroll' className={`${styles.enroll} ${styles.paid}`}>
                 <h2>How to enroll?</h2>
-                <iframe src={`
-                    https://accept.paymob.com/api/acceptance/iframes/899396?payment_token=${"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TVRBeU1qZ3lPU3dpYm1GdFpTSTZJbWx1YVhScFlXd2lmUS5nTktfNTY2YWJOM0RGX1lueFZ2UlhwSktqbWJBMGZsSkdhcHQ5TmNESnA1Uks2cHBsWU04bEgxamN4ZGtJVzBWWVNxelJGNzFISHJUN25NM0hkOVUtUQ=="}
-                `}></iframe>
+                {
+                    methods.map((method: any,index: number) => {
+                        return(
+                            <div key={index}>
+                                <div style={{ height:"100px"}}>
+                                    {
+                                        index === 0 && 
+                                        <a href={payment?.payment_data.redirectTo}>
+                                            <Image style={{ objectFit:'contain', height: "100%" }} src={method.logo} alt='logo' width={2000} height={2000}></Image>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        )
+                    })
+                }
                 <ul>
                     <li>
                         <button onClick={() => {handlePaymentSuccess(

@@ -41,7 +41,7 @@
 .contact > div:nth-child(2) .info > div:not(:last-child){
     border-bottom: 1px solid var(--icon-color);
 }
-.contact > div:nth-child(2) .info > div:first-of-type a{
+.contact > div:nth-child(2) .info > div:nth-child(2) a{
     display: flex;
     align-items: center;
     /* justify-content: center; */
@@ -51,14 +51,14 @@
     border-radius: 30px;
     padding-right: 30px;
 }
-.contact.ar > div:nth-child(2) .info > div:first-of-type a{
+.contact.ar > div:nth-child(2) .info > div:nth-child(2) a{
     padding-right: 0px;
     padding-left: 30px;
 }
-.contact > div:nth-child(2) .info > div:first-of-type a:hover{
+.contact > div:nth-child(2) .info > div:nth-child(2) a:hover{
     background-color: var(--features-card-bg);
 }
-.contact > div:nth-child(2) .info > div:first-of-type a span{
+.contact > div:nth-child(2) .info > div:nth-child(2) a span{
     background-color: var(--features-card-bg);
     font-size: 24px;
     width: 50px;
@@ -69,12 +69,12 @@
     justify-content: center;
     transition: var(--main-transition);
 }
-.contact > div:nth-child(2) .info > div:first-of-type a:hover span{
+.contact > div:nth-child(2) .info > div:nth-child(2) a:hover span{
     background-color: var(--main-light-color);
     box-shadow: var(--main-shadow);
     color: #fff;
 }
-.contact > div:nth-child(2) .info > div:first-of-type a h4{
+.contact > div:nth-child(2) .info > div:nth-child(2) a h4{
     border-left: 1px solid transparent;
     padding-left: 20px;
     opacity: 0;
@@ -82,7 +82,7 @@
     transition: var(--animation-transition);
     transition-delay: 1.3s;
 }
-.contact.ar > div:nth-child(2) .info > div:first-of-type a h4{
+.contact.ar > div:nth-child(2) .info > div:nth-child(2) a h4{
     border-left: none;
     transform: translateX(40px);
     padding-left: 0px;
@@ -90,12 +90,12 @@
     padding-right: 20px;
     direction: ltr;
 }
-.contact.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
+.contact.scrolled > div:nth-child(2) .info > div:nth-child(2) a h4{
     opacity: 1;
     transform: translateX(0px);
     border-left: 1px solid var(--icon-color);
 }
-.contact.ar.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
+.contact.ar.scrolled > div:nth-child(2) .info > div:nth-child(2) a h4{
     border-left: none;
     border-right: 1px solid var(--icon-color);
 }
@@ -146,7 +146,7 @@
     .contact > div:nth-child(2) .info > div{
         width: 100%;
     }
-    .contact > div:nth-child(2) .info > div:first-of-type a{
+    .contact > div:nth-child(2) .info > div:nth-child(2) a{
         /* justify-content: center; */
     }
     .contact > div:nth-child(2) .location{
@@ -167,25 +167,25 @@
     .contact > div:nth-child(2) .info > div{
         width: 100%;
     }
-    .contact > div:nth-child(2) .info > div:first-of-type{
+    .contact > div:nth-child(2) .info > div:nth-child(2){
         gap: 0 !important;
     }
-    .contact > div:nth-child(2) .info > div:first-of-type a{
+    .contact > div:nth-child(2) .info > div:nth-child(2) a{
         justify-content: center;
         flex-direction: column;
         gap: 10px;
         padding: 20px;
         margin-bottom: 0;
     }
-    .contact > div:nth-child(2) .info > div:first-of-type a h4,
-    .contact.ar > div:nth-child(2) .info > div:first-of-type a h4{
+    .contact > div:nth-child(2) .info > div:nth-child(2) a h4,
+    .contact.ar > div:nth-child(2) .info > div:nth-child(2) a h4{
         border-left: none;
         padding-left: 0;
         border-right: none;
         padding-right: 0;
     }
-    .contact.scrolled > div:nth-child(2) .info > div:first-of-type a h4,
-    .contact.ar.scrolled > div:nth-child(2) .info > div:first-of-type a h4{
+    .contact.scrolled > div:nth-child(2) .info > div:nth-child(2) a h4,
+    .contact.ar.scrolled > div:nth-child(2) .info > div:nth-child(2) a h4{
         border-left: none;
         border-right: none;
     }

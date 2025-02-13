@@ -28,6 +28,7 @@ const Hero = ({
     },[])
 
     
+    
     const classNames = [
         lo === "ar" ? styles.ar : null,
         loaded ? styles.loaded : null,
@@ -40,18 +41,9 @@ const Hero = ({
         <div className="container">
             <div className={styles.text}>
                 <h2>{t("h2")}</h2>
-                {/* <p>{t("p")}</p> */}
                 <p>
                     {t("p1")}<span>{t("span")}</span>{t("p2")}
                 </p>
-                {/* <div className={styles.btns}>
-                    <MainLink href={"/courses"}>
-                        {t("btn1")}
-                    </MainLink>
-                    <MainLink inverted={true} href={"/contact"}>
-                        {t("btn2")}
-                    </MainLink>
-                </div> */}
                 <div className={styles.stats}>
                     <Stats lo={lo} />
                 </div>

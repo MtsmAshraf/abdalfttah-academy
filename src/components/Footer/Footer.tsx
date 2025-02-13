@@ -11,6 +11,7 @@ const Footer = ({
 }: {
   lo: string,
 }) => {
+    
   const t = useTranslations("Footer")
   return (
     <footer className={lo === "ar" ? styles.footer + " " + styles.ar : styles.footer}>
@@ -22,6 +23,7 @@ const Footer = ({
         </Link>
         </span> */}
         <div className="container">
+        
             <div>
             <h4>{t("Pages.Heading")}</h4>
             <div>

@@ -48,6 +48,27 @@ const nextConfig = {
                 pathname: '/**',
                 search: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'public-api.wordpress.com/wp/v2/sites/abdalfttahacademy.wordpress.com/',
+                port: '',
+                pathname: '/**',
+                search: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'staging.fawaterk.com',
+                port: '',
+                pathname: '/**',
+                search: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.notion.com',
+                port: '',
+                pathname: '/**',
+                search: '',
+            },
         ],
     },
     webpack: (config: any, { isServer }: {isServer: any}) => {

@@ -6,7 +6,7 @@ import { faFacebookF, faGoogleScholar, faLinkedinIn, faOrcid, faTiktok, faXTwitt
 const SocialUl = () => {
   return (
     <ul className={styles.socialUl}>
-        <li>
+        <li className={styles.youtube}>
             <a href="https://www.youtube.com/@MoAbdalfttah" title='Youtube' target='_blank'>
                 <FontAwesomeIcon icon={faYoutube}></FontAwesomeIcon>
                 <span>
@@ -14,7 +14,7 @@ const SocialUl = () => {
                 </span>
             </a>
         </li>
-        <li>
+        <li className={styles.facebook}>
             <a href="https://www.facebook.com/mohamed.abotreka.547" title='Facebook' target='_blank'>
                 <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
                 <span>
@@ -22,7 +22,7 @@ const SocialUl = () => {
                 </span>
             </a>
         </li>
-        <li>
+        <li className={styles.linkedin}>
             <a href="https://www.linkedin.com/in/mohmed-ahmed/" title='Linlkedin' target='_blank'>
                 <FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon>
                 <span>
@@ -30,7 +30,7 @@ const SocialUl = () => {
                 </span>
             </a>
         </li>
-        <li>
+        <li className={styles.tiktok}>
             <a href="https://www.tiktok.com/@mo_abdalfttah?lang=ar" title='Whatsapp' target='_blank'>
                 <FontAwesomeIcon icon={faTiktok}></FontAwesomeIcon>
                 <span>
@@ -38,7 +38,7 @@ const SocialUl = () => {
                 </span>
             </a>
         </li>
-        <li>
+        <li className={styles.scholar}>
             <a href="https://scholar.google.com/citations?user=vTOa4sIAAAAJ&hl=ar" title='Google Scholar' target='_blank'>
                 <FontAwesomeIcon icon={faGoogleScholar}></FontAwesomeIcon>
                 <span>
@@ -46,15 +46,15 @@ const SocialUl = () => {
                 </span>
             </a>
         </li>
-        <li>
-            <a href="https://scholar.google.com/citations?user=vTOa4sIAAAAJ&hl=ar" title='ORCID' target='_blank'>
+        <li className={styles.orcid}>
+            <a href="https://orcid.org/0000-0002-8294-2979" title='ORCID' target='_blank'>
                 <FontAwesomeIcon icon={faOrcid}></FontAwesomeIcon>
                 <span>
                     ORCID
                 </span>
             </a>
         </li>
-        <li>
+        <li className={styles.x}>
             <a href="https://x.com/mo_abdalfattah" title='X' target='_blank'>
                 <FontAwesomeIcon icon={faXTwitter}></FontAwesomeIcon>
                 <span>

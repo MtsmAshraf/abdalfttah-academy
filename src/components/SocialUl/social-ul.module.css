@@ -6,7 +6,6 @@
     flex-wrap: wrap;
 }
 .socialUl a{
-    background-color: var(--features-card-bg);
     font-size: 24px;
     width: 50px;
     height: 50px;
@@ -16,6 +15,30 @@
     justify-content: center;
     transition: var(--main-transition);
     position: relative;
+    color: #fff;
+}
+.socialUl li.youtube a{
+    background-color: #FF0000;
+}
+.socialUl li.facebook a{
+    background-color: #1877F2;
+}
+.socialUl li.linkedin a{
+    background-color: #0077B5;
+}
+.socialUl li.tiktok a{
+    background-color: #000000;
+}
+.socialUl li.scholar a{
+    color: #000;
+    background-color: #a0c3ff;
+}
+.socialUl li.orcid a{
+    color: #000;
+    background-color: #a1c837;
+}
+.socialUl li.x a{
+    background-color: #000000;
 }
 .socialUl a:hover{
     background-color: var(--main-light-color);

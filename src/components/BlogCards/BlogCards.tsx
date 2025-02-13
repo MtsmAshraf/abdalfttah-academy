@@ -1,4 +1,3 @@
-"use client"
 import React, { use, useEffect, useState } from 'react'
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
@@ -15,6 +14,7 @@ import allBlogPosts, { BlogPost } from './allBlogPosts'
 import { useTranslations } from 'next-intl'
 
 import altImg from "../../../public/images/post-loading.jpg"
+// import { getBlogPosts } from '@/lib/notion'
 
 
 const BlogCards = ({
@@ -29,128 +29,164 @@ const BlogCards = ({
         lo === "ar" ? styles.ar : ""
     ]
 
-    const t = useTranslations("Blog")
+    // const t = useTranslations("Blog")
 
-    const [posts, setPosts] = useState<WordPressPost[]>([]);
-    const [mediaId, setMediaId] = useState(0)
-    const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
-    const [full, SetFull] = useState(false)
-    const [loading, SetLoading] = useState(false)
+    // const [posts, setPosts] = useState<WordPressPost[]>([]);
+    // const [mediaId, setMediaId] = useState(0)
+    // const [featuredMedia, setFeaturedMedia] = useState<Record<number, WordPressMedia>>({});
+    // const [full, SetFull] = useState(false)
+    // const [loading, SetLoading] = useState(false)
 
 
-    interface WordPressPost {
-        id: number;
-        date: string; // ISO 8601 format
-        date_gmt: string;
-        guid: {
-            rendered: string;
-        };
-        modified: string;
-        modified_gmt: string;
-        slug: string;
-        status: string;
-        type: string; // 'post', 'page', etc.
-        link: string;
-        title: {
-            rendered: string;
-        };
-        content: {
-            rendered: string; // The HTML content
-            protected: boolean;
-        };
-        excerpt: {
-            rendered: string;
-            protected: boolean;
-        };
-        author: number; // ID of the author
-        featured_media: number; // ID of the featured media (image)
-        comment_status: string;
-        ping_status: string;
-        sticky: boolean;
-        template: string;
-        format: string; // 'standard', 'aside', 'gallery', etc.
-        meta: any; // Often an empty object initially, but can hold custom fields
-        categories: number[]; // Array of category IDs
-        tags: number[]; // Array of tag IDs
+    // interface WordPressPost {
+    //     id: number;
+    //     date: string; // ISO 8601 format
+    //     date_gmt: string;
+    //     guid: {
+    //         rendered: string;
+    //     };
+    //     modified: string;
+    //     modified_gmt: string;
+    //     slug: string;
+    //     status: string;
+    //     type: string; // 'post', 'page', etc.
+    //     link: string;
+    //     title: {
+    //         rendered: string;
+    //     };
+    //     content: {
+    //         rendered: string; // The HTML content
+    //         protected: boolean;
+    //     };
+    //     excerpt: {
+    //         rendered: string;
+    //         protected: boolean;
+    //     };
+    //     author: number; // ID of the author
+    //     featured_media: number; // ID of the featured media (image)
+    //     comment_status: string;
+    //     ping_status: string;
+    //     sticky: boolean;
+    //     template: string;
+    //     format: string; // 'standard', 'aside', 'gallery', etc.
+    //     meta: any; // Often an empty object initially, but can hold custom fields
+    //     categories: number[]; // Array of category IDs
+    //     tags: number[]; // Array of tag IDs
     
-        // ... potentially more properties depending on your WordPress setup
-    }
+    //     // ... potentially more properties depending on your WordPress setup
+    // }
 
-    interface WordPressMedia {
-        id: number;
-        source_url: string; // URL of the image
-        // ... other media properties (e.g., sizes, alt text)
-    }
+    // interface WordPressMedia {
+    //     id: number;
+    //     source_url: string; // URL of the image
+    //     // ... other media properties (e.g., sizes, alt text)
+    // }
 
-    const [start, setStart] = useState(1)
-    const [end, setEnd] = useState(3)
+    // const [start, setStart] = useState(1)
+    // const [end, setEnd] = useState(3)
     
-    async function fetchPosts(s: number, e: number) {
-    SetLoading(true)
-    const perPage = e - s + 1; // Number of posts to fetch
-    const offset = s - 1; // Offset should be 0-based
-    console.log("start", start)
-    console.log("end", end)
-    console.log("perPage", perPage)
-    console.log("offset", offset)
-    if(offset > 26 + 3){
-        SetFull(true)
-    }
-    try {
-        const response = await fetch(`https://biotech-informatics.com/wp-json/wp/v2/posts?per_page=${perPage}&offset=${offset}&_fields=id,title,excerpt,featured_media`); // Replace with your WordPress URL
-        const data = await response.json();
-        setPosts([...posts, ...data]); 
-        if (data) { // Check if data exists
-            const mediaPromises = data.map(async (post: WordPressPost) => {
-            if (post.featured_media) {
-                const mediaResponse = await fetch(
-                    `https://biotech-informatics.com/wp-json/wp/v2/media/${post.featured_media}`
-                );
-                const resp = await mediaResponse.json();
-                return resp;
-                // return null; // No featured media
-            }
-            return null; // No featured media
-            });
-            const mediaData = await Promise.all(mediaPromises);
-            const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
-            if (media) {
-                acc[media.id] = media;
-            }
-            return acc;
-            }, {});
-            setFeaturedMedia({...featuredMedia, ...mediaById}); 
-            SetLoading(false)
-            setStart(start + 4);
-            setEnd(end + 4);
-        }
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-    }
-    }
-    useEffect(() => {
-        fetchPosts(start,end);
-    }, []);
+    // async function fetchPosts(s: number, e: number) {
+    // SetLoading(true)
+    // const perPage = e - s + 1; // Number of posts to fetch
+    // const offset = s - 1; // Offset should be 0-based
+    // console.log("start", start)
+    // console.log("end", end)
+    // console.log("perPage", perPage)
+    // console.log("offset", offset)
+    // if(offset > 26 + 3){
+    //     SetFull(true)
+    // }
+    // try {
+    //     const response = await fetch(`https://biotech-informatics.com/wp-json/wp/v2/sites/abdalfttahacademy.wordpress.com/posts?per_page=${perPage}&offset=${offset}&_fields=id,title,excerpt,featured_media`); // Replace with your WordPress URL
+    //     const data = await response.json();
+    //     setPosts([...posts, ...data]); 
+    //     if (data) { // Check if data exists
+    //         const mediaPromises = data.map(async (post: WordPressPost) => {
+    //         if (post.featured_media) {
+    //             const mediaResponse = await fetch(
+    //                 `https://biotech-informatics.com/wp-json/wp/v2/sites/abdalfttahacademy.wordpress.com/media/${post.featured_media}`
+    //             );
+    //             const resp = await mediaResponse.json();
+    //             return resp;
+    //             // return null; // No featured media
+    //         }
+    //         return null; // No featured media
+    //         });
+    //         const mediaData = await Promise.all(mediaPromises);
+    //         const mediaById: Record<number, WordPressMedia> = mediaData.reduce((acc, media) => {
+    //         if (media) {
+    //             acc[media.id] = media;
+    //         }
+    //         return acc;
+    //         }, {});
+    //         setFeaturedMedia({...featuredMedia, ...mediaById}); 
+    //         SetLoading(false)
+    //         setStart(start + 4);
+    //         setEnd(end + 4);
+    //     }
+    // } catch (error) {
+    //     console.error('Error fetching posts:', error);
+    // }
+    // }
+    // useEffect(() => {
+    //     fetchPosts(start,end);
+    // }, []);
 
-    useEffect(() => {
-        console.log("posts sep", posts);
-    }, [posts]);
+    // useEffect(() => {
+    //     console.log("posts sep", posts);
+    // }, [posts]);
 
 
-    useEffect(() => {
-        console.log("featuredMedia sep", featuredMedia);
-    }, [featuredMedia]);
-    
+    // useEffect(() => {
+    //     console.log("featuredMedia sep", featuredMedia);
+    // }, [featuredMedia]);
+    // const posts = await getBlogPosts();
+
+    // const getAuth = () => {
+    //     const options = {
+    //         method: 'POST',
+    //             headers: {
+    //             accept: 'application/json',
+    //             Authorization: 'Basic 198d872b-594c-8002-b01e-00370b8525ed',
+    //             'content-type': 'application/json'
+    //             },
+    //             body: JSON.stringify({grant_type: '"authorization_code"'})
+    //         };
+            
+    //         fetch('https://api.notion.com/v1/oauth/token', {
+    //             method: 'POST',
+    //             headers: {
+    //             "accept": 'application/json',
+    //             "Authorization": 'Basic 198d872b-594c-8002-b01e-00370b8525ed',
+    //             'content-type': 'application/json'
+    //             },
+    //             body: JSON.stringify({grant_type: '"authorization_code"'})
+    //             }
+    //         )
+    //         .then(res => res.json())
+    //         .then(res => console.log("res", res))
+    //         .catch(err => console.error(err));
+    // }
+
+    // getAuth()
 
   return (
     <section className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
         <MainHeading>
             {
-                all ? t("HeadingAll") : t("Heading")
+                // all ? t("HeadingAll") : t("Heading")
+                "blog"
             }
         </MainHeading>
         <div className="container">
-            {
+            {/* <ul>
+                {posts.map((post) => (
+                    <li key={post.id}>
+                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    </li>
+                ))}
+            </ul> */}
+            {/* {
                 posts.length > 0 ? 
                 posts.map((post: WordPressPost, index: number) => {
                     const cleanHTML = DOMPurify.sanitize(post.excerpt.rendered)
@@ -273,9 +309,10 @@ const BlogCards = ({
                         </BlogCard>
                     </>        
                 
-            }
+            } */}
+
         </div>
-        {
+        {/* {
             all ?  <div className={styles.loadMore} style={{ display: full ? "none" : "block" }}>
             <button 
                 disabled={loading}
@@ -285,13 +322,13 @@ const BlogCards = ({
                 {loading && <FontAwesomeIcon icon={faSpinner} />}
             </button>
         </div> : null
-        }
+        } */}
         <div className={styles.moreBtn}>
             {
                 !all && 
                 <MainLink href={"/blog"}>
                     <span>
-                        {t("AllPosts")}
+                        {/* {t("AllPosts")} */}
                     </span>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </MainLink>

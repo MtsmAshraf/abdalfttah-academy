@@ -41,22 +41,9 @@ const Contact = ({
         <div className="container">
             <div className={styles.info}>
                 <div>
-                    <a href='/' target='_blank'>
-                        <span>
-                            <FontAwesomeIcon icon={faPhone} />
-                        </span>
-                        <h4>
-                            +1224535565676
-                        </h4>
-                    </a>
-                    <a href='/' target='_blank'>
-                        <span>
-                            <FontAwesomeIcon icon={faWhatsapp} />
-                        </span>
-                        <h4>
-                            +1224535565676
-                        </h4>
-                    </a>
+                    <SocialUl />
+                </div>
+                <div>
                     <a href="mailto:mohamed.biotech98@gmail.com" target='_blank'>
                         <span>
                             <FontAwesomeIcon icon={faEnvelope} />
@@ -65,9 +52,6 @@ const Contact = ({
                             mohamed.biotech98@gmail.com
                         </h4>
                     </a>
-                </div>
-                <div>
-                    <SocialUl />
                 </div>
                 <div className={styles.address}>
                     <span>
