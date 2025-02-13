@@ -103,7 +103,19 @@
         "Heading": "Publications"
     },
     "Courses": {
-        "Heading": "Courses"
+        "Heading": "Courses",
+        "uponRequest": {
+            "heading": "Welcome to the DNA Replication Course!",
+            "description": "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+            "divs": {
+                "h2": "Why Take a Personalized Course?",
+                "content": [
+                    "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                    "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                    "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*."
+                ]
+            }
+        }
     },
     "Blog": {
         "HeadingAll": "Blog",
