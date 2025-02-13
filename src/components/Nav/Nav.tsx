@@ -30,9 +30,9 @@ const Nav = ({
                 <li>
                     <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname.split("/")[2] === "courses" ? styles.active : ""} href={'/courses'}>{t("1")}</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname === `/${lo}/publications` ? styles.active : ""} href={'/publications'}>{t("2")}</Link>
-                </li>
+                </li> */}
                 <li>
                     <Link onClick={() => dispatch(toggleShowSideNav())} className={pathname.split("/")[2] === "blog" ? styles.active : ""} href={'/blog'}>{t("3")}</Link>
                 </li>
