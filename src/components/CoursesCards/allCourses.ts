@@ -167,7 +167,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week four: 14 Hallmarks of Cancer",
+                    button: "Week four: *14 Hallmarks of Cancer*",
                     subList: [
                         "Sustaining Proliferative Signaling",
                         "Evading Growth Suppressors",
@@ -186,7 +186,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week five: Tumor Viruses and Genetic Factors in Cancer",
+                    button: "Week five: *Tumor Viruses and Genetic Factors in Cancer*",
                     subList: [
                         "The Role of Tumor Viruses in Cancer Research",
                         "Early Hypotheses on Tumor Viruses",
@@ -222,7 +222,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week Seven: Cancer Treatments and Their Drugs",
+                    button: "Week Seven: *Cancer Treatments and Their Drugs*",
                     subList: [
                         {
                             heading: "*Surgery & Radiation*",
@@ -1798,7 +1798,7 @@ const allCourses : Course[] = [
                             button: "*Downloading biological datasets* from *UCSC and Pepper*",
                         },
                         {
-                            button: "Installing *R packages* from *CRAN, GitHub, and Bioconductor*",
+                            button: "*Installing R packages* from *CRAN, GitHub, and Bioconductor*",
                         },
                     ]
                 },
@@ -1809,7 +1809,7 @@ const allCourses : Course[] = [
                     partLink:"https://www.youtube.com/watch?v=uumUZCAU_YQ&list=PLC4LFcwOQGSFqZgpvT76obvkph0SADHBk",
                     contentPieces: [
                         {
-                            button: "Creating *different types of plots* in R",
+                            button: "*Creating different types of plots in R*",
                             subList: [
                                 "*Bar Plots, Histograms, Scatter Plots, Box Plots*",
                                 "*Density Plots, Violin Plots, Line Plots*",
@@ -1825,13 +1825,10 @@ const allCourses : Course[] = [
                     partLink:"https://www.youtube.com/watch?v=G9MIKReLkwY&list=PLC4LFcwOQGSGTydn4NPPr76Pz2i-Xa2sX",
                     contentPieces: [
                         {
-                            button: "*Data manipulation & transformation* techniques",
+                            button: "*Data manipulation & transformation techniques*",
                             subList: [
                                 "Filtering, Selecting, Arranging, Mutating, Summarizing",
                                 "Spreading, Gathering, Separating, and Pulling data",
-                                "Integer",
-                                "Logical",
-                                "Complex"
                             ]
                         },
                         {
@@ -1881,7 +1878,7 @@ const allCourses : Course[] = [
                             ]
                         },
                         {
-                            button: "Hypothesis Testing Methods",
+                            button: "*Hypothesis Testing Methods*",
                             subList: [
                                 "*T-Test*",
                                 "*ANOVA (Analysis of Variance)*",
@@ -1899,29 +1896,18 @@ const allCourses : Course[] = [
                         {
                             button: "*Introduction to Bioconductor*, a powerful tool for analyzing genomic data",
                             subList: [
-                                "Character",
-                                "Numeric",
-                                "Integer",
-                                "Logical",
-                                "Complex"
+                                "Genomic Annotation & Gene Ontology (GO) Analysis",
+                                "*Multiple Sequence Alignment & Phylogenetic Tree Construction*",
+                                "*Quality Control for Sequencing Reads* (Trimming & Filtering Reads)",
+                                {
+                                    heading: "Working with Genomic Data in R:",
+                                    list: [
+                                        "Introduction to *GenomicRanges* package",
+                                        "Understanding the *Summarized Experiment Object*",
+                                    ]
+                                }
                             ]
-                        },
-                        {
-                            button: "*Genomic Annotation & Gene Ontology (GO) Analysis*",
-                        },
-                        {
-                            button: "*Multiple Sequence Alignment & Phylogenetic Tree Construction*",
-                        },
-                        {
-                            button: "*Quality Control for Sequencing Reads* (Trimming & Filtering Reads)",
-                        },
-                        {
-                            button: "*Working with Genomic Data in R*",
-                            subList: [
-                                "Introduction to *GenomicRanges* package",
-                                "Understanding the *SummarizedExperiment Object*",
-                            ]
-                        },
+                        }
                     ]
                 }
             ],

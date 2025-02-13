@@ -253,7 +253,7 @@
     gap: 10px;
     color: var(--text-color);
     font-family: "Poppins", sans-serif;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 18px;
     text-align: left;
     /* width: 100%; */
@@ -262,6 +262,9 @@
 }
 .course > div:nth-child(2) .scroll > div .content > li button p{
     flex: 1;
+}
+.course > div:nth-child(2) .scroll > div .content strong{
+    font-weight: 600;
 }
 .course > div:nth-child(2) .scroll > div .content > li button svg{
     cursor: pointer;

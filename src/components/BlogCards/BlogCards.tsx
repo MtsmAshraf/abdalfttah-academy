@@ -147,7 +147,7 @@ const BlogCards = ({
     //         method: 'POST',
     //             headers: {
     //             accept: 'application/json',
-    //             Authorization: 'Basic 198d872b-594c-8002-b01e-00370b8525ed',
+    //             Authorization: 'Basic ID',
     //             'content-type': 'application/json'
     //             },
     //             body: JSON.stringify({grant_type: '"authorization_code"'})
