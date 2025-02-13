@@ -75,14 +75,14 @@ const allCourses : Course[] = [
         enrollType: "paid",
         title: "Introduction to Cancer Biology",
         category: "Advanced Biology",
-        price: "100$ USD",
+        price: "100",
         src: image1,
         innerPage: {
             details: {
                 when: "20-06-2025",
                 duration: "8 weeks",
                 location: "Online",
-                price: "100 USD"
+                price: "100"
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
@@ -369,7 +369,7 @@ const allCourses : Course[] = [
     },
     {
         id: "2",
-        enrollType: "free",
+        enrollType: "coming soon",
         title: "Advanced Cancer Biology",
         category: "Advanced Biology",
         src: image2,
@@ -588,7 +588,7 @@ const allCourses : Course[] = [
     },
     {
         id: "3",
-        enrollType: "free",
+        enrollType: "coming soon",
         title: "Immune Oncology",
         category: "Advanced Biology",
         price: "Coming Soon",
@@ -808,7 +808,7 @@ const allCourses : Course[] = [
     },
     {
         id: "4",
-        enrollType: "free",
+        enrollType: "coming soon",
         title: "Brain Tumors and Glial Cell Biology",
         category: "Advanced Biology",
         price: "Upon Request",
@@ -1028,10 +1028,9 @@ const allCourses : Course[] = [
     },
     {
         id: "5",
-        enrollType: "free",
+        enrollType: "coming soon",
         title: "Basics of Colorectal Cancer (CRC)",
         category: "Advanced Biology",
-        price: "200.00$ USD",
         src: image2,
         innerPage: {
             details: {
@@ -2665,10 +2664,9 @@ const allCourses : Course[] = [
     },
     {
         id: "14",
-        enrollType: "free",
+        enrollType: "coming soon",
         title: "Introduction to Bioinformatics",
         category: "Basics",
-        price: "200.00$ USD",
         src: image2,
         innerPage: {
             details: {

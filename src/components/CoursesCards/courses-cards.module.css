@@ -59,10 +59,65 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    
 }
 .coursesCards > span > a:hover{
     background-color: var(--sec-bg);
     gap: 20px;
+}
+.coursesCards .commingSoon{
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    background-image: var(--main-heading-gradient);
+    font-size: 30px;
+    /* padding: 10px 30px; */
+    border-radius: 30px;
+    color: #fff;
+    box-shadow: var(--main-light-shadow);
+    text-align: center;
+    width: 300px;
+    max-width: 95%;
+    height: 60px;
+    overflow: hidden;
+    transition: var(--animation-transition);
+}
+@media (max-width: 650px) {
+    .coursesCards .commingSoon{
+        font-size: 20px;
+        width: 200px;
+        max-width: 95%;
+        height: 40px;
+    }
+}
+.coursesCards:has(div[show-modal="true"]) .commingSoon{
+    top: 100px;
+}
+.coursesCards .commingSoon p{
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transition: var(--animation-transition);
+    transform: translateX(-50%) translateY(-50%);
+}
+.coursesCards .commingSoon p:first-child{
+    top: 50%;
+}
+.coursesCards .commingSoon p:last-child{
+    top: 150%;
+    opacity: 0;
+}
+.coursesCards:has(div[show-modal="true"]) .commingSoon p:first-child{
+    opacity: 0;
+    transition-delay: 1.5s;
+    top: -150%;
+}
+.coursesCards:has(div[show-modal="true"]) .commingSoon p:last-child{
+    transition-delay: 1.5s;
+    opacity: 1;
+    top: 50%;
 }
 @media (max-width: 1250px) {
     .coursesCards > div:nth-of-type(2){

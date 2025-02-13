@@ -34,3 +34,11 @@
         font-size: 30px;
     }
 }
+@media (max-width: 650px) {
+    .mainHeading{
+        font-size: 40px;
+    }
+    .mainHeading.scrolled{
+        font-size: 22px;
+    }
+}

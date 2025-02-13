@@ -40,6 +40,7 @@ const CoursesCards = ({
             }, 1200);
         }
     },[])
+
   return (
     <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>
         <MainHeading cat={category}>
@@ -54,8 +55,8 @@ const CoursesCards = ({
                         if(course.category.toLowerCase() === category.toLowerCase()){
                             return(
                                 !all && index <= 3 &&
-                                    <Card index={index} key={course.id}>
-                                    <Link href={`/courses/${course.id}`}>
+                                    <Card comingSoon={course.enrollType === "coming soon"} index={index} key={course.id}>
+                                    <Link style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }} href={`/courses/${course.id}`}>
                                         <div>
                                             <Image src={course.src} alt={`${course.title} Course`}></Image>
                                         </div>
@@ -64,16 +65,16 @@ const CoursesCards = ({
                                     </Link>
                                         <div>
                                             <h4>{course.title}</h4>
-                                            <div>
+                                            <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
                                                 <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
                                         </div>
-                                </Card>
+                                    </Card>
                                 
                                 || all &&
-                                    <Card index={index} key={course.id}>
-                                    <Link href={`/courses/${course.id}`}>
+                                    <Card comingSoon={course.enrollType === "coming soon"} index={index} key={course.id}>
+                                    <Link style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }} href={`/courses/${course.id}`}>
                                         <div>
                                             <Image src={course.src} alt={`${course.title} Course`}></Image>
                                         </div>
@@ -82,8 +83,8 @@ const CoursesCards = ({
                                     </Link>
                                         <div>
                                             <h4>{course.title}</h4>
-                                            <div>
-                                                <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
+                                            <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                                <p>{course.enrollType === "paid" ? `${course.price}$ USD` : course.enrollType}</p>
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
                                         </div>
@@ -94,8 +95,8 @@ const CoursesCards = ({
                     }else if(!category){
                         return(
                             !all && index <= 3 &&
-                                <Card index={index} key={course.id}>
-                                <Link href={`/courses/${course.id}`}>
+                                <Card comingSoon={course.enrollType === "coming soon"} index={index} key={course.id}>
+                                <Link style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }} href={`/courses/${course.id}`}>
                                     <div>
                                         <Image src={course.src} alt={`${course.title} Course`}></Image>
                                     </div>
@@ -104,7 +105,7 @@ const CoursesCards = ({
                                 </Link>
                                     <div>
                                         <h4>{course.title}</h4>
-                                        <div>
+                                        <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
                                             <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
@@ -112,8 +113,8 @@ const CoursesCards = ({
                             </Card>
                             
                             || all &&
-                                <Card index={index} key={course.id}>
-                                <Link href={`/courses/${course.id}`}>
+                                <Card comingSoon={course.enrollType === "coming soon"} index={index} key={course.id}>
+                                <Link style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }} href={`/courses/${course.id}`}>
                                     <div>
                                         <Image src={course.src} alt={`${course.title} Course`}></Image>
                                     </div>
@@ -122,7 +123,7 @@ const CoursesCards = ({
                                 </Link>
                                     <div>
                                         <h4>{course.title}</h4>
-                                        <div>
+                                        <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
                                             <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
@@ -143,6 +144,10 @@ const CoursesCards = ({
                 </MainLink>
             </span>
         }
+        <div className={styles.commingSoon}>
+            <p>Coming Soon</p>
+            <p>Stay Tuned</p>
+        </div>
     </section>
   )
 }

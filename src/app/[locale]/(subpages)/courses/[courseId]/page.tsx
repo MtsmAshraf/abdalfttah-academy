@@ -329,7 +329,7 @@ const CourseId = ({
                   </li>
                   <li>
                     <span><FontAwesomeIcon icon={faDollar} /></span>
-                    <h5>{course.innerPage.details.price || "Free"}</h5>
+                    <h5>{course.innerPage.details.price ? `${course.innerPage.details.price} USD` : "Free"}</h5>
                   </li>
                 </ul>
               </div>
