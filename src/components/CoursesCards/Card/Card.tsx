@@ -24,7 +24,6 @@ const Card = ({
         if(card.current.offsetTop <= (window.scrollY + 500)){
             setTimeout(() => {
                 setCardScrolled(true)
-                console.log(card, index)
             }, 1200);
         }
     },[])

@@ -1,3 +1,4 @@
+"use client"
 import React, { use, useEffect, useState } from 'react'
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
@@ -14,6 +15,7 @@ import allBlogPosts, { BlogPost } from './allBlogPosts'
 import { useTranslations } from 'next-intl'
 
 import altImg from "../../../public/images/post-loading.jpg"
+import { getBlogPosts } from '@/lib/notion'
 // import { getBlogPosts } from '@/lib/notion'
 
 
@@ -140,35 +142,38 @@ const BlogCards = ({
     // useEffect(() => {
     //     console.log("featuredMedia sep", featuredMedia);
     // }, [featuredMedia]);
-    // const posts = await getBlogPosts();
+    type NotionPost = {
+        id: string,
+        title: string,
+        content: string,
+    }
+    const [posts, setPosts] = useState<NotionPost[]>([
+        {
+            id: "21123",
+            title: "string",
+            content: "string",
+        },
+        {
+            id: "211233",
+            title: "string",
+            content: "string",
+        },
+        {
+            id: "2112334",
+            title: "string",
+            content: "string",
+        },
+    ])
+    useEffect(() => {
+        fetch("/api/posts", {
+            headers: { Authorization: `Bearer ntn_B79750973607vCBFou3TYjogVf6gwSTHVGgQphjsZ8h2lz` },
+        })
+        .then((res) => res.json())
+        .then((data) => {setPosts(data); console.log("posts", data)})
+        .catch((err) => console.error(err));
+    }, []);
 
-    // const getAuth = () => {
-    //     const options = {
-    //         method: 'POST',
-    //             headers: {
-    //             accept: 'application/json',
-    //             Authorization: 'Basic ID',
-    //             'content-type': 'application/json'
-    //             },
-    //             body: JSON.stringify({grant_type: '"authorization_code"'})
-    //         };
-            
-    //         fetch('https://api.notion.com/v1/oauth/token', {
-    //             method: 'POST',
-    //             headers: {
-    //             "accept": 'application/json',
-    //             "Authorization": 'Basic 198d872b-594c-8002-b01e-00370b8525ed',
-    //             'content-type': 'application/json'
-    //             },
-    //             body: JSON.stringify({grant_type: '"authorization_code"'})
-    //             }
-    //         )
-    //         .then(res => res.json())
-    //         .then(res => console.log("res", res))
-    //         .catch(err => console.error(err));
-    // }
 
-    // getAuth()
 
   return (
     <section className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
@@ -179,6 +184,17 @@ const BlogCards = ({
             }
         </MainHeading>
         <div className="container">
+            <h1>Blog Posts</h1>
+            {/* {
+                posts.map((post: NotionPost) => {
+                    return(
+                        <div key={post.id}>
+                        <h2>{post.title}</h2>
+                        <p>{post.content}</p>
+                    </div>
+                    )
+                })
+            } */}
             {/* <ul>
                 {posts.map((post) => (
                     <li key={post.id}>

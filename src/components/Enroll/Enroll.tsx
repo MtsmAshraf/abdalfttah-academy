@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./enroll.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faQuestion, faRocket } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import instaPay from "../../../public/images/instapay.png"
 import vodafoneCash from "../../../public/images/vodafone-cash.png"
-
+import Select from "react-select";
 
 import Image from 'next/image'
 const Enroll = ({
@@ -23,111 +23,240 @@ const Enroll = ({
     showAr?: boolean
 }) => {
 
-    async function handlePaymentSuccess(userEmail: string, userName: string, course: string) {
-        await fetch("/api/send", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: userEmail, name: userName , courseName: course }),
-        });
-    }
-    type Method = {
-        logo: string,
-        name_ar: string,
-        name_en: string,
-        paymentId: number,
-        redirect: string,
-    }
-    const [methods, setMethods] = useState<Method[]>([])
-    const [payment, setPayment] = useState<any>()
+async function handlePaymentSuccess(userEmail: string, userName: string, course: string) {
+    await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: userEmail, name: userName , courseName: course }),
+    });
+}
 
-    async function getMethods() {
-        var myHeaders = new Headers();
-        myHeaders.append("content-type", "application/json");
-        myHeaders.append("Authorization", "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88");
+type Method = {
+    logo: string,
+    name_ar: string,
+    name_en: string,
+    paymentId: number,
+    redirect: string,
+}
+const [methods, setMethods] = useState<Method[]>([])
+const [payment, setPayment] = useState<any>()
 
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
+async function getMethods() {
+    var myHeaders = new Headers();
+    myHeaders.append("content-type", "application/json");
+    myHeaders.append("Authorization", "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88");
 
-
-        await fetch("https://staging.fawaterk.com/api/v2/getPaymentmethods", {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88"
-            },
-            redirect: 'follow'
-        })
-        .then(response => (response.json()))
-        .then(result => {
-            console.log(result.data)
-            setMethods(result.data)
-            excutePayment(result.data[0].paymentId)
-            // console.log("result.data[0].paymentId", result.data[0].paymentId)
-        })
-        .catch(error => console.log('error', error));
-
-    }
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
 
 
-    async function excutePayment(id: number) {
-        var axios = require('axios');
-        var data = JSON.stringify({
-        "payment_method_id": id,
-        "cartTotal": "5000",
-        "currency": "EGP",
-        "customer": {
-            "first_name": "test",
-            "last_name": "test",
-            "email": "test@test.test",
-            "phone": "01000000000",
-            "address": "test address"
+    await fetch("https://staging.fawaterk.com/api/v2/getPaymentmethods", {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88"
         },
-        "redirectionUrls": {
-            "successUrl": "https://dev.fawaterk.com/success",
-            "failUrl": "https://dev.fawaterk.com/fail",
-            "pendingUrl": "https://dev.fawaterk.com/pending"
-        },
-        "cartItems": [
-            {
-            "name": courseName,
-            "price": "5000",
-            "quantity": "1"
-            }
-        ]
-        });
+        redirect: 'follow'
+    })
+    .then(response => (response.json()))
+    .then(result => {
+        console.log(result.data)
+        setMethods(result.data)
+        excutePayment(result.data[0].paymentId)
+        // console.log("result.data[0].paymentId", result.data[0].paymentId)
+    })
+    .catch(error => console.log('error', error));
 
-        var config = {
-        method: 'post',
-        url: 'https://staging.fawaterk.com/api/v2/invoiceInitPay',
-        headers: { 
-            'Authorization': 'Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88', 
-            'Content-Type': 'application/json'
-        },
-        data : data
-        };
+}
 
-        axios(config)
-        .then(function (response: any) {
-            console.log(response.data.data);
-            setPayment(response.data.data)
-        })
-        .catch(function (error: Error) {
-            console.log(error);
-        });
-    }
 
-    useEffect(() => {
-        getMethods()
-        console.log(methods)
-    },[])
-
-    const classNames = [
-        styles.enroll,
-        lo === "ar" && showAr ? styles.ar : ""
+async function excutePayment(id: number) {
+    var axios = require('axios');
+    var data = JSON.stringify({
+    "payment_method_id": id,
+    "cartTotal": "5000",
+    "currency": "EGP",
+    "customer": {
+        "first_name": "test",
+        "last_name": "test",
+        "email": "test@test.test",
+        "phone": "01000000000",
+        "address": "test address"
+    },
+    "redirectionUrls": {
+        "successUrl": "https://dev.fawaterk.com/success",
+        "failUrl": "https://dev.fawaterk.com/fail",
+        "pendingUrl": "https://dev.fawaterk.com/pending"
+    },
+    "cartItems": [
+        {
+        "name": courseName,
+        "price": "5000",
+        "quantity": "1"
+        }
     ]
+    });
+
+    var config = {
+    method: 'post',
+    url: 'https://staging.fawaterk.com/api/v2/invoiceInitPay',
+    headers: { 
+        'Authorization': 'Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88', 
+        'Content-Type': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+    .then(function (response: any) {
+        console.log(response.data.data);
+        setPayment(response.data.data)
+    })
+    .catch(function (error: Error) {
+        console.log(error);
+    });
+}
+
+useEffect(() => {
+    getMethods()
+    console.log(methods)
+},[])
+
+const countryCodes = [
+    { value: "+1", label: "🇺🇸 +1 (USA)" },
+    { value: "+44", label: "🇬🇧 +44 (UK)" },
+    { value: "+20", label: "🇪🇬 +20 (Egypt)" },
+    { value: "+91", label: "🇮🇳 +91 (India)" },
+    { value: "+33", label: "🇫🇷 +33 (France)" },
+    { value: "+49", label: "🇩🇪 +49 (Germany)" },
+    { value: "+971", label: "🇦🇪 +971 (UAE)" },
+    { value: "+61", label: "🇦🇺 +61 (Australia)" },
+    { value: "+7", label: "🇷🇺 +7 (Russia)" },
+    { value: "+81", label: "🇯🇵 +81 (Japan)" },
+    { value: "+86", label: "🇨🇳 +86 (China)" },
+    { value: "+34", label: "🇪🇸 +34 (Spain)" },
+    { value: "+39", label: "🇮🇹 +39 (Italy)" },
+    { value: "+55", label: "🇧🇷 +55 (Brazil)" },
+    { value: "+52", label: "🇲🇽 +52 (Mexico)" },
+    { value: "+27", label: "🇿🇦 +27 (South Africa)" },
+    { value: "+62", label: "🇮🇩 +62 (Indonesia)" },
+    { value: "+82", label: "🇰🇷 +82 (South Korea)" },
+    { value: "+90", label: "🇹🇷 +90 (Turkey)" },
+    { value: "+46", label: "🇸🇪 +46 (Sweden)" },
+    { value: "+47", label: "🇳🇴 +47 (Norway)" },
+    { value: "+48", label: "🇵🇱 +48 (Poland)" },
+    { value: "+31", label: "🇳🇱 +31 (Netherlands)" },
+    { value: "+32", label: "🇧🇪 +32 (Belgium)" },
+    { value: "+41", label: "🇨🇭 +41 (Switzerland)" },
+    { value: "+43", label: "🇦🇹 +43 (Austria)" },
+    { value: "+30", label: "🇬🇷 +30 (Greece)" },
+    { value: "+351", label: "🇵🇹 +351 (Portugal)" },
+    { value: "+353", label: "🇮🇪 +353 (Ireland)" },
+    { value: "+380", label: "🇺🇦 +380 (Ukraine)" },
+    { value: "+375", label: "🇧🇾 +375 (Belarus)" },
+    { value: "+420", label: "🇨🇿 +420 (Czech Republic)" },
+    { value: "+421", label: "🇸🇰 +421 (Slovakia)" },
+    { value: "+36", label: "🇭🇺 +36 (Hungary)" },
+    { value: "+40", label: "🇷🇴 +40 (Romania)" },
+    { value: "+386", label: "🇸🇮 +386 (Slovenia)" },
+    { value: "+372", label: "🇪🇪 +372 (Estonia)" },
+    { value: "+371", label: "🇱🇻 +371 (Latvia)" },
+    { value: "+370", label: "🇱🇹 +370 (Lithuania)" },
+    { value: "+56", label: "🇨🇱 +56 (Chile)" },
+    { value: "+57", label: "🇨🇴 +57 (Colombia)" },
+    { value: "+58", label: "🇻🇪 +58 (Venezuela)" },
+    { value: "+63", label: "🇵🇭 +63 (Philippines)" },
+    { value: "+65", label: "🇸🇬 +65 (Singapore)" },
+    { value: "+66", label: "🇹🇭 +66 (Thailand)" },
+    { value: "+92", label: "🇵🇰 +92 (Pakistan)" },
+    { value: "+98", label: "🇮🇷 +98 (Iran)" },
+    { value: "+965", label: "🇰🇼 +965 (Kuwait)" },
+    { value: "+966", label: "🇸🇦 +966 (Saudi Arabia)" },
+    { value: "+972", label: "🇮🇱 +972 (Israel)" },
+    { value: "+973", label: "🇧🇭 +973 (Bahrain)" },
+    { value: "+974", label: "🇶🇦 +974 (Qatar)" },
+    { value: "+975", label: "🇧🇹 +975 (Bhutan)" },
+    { value: "+976", label: "🇲🇳 +976 (Mongolia)" },
+    { value: "+977", label: "🇳🇵 +977 (Nepal)" },
+    { value: "+212", label: "🇲🇦 +212 (Morocco)" },
+    { value: "+213", label: "🇩🇿 +213 (Algeria)" },
+    { value: "+216", label: "🇹🇳 +216 (Tunisia)" },
+    { value: "+218", label: "🇱🇾 +218 (Libya)" },
+    { value: "+220", label: "🇬🇲 +220 (Gambia)" },
+    { value: "+221", label: "🇸🇳 +221 (Senegal)" },
+    { value: "+222", label: "🇲🇷 +222 (Mauritania)" },
+    { value: "+223", label: "🇲🇱 +223 (Mali)" },
+    { value: "+225", label: "🇨🇮 +225 (Ivory Coast)" },
+    { value: "+226", label: "🇧🇫 +226 (Burkina Faso)" },
+    { value: "+227", label: "🇳🇪 +227 (Niger)" },
+    { value: "+228", label: "🇹🇬 +228 (Togo)" },
+    { value: "+229", label: "🇧🇯 +229 (Benin)" },
+    { value: "+230", label: "🇲🇺 +230 (Mauritius)" },
+    { value: "+231", label: "🇱🇷 +231 (Liberia)" },
+    { value: "+232", label: "🇸🇱 +232 (Sierra Leone)" },
+    { value: "+233", label: "🇬🇭 +233 (Ghana)" },
+    { value: "+234", label: "🇳🇬 +234 (Nigeria)" },
+    { value: "+235", label: "🇹🇩 +235 (Chad)" },
+    { value: "+236", label: "🇨🇫 +236 (Central African Republic)" },
+    { value: "+237", label: "🇨🇲 +237 (Cameroon)" },
+    { value: "+238", label: "🇨🇻 +238 (Cape Verde)" },
+    { value: "+239", label: "🇸🇹 +239 (Sao Tome and Principe)" },
+    { value: "+240", label: "🇬🇶 +240 (Equatorial Guinea)" },
+    { value: "+241", label: "🇬🇦 +241 (Gabon)" },
+    { value: "+242", label: "🇨🇬 +242 (Republic of the Congo)" },
+    { value: "+243", label: "🇨🇩 +243 (Democratic Republic of the Congo)" },
+    { value: "+244", label: "🇦🇴 +244 (Angola)" },
+    { value: "+245", label: "🇬🇼 +245 (Guinea-Bissau)" },
+    { value: "+246", label: "🇮🇴 +246 (British Indian Ocean Territory)" },
+    { value: "+248", label: "🇸🇨 +248 (Seychelles)" },
+    { value: "+249", label: "🇸🇩 +249 (Sudan)" },
+    { value: "+250", label: "🇷🇼 +250 (Rwanda)" },
+];
+  
+const customStyles = {
+    control: (base: any, state: { isFocused: any }) => ({
+        ...base,
+        backgroundColor: "var(--bg-color)",
+        borderRadius: "20px 0px 0px 20px",
+        border: "none",
+        outline: state.isFocused ? "2px solid var(--main-light-color)" : "1px solid var(--main-light-color)", // Blue focus border
+        padding: "0px 0px 0px 10px",
+        transition: "0.2s ease-in-out",
+        fontSize: "14px",
+        height: "100%"
+    }),
+    menu: (base: any) => ({
+        ...base,
+        backgroundColor: "var(--bg-color)",
+        // backgroundColor: "white",
+        borderRadius: "8px",
+        overflow: "hidden",
+        textAlign: "center",
+    }),
+    option: (base: any, { isFocused, isSelected }: any) => ({
+        ...base,
+        backgroundColor: isSelected ? "var(--main-light-color)" : isFocused ? "var(--main-light-color)" : "var(--main-color)",
+        color: isSelected ? "white" : "white",
+        cursor: "pointer",
+    }),
+    singleValue: (base: any) => ({
+        ...base,
+        color: "var(--text-color)",
+    }),
+    
+};
+  
+const [selectedCode, setSelectedCode] = useState(countryCodes[2]); // Default to Egypt
+const [phoneNumber, setPhoneNumber] = useState("");
+
+
+const classNames = [
+    styles.enroll,
+    lo === "ar" && showAr ? styles.ar : ""
+]
 
     if(enrollType === "free"){
         return (
@@ -182,6 +311,55 @@ const Enroll = ({
         return (
             <div id='enroll' className={`${classNames.length > 1 ? classNames.join(" ") : classNames[0]} ${styles.paid}`}>
                 <h2>How to enroll?</h2>
+                
+                <form action="">
+                    <h3>Please add your info!</h3>
+                    <div>
+                        <label htmlFor="name">
+                            <FontAwesomeIcon icon={faUser} />
+                            <span>
+                                Name
+                            </span>
+                        </label>
+                        <input type="text" name="name" id="name" required placeholder='e.g. John Doe'/>
+                    </div>
+                    <div>
+                        <label htmlFor="email">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                            <span>
+                                Email
+                            </span>
+                        </label>
+                        <input type="email" name="email" id="email" required placeholder='e.g. john@example.com'/>
+                    </div>
+                    <div>
+                        <label htmlFor="number"> 
+                            <FontAwesomeIcon icon={faPhone} />
+                            <span>
+                                Phone number
+                            </span>
+                        </label>
+                        <div className={styles.phone}>
+                            <Select
+                                options={countryCodes}
+                                value={selectedCode}
+                                onChange={(e) => {setSelectedCode(
+                                    {
+                                        value: e?.value || "value", 
+                                        label: e?.label || "label"
+                                    })}}
+                                styles={customStyles}
+                            />
+                            <input
+                                type="tel"
+                                required placeholder="Enter phone number"
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <button>Submit</button>
+                </form>
                 {
                     methods.map((method: any,index: number) => {
                         return(
@@ -199,40 +377,26 @@ const Enroll = ({
                     })
                 }
                 <ul>
-                    <li>
-                        <button onClick={() => {handlePaymentSuccess(
-                            "mosda@gmail.com",
-                            "moatasim",
-                            courseName
-                        )}}>
-                            <span>
-                                <Image loading='lazy' width={2500} height={2500} src={vodafoneCash} alt='Vodafone Cash Logo'></Image>
-                            </span>
-                            <h4>
-                                Vodafone Cash
-                            </h4>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <span>
-                                <Image loading='lazy' width={2500} height={2500} src={instaPay} alt='InstaPay Logo'></Image>
-                            </span>
-                            <h4>
-                                InstaPay
-                            </h4>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <span>
-                                <FontAwesomeIcon icon={faMoneyBillTransfer}  />
-                            </span>
-                            <h4>
-                                Bank Transfer
-                            </h4>
-                        </button>
-                    </li>
+                    {
+                        methods.map((method: Method, index: number) => {
+                            return(
+                                <li key={index}>
+                                    <button onClick={() => {handlePaymentSuccess(
+                                        "mosda@gmail.com",
+                                        "moatasim",
+                                        courseName
+                                    )}}>
+                                        <span>
+                                            <Image loading='lazy' width={2500} height={2500} src={method.logo} alt='Vodafone Cash Logo'></Image>
+                                        </span>
+                                        <h4>
+                                            {method.name_en}
+                                        </h4>
+                                    </button>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
         )

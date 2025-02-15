@@ -2,13 +2,25 @@ import * as React from "react";
 
 interface EmailTemplateProps {
   firstName: string;
+  userEmail: string;
+  course: string
 }
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   firstName,
+  userEmail,
+  course
 }) => (
   <div>
-    <h1>Welcome, {firstName}!</h1>
+    <p>
+      Dear, <b style={{ textTransform: "capitalize" }}>{firstName}</b>! <br />
+      Thank you for enrolling in the <b>{course}</b> course! <br />
+      We will contact you as soon as possible. <br />
+      looking forward to hear from you! <br />
+      
+      regards, <br />
+      Mohamed Abdalfttah <br />
+    </p>
   </div>
 );
 
