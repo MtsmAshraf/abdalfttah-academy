@@ -23,12 +23,13 @@ const Enroll = ({
     showAr?: boolean
 }) => {
 
-async function handlePaymentSuccess(userEmail: string, userName: string, course: string) {
+async function handlePaymentSuccess(userEmail: string, userName: string, phone: string, course: string) {
     await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: userEmail, name: userName , courseName: course }),
+        body: JSON.stringify({ email: userEmail, name: userName, phone: phone , courseName: course }),
     });
+    console.log("formData",formData)
 }
 
 type Method = {
@@ -235,6 +236,7 @@ const customStyles = {
         borderRadius: "8px",
         overflow: "hidden",
         textAlign: "center",
+        minWidth: "200px"
     }),
     option: (base: any, { isFocused, isSelected }: any) => ({
         ...base,
@@ -248,10 +250,23 @@ const customStyles = {
     }),
     
 };
-  
-const [selectedCode, setSelectedCode] = useState(countryCodes[2]); // Default to Egypt
-const [phoneNumber, setPhoneNumber] = useState("");
+    
+    type FormData = {
+        username: string,
+        userEmail: string,
+        phoneNumber: string,
+        course: string
+    }
 
+    const [formData, setFormData] = useState<FormData>({
+        username: "",
+        userEmail: "",
+        phoneNumber: "",
+        course: courseName
+    })
+
+const [selectedCode, setSelectedCode] = useState(countryCodes[2]); // Default to Egypt
+const [showNotValid, setShowNotValid] = useState<boolean>()
 
 const classNames = [
     styles.enroll,
@@ -312,7 +327,19 @@ const classNames = [
             <div id='enroll' className={`${classNames.length > 1 ? classNames.join(" ") : classNames[0]} ${styles.paid}`}>
                 <h2>How to enroll?</h2>
                 
-                <form action="">
+                <form onSubmit={(e) => {
+                    e.preventDefault(); 
+                    if( 
+                        formData.username.length > 1 && 
+                        formData.userEmail.includes("@") && 
+                        formData.phoneNumber.length > 5
+                    ){
+                        console.log("formData","VALID")
+                        handlePaymentSuccess(formData.userEmail, formData.username, formData.phoneNumber, formData.course)
+                    }else{
+                        console.log("formData","NOT VALID")
+                    }; 
+                    }}>
                     <h3>Please add your info!</h3>
                     <div>
                         <label htmlFor="name">
@@ -321,7 +348,7 @@ const classNames = [
                                 Name
                             </span>
                         </label>
-                        <input type="text" name="name" id="name" required placeholder='e.g. John Doe'/>
+                        <input onChange={(e) => {setFormData({...formData, username: e.target.value})}} type="text" name="name" id="name" required placeholder='e.g. John Doe'/>
                     </div>
                     <div>
                         <label htmlFor="email">
@@ -330,7 +357,7 @@ const classNames = [
                                 Email
                             </span>
                         </label>
-                        <input type="email" name="email" id="email" required placeholder='e.g. john@example.com'/>
+                        <input onChange={(e) => {setFormData({...formData, userEmail: e.target.value})}} type="email" name="email" id="email" required placeholder='e.g. john@example.com'/>
                     </div>
                     <div>
                         <label htmlFor="number"> 
@@ -351,16 +378,17 @@ const classNames = [
                                 styles={customStyles}
                             />
                             <input
+                                onChange={(e) => {setFormData({...formData, phoneNumber: `${selectedCode.value}${e.target.value}`})}}
                                 type="tel"
                                 required placeholder="Enter phone number"
-                                value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
                             />
                         </div>
                     </div>
-                    <button>Submit</button>
                 </form>
-                {
+                <p style={{ opacity: showNotValid ? "1" : "0" }} className={styles.notValid}>
+                    Please make sure to fill ALL the the info!
+                </p>
+                {/* {
                     methods.map((method: any,index: number) => {
                         return(
                             <div key={index}>
@@ -375,17 +403,28 @@ const classNames = [
                             </div>
                         )
                     })
-                }
+                } */}
                 <ul>
                     {
                         methods.map((method: Method, index: number) => {
                             return(
                                 <li key={index}>
-                                    <button onClick={() => {handlePaymentSuccess(
-                                        "mosda@gmail.com",
-                                        "moatasim",
-                                        courseName
-                                    )}}>
+                                    <button onClick={(e) => {
+                                        e.preventDefault(); 
+                                        if( 
+                                            formData.username.length > 1 && 
+                                            formData.userEmail.includes("@") && 
+                                            formData.phoneNumber.length > 2
+                                        ){
+                                            console.log("formData","VALID")
+                                            setShowNotValid(false)
+                                            handlePaymentSuccess(formData.userEmail, formData.username, formData.phoneNumber, formData.course)
+                                        }else{
+                                            console.log("formData","NOT VALID")
+                                            setShowNotValid(true)
+                                        }; 
+                                        }}
+                                    >
                                         <span>
                                             <Image loading='lazy' width={2500} height={2500} src={method.logo} alt='Vodafone Cash Logo'></Image>
                                         </span>

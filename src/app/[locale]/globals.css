@@ -41,6 +41,7 @@ html{
   --sec-bg: #fff;
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
   --main-light-shadow: 0 5px 20px -5px var(--main-light-color);
+  --not-valid-shadow: 0 .5rem 20px -5px red;
   --sec-shadow: 0 10px 10px -5px #212438;
   --section-shadow: 0 -10px 10px -5px #212438;
   --sec-light-shadow: 0 10px 10px -5px #121423;
@@ -78,6 +79,7 @@ html{
   --main-shadow: 0 .5rem 20px -5px var(--main-light-color);
   --main-light-shadow: 0 5px 20px -5px var(--main-light-color);
   --sec-shadow: 0 10px 20px -5px #333;
+  --not-valid-shadow: 0 .5rem 20px -5px red;
   --section-shadow: 0 -10px 20px -5px #acb2d9;
   --sec-light-shadow: 0 10px 20px -5px #888;
   --header-shadow: 0 -0.5rem 2rem var(--main-color);

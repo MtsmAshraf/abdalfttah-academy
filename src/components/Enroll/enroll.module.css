@@ -60,7 +60,7 @@
 .enroll.paid form{
     background-image: var(--hero-gradient);
     border: 2px solid var(--main-light-color);
-    padding: 20px;
+    padding: 20px 40px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -91,6 +91,17 @@
 }
 .enroll.paid form label svg{
     font-size: 20px;
+}
+.enroll.paid .notValid{
+    color: #fff;
+    background-image: var(--main-heading-gradient-cat);
+    text-align: center;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: var(--not-valid-shadow);
 }
 @media (max-width: 650px) {
     .enroll.paid form h3{
