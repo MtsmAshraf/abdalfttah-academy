@@ -73,6 +73,7 @@ async function getMethods() {
 
 }
 
+const [redirectLink,setRedirectLink] = useState("")
 
 async function excutePayment(id: number) {
     var axios = require('axios');
@@ -102,18 +103,21 @@ async function excutePayment(id: number) {
     });
 
     var config = {
-    method: 'post',
-    url: 'https://staging.fawaterk.com/api/v2/invoiceInitPay',
-    headers: { 
-        'Authorization': 'Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88', 
-        'Content-Type': 'application/json'
-    },
-    data : data
-};
+        method: 'post',
+        url: 'https://staging.fawaterk.com/api/v2/invoiceInitPay',
+        headers: { 
+            'Authorization': 'Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88', 
+            'Content-Type': 'application/json'
+        },
+        data : data
+    };
 
-axios(config)
+    axios(config)
     .then(function (response: any) {
         console.log(response.data.data);
+        if(response.data.data.payment_data.redirectTo){
+            setRedirectLink(response.data.data.payment_data.redirectTo)
+        }
         setPayment(response.data.data)
     })
     .catch(function (error: Error) {
@@ -251,19 +255,19 @@ const customStyles = {
     
 };
     
-    type FormData = {
-        username: string,
-        userEmail: string,
-        phoneNumber: string,
-        course: string
-    }
+type FormData = {
+    username: string,
+    userEmail: string,
+    phoneNumber: string,
+    course: string
+}
 
-    const [formData, setFormData] = useState<FormData>({
-        username: "",
-        userEmail: "",
-        phoneNumber: "",
-        course: courseName
-    })
+const [formData, setFormData] = useState<FormData>({
+    username: "",
+    userEmail: "",
+    phoneNumber: "",
+    course: courseName
+})
 
 const [selectedCode, setSelectedCode] = useState(countryCodes[2]); // Default to Egypt
 const [showNotValid, setShowNotValid] = useState<boolean>()
@@ -388,22 +392,6 @@ const classNames = [
                 <p style={{ opacity: showNotValid ? "1" : "0" }} className={styles.notValid}>
                     Please make sure to fill ALL the the info!
                 </p>
-                {/* {
-                    methods.map((method: any,index: number) => {
-                        return(
-                            <div key={index}>
-                                <div style={{ height:"100px"}}>
-                                    {
-                                        index === 0 && 
-                                        <a href={payment?.payment_data.redirectTo}>
-                                            <Image style={{ objectFit:'contain', height: "100%" }} src={method.logo} alt='logo' width={2000} height={2000}></Image>
-                                        </a>
-                                    }
-                                </div>
-                            </div>
-                        )
-                    })
-                } */}
                 <ul>
                     {
                         methods.map((method: Method, index: number) => {
@@ -432,6 +420,14 @@ const classNames = [
                                             {method.name_en}
                                         </h4>
                                     </button>
+                                    {
+                                        method.paymentId === 2 ? 
+                                        <a href={redirectLink}>
+                                            Pay
+                                        </a>
+                                        : 
+                                        null
+                                    }
                                 </li>
                             )
                         })
