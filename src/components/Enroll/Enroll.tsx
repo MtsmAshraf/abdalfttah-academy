@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./enroll.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import instaPay from "../../../public/images/instapay.png"
 import vodafoneCash from "../../../public/images/vodafone-cash.png"
@@ -42,87 +42,89 @@ type Method = {
 const [methods, setMethods] = useState<Method[]>([])
 const [payment, setPayment] = useState<any>()
 
-async function getMethods() {
-    var myHeaders = new Headers();
-    myHeaders.append("content-type", "application/json");
-    myHeaders.append("Authorization", "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88");
-
-    var requestOptions = {
+async function getMethods(paymentId?: number ) {
+    await fetch("/api/payment", {
         method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-
-
-    await fetch("https://staging.fawaterk.com/api/v2/getPaymentmethods", {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88"
+        headers: { 
+            "Content-Type": "application/json"
         },
-        redirect: 'follow'
     })
-    .then(response => (response.json()))
-    .then(result => {
-        console.log(result.data)
+    .then( res => res.json())
+    .then((result => {
+        if(paymentId || paymentId === 0){
+            if(window.sessionStorage.getItem(result.data[paymentId].paymentId.toString())){
+                if(window.sessionStorage.getItem(result.data[paymentId].paymentId.toString())?.includes("https")){
+                    setRedirectLink(window.sessionStorage.getItem(result.data[paymentId].paymentId.toString()) || "")
+                }else{
+                    setFawryCode(window.sessionStorage.getItem(`${result.data[paymentId].paymentId.toString()}`) || "")
+                    setFawryDate(window.sessionStorage.getItem(`${result.data[paymentId].paymentId.toString()}-date`) || "")
+                }
+            }else{
+                excutePayment(result.data[paymentId].paymentId)
+            }
+        }
         setMethods(result.data)
-        excutePayment(result.data[0].paymentId)
-        // console.log("result.data[0].paymentId", result.data[0].paymentId)
-    })
-    .catch(error => console.log('error', error));
-
+    }))
+;
 }
 
 const [redirectLink,setRedirectLink] = useState("")
+const [fawryCode, setFawryCode] = useState("")
+const [fawryDate, setFawryDate] = useState("")
+const [loading, setLoading] = useState(false)
 
 async function excutePayment(id: number) {
-    var axios = require('axios');
-    var data = JSON.stringify({
-    "payment_method_id": id,
-    "cartTotal": "5000",
-    "currency": "EGP",
-    "customer": {
-        "first_name": "test",
-        "last_name": "test",
-        "email": "test@test.test",
-        "phone": "01000000000",
-        "address": "test address"
-    },
-    "redirectionUrls": {
-        "successUrl": "https://dev.fawaterk.com/success",
-        "failUrl": "https://dev.fawaterk.com/fail",
-        "pendingUrl": "https://dev.fawaterk.com/pending"
-    },
-    "cartItems": [
-        {
-        "name": courseName,
-        "price": "5000",
-        "quantity": "1"
-        }
-    ]
+    setLoading(true)
+    const response = await fetch("/api/excute-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            payment_method_id: id,
+            courseName: courseName
+        })
     });
 
-    var config = {
-        method: 'post',
-        url: 'https://staging.fawaterk.com/api/v2/invoiceInitPay',
-        headers: { 
-            'Authorization': 'Bearer 2690f31989d675d9f2b250d0abbdc935967e93230df661ce88', 
-            'Content-Type': 'application/json'
-        },
-        data : data
-    };
+    
+    const result = await response.json();
+    console.log("EXCUTED", result.data);
 
-    axios(config)
-    .then(function (response: any) {
-        console.log(response.data.data);
-        if(response.data.data.payment_data.redirectTo){
-            setRedirectLink(response.data.data.payment_data.redirectTo)
-        }
-        setPayment(response.data.data)
-    })
-    .catch(function (error: Error) {
-        console.log(error);
-    });
+    if(result.data.payment_data.redirectTo){
+        setRedirectLink(result.data.payment_data.redirectTo)
+        window.sessionStorage.setItem(id.toString(), result.data.payment_data.redirectTo)
+        setFawryCode("")
+        setFawryDate("")
+        setLoading(false)
+    }
+    if(result.data.payment_data.fawryCode){
+        setRedirectLink("")
+        setFawryCode(result.data.payment_data.fawryCode)
+        setFawryDate(result.data.payment_data.expireDate)
+        window.sessionStorage.setItem(id.toString(), result.data.payment_data.fawryCode)
+        window.sessionStorage.setItem(`${id.toString()}-date`, result.data.payment_data.expireDate)
+        setLoading(false)
+    }
+    setPayment(result.data)
+    // var axios = require('axios');
+    // axios(config)
+    // .then(function (response: any) {
+    //     console.log("response.data.data", response.data.data);
+    //     if(response.data.data.payment_data.redirectTo){
+    //         setRedirectLink(response.data.data.payment_data.redirectTo)
+    //         setFawryCode("")
+    //         setFawryDate("")
+    //         setLoading(false)
+    //     }
+    //     if(response.data.data.payment_data.fawryCode){
+    //         setRedirectLink("")
+    //         setFawryCode(response.data.data.payment_data.fawryCode)
+    //         setFawryDate(response.data.data.payment_data.expireDate)
+    //         setLoading(false)
+    //     }
+    //     setPayment(response.data.data)
+    // })
+    // .catch(function (error: Error) {
+    //     console.log(error);
+    // });
 }
 
 useEffect(() => {
@@ -276,6 +278,13 @@ const classNames = [
     styles.enroll,
     lo === "ar" && showAr ? styles.ar : ""
 ]
+    const [isMounted, setIsMounted] = useState(false);
+    
+    useEffect(() => {
+        setIsMounted(true); // Ensures component only renders on client
+    }, []);
+
+    if (!isMounted) return null; // Avoid SSR mismatches
 
     if(enrollType === "free"){
         return (
@@ -388,51 +397,78 @@ const classNames = [
                             />
                         </div>
                     </div>
+                    <p style={{ opacity: showNotValid ? "1" : "0" }} className={styles.notValid}>
+                        Please make sure to fill ALL the the info!
+                    </p>
+                    <ul>
+                        {
+                            methods.map((method: Method, index: number) => {
+                                return(
+                                    <li key={index}>
+                                        <button onClick={(e) => {
+                                            e.preventDefault(); 
+                                            if( 
+                                                formData.username.length > 1 && 
+                                                formData.userEmail.includes("@") && 
+                                                formData.phoneNumber.length > 2
+                                            ){
+                                                console.log("formData","VALID")
+                                                getMethods(index)
+                                                setShowNotValid(false)
+                                                // handlePaymentSuccess(formData.userEmail, formData.username, formData.phoneNumber, formData.course)
+                                            }else{
+                                                console.log("formData","NOT VALID")
+                                                setShowNotValid(true)
+                                            }; 
+                                            }}
+                                        >
+                                            <span>
+                                                <Image loading='lazy' width={2500} height={2500} src={method.logo} alt='Vodafone Cash Logo'></Image>
+                                            </span>
+                                            <h4>
+                                                {method.name_en}
+                                            </h4>
+                                        </button>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    <div className={styles.paymentInfo}>
+                        {
+                            loading ? 
+                            <span className={styles.loading}>
+                                <FontAwesomeIcon icon={faSpinner} />
+                            </span>
+                            :
+                            !loading ? 
+                            redirectLink ? 
+                            <a href={redirectLink}>
+                                Pay with Mastercard/Visa/Meeza
+                            </a> : null : null
+                        }
+
+                        {
+                            loading ? 
+                            <span className={styles.loading}>
+                                <FontAwesomeIcon icon={faSpinner} />
+                            </span>
+                            :
+                            !loading ?
+                            fawryCode ? 
+                            <>
+                                <p>
+                                    <span>OR</span>
+                                    <br />
+                                    Please pay with Fawry <br />
+                                    code <span>{fawryCode}</span> <br /> before <span>{fawryDate}</span>
+                                </p>
+                            </>
+                            :
+                            null : null
+                        }
+                    </div>
                 </form>
-                <p style={{ opacity: showNotValid ? "1" : "0" }} className={styles.notValid}>
-                    Please make sure to fill ALL the the info!
-                </p>
-                <ul>
-                    {
-                        methods.map((method: Method, index: number) => {
-                            return(
-                                <li key={index}>
-                                    <button onClick={(e) => {
-                                        e.preventDefault(); 
-                                        if( 
-                                            formData.username.length > 1 && 
-                                            formData.userEmail.includes("@") && 
-                                            formData.phoneNumber.length > 2
-                                        ){
-                                            console.log("formData","VALID")
-                                            setShowNotValid(false)
-                                            handlePaymentSuccess(formData.userEmail, formData.username, formData.phoneNumber, formData.course)
-                                        }else{
-                                            console.log("formData","NOT VALID")
-                                            setShowNotValid(true)
-                                        }; 
-                                        }}
-                                    >
-                                        <span>
-                                            <Image loading='lazy' width={2500} height={2500} src={method.logo} alt='Vodafone Cash Logo'></Image>
-                                        </span>
-                                        <h4>
-                                            {method.name_en}
-                                        </h4>
-                                    </button>
-                                    {
-                                        method.paymentId === 2 ? 
-                                        <a href={redirectLink}>
-                                            Pay
-                                        </a>
-                                        : 
-                                        null
-                                    }
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
             </div>
         )
     }else if(enrollType === "upon request"){
