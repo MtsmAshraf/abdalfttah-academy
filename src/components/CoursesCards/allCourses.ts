@@ -1645,7 +1645,6 @@ const allCourses : Course[] = [
         title: "Spatial Transcriptomics",
         category: "Data Analysis and Technologies",
         price: "upon request",
-        featured: true,
         src: image2,
         innerPage: {
             details: {
@@ -2441,6 +2440,7 @@ const allCourses : Course[] = [
         title: "RNA Transcription",
         category: "Basics",
         price: "",
+        featured: true,
         src: image2,
         innerPage: {
             details: {
