@@ -30,11 +30,11 @@ const Footer = ({
                 <Link href={"/"}>{t("Pages.Links.Home")}</Link>
                 <Link href={`/courses`}>{t("Pages.Links.Courses")}</Link>
                 <Link href={`/publications`}>{t("Pages.Links.Publications")}</Link>
-                <Link href={`/blog`}>{t("Pages.Links.Blog")}</Link>
+                {/* <Link href={`/blog`}>{t("Pages.Links.Blog")}</Link> */}
                 <Link href={`/about`}>{t("Pages.Links.AboutMe")}</Link>
             </div>
             </div>
-            <div>
+            {/* <div>
                 <h4>{t("Address.Heading")}</h4>
                 <div>
                     <div>
@@ -58,7 +58,7 @@ const Footer = ({
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div>
             <h4>{t("SocialMedia.Heading")}</h4>
             <div className={styles.socials}>

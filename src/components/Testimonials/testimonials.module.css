@@ -1,6 +1,6 @@
 .testimonials{
     padding-top: 80px;
-    padding-bottom: 200px;
+    padding-bottom: 140px;
     background-image: url("../../../public/images/testi-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@
     transition: var(--animation-transition);
     opacity: 0;
     transform: translateY(100px);
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 .testimonials:has(.overlay.scrolled){
     opacity: 1;
@@ -249,7 +249,10 @@
         align-items: center;
     }
     .testimonials .swiper .btns{
-        bottom: -80px;
+        bottom: -20px;
+    }
+    .testimonials .pagination{
+        bottom: -60px;
     }
 }
 @media (max-width: 600px) {

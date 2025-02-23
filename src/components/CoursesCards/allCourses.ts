@@ -2433,7 +2433,7 @@ const allCourses : Course[] = [
     {
         id: "13",
         enrollType: "free",
-        title: "DNA Transcription",
+        title: "RNA Transcription",
         category: "Basics",
         price: "",
         src: image2,

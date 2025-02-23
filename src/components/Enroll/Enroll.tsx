@@ -51,6 +51,7 @@ async function getMethods(paymentId?: number ) {
     })
     .then( res => res.json())
     .then((result => {
+        console.log("Methods", result.data)
         if(paymentId || paymentId === 0){
             if(window.sessionStorage.getItem(result.data[paymentId].paymentId.toString())){
                 if(window.sessionStorage.getItem(result.data[paymentId].paymentId.toString())?.includes("https")){
@@ -87,6 +88,14 @@ async function excutePayment(id: number) {
     
     const result = await response.json();
     console.log("EXCUTED", result.data);
+    if(invoiceIds.includes(result.data.invoice_id) === false){
+        setInvoiceIds([...invoiceIds, result.data.invoice_id])
+        console.log("NEW ID ADDED", result.data.invoice_id ,invoiceIds)
+    }
+    if(invoiceIds.length > 0){
+        window.localStorage.setItem("INVOICE_IDs", invoiceIds.join(","))
+    }
+    // console.log("INVOICE_IDs", invoiceIds);
 
     if(result.data.payment_data.redirectTo){
         setRedirectLink(result.data.payment_data.redirectTo)
@@ -103,33 +112,32 @@ async function excutePayment(id: number) {
         window.sessionStorage.setItem(`${id.toString()}-date`, result.data.payment_data.expireDate)
         setLoading(false)
     }
-    setPayment(result.data)
-    // var axios = require('axios');
-    // axios(config)
-    // .then(function (response: any) {
-    //     console.log("response.data.data", response.data.data);
-    //     if(response.data.data.payment_data.redirectTo){
-    //         setRedirectLink(response.data.data.payment_data.redirectTo)
-    //         setFawryCode("")
-    //         setFawryDate("")
-    //         setLoading(false)
-    //     }
-    //     if(response.data.data.payment_data.fawryCode){
-    //         setRedirectLink("")
-    //         setFawryCode(response.data.data.payment_data.fawryCode)
-    //         setFawryDate(response.data.data.payment_data.expireDate)
-    //         setLoading(false)
-    //     }
-    //     setPayment(response.data.data)
-    // })
-    // .catch(function (error: Error) {
-    //     console.log(error);
-    // });
+    setPayment(result.data);
 }
+const [paid, setPaid] = useState(false)
+const [invoiceIds, setInvoiceIds] = useState<string[]>([])
+const fetchInvoiceData = async (invoiceId: string) => {
+    const response = await fetch(`/api/invoice/${invoiceId}`);
+    const data = await response.json();
+    console.log("invoice data", data.data);
+    if(data.data.paid === 1){
+        setPaid(true)
+    }
+};
+
+// useEffect(() => {
+//     if(window.localStorage.getItem("INVOICE_IDs")){
+//         // setInvoiceIds(window.localStorage.getItem("INVOICE_IDs")?.split(",") || [])
+//         invoiceIds?.map((id) => {
+//             fetchInvoiceData(id);
+//         })
+//     }
+// },[invoiceIds])
+
 
 useEffect(() => {
     getMethods()
-    console.log(methods)
+    console.log("methods",methods)
 },[])
 
 const countryCodes = [
@@ -423,7 +431,7 @@ const classNames = [
                                             }}
                                         >
                                             <span>
-                                                <Image loading='lazy' width={2500} height={2500} src={method.logo} alt='Vodafone Cash Logo'></Image>
+                                                <Image loading='lazy' width={10000} height={10000} src={method.logo} alt='Vodafone Cash Logo'></Image>
                                             </span>
                                             <h4>
                                                 {method.name_en}
@@ -435,6 +443,8 @@ const classNames = [
                         }
                     </ul>
                     <div className={styles.paymentInfo}>
+                        {/* Invoice: {invoiceIds.join(" | ")} <br /> */}
+                        isPaid?: {paid ? <span>YES</span> : <span>NO</span> }
                         {
                             loading ? 
                             <span className={styles.loading}>

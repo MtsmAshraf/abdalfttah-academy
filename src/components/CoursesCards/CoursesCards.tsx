@@ -145,8 +145,10 @@ const CoursesCards = ({
             </span>
         }
         <div className={styles.commingSoon}>
-            <p>Coming Soon</p>
-            <p>Stay Tuned</p>
+            <div>
+                <p>Coming Soon</p>
+                <p>Stay Tuned</p>
+            </div>
         </div>
     </section>
   )

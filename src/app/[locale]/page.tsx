@@ -30,7 +30,7 @@ export default function Home({
             <Features lo={locale} />
             <Timeline lo={locale} />
             <Publications lo={locale} />
-            <BlogCards lo={locale} />
+            {/* <BlogCards lo={locale} /> */}
             <Testimonials lo={locale} parentEl={"home"} />
         </main>
       </Provider>
