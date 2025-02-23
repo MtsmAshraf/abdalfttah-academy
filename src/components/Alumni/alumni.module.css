@@ -11,7 +11,7 @@
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 .alumni > :nth-child(2) > div{  /* person div */
     border-radius: 20px;
@@ -85,4 +85,5 @@
 }
 .alumni > :nth-child(2) > div > div:nth-child(2) span{
     font-size: 12px;
+    padding: 0px 5px;
 }

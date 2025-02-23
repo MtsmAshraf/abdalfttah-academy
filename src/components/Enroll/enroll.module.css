@@ -15,6 +15,9 @@
 .enroll.ar > p span{
     font-size: 20px;
 }
+.enroll > p{
+    margin-bottom: 20px;    
+}
 .enroll ul{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -22,7 +25,7 @@
 .enroll ul li{
     display: flex;
     align-items: center;
-    background-color: var(--feature s-card-bg);
+    background-color: var(--features-card-bg);
     margin-bottom: 20px;
     border-radius: 30px;
 }
