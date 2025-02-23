@@ -116,14 +116,15 @@ async function excutePayment(id: number) {
 }
 const [paid, setPaid] = useState(false)
 const [invoiceIds, setInvoiceIds] = useState<string[]>([])
-const fetchInvoiceData = async (invoiceId: string) => {
-    const response = await fetch(`/api/invoice/${invoiceId}`);
-    const data = await response.json();
-    console.log("invoice data", data.data);
-    if(data.data.paid === 1){
-        setPaid(true)
-    }
-};
+
+// const fetchInvoiceData = async (invoiceId: string) => {
+//     const response = await fetch(`/api/invoice/${invoiceId}`);
+//     const data = await response.json();
+//     console.log("invoice data", data.data);
+//     if(data.data.paid === 1){
+//         setPaid(true)
+//     }
+// };
 
 // useEffect(() => {
 //     if(window.localStorage.getItem("INVOICE_IDs")){
