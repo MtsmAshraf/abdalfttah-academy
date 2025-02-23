@@ -50,6 +50,7 @@ export type Course = {
     category: string,
     price?: string,
     src: StaticImageData,
+    featured?: boolean,
     innerPage: {
         details: {
             noOfVideos?: string,
@@ -81,6 +82,7 @@ const allCourses : Course[] = [
         category: "Advanced Biology",
         price: "100",
         src: image1,
+        featured: true,
         innerPage: {
             details: {
                 when: "20-06-2025",
@@ -1518,6 +1520,7 @@ const allCourses : Course[] = [
         enrollType: "upon request",
         title: "Single-Cell RNA Sequencing",
         category: "Data Analysis and Technologies",
+        featured: true,
         price: "upon request",
         src: image2,
         innerPage: {
@@ -1642,6 +1645,7 @@ const allCourses : Course[] = [
         title: "Spatial Transcriptomics",
         category: "Data Analysis and Technologies",
         price: "upon request",
+        featured: true,
         src: image2,
         innerPage: {
             details: {
@@ -1765,6 +1769,7 @@ const allCourses : Course[] = [
         title: "Data Analysis & Bioinformatics with R",
         category: "Data Analysis and Technologies",
         price: "free",
+        featured: true,
         src: image2,
         innerPage: {
             details: {

@@ -66,7 +66,7 @@ const CoursesCards = ({
                                         <div>
                                             <h4>{course.title}</h4>
                                             <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
+                                                <p>{course.enrollType === "paid" ? `${course.price}$ USD` : course.enrollType}</p>
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
                                         </div>
@@ -94,7 +94,7 @@ const CoursesCards = ({
                         }
                     }else if(!category){
                         return(
-                            !all && index <= 3 &&
+                            !all && course.featured &&
                                 <Card comingSoon={course.enrollType === "coming soon"} index={index} key={course.id}>
                                 <Link style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }} href={`/courses/${course.id}`}>
                                     <div>
@@ -106,7 +106,7 @@ const CoursesCards = ({
                                     <div>
                                         <h4>{course.title}</h4>
                                         <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                            <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
+                                            <p>{course.enrollType === "paid" ? `${course.price}$ USD` : course.enrollType}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@ const CoursesCards = ({
                                     <div>
                                         <h4>{course.title}</h4>
                                         <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                            <p>{course.enrollType === "paid" ? course.price : course.enrollType}</p>
+                                            <p>{course.enrollType === "paid" ? `${course.price}$ USD` : course.enrollType}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
                                     </div>
