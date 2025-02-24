@@ -7,6 +7,10 @@ import alumni1 from "../../../public/images/alumni-1.webp"
 import alumni2 from "../../../public/images/alumni-2.webp"
 import alumni3 from "../../../public/images/alumni-3.webp"
 import alumni4 from "../../../public/images/alumni-4.webp"
+import alumni5 from "../../../public/images/alumni-5.webp"
+import alumni6 from "../../../public/images/alumni-6.webp"
+import alumni7 from "../../../public/images/alumni-7.webp"
+import alumni8 from "../../../public/images/alumni-8.webp"
 
 
 
@@ -329,6 +333,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ] 
         }
     },
@@ -497,6 +533,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
@@ -672,6 +740,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ] 
         }
     },
@@ -841,6 +941,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
@@ -1015,6 +1147,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ] 
         }
     },
@@ -1105,6 +1269,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
@@ -1199,6 +1395,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
@@ -1297,6 +1525,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ] 
         }
     },
@@ -1388,6 +1648,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
@@ -1610,6 +1902,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ] 
         }
     },
@@ -1782,6 +2106,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ],
             courseLink: "https://youtube.com/playlist?list=PLC4LFcwOQGSH8NbGsisaJiyhxWQ5MVF1l&si=-sRgDZ6lddHRiync",
         }
@@ -1915,6 +2271,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
@@ -2125,6 +2513,38 @@ const allCourses : Course[] = [
                     country: "Egypt",
                     countryCode: "eg"
                 },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
             ],
             courseLink: "https://youtube.com/playlist?list=PLC4LFcwOQGSHGArTtrYu4U0iP9LbBEO_Z&si=dPNNVGF3WMzop-wu",
         }
@@ -2294,6 +2714,38 @@ const allCourses : Course[] = [
                     name: "Soliman Attia",
                     title: "Faculty of Agriculture Banha university",
                     src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
                     country: "Egypt",
                     countryCode: "eg"
                 },
