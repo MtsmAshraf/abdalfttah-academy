@@ -445,7 +445,6 @@ const classNames = [
                     </ul>
                     <div className={styles.paymentInfo}>
                         {/* Invoice: {invoiceIds.join(" | ")} <br /> */}
-                        isPaid?: {paid ? <span>YES</span> : <span>NO</span> }
                         {
                             loading ? 
                             <span className={styles.loading}>

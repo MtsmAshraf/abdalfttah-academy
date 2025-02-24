@@ -155,6 +155,7 @@
     transition: var(--animation-transition);
     transform: translate(-10px, 50px);
     opacity: 0;
+    max-width: 50%;
 }
 .course.loaded > div:nth-child(2) .scroll{
     transform: translate(0px,0px);
@@ -163,6 +164,7 @@
 @media (max-width: 992px) {
     .course > div:nth-child(2) .scroll{
         transform: translate(-0px, 100px);
+        max-width: 100%;
     }
 }
 .course > div:nth-child(2) .scroll > div{
