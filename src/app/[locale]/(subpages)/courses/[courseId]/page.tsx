@@ -401,7 +401,7 @@ const CourseId = ({
                     <h5>{
                       course.innerPage.details.price
                       ?
-                      course.innerPage.details.discount 
+                      course.innerPage.details.discount && course.innerPage.details.price
                       ?
                       <>
                           {`${course.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> <br />{`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}

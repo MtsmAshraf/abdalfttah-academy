@@ -201,6 +201,7 @@
 }
 .course li.prohibited{
     background-image: var(--main-heading-gradient-cat) ;
+    color: #fff;
     padding: 5px 20px;
     border-radius: 20px;
 }
