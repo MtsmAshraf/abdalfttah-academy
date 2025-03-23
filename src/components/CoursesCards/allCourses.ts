@@ -64,6 +64,7 @@ export type Course = {
     title: string,
     category: string,
     price?: string,
+    discount?: string,
     src: StaticImageData,
     innerSrc?: StaticImageData
     featured?: boolean,
@@ -74,7 +75,8 @@ export type Course = {
             when?: string,
             duration?: string,
             location?: string,
-            price?: string
+            price?: string,
+            discount?: string,
         },
         heading: string,
         description: string,
@@ -94,9 +96,10 @@ const allCourses : Course[] = [
     {
         id: "0",
         enrollType: "google form",
-        title: "Workshop",
+        title: "Single-Cell RNA-seq Workshop",
         category: "Workshop",
-        price: "20",
+        price: "100",
+        discount: "80",
         src: image0,
         innerSrc: image0inner,
         featured: true,
@@ -105,7 +108,8 @@ const allCourses : Course[] = [
                 when: "4-5 April",
                 duration: "2 days",
                 location: "El-Dokki",
-                price: "20"
+                price: "100",
+                discount: "80"
             },
             heading: "Workshop Overview!",
             description: "This 2-day Single-Cell RNA-seq Workshop is designed to provide both foundational knowledge and practical experience in single-cell transcriptomics.",

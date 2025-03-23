@@ -398,7 +398,20 @@ const CourseId = ({
                   </li>
                   <li>
                     <span><FontAwesomeIcon icon={faDollar} /></span>
-                    <h5>{course.innerPage.details.price ? `${course.innerPage.details.price} USD` : "Free"}</h5>
+                    <h5>{
+                      course.innerPage.details.price
+                      ?
+                      course.innerPage.details.discount 
+                      ?
+                      <>
+                          {`${course.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> <br />{`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
+                      </>
+                      // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } USD` 
+                      :
+                      `${course.innerPage.details.price} USD` 
+                      :
+                      "Free"}
+                      </h5>
                   </li>
                 </ul>
               </div>
