@@ -102,7 +102,7 @@ const allCourses : Course[] = [
         featured: true,
         innerPage: {
             details: {
-                when: "20-06-2025",
+                when: "4-5 April",
                 duration: "2 days",
                 location: "El-Dokki",
                 price: "20"
@@ -123,9 +123,9 @@ const allCourses : Course[] = [
                         {
                             heading: "On Day 2:",
                             paragraphs: [
-                                'it is a *special hands-on session* conducted in R, where participants will analyze real-world single-cell data from the publication: “Harnessing STING signaling and natural killer cells overcomes PARP inhibitor resistance in homologous recombination deficient breast cancer.”',
+                                'it is a *special hands-on session conducted in R*, where participants will analyze real-world single-cell data from the publication: “Harnessing STING signaling and natural killer cells overcomes PARP inhibitor resistance in homologous recombination deficient breast cancer.”',
                                 "*Mohmed Abdalfttah*, one of the authors of this study, performed the single-cell analysis and will guide the session.",
-                                "Although the hands-on will primarily use R, some tools and workflows explored will also include Python-based solutions, offering a well-rounded perspective on multi-platform single-cell analysis."
+                                "Although the hands-on will primarily use *R, some tools and workflows explored will also include Python-based solutions*, offering a well-rounded perspective on multi-platform single-cell analysis."
                             ]
                         },
                     ],
