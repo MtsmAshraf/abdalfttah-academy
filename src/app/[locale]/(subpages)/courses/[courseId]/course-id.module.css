@@ -199,6 +199,11 @@
 .course > div:nth-child(2) .scroll p{
     line-height: 1.8;
 }
+.course li.prohibited{
+    background-image: var(--main-heading-gradient-cat) ;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
 .course > div:nth-child(2) .more{
     /* list-style: disc !important */
 }

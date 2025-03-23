@@ -44,7 +44,8 @@ export type GeneralContent = {
     contentPieces: Content[]
 }
 export type WhoNote = {
-    note: string
+    note?: string,
+    notNote?: string
 }
 export type OptionalDiv = {
     h2: string,
@@ -108,6 +109,7 @@ const allCourses : Course[] = [
             },
             heading: "Workshop Overview!",
             description: "This 2-day Single-Cell RNA-seq Workshop is designed to provide both foundational knowledge and practical experience in single-cell transcriptomics.",
+            courseLink: "https://forms.gle/QhDUUwbuWKG9cHBE7",
             divs:[
                 {
                     h2: "Workshop Structure",
@@ -192,22 +194,6 @@ const allCourses : Course[] = [
                                 "Manual curation tips",
                             ]
                         },
-                        "What is Cancer?",
-                        "Basic Cell Biology of Cancer Development",
-                        "Basics of Cell Biology and the Cell Cycle",
-                        "Overview of the Cell Cycle and Its Regulation",
-                        "How Uncontrolled Cell Cycle Leads to Cancer",
-                        "Differences Between Normal Cells and Cancer Cells",
-                        "Understanding cancer prevalence, incidence, and survival rates",
-                        "Key trends in cancer statistics by type and region",
-                        "Origin of Tumors from Normal Tissues",
-                        "Tumors Originate from Various Specialized Cell Types",
-                        "Major Types of Cancer",
-                        "Classification of Tumors: Benign vs. Malignant",
-                        "Histopathology and Architecture of Tumors",
-                        "Epithelial Origin of Carcinomas",
-                        "Carcinomas and Epithelial Tissue Structure",
-                        "Other Tumor Types: Sarcomas, Hematopoietic, and Neuroectodermal Tumors"
                     ]
                 },
                 {
@@ -274,7 +260,7 @@ const allCourses : Course[] = [
             ],
             who: [
                 {
-                    note: "If you are a *first-year undergraduate student*, this workshop is *NOT* for you. You *CANNOT* attend."
+                    notNote: "If you are a *first-year undergraduate student*, this workshop is *NOT* for you. You *CANNOT* attend."
                 },
                 "*Researchers familiar with bulk RNA-seq* who want to transition to single-cell analysis.",
                 "*Biologists and bioinformaticians interested in exploring scRNA-seq* technologies and workflows.",

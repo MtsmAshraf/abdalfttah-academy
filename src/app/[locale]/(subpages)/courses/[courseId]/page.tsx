@@ -111,7 +111,11 @@ const CourseId = ({
                 </>
                 : 
                 <>
-                  <h2>Welcome to {course.title} Course!</h2>
+                  {
+                    course.enrollType === "google form" ? 
+                    <h2>Welcome to the {course.title}</h2> : 
+                    <h2>Welcome to {course.title} Course!</h2>
+                  }
                   <BoldText text={course.innerPage.description} />
                 </>
               }
@@ -327,8 +331,8 @@ const CourseId = ({
                         )
                       }else if(typeof(li) === "object"){
                         return(
-                          <li key={index}>
-                            <BoldText text={`${li.note}`} />
+                          <li className={styles.prohibited} key={index}>
+                            <BoldText text={`${li.notNote ? li.notNote : li.note}`} />
                           </li>
                         )
                       }
@@ -343,8 +347,8 @@ const CourseId = ({
                         )
                       }else if(typeof(li) === "object"){
                         return(
-                          <li key={index}>
-                            <BoldText text={`${li.note}`} />
+                          <li className={li.notNote ? styles.prohibited : ""} key={index}>
+                            <BoldText text={`${li.notNote ? li.notNote : li.note}`} />
                           </li>
                         )
                       }
