@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./enroll.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faFileInvoice, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import instaPay from "../../../public/images/instapay.png"
 import vodafoneCash from "../../../public/images/vodafone-cash.png"
@@ -592,6 +592,21 @@ const classNames = [
                         </div>
                     </>
                 }
+            </div>
+        )
+    }else if(enrollType === "google form"){
+        return(
+            <div id='enroll' className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
+                <h2>How to enroll?</h2>
+                <p>Enrolling in this course is simple, just fill this form.</p>
+                <div>
+                    <a className={styles.googleForm} href={courseLink} target='_blank'>
+                        <FontAwesomeIcon icon={faFileInvoice} />
+                        <span>
+                            Google Form!
+                        </span>
+                    </a>
+                </div>
             </div>
         )
     }

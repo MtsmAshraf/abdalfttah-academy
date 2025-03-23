@@ -357,10 +357,10 @@ const CourseId = ({
           </div>
           <div className={styles.fixed}>
             <div className={styles.img}>
-              <Image loading='lazy' src={course.src} alt={`${course?.title} `}></Image>
+              <Image loading='lazy' src={course.innerSrc ? course.innerSrc : course.src} alt={`${course?.title} `}></Image>
             </div>
             {
-              (course.enrollType === "free" || course.enrollType === "paid") &&  <div className={styles.overview}>
+              (course.enrollType === "free" || course.enrollType === "paid" || course.enrollType === "google form") &&  <div className={styles.overview}>
                 <ul className={styles.basicUl}>
                   <li>
                     {

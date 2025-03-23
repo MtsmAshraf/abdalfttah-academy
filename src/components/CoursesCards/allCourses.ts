@@ -1,5 +1,8 @@
 import { StaticImageData } from "next/image";
 
+
+import image0 from "../../../public/images/workshop.jpeg"
+import image0inner from "../../../public/images/workshop-inner.jpeg"
 import image1 from "../../../public/images/IntroductionToCancerBiology.jpg"
 import image2 from "../../../public/images/course.jpg"
 import userImg from "../../../public/images/user.webp"
@@ -61,6 +64,7 @@ export type Course = {
     category: string,
     price?: string,
     src: StaticImageData,
+    innerSrc?: StaticImageData
     featured?: boolean,
     innerPage: {
         details: {
@@ -87,6 +91,269 @@ export type Course = {
 
 const allCourses : Course[] = [
     {
+        id: "0",
+        enrollType: "google form",
+        title: "Workshop",
+        category: "Workshop",
+        price: "20",
+        src: image0,
+        innerSrc: image0inner,
+        featured: true,
+        innerPage: {
+            details: {
+                when: "20-06-2025",
+                duration: "2 days",
+                location: "El-Dokki",
+                price: "20"
+            },
+            heading: "Workshop Overview!",
+            description: "This 2-day Single-Cell RNA-seq Workshop is designed to provide both foundational knowledge and practical experience in single-cell transcriptomics.",
+            divs:[
+                {
+                    h2: "Workshop Structure",
+                    content: [
+                        {
+                            heading: "On Day 1:",
+                            paragraphs: [
+                                "we focus on the *theoretical concepts* behind single-cell technologies, protocols, and analytical pipelines, helping participants understand the logic and methodology behind each step.",
+                            ]
+                        },
+                        {
+                            heading: "On Day 2:",
+                            paragraphs: [
+                                'it is a *special hands-on session* conducted in R, where participants will analyze real-world single-cell data from the publication: “Harnessing STING signaling and natural killer cells overcomes PARP inhibitor resistance in homologous recombination deficient breast cancer.”',
+                                "*Mohmed Abdalfttah*, one of the authors of this study, performed the single-cell analysis and will guide the session.",
+                                "Although the hands-on will primarily use R, some tools and workflows explored will also include Python-based solutions, offering a well-rounded perspective on multi-platform single-cell analysis."
+                            ]
+                        },
+                    ],
+                }
+            ],
+            content: [
+                {
+                    button: "Day 1 - *Theoretical Foundations*",
+                    subList: [
+                        "*Morning Session:*",
+                        {
+                            heading: "*Introduction to Single-Cell Technologies*",
+                            list:[
+                                "- Evolution and need for single-cell analysis",
+                                "- Comparison of platforms (10x Genomics, SMART-Seq, Drop-Seq)",
+                                "- Applications: cancer, immunology, developmental biology"
+                            ]
+                        },
+                        {
+                            heading: "*Experimental Design & Protocols*",
+                            list: [
+                                "- Sample collection, dissociation, viability check",
+                                "- Barcoding, reverse transcription, library preparation",
+                                "- Avoiding batch effects: experimental best practices",
+                            ]
+                        },
+                        {
+                            heading: "*scRNA-seq Data Workflow Overview*",
+                            list: [
+                                "- From FASTQ to expression matrix",
+                                "- Introduction to Cell Ranger",
+                            ]
+                        },
+                        "*Break*",
+                        "*Afternoon Session:*",
+                        {
+                            heading: "*Quality Control*",
+                            list:[
+                                "Ambient RNA: CellBender",
+                                "Doublets: Scrublet",
+                                "Mitochondrial % and QC thresholds",
+                                "Denoising: brief on MAGIC and imputation caveats",
+                            ]
+                        },
+                        {
+                            heading: "*Normalization & Feature Selection*",
+                            list:[
+                                "Log-normalization as the standard workflow",
+                                "HVG selection: mean-variance & VST",
+                                "Biological relevance of features"
+                            ]
+                        },
+                        {
+                            heading: "*Dimensionality Reduction & Clustering*",
+                            list:[
+                                "PCA → UMAP/t-SNE",
+                                "Graph-based clustering (KNN, Louvain)",
+                                "Interpretation and pitfalls",
+                            ]
+                        },
+                        {
+                            heading: "*Cell Type Annotation*",
+                            list:[
+                                "Marker-based + reference mapping",
+                                "Tools: SingleR, Azimuth",
+                                "Manual curation tips",
+                            ]
+                        },
+                        "What is Cancer?",
+                        "Basic Cell Biology of Cancer Development",
+                        "Basics of Cell Biology and the Cell Cycle",
+                        "Overview of the Cell Cycle and Its Regulation",
+                        "How Uncontrolled Cell Cycle Leads to Cancer",
+                        "Differences Between Normal Cells and Cancer Cells",
+                        "Understanding cancer prevalence, incidence, and survival rates",
+                        "Key trends in cancer statistics by type and region",
+                        "Origin of Tumors from Normal Tissues",
+                        "Tumors Originate from Various Specialized Cell Types",
+                        "Major Types of Cancer",
+                        "Classification of Tumors: Benign vs. Malignant",
+                        "Histopathology and Architecture of Tumors",
+                        "Epithelial Origin of Carcinomas",
+                        "Carcinomas and Epithelial Tissue Structure",
+                        "Other Tumor Types: Sarcomas, Hematopoietic, and Neuroectodermal Tumors"
+                    ]
+                },
+                {
+                    button: "Day 2 – *Hands-On Practical*",
+                    subList: [
+                        "*Morning Session:*",
+                        {
+                            heading: "*Cell Ranger Output Interpretation (R & command line)*",
+                            list:[
+                                "- Load filtered feature-barcode matrix",
+                                "- Inspect Cell Ranger output structure and QC metrics (JSONs, HTML)",
+                            ]
+                        }, 
+                        {
+                            heading: "*Preprocessing & QC (R: Seurat, Python: Scanpy demo)*",
+                            list:[
+                                "- Filter cells & genes by count, gene, and mitochondrial thresholds",
+                                "- Apply ambient RNA correction with CellBender (Python demo)",
+                                "- Detect doublets with Scrublet (Python) or DoubletFinder (R)",
+                                "- Generate visual QC plots"
+                            ]
+                        }, 
+                        {
+                            heading: "*Normalization & HVG Selection (R main)*",
+                            list:[
+                                "- Apply Log-normalization",
+                                "- Identify and visualize HVGs",
+                                "- Assess biological vs technical variation"
+                            ]
+                        },
+                        "Lunch Break",
+                        "*Afternoon Session*",
+                        {
+                            heading: "*Dimensionality Reduction & Clustering (R main)*",
+                            list:[
+                                "- Perform PCA",
+                                "- Construct KNN graph and apply clustering (Louvain)",
+                                "- Visualize with UMAP"
+                            ]
+                        },{
+                            heading: "*Cell Type Annotation (R main, Python optional)*",
+                            list:[
+                                "- Visualize marker gene expression",
+                                "- Automatic annotation with Azimuth or SingleR",
+                                "- Manual curation and cluster naming"
+                            ]
+                        },{
+                            heading: "*Dataset Integration*",
+                            list:[
+                                "- Apply Harmony (R) to correct for batch effects",
+                                "- Compare with scVI (Python) for latent variable modeling",
+                                "- Discussion on strengths and use cases for each method"
+                            ]
+                        },{
+                            heading: "*Differential Expression Analysis*",
+                            list:[
+                                "- Compare resistant vs sensitive mice to PARPi therapy",
+                                "- Identify DE genes across key immune and tumor populations",
+                                "- Discuss biological implications in the context of the publication"
+                            ]
+                        },
+                    ]
+                }
+            ],
+            who: [
+                {
+                    note: "If you are a *first-year undergraduate student*, this workshop is *NOT* for you. You *CANNOT* attend."
+                },
+                "*Researchers familiar with bulk RNA-seq* who want to transition to single-cell analysis.",
+                "*Biologists and bioinformaticians interested in exploring scRNA-seq* technologies and workflows.",
+                "*Undergraduate students* (second year or above) with a strong interest in genomics and data analysis.",
+                "*Master’s and PhD students* working in genomics, immunology, cancer biology, or related fields",
+                "*Computational scientists* aiming to apply R/Python skills in a cutting-edge biomedical context",
+                "Anyone curious about real-world applications of scRNA-seq in cancer and immunotherapy research",
+                {
+                    note: '*No prior single-cell experience is required*, but basic understanding of transcriptomics is highly recommended.'
+                },
+            ],
+            people: [
+                {
+                    id: "0",
+                    name: "Youssef Hesham",
+                    title: "Faculty of Science Cairo university",
+                    src: alumni1,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "1",
+                    name: "Kamar Ahmed",
+                    title: "Faculty of Science Ain Shams university",
+                    src: alumni2,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "2",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Cairo university",
+                    src: alumni3,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "3",
+                    name: "Soliman Attia",
+                    title: "Faculty of Agriculture Banha university",
+                    src: alumni4,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "4",
+                    name: "Bassem EL-Sayed",
+                    title: "MUST university",
+                    src: alumni5,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "5",
+                    name: "Mina Mokpel",
+                    title: "MUST university",
+                    src: alumni6,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "6",
+                    name: "Mariam Ahmed",
+                    title: "Faculty of Agriculture Ain Shams university",
+                    src: alumni7,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+                {
+                    id: "7",
+                    name: "Suhila Shaban",
+                    title: "MUST university",
+                    src: alumni8,
+                    country: "Egypt",
+                    countryCode: "eg"
+                },
+            ] 
+        }
+    }, {
         id: "1",
         enrollType: "paid",
         title: "Introduction to Cancer Biology",

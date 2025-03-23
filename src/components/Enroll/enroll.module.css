@@ -17,6 +17,7 @@
 }
 .enroll > p{
     margin-bottom: 20px;    
+    text-align: center;
 }
 .enroll ul{
     margin-top: 20px;
@@ -299,6 +300,9 @@
 .enroll > div > a.whatsapp{
     border: 1px solid #128c7e;
 }
+.enroll > div > a.googleForm{
+    border: 1px solid #7248B9;
+}
 .enroll > div > a svg{
     font-size: 30px;
     transition: var(--main-transition);
@@ -314,6 +318,10 @@
 .enroll > div > a.whatsapp svg{
     /* border: 1px solid #ff0033; */
     color: #128c7e;
+}
+.enroll > div > a.googleForm svg{
+    /* border: 1px solid #ff0033; */
+    color: #7248B9;
 }
 .enroll > div > a span{
     transition: var(--main-transition);
@@ -333,6 +341,10 @@
 .enroll > div > a.whatsapp:hover{
     background-color: #128c7e;
     box-shadow: 0px 0px 8px 5px #31d2bf;
+}
+.enroll > div > a.googleForm:hover{
+    background-color: #7248B9;
+    box-shadow: 0px 0px 8px 5px #846dac;
 }
 .enroll > div > a:hover svg{
     color: #fff;
