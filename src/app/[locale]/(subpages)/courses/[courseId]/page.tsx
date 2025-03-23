@@ -404,7 +404,7 @@ const CourseId = ({
                       course.innerPage.details.discount && course.innerPage.details.price
                       ?
                       <>
-                          {`${course.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> <br />{`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
+                          {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ USD</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
                       </>
                       // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } USD` 
                       :
