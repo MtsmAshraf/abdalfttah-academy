@@ -348,8 +348,10 @@ const classNames = [
         return (
             <div id='enroll' className={`${classNames.length > 1 ? classNames.join(" ") : classNames[0]} ${styles.paid}`}>
                 <h2>How to enroll?</h2>
-                
-                <form onSubmit={(e) => {
+                <p style={{ fontSize: "22px" }}>
+                    Coming Soon
+                </p>
+                {/* <form onSubmit={(e) => {
                     e.preventDefault(); 
                     if( 
                         formData.username.length > 1 && 
@@ -444,7 +446,6 @@ const classNames = [
                         }
                     </ul>
                     <div className={styles.paymentInfo}>
-                        {/* Invoice: {invoiceIds.join(" | ")} <br /> */}
                         {
                             loading ? 
                             <span className={styles.loading}>
@@ -478,7 +479,9 @@ const classNames = [
                             null : null
                         }
                     </div>
-                </form>
+                </form> */}
+                        {/* Invoice: {invoiceIds.join(" | ")} <br /> */}
+
             </div>
         )
     }else if(enrollType === "upon request"){
