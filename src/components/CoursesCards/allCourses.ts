@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 import image0 from "../../../public/images/workshop.jpeg"
 import image0inner from "../../../public/images/workshop-inner.jpeg"
 import image1 from "../../../public/images/IntroductionToCancerBiology.jpg"
-import image2 from "../../../public/images/course.jpg"
+import image2 from "../../../public/images/course.webp"
 import userImg from "../../../public/images/user.webp"
 import alumni1 from "../../../public/images/alumni-1.webp"
 import alumni2 from "../../../public/images/alumni-2.webp"
@@ -102,7 +102,7 @@ const allCourses : Course[] = [
         discount: "80",
         src: image0,
         innerSrc: image0inner,
-        featured: true,
+        featured: false,
         innerPage: {
             details: {
                 when: "4-5 April",

@@ -4,7 +4,7 @@ import styles from "./course-id.module.css"
 import allCourses, { Content, ContentList, Course, GeneralContent, OptionalDiv, OptionalDivContent, Person, WhoNote } from '@/components/CoursesCards/allCourses'
 import MainHeading from '@/components/MainHeading/MainHeading'
 import Image from 'next/image'
-import altImg from "../../../../../../public/images/course.jpg"
+import altImg from "../../../../../../public/images/course.webp"
 import userImg from "../../../../../../public/images/user.webp"
 import Loader from '@/components/Loader/Loader'
 import Testimonials from '@/components/Testimonials/Testimonials'
