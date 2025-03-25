@@ -1,4 +1,3 @@
-"use client"
 import { Metadata } from 'next';
 import React, { use } from 'react'
 import allCourses, { Course } from '@/components/CoursesCards/allCourses';
