@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import React, { use } from 'react'
 import allCourses, { Course } from '@/components/CoursesCards/allCourses';
-import { usePathname } from 'next/navigation';
 
 
 // const course = allCourses.find(course => course.id === )
@@ -23,9 +22,6 @@ const CoursesPagesLayout = ({
   params:  Promise<{locale: string}>
 }>) => {
 
-    const pathname = usePathname()
-    const courseId = pathname.split("/")[pathname.split("/").length - 1]
-    console.log(courseId)
 
   return children
 }
