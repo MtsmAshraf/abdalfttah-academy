@@ -13,7 +13,7 @@ import Contact from "@/components/Contact/Contact";
 export const metadata: Metadata = {
   title: "Abdalfattah Academy",
   description: "Abdalfattah Academy official website",
-  icons: icon.src,
+  icons: icon.src,  
 };
 
 export default async function RootLayout({

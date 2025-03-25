@@ -6,15 +6,6 @@ import Testimonials from '@/components/Testimonials/Testimonials'
 import { Metadata } from 'next'
 
 
-
-export const metadata: Metadata = {
-  title: "Abdalfattah Academy",
-  description: "Abdalfattah Academy official website",
-  openGraph: {
-      title:"title",
-      url: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fworkshop-inner.5b927ffb.jpeg&w=1920&q=75",
-  }
-};
 const Courses = ({
   params
 }: Readonly<{
