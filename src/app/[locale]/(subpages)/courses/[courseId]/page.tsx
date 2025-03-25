@@ -19,43 +19,6 @@ import BoldText from '@/components/BoldText/BoldText'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 
-// app/courses/[slug]/page.js
-export async function generateMetadata({ 
-  params 
-} : { params:  Promise<{courseId: string, locale: string}>  }) {
-  // Fetch course data based on slug
-  const { courseId } = use(params)
-  const course: Course | any = allCourses.find(course => course.id === courseId) ;
-  
-  return {
-    title: course.title,
-    // description: course.description,
-    openGraph: {
-      title: course.title,
-      description: course.description,
-      url: `https://www.abdalfttah-academy.com/en/courses/${courseId}`,
-      siteName: `Abdelfttah Academy | ${course.title}`,
-      images: [
-        {
-          url: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fworkshop-inner.5b927ffb.jpeg&w=1920&q=75", // Full absolute URL to the image
-          width: 800,
-          height: 600,
-          alt: `${course.title} image`,
-        },
-      ],
-      locale: 'en',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: course.title,
-      description: course.description,
-      images: ["https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fworkshop-inner.5b927ffb.jpeg&w=1920&q=75"],
-    },
-  };
-}
-
-
 const CourseId = ({
     params,
   }: Readonly<{
