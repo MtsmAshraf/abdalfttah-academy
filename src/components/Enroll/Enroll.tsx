@@ -24,10 +24,18 @@ const Enroll = ({
 }) => {
 
 async function handlePaymentSuccess(userEmail: string, userName: string, phone: string, course: string) {
+    // the send api informs the subscriber that his payment was successful
     await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: userEmail, name: userName, phone: phone , courseName: course }),
+        body: JSON.stringify(
+            { 
+                email: userEmail, 
+                name: userName, 
+                phone: phone , 
+                courseName: course 
+            }
+        ),
     });
     console.log("formData",formData)
 }
@@ -97,14 +105,14 @@ async function excutePayment(id: number) {
     }
     // console.log("INVOICE_IDs", invoiceIds);
 
-    if(result.data.payment_data.redirectTo){
+    if(result.data.payment_data.redirectTo){ // this means the method is to pay with card
         setRedirectLink(result.data.payment_data.redirectTo)
         window.sessionStorage.setItem(id.toString(), result.data.payment_data.redirectTo)
         setFawryCode("")
         setFawryDate("")
         setLoading(false)
     }
-    if(result.data.payment_data.fawryCode){
+    if(result.data.payment_data.fawryCode){ // this means the method is to pay with fawry
         setRedirectLink("")
         setFawryCode(result.data.payment_data.fawryCode)
         setFawryDate(result.data.payment_data.expireDate)

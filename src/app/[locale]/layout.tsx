@@ -11,8 +11,8 @@ import icon from "./favicon.ico"
 import Contact from "@/components/Contact/Contact";
 
 export const metadata: Metadata = {
-  title: "Abdalfattah Academy",
-  description: "Abdalfattah Academy official website",
+  title: "Abdalfttah Academy",
+  description: "Abdalfttah Academy official website",
   icons: icon.src,  
 };
 

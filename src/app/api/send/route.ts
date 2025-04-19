@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { email, name, phone, courseName } = await req.json();
   try {
     const { data, error } = await resend.emails.send({
-      from: "Abdalfttah Academy <onboarding@resend.dev>",
+      from: "Abdalfttah Academy <onboarding@resend.dev>", // this should not be (onboarding@resend.dev) if the website is on a real custom doamin
       to: ['mo32000a@gmail.com'],
       subject: `${courseName} Course Paid Successfully!`,
       react: EmailTemplate({ 
