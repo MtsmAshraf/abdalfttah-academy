@@ -16,6 +16,7 @@ import Insructor from '@/components/Insructor/Insructor'
 import Enroll from '@/components/Enroll/Enroll'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import BoldText from '@/components/BoldText/BoldText'
+import { notFound } from 'next/navigation'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 
@@ -95,6 +96,10 @@ const CourseId = ({
       styles.course,
       crsScrolled ? styles.loaded : ''
     ]
+
+    if(parseInt(courseId) >= allCourses.length){
+      return notFound();
+    }
 
   return (
     <section ref={crs} className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
