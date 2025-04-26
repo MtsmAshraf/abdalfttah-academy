@@ -71,10 +71,10 @@ const CoursesCards = ({
                                                 course.discount && course.price
                                                 ?
                                                 <>
-                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
+                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
                                                 </>
                                                 :
-                                                `${course.price}$ USD` : course.enrollType}</p>
+                                                `${course.price}$ EGP` : course.enrollType}</p>
 
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
@@ -98,10 +98,10 @@ const CoursesCards = ({
                                                 course.discount && course.price
                                                 ?
                                                 <>
-                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
+                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
                                                 </>
                                                 :
-                                                `${course.price}$ USD` : course.enrollType}</p>
+                                                `${course.price}$ EGP` : course.enrollType}</p>
 
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                             </div>
@@ -129,10 +129,10 @@ const CoursesCards = ({
                                             course.discount && course.price
                                             ?
                                             <>
-                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
+                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
                                             </>
                                             :
-                                            `${course.price}$ USD` : course.enrollType}</p>
+                                            `${course.price}$ EGP` : course.enrollType}</p>
 
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
@@ -156,10 +156,10 @@ const CoursesCards = ({
                                             course.discount && course.price
                                             ?
                                             <>
-                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ USD</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ USD`}
+                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
                                             </>
                                             :
-                                            `${course.price}$ USD` : course.enrollType}</p>
+                                            `${course.price}$ EGP` : course.enrollType}</p>
 
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
