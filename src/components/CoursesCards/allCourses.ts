@@ -1440,131 +1440,131 @@ const allCourses : Course[] = [
             ] 
         }
     },
-    {
-        id: "6",
-        enrollType: "upon request",
-        title: "Circular RNA (CircRNA) Biology",
-        category: "Advanced Biology",
-        price: "upon request",
-        src: image2,
-        innerPage: {
-            details: {
-                noOfVideos: "Videos",
-                duration: "hours",
-                location: "Online",
+    // {
+    //     id: "6",
+    //     enrollType: "upon request",
+    //     title: "Circular RNA (CircRNA) Biology",
+    //     category: "Advanced Biology",
+    //     price: "upon request",
+    //     src: image2,
+    //     innerPage: {
+    //         details: {
+    //             noOfVideos: "Videos",
+    //             duration: "hours",
+    //             location: "Online",
                 
-            },
-            heading: "Welcome to the DNA Replication Course!",
-            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            descriptionAr: "ستسير هذا الدورة بالمشاركين عبر عملية تضاعف الحمض النووي (DNA) الرائعة، وهي آلية أساسية تضمن استمرارية المعلومات الجينية في جميع الخلايا الحية. سنستكشف الاكتشافات التجريبية التي أكدت الطبيعة شبه المحافظة لعملية التضاعف، بالإضافة إلى الآليات الجزيئية المشاركة والخطوات التفصيلية لتخليق الحمض النووي في كل من الأنظمة بدائية النواة وحقيقية النواة. تشمل الموضوعات الرئيسية مواقع بدء التضاعف، إنزيمات البوليميراز، آليات التدقيق وإصلاح الأخطاء، والتحديات المرتبطة بتضاعف نهايات الكروموسومات. بنهاية الدورة، سيكون لدى المشاركين فهم شامل لكيفية تضاعف الحمض النووي بدقة، والإنزيمات الأساسية التي تدفع هذه العملية الحيوية.",
-            divs: [
-                {
-                    h2: "Why Take a Personalized Course?",
-                    h2Ar: "لماذا تأخذ دورة مخصصة؟",
-                    content: [
-                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
-                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
-                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
-                    ],
-                    contentAr: [
-                        "*تعلم مركز:* بدلًا من متابعة عدة دورات متفرقة، احصل على كل شيء منظمًا في مكان واحد.",
-                        "*إرشاد فردي:* دعم مباشر لضمان تطبيق ما تتعلمه بشكل فعال.",
-                        "*تأثير على مستقبلك المهني:* اكتساب مهارات تساعدك على *إنهاء أبحاثك بشكل أسرع، تحسين فرصك الوظيفية، وزيادة راتبك المحتمل*.",
-                    ]
-                }
-            ],
-            who: [
-                {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
-                },
-                {
-                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
-                },
-                "*Master's or PhD students* looking for structured, targeted learning.",
-                "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
-                "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
-                "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
-            ],
-            whoAr: [
-                {
-                    note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
-                },
-                {
-                    note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
-                },
-                "*طلاب الماجستير والدكتوراه* الذين يبحثون عن تعلم منظم ومستهدف.",
-                "*الباحثون الذين يحتاجون إلى إرشاد فردي* لتطبيق المهارات مباشرة في أبحاثهم.",
-                "*المهنيون الذين يسعون لتطوير حياتهم المهنية* سواء للحصول على *وظيفة جديدة أو زيادة راتبهم* بعد إنهاء دراستهم.",
-                "*ليس للطلاب الجامعيين* الذين لديهم وقت لاستكشاف مجالات التعلم العامة. هذا الكورس موجه للأشخاص الذين يحتاجون إلى *تجربة تعلم واضحة، فعالة، ومخصصة*."
-            ],
-            people: [
-                {
-                    id: "0",
-                    name: "Youssef Hesham",
-                    title: "Faculty of Science Cairo university",
-                    src: alumni1,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "1",
-                    name: "Kamar Ahmed",
-                    title: "Faculty of Science Ain Shams university",
-                    src: alumni2,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "2",
-                    name: "Mariam Ahmed",
-                    title: "Faculty of Agriculture Cairo university",
-                    src: alumni3,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "3",
-                    name: "Soliman Attia",
-                    title: "Faculty of Agriculture Banha university",
-                    src: alumni4,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "4",
-                    name: "Bassem EL-Sayed",
-                    title: "MUST university",
-                    src: alumni5,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "5",
-                    name: "Mina Mokpel",
-                    title: "MUST university",
-                    src: alumni6,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "6",
-                    name: "Mariam Ahmed",
-                    title: "Faculty of Agriculture Ain Shams university",
-                    src: alumni7,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-                {
-                    id: "7",
-                    name: "Suhila Shaban",
-                    title: "MUST university",
-                    src: alumni8,
-                    country: "Egypt",
-                    countryCode: "eg"
-                },
-            ] 
-        }
-    },
+    //         },
+    //         heading: "Welcome to the DNA Replication Course!",
+    //         description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
+    //         descriptionAr: "ستسير هذا الدورة بالمشاركين عبر عملية تضاعف الحمض النووي (DNA) الرائعة، وهي آلية أساسية تضمن استمرارية المعلومات الجينية في جميع الخلايا الحية. سنستكشف الاكتشافات التجريبية التي أكدت الطبيعة شبه المحافظة لعملية التضاعف، بالإضافة إلى الآليات الجزيئية المشاركة والخطوات التفصيلية لتخليق الحمض النووي في كل من الأنظمة بدائية النواة وحقيقية النواة. تشمل الموضوعات الرئيسية مواقع بدء التضاعف، إنزيمات البوليميراز، آليات التدقيق وإصلاح الأخطاء، والتحديات المرتبطة بتضاعف نهايات الكروموسومات. بنهاية الدورة، سيكون لدى المشاركين فهم شامل لكيفية تضاعف الحمض النووي بدقة، والإنزيمات الأساسية التي تدفع هذه العملية الحيوية.",
+    //         divs: [
+    //             {
+    //                 h2: "Why Take a Personalized Course?",
+    //                 h2Ar: "لماذا تأخذ دورة مخصصة؟",
+    //                 content: [
+    //                     "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+    //                     "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+    //                     "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+    //                 ],
+    //                 contentAr: [
+    //                     "*تعلم مركز:* بدلًا من متابعة عدة دورات متفرقة، احصل على كل شيء منظمًا في مكان واحد.",
+    //                     "*إرشاد فردي:* دعم مباشر لضمان تطبيق ما تتعلمه بشكل فعال.",
+    //                     "*تأثير على مستقبلك المهني:* اكتساب مهارات تساعدك على *إنهاء أبحاثك بشكل أسرع، تحسين فرصك الوظيفية، وزيادة راتبك المحتمل*.",
+    //                 ]
+    //             }
+    //         ],
+    //         who: [
+    //             {
+    //                 note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+    //             },
+    //             {
+    //                 note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+    //             },
+    //             "*Master's or PhD students* looking for structured, targeted learning.",
+    //             "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
+    //             "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
+    //             "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
+    //         ],
+    //         whoAr: [
+    //             {
+    //                 note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
+    //             },
+    //             {
+    //                 note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+    //             },
+    //             "*طلاب الماجستير والدكتوراه* الذين يبحثون عن تعلم منظم ومستهدف.",
+    //             "*الباحثون الذين يحتاجون إلى إرشاد فردي* لتطبيق المهارات مباشرة في أبحاثهم.",
+    //             "*المهنيون الذين يسعون لتطوير حياتهم المهنية* سواء للحصول على *وظيفة جديدة أو زيادة راتبهم* بعد إنهاء دراستهم.",
+    //             "*ليس للطلاب الجامعيين* الذين لديهم وقت لاستكشاف مجالات التعلم العامة. هذا الكورس موجه للأشخاص الذين يحتاجون إلى *تجربة تعلم واضحة، فعالة، ومخصصة*."
+    //         ],
+    //         people: [
+    //             {
+    //                 id: "0",
+    //                 name: "Youssef Hesham",
+    //                 title: "Faculty of Science Cairo university",
+    //                 src: alumni1,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "1",
+    //                 name: "Kamar Ahmed",
+    //                 title: "Faculty of Science Ain Shams university",
+    //                 src: alumni2,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "2",
+    //                 name: "Mariam Ahmed",
+    //                 title: "Faculty of Agriculture Cairo university",
+    //                 src: alumni3,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "3",
+    //                 name: "Soliman Attia",
+    //                 title: "Faculty of Agriculture Banha university",
+    //                 src: alumni4,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "4",
+    //                 name: "Bassem EL-Sayed",
+    //                 title: "MUST university",
+    //                 src: alumni5,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "5",
+    //                 name: "Mina Mokpel",
+    //                 title: "MUST university",
+    //                 src: alumni6,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "6",
+    //                 name: "Mariam Ahmed",
+    //                 title: "Faculty of Agriculture Ain Shams university",
+    //                 src: alumni7,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //             {
+    //                 id: "7",
+    //                 name: "Suhila Shaban",
+    //                 title: "MUST university",
+    //                 src: alumni8,
+    //                 country: "Egypt",
+    //                 countryCode: "eg"
+    //             },
+    //         ] 
+    //     }
+    // },
     {
         id: "7",
         enrollType: "upon request",
