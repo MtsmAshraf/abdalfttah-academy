@@ -410,11 +410,11 @@ const CourseId = ({
                       course.innerPage.details.discount && course.innerPage.details.price
                       ?
                       <>
-                          {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ USD</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ USD`}
+                          {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ EGP</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
                       </>
-                      // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } USD` 
+                      // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
                       :
-                      `${course.innerPage.details.price} USD` 
+                      `${course.innerPage.details.price} EGP` 
                       :
                       "Free"}
                       </h5>

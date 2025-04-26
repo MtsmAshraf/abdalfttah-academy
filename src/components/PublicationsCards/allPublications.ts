@@ -39,7 +39,7 @@ const allPublications : Publication[] = [
         ],
         date: "Cancer Research (2025)",
         src: "https://www.purdue.edu/uns/images/2019/cancer-research.jpg",
-        link: "https://www.biorxiv.org/content/10.1101/2024.03.01.582941v1",
+        link: "",
         pdf: "/2024.03.01.582941v1.full.pdf"
     },
     {

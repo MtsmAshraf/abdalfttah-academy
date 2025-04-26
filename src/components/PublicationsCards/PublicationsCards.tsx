@@ -98,7 +98,7 @@ const PublicationsCards = ({
                                     {publication.date}
                                 </span>
                                 <div>
-                                    <a href={publication.link} target='_blank'>Link</a>
+                                    <a href={publication.link} style={{ pointerEvents: !publication.link ? "none" : "unset"}} target='_blank'>Link</a>
                                     <button
                                         onClick={() => {setShowModal(true); setPdfUrl(publication.pdf)}}
                                         >PDF
