@@ -385,7 +385,7 @@ const allCourses : Course[] = [
             ],
             content: [
                 {
-                    button: "Week one: *Fundamentals of Cancer Biology and Classification*",
+                    button: "Week One: *Fundamentals of Cancer Biology and Classification*",
                     subList: [
                         "What is Cancer?",
                         "Basic Cell Biology of Cancer Development",
@@ -406,7 +406,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week two: *Cancer Incidence and Causes*",
+                    button: "Week Two: *Cancer Incidence and Causes*",
                     subList: [
                         "Variability in Cancer Frequency Across Populations",
                         "Global Variability in Cancer Incidence",
@@ -422,7 +422,20 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week Three: *Cancers seem to develop progressively*",
+                    button: "Week Three: *Tumor Viruses and Genetic Factors in Cancer*",
+                    subList: [
+                        "The Role of Tumor Viruses in Cancer Research",
+                        "Early Hypotheses on Tumor Viruses",
+                        "Challenges to the Viral Theory of Cancer",
+                        "The Retrovirus Hypothesis and Cancer",
+                        "Human Cancer and Endogenous Retroviruses (ERVs)",
+                        "Why the Tumor Virus Hypothesis Failed",
+                        "Oncogenes: Drivers of Uncontrolled Growth",
+                        "Tumor Suppressor Genes: The Guardians Against Cancer",
+                    ]
+                },
+                {
+                    button: "Week Four: *Cancers seem to develop progressively*",
                     subList: [
                         "Normal Cells",
                         "Hyperplasia",
@@ -442,7 +455,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week four: *14 Hallmarks of Cancer*",
+                    button: "Week Five: *14 Hallmarks of Cancer*",
                     subList: [
                         "Sustaining Proliferative Signaling",
                         "Evading Growth Suppressors",
@@ -461,20 +474,22 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week five: *Tumor Viruses and Genetic Factors in Cancer*",
+                    button: "Week Six: *The Tumor Microenvironment*",
                     subList: [
-                        "The Role of Tumor Viruses in Cancer Research",
-                        "Early Hypotheses on Tumor Viruses",
-                        "Challenges to the Viral Theory of Cancer",
-                        "The Retrovirus Hypothesis and Cancer",
-                        "Human Cancer and Endogenous Retroviruses (ERVs)",
-                        "Why the Tumor Virus Hypothesis Failed",
-                        "Oncogenes: Drivers of Uncontrolled Growth",
-                        "Tumor Suppressor Genes: The Guardians Against Cancer",
+                        "The Tumor Is Not Only Cancer Cells",
+                        "Overview of the Tumor Microenvironment (TME)",
+                        "Macrophages in the TME",
+                        "Cancer-Associated Fibroblasts (CAFs)",
+                        "T Cells in the TME",
+                        "Natural Killer (NK) Cells",
+                        "Endothelial Cells and Blood Vessels",
+                        "Extracellular Matrix (ECM) in the TME",
+                        "Secreted Molecules (Cytokines, Chemokines, Growth Factors)",
+                        "Research Papers and Case Examples"
                     ]
                 },
                 {
-                    button: "Week six: *The Process and Impact of Cancer Metastasis*",
+                    button: "Week Seven: *The Process and Impact of Cancer Metastasis*",
                     subList: [
                         "What is Metastasis?",
                         "Primary Tumors vs. Metastases",
@@ -497,7 +512,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    button: "Week Seven: *Cancer Treatments and Their Drugs*",
+                    button: "Week Eight: *Cancer Treatments and Their Drugs*",
                     subList: [
                         {
                             heading: "*Surgery & Radiation*",
@@ -1580,8 +1595,8 @@ const allCourses : Course[] = [
                 
             },
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            descriptionAr: "ستسير هذا الدورة بالمشاركين عبر عملية تضاعف الحمض النووي (DNA) الرائعة، وهي آلية أساسية تضمن استمرارية المعلومات الجينية في جميع الخلايا الحية. سنستكشف الاكتشافات التجريبية التي أكدت الطبيعة شبه المحافظة لعملية التضاعف، بالإضافة إلى الآليات الجزيئية المشاركة والخطوات التفصيلية لتخليق الحمض النووي في كل من الأنظمة بدائية النواة وحقيقية النواة. تشمل الموضوعات الرئيسية مواقع بدء التضاعف، إنزيمات البوليميراز، آليات التدقيق وإصلاح الأخطاء، والتحديات المرتبطة بتضاعف نهايات الكروموسومات. بنهاية الدورة، سيكون لدى المشاركين فهم شامل لكيفية تضاعف الحمض النووي بدقة، والإنزيمات الأساسية التي تدفع هذه العملية الحيوية.",
+            description: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs. Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*.",
+            descriptionAr: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك. غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*.",
             divs: [
                 {
                     h2: "Why Take a Personalized Course?",
@@ -1600,24 +1615,24 @@ const allCourses : Course[] = [
             ],
             
             who: [
-                {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
-                },
-                {
-                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
-                },
+                // {
+                //     note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                // },
+                // {
+                //     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                // },
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
                 "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             whoAr: [
-                {
-                    note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
-                },
-                {
-                    note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
-                },
+                // {
+                //     note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
+                // },
+                // {
+                //     note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+                // },
                 "*طلاب الماجستير والدكتوراه* الذين يبحثون عن تعلم منظم ومستهدف.",
                 "*الباحثون الذين يحتاجون إلى إرشاد فردي* لتطبيق المهارات مباشرة في أبحاثهم.",
                 "*المهنيون الذين يسعون لتطوير حياتهم المهنية* سواء للحصول على *وظيفة جديدة أو زيادة راتبهم* بعد إنهاء دراستهم.",
@@ -1707,8 +1722,8 @@ const allCourses : Course[] = [
                 
             },
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            descriptionAr: "ستسير هذا الدورة بالمشاركين عبر عملية تضاعف الحمض النووي (DNA) الرائعة، وهي آلية أساسية تضمن استمرارية المعلومات الجينية في جميع الخلايا الحية. سنستكشف الاكتشافات التجريبية التي أكدت الطبيعة شبه المحافظة لعملية التضاعف، بالإضافة إلى الآليات الجزيئية المشاركة والخطوات التفصيلية لتخليق الحمض النووي في كل من الأنظمة بدائية النواة وحقيقية النواة. تشمل الموضوعات الرئيسية مواقع بدء التضاعف، إنزيمات البوليميراز، آليات التدقيق وإصلاح الأخطاء، والتحديات المرتبطة بتضاعف نهايات الكروموسومات. بنهاية الدورة، سيكون لدى المشاركين فهم شامل لكيفية تضاعف الحمض النووي بدقة، والإنزيمات الأساسية التي تدفع هذه العملية الحيوية.",
+            description: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs. Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*.",
+            descriptionAr: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك. غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*.",
             divs: [
                 {
                     h2: "Why Take a Personalized Course?",
@@ -1727,24 +1742,24 @@ const allCourses : Course[] = [
             ],
             
             who: [
-                {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
-                },
-                {
-                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
-                },
+                // {
+                //     note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                // },
+                // {
+                //     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                // },
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
                 "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             whoAr: [
-                {
-                    note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
-                },
-                {
-                    note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
-                },
+                // {
+                //     note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
+                // },
+                // {
+                //     note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+                // },
                 "*طلاب الماجستير والدكتوراه* الذين يبحثون عن تعلم منظم ومستهدف.",
                 "*الباحثون الذين يحتاجون إلى إرشاد فردي* لتطبيق المهارات مباشرة في أبحاثهم.",
                 "*المهنيون الذين يسعون لتطوير حياتهم المهنية* سواء للحصول على *وظيفة جديدة أو زيادة راتبهم* بعد إنهاء دراستهم.",
@@ -1833,8 +1848,8 @@ const allCourses : Course[] = [
                 
             },
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course will guide participants through the fascinating process of DNA replication, a fundamental mechanism ensuring genetic continuity in all living cells. We will explore the experimental discoveries that confirmed the semiconservative nature of replication, the molecular machinery involved, and the step-by-step process of DNA synthesis in both prokaryotic and eukaryotic systems. Key topics include replication origins, polymerases, proofreading mechanisms, and the challenges of replicating chromosome ends. By the end of the course, participants will have a thorough understanding of how DNA faithfully replicates and the critical enzymes that drive this essential process.",
-            descriptionAr: "ستسير هذا الدورة بالمشاركين عبر عملية تضاعف الحمض النووي (DNA) الرائعة، وهي آلية أساسية تضمن استمرارية المعلومات الجينية في جميع الخلايا الحية. سنستكشف الاكتشافات التجريبية التي أكدت الطبيعة شبه المحافظة لعملية التضاعف، بالإضافة إلى الآليات الجزيئية المشاركة والخطوات التفصيلية لتخليق الحمض النووي في كل من الأنظمة بدائية النواة وحقيقية النواة. تشمل الموضوعات الرئيسية مواقع بدء التضاعف، إنزيمات البوليميراز، آليات التدقيق وإصلاح الأخطاء، والتحديات المرتبطة بتضاعف نهايات الكروموسومات. بنهاية الدورة، سيكون لدى المشاركين فهم شامل لكيفية تضاعف الحمض النووي بدقة، والإنزيمات الأساسية التي تدفع هذه العملية الحيوية.",
+            description: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs. Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*.",
+            descriptionAr: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك. غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*.",
             divs: [
                 {
                     h2: "Why Take a Personalized Course?",
@@ -1853,24 +1868,24 @@ const allCourses : Course[] = [
             ],
             
             who: [
-                {
-                    note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
-                },
-                {
-                    note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
-                },
+                // {
+                //     note: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs."
+                // },
+                // {
+                //     note: "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+                // },
                 "*Master's or PhD students* looking for structured, targeted learning.",
                 "*Researchers needing one-on-one guidance* to apply skills directly to their work.",
                 "*Professionals seeking career advancement, whether to **secure a new job or increase their salary* after completing their degree.",
                 "*NOT for undergraduate students* who have more time to explore general learning paths. This course is for those who need *a clear, efficient, and personalized* learning experience."
             ],
             whoAr: [
-                {
-                    note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
-                },
-                {
-                    note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
-                },
+                // {
+                //     note: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك"
+                // },
+                // {
+                //     note: "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+                // },
                 "*طلاب الماجستير والدكتوراه* الذين يبحثون عن تعلم منظم ومستهدف.",
                 "*الباحثون الذين يحتاجون إلى إرشاد فردي* لتطبيق المهارات مباشرة في أبحاثهم.",
                 "*المهنيون الذين يسعون لتطوير حياتهم المهنية* سواء للحصول على *وظيفة جديدة أو زيادة راتبهم* بعد إنهاء دراستهم.",
