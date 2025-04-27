@@ -119,7 +119,20 @@ const CourseId = ({
                 locale === "ar" && course.innerPage.descriptionAr? 
                 <>
                   <h2 className={styles.welcomeAr}>مرحبًا بك في دورة {course.title}!</h2>
-                  <BoldText text={course.innerPage.descriptionAr || course.innerPage.description } />
+                  {
+                    typeof(course.innerPage.descriptionAr) === "string" ?
+                    // <BoldText text={course.innerPage.descriptionAr || course.innerPage.description } />
+                    <BoldText text={course.innerPage.descriptionAr } />
+                    :
+                    course.innerPage.descriptionAr.map((descriptionItem: string, index: number) => {
+                      return(
+                        <div key={index}>
+                        <br />
+                        <BoldText text={descriptionItem} />
+                        </div>
+                      )
+                    })
+                  }
                 </>
                 : 
                 <>
@@ -128,7 +141,19 @@ const CourseId = ({
                     <h2>Welcome to the {course.title}</h2> : 
                     <h2>Welcome to {course.title} Course!</h2>
                   }
-                  <BoldText text={course.innerPage.description} />
+                  {
+                    typeof(course.innerPage.description) === "string" ?
+                      <BoldText text={course.innerPage.description} />
+                    :
+                    course.innerPage.description.map((descriptionItem: string, index: number) => {
+                      return(
+                        <div key={index}>
+                        <br />
+                        <BoldText text={descriptionItem} />
+                        </div>
+                      )
+                    })
+                  }
                 </>
               }
               

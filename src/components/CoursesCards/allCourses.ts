@@ -79,8 +79,8 @@ export type Course = {
             discount?: string,
         },
         heading: string,
-        description: string,
-        descriptionAr?: string,
+        description: string | string[],
+        descriptionAr?: string | string[],
         divs?: OptionalDiv[],
         why?: string[],
         content?: (Content | GeneralContent)[],
@@ -1595,8 +1595,13 @@ const allCourses : Course[] = [
                 
             },
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs. Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*.",
-            descriptionAr: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك. غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*.",
+            description: [
+                "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs.",
+                "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+            ],
+            descriptionAr: ["هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك.",
+                "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+            ],
             divs: [
                 {
                     h2: "Why Take a Personalized Course?",
@@ -1722,8 +1727,13 @@ const allCourses : Course[] = [
                 
             },
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs. Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*.",
-            descriptionAr: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك. غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*.",
+            description: [
+                "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs.",
+                "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+            ],
+            descriptionAr: ["هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك.",
+                "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+            ],
             divs: [
                 {
                     h2: "Why Take a Personalized Course?",
@@ -1848,8 +1858,13 @@ const allCourses : Course[] = [
                 
             },
             heading: "Welcome to the DNA Replication Course!",
-            description: "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs. Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*.",
-            descriptionAr: "هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك. غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*.",
+            description: [
+                "This course is designed *specifically for master's and PhD students, NOT undergraduates. Instead of taking multiple scattered courses, this program provides **a structured, focused learning experience* tailored to your needs.",
+                "Graduate students often struggle to find the right resources amid a sea of general courses. This program *offers a clear path* with *focused content and one-on-one guidance, ensuring that you learn exactly what you need **without wasting time on unnecessary material*."
+            ],
+            descriptionAr: ["هذا الكورس مصمم *خصيصًا لطلاب الماجستير والدكتوراه، وليس للطلاب الجامعيين. بدلًا من البحث في العديد من الدورات المتفرقة، يوفر هذا البرنامج **تجربة تعليمية مركزة ومنظمة* تناسب احتياجاتك.",
+                "غالبًا ما يواجه طلاب الدراسات العليا صعوبة في العثور على الموارد المناسبة وسط الكم الكبير من الدورات العامة. هذا البرنامج *يمنحك مسارًا واضحًا* مع *محتوى موجه وإرشاد فردي، مما يضمن لك تعلم ما تحتاجه **دون إضاعة الوقت في معلومات غير ضرورية*."
+            ],
             divs: [
                 {
                     h2: "Why Take a Personalized Course?",
