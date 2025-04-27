@@ -107,6 +107,29 @@ const CourseId = ({
       router.back()
     }
 
+    const [egyptian, setEgyptian] = useState(true)
+    const [currency, setCurrency] = useState('USD');
+  
+    useEffect(() => {
+      // Fetch user's location based on IP
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          if (data.country === 'EG') {
+            setEgyptian(true);
+            setCurrency('EGP');
+          } else {
+            setEgyptian(false);
+            setCurrency('USD');
+          }
+        })
+        .catch(() => {
+          // Fallback if API fails
+          setEgyptian(false);
+          setCurrency('EGP');
+        });
+    }, []);
+
   return (
     <section ref={crs} className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
         <MainHeading>
@@ -435,20 +458,38 @@ const CourseId = ({
                   </li>
                   <li>
                     <span><FontAwesomeIcon icon={faDollar} /></span>
-                    <h5>{
-                      course.innerPage.details.price
-                      ?
-                      course.innerPage.details.discount && course.innerPage.details.price
-                      ?
-                      <>
-                          {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ EGP</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
-                      </>
-                      // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
-                      :
-                      `${course.innerPage.details.price} EGP` 
-                      :
-                      "Free"}
+                    {
+                      egyptian ? 
+                      <h5>{
+                        course.innerPage.details.price
+                        ?
+                        course.innerPage.details.discount && course.innerPage.details.price
+                        ?
+                        <>
+                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ {currency}</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ ${currency}`}
+                        </>
+                        // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } ${currency}` 
+                        :
+                        `${course.innerPage.details.price} ${currency}` 
+                        :
+                        "Free"}
                       </h5>
+                      :
+                      <h5>{
+                        course.innerPage.details.priceUsd
+                        ?
+                        course.innerPage.details.discount && course.innerPage.details.priceUsd
+                        ?
+                        <>
+                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ {currency}</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ ${currency}`}
+                        </>
+                        // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } ${currency}` 
+                        :
+                        `${course.innerPage.details.priceUsd} ${currency}` 
+                        :
+                        "Free"}
+                      </h5>
+                    }
                   </li>
                 </ul>
               </div>

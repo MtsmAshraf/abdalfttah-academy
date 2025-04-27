@@ -41,6 +41,29 @@ const CoursesCards = ({
         }
     },[])
 
+    const [egyptian, setEgyptian] = useState(true)
+    const [currency, setCurrency] = useState('USD');
+  
+    useEffect(() => {
+        // Fetch user's location based on IP
+    fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+        if (data.country === 'EG') {
+        setEgyptian(true);
+        setCurrency('EGP');
+        } else {
+        setEgyptian(false);
+        setCurrency('USD');
+        }
+    })
+    .catch(() => {
+        // Fallback if API fails
+        setEgyptian(true);
+        setCurrency('EGP');
+        });
+    }, []);
+
   return (
     <section ref={coursesCards} className={coursesScrolled ? styles.scrolled + " " + styles.coursesCards : styles.coursesCards}>
         <MainHeading cat={category}>
@@ -65,19 +88,37 @@ const CoursesCards = ({
                                     </Link>
                                         <div>
                                             <h4>{course.title}</h4>
-                                            <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                            {
+                                                egyptian ? 
+                                                <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
                                                 <p>{course.enrollType === "paid" || course.enrollType === "google form" 
                                                 ?
                                                 course.discount && course.price
                                                 ?
                                                 <>
-                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
+                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
                                                 </>
                                                 :
-                                                `${course.price}$ EGP` : course.enrollType}</p>
+                                                `${course.price}$ ${currency}` : course.enrollType}</p>
 
                                                 <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
-                                            </div>
+                                                </div>
+                                                :
+                                                <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                    ?
+                                                    course.discount && course.priceUsd
+                                                    ?
+                                                    <>
+                                                        {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.priceUsd}$ EGP</s> {`${parseInt(course.priceUsd) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
+                                                    </>
+                                                    :
+                                                    `${course.priceUsd}$ ${currency}` : course.enrollType}</p>
+
+                                                    <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                                </div>
+                                                }
+                                            
                                         </div>
                                     </Card>
                                 
@@ -92,19 +133,36 @@ const CoursesCards = ({
                                     </Link>
                                         <div>
                                             <h4>{course.title}</h4>
-                                            <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" 
-                                                ?
-                                                course.discount && course.price
-                                                ?
-                                                <>
-                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
-                                                </>
-                                                :
-                                                `${course.price}$ EGP` : course.enrollType}</p>
+                                            {
+                                                egyptian ? 
+                                                <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                    ?
+                                                    course.discount && course.price
+                                                    ?
+                                                    <>
+                                                        {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
+                                                    </>
+                                                    :
+                                                    `${course.price}$ ${currency}` : course.enrollType}</p>
 
-                                                <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
-                                            </div>
+                                                    <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                                </div>
+                                                :
+                                                <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                    ?
+                                                    course.discount && course.priceUsd
+                                                    ?
+                                                    <>
+                                                        {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.priceUsd}$ EGP</s> {`${parseInt(course.priceUsd) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
+                                                    </>
+                                                    :
+                                                    `${course.priceUsd}$ ${currency}` : course.enrollType}</p>
+
+                                                    <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                                </div>
+                                            }
                                         </div>
                                 </Card>
                                 
@@ -123,19 +181,36 @@ const CoursesCards = ({
                                 </Link>
                                     <div>
                                         <h4>{course.title}</h4>
-                                        <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                            <p>{course.enrollType === "paid" || course.enrollType === "google form" 
-                                            ?
-                                            course.discount && course.price
-                                            ?
-                                            <>
-                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
-                                            </>
-                                            :
-                                            `${course.price}$ EGP` : course.enrollType}</p>
+                                        {
+                                            egyptian ? 
+                                            <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                ?
+                                                course.discount && course.price
+                                                ?
+                                                <>
+                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
+                                                </>
+                                                :
+                                                `${course.price}$ ${currency}` : course.enrollType}</p>
 
-                                            <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
-                                        </div>
+                                                <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                            </div>
+                                            :
+                                            <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
+                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                ?
+                                                course.discount && course.priceUsd
+                                                ?
+                                                <>
+                                                    {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.priceUsd}$ EGP</s> {`${parseInt(course.priceUsd) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
+                                                </>
+                                                :
+                                                `${course.priceUsd}$ ${currency}` : course.enrollType}</p>
+
+                                                <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
+                                            </div>
+                                        }
                                     </div>
                             </Card>
                             
@@ -156,11 +231,10 @@ const CoursesCards = ({
                                             course.discount && course.price
                                             ?
                                             <>
-                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ EGP`}
+                                                {`${course.discount}% off | `} <s style={{ opacity: 0.7 }}>{course.price}$ EGP</s> {`${parseInt(course.price) * (100 - parseInt(course.discount)) * 0.01}$ ${currency}`}
                                             </>
                                             :
-                                            `${course.price}$ EGP` : course.enrollType}</p>
-
+                                            `${course.price}$ ${currency}` : course.enrollType}</p>
                                             <MainLink inverted href={`/courses/${course.id}`}>Enroll</MainLink>
                                         </div>
                                     </div>

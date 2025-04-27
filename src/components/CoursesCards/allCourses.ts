@@ -64,6 +64,7 @@ export type Course = {
     title: string,
     category: string,
     price?: string,
+    priceUsd?: string,
     discount?: string,
     src: StaticImageData,
     innerSrc?: StaticImageData
@@ -76,6 +77,7 @@ export type Course = {
             duration?: string,
             location?: string,
             price?: string,
+            priceUsd?: string,
             discount?: string,
         },
         heading: string,
@@ -350,6 +352,7 @@ const allCourses : Course[] = [
         title: "Introduction to Cancer Biology",
         category: "Advanced Biology",
         price: "1000",
+        priceUsd: "100",
         src: image1,
         featured: true,
         innerPage: {
@@ -357,7 +360,8 @@ const allCourses : Course[] = [
                 when: "20-06-2025",
                 duration: "8 weeks",
                 location: "Online",
-                price: "1000"
+                price: "1000",
+                priceUsd: "100"
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
