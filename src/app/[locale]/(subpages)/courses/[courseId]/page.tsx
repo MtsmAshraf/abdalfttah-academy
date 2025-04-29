@@ -16,7 +16,7 @@ import Insructor from '@/components/Insructor/Insructor'
 import Enroll from '@/components/Enroll/Enroll'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import BoldText from '@/components/BoldText/BoldText'
-import { notFound, useRouter } from 'next/navigation'
+import { notFound } from 'next/navigation'
 const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 
@@ -97,15 +97,16 @@ const CourseId = ({
       crsScrolled ? styles.loaded : ''
     ]
 
-    if(parseInt(courseId) >= allCourses.length){
+    const validIds: string[] = [];
+    allCourses.forEach((course: Course) => {
+      if(course.enrollType !== "coming soon"){
+        validIds.push(course.id)
+      }
+    })
+    if(validIds.includes(courseId) === false){
       return notFound();
     }
 
-    const router = useRouter()
-
-    if(course.enrollType === "coming soon"){
-      router.back()
-    }
 
     const [egyptian, setEgyptian] = useState(true)
     const [currency, setCurrency] = useState('USD');
