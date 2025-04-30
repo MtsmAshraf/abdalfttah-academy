@@ -9,7 +9,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 export default function ThemeToggle({
     lo
 } : {
-    lo: string
+    lo?: string
 }) {
   const theme = useSelector((state: any) => state.theme.theme);
   const dispatch = useDispatch();

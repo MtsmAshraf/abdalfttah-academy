@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { use } from 'react'
 import styles from "./not-found.module.css"
 import Image from 'next/image'
 import notFound from "../../../public/images/not-found.png"
@@ -7,7 +7,11 @@ import { Link } from '@/i18n/routing'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faHome } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/navigation'
+import ThemeToggle from '@/components/ThemeToggle/ThemeToggle'
+import { Provider } from 'react-redux'
+import { store } from '@/store/store'
 const NotFound = () => {
+    
     const router = useRouter()
   return (
     <div className={styles.notFound}>
@@ -35,6 +39,9 @@ const NotFound = () => {
                 </Link>
             </span>
         </div>
+        <Provider store={store}>
+            <ThemeToggle />
+        </Provider>
     </div>
   )
 }
