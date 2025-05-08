@@ -108,28 +108,28 @@ const CourseId = ({
     }
 
 
-    // const [egyptian, setEgyptian] = useState(true)
-    // const [currency, setCurrency] = useState('USD');
+    const [egyptian, setEgyptian] = useState(true)
+    const [currency, setCurrency] = useState('USD');
   
-    // useEffect(() => {
-    //   // Fetch user's location based on IP
-    //   fetch('https://ipapi.co/json/')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       if (data.country === 'EG') {
-    //         setEgyptian(true);
-    //         setCurrency('EGP');
-    //       } else {
-    //         setEgyptian(false);
-    //         setCurrency('USD');
-    //       }
-    //     })
-    //     .catch(() => {
-    //       // Fallback if API fails
-    //       setEgyptian(false);
-    //       setCurrency('EGP');
-    //     });
-    // }, []);
+    useEffect(() => {
+      // Fetch user's location based on IP
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          if (data.country === 'EG') {
+            setEgyptian(true);
+            setCurrency('EGP');
+          } else {
+            setEgyptian(false);
+            setCurrency('USD');
+          }
+        })
+        .catch(() => {
+          // Fallback if API fails
+          setEgyptian(false);
+          setCurrency('EGP');
+        });
+    }, []);
 
   return (
     <section ref={crs} className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
@@ -460,7 +460,7 @@ const CourseId = ({
                   <li>
                     <span><FontAwesomeIcon icon={faDollar} /></span>
                     {
-                      true ? 
+                      egyptian ? 
                       <h5>{
                         course.innerPage.details.price
                         ?
@@ -476,21 +476,20 @@ const CourseId = ({
                         "Free"}
                       </h5>
                       :
-                      null
-                      // <h5>{
-                      //   course.innerPage.details.priceUsd
-                      //   ?
-                      //   course.innerPage.details.discount && course.innerPage.details.priceUsd
-                      //   ?
-                      //   <>
-                      //       {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ EGP</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
-                      //   </>
-                      //   // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
-                      //   :
-                      //   `${course.innerPage.details.priceUsd} EGP` 
-                      //   :
-                      //   "Free"}
-                      // </h5>
+                      <h5>{
+                        course.innerPage.details.priceUsd
+                        ?
+                        course.innerPage.details.discount && course.innerPage.details.priceUsd
+                        ?
+                        <>
+                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ USD</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ USD`}
+                        </>
+                        // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } USD` 
+                        :
+                        `${course.innerPage.details.priceUsd} USD` 
+                        :
+                        "Free"}
+                      </h5>
                     }
                   </li>
                 </ul>
