@@ -189,6 +189,10 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.course > div:nth-child(2) .scroll > div div{
+    /* background-color: red; */
+    border-bottom: 1px solid var(--main-light-color);
+}
 .course > div:nth-child(2) .scroll  ul{
     /* font-size: 14px; */
 }

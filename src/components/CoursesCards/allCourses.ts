@@ -348,7 +348,7 @@ const allCourses : Course[] = [
     // }, 
     {
         id: "1",
-        enrollType: "paid",
+        enrollType: "google form",
         title: "Introduction to Cancer Biology",
         category: "Advanced Biology",
         price: "1000",
@@ -357,31 +357,68 @@ const allCourses : Course[] = [
         featured: true,
         innerPage: {
             details: {
-                when: "20-06-2025",
-                duration: "8 weeks",
+                when: "July 2025",
+                duration: "12 weeks",
                 location: "Online",
                 price: "1000",
                 priceUsd: "100"
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
+            courseLink: "https://docs.google.com/forms/d/e/1FAIpQLSd4OuY113tq2_DSRG7IvKOBQEblRGh0so_PXIsGXZil61QD3Q/viewform?usp=header",
             divs:[
                 {
                     h2: "Course Structure",
                     content: [
                         {
-                            heading: "Preparation Phase (Daily for 10 Days)",
+                            heading: "Preparation Phase (Daily for 30 Days)",
                             paragraphs: [
                                 "Independent study to build foundational knowledge.",
-                                "Here you mention the three courses of (DNA Structure, DNA Replication, RNA Transcription)"
+                                "Here you mention the three courses of (DNA Structure, DNA Replication, RNA Transcription)",
+                                "Focus areas:",
+                                "*DNA Structure*",
+                                "- *DNA Replication*",
+                                "- *DNA Transcription*",
+                                "- *RNA Translation*",
                             ]
                         },
                         {
                             heading: "Weekly Sessions",
                             paragraphs: [
-                                "*Lecture (3 hours):* Covers core concepts in depth.",
-                                "*Tutorial (1 hour):* Focuses on advanced discussions and clarifications.",
-                                "*One-to-One Meeting (1 hour, optional):* Personalised guidance available upon request."
+                                "- *Lecture (3 hours):* Covers core concepts in depth.",
+                                "- *Tutorial (2 hours):* Focuses on advanced discussions and clarifications.",
+                                "- *One-to-One Meeting (1 hour, optional):* Personalised guidance available upon request."
+                            ]
+                        },
+                        {
+                            heading: "*Final Task: Article Presentation*",
+                            paragraphs: [
+                                "Each participant will *present a research or review article*.",
+                                "The goal is to *develop the skill of reading and learning from primary scientific literature* after building a strong foundation.",
+                                " Presentations will help reinforce concepts and foster scientific communication skills.",
+                            ]
+                        },
+                    ],
+                },
+                {
+                    h2: "Don't Have a Background in Molecular Biology?",
+                    content: [
+                        
+                        {
+                            heading: "No worries! We've got you covered.",
+                            paragraphs: [
+                                "For those who need a foundation in molecular biology, we offer a *4-weeks preparatory program* to help you get up to speed before diving into cancer biology. This program is *FREE*, with no additional charges.",
+                                "In this program, you'll follow along with *Mohmed Abdalfttah's YouTube playlist* covering essential topics:",
+                                "- *DNA Structure and Analysis*",
+                                "- *DNA Replication*",
+                                "- *DNA Transcription*",
+                                "- *RNA Translation*",
+                                "We'll provide:",
+                                "- 👥 *Group study*",
+                                "- 📝 *Structured tasks*",
+                                "- 💬 *One-to-one support*",
+                                "This preparatory phase is designed to *build your confidence* and *equip you with the knowledge* needed to fully engage with the main cancer biology course.",
+                                "If you need this preparation, *join us in this learning journey* and become well-prepared for the next step in understanding cancer biology!"
                             ]
                         },
                     ],
@@ -1481,9 +1518,9 @@ const allCourses : Course[] = [
     //                 h2: "Why Take a Personalized Course?",
     //                 h2Ar: "لماذا تأخذ دورة مخصصة؟",
     //                 content: [
-    //                     "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
-    //                     "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
-    //                     "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+    //                     "- *Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+    //                     "- *One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+    //                     "- *Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
     //                 ],
     //                 contentAr: [
     //                     "*تعلم مركز:* بدلًا من متابعة عدة دورات متفرقة، احصل على كل شيء منظمًا في مكان واحد.",
@@ -1611,9 +1648,9 @@ const allCourses : Course[] = [
                     h2: "Why Take a Personalized Course?",
                     h2Ar: "لماذا تأخذ دورة مخصصة؟",
                     content: [
-                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
-                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
-                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                        "- *Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "- *One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "- *Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
                     ],
                     contentAr: [
                         "*تعلم مركز:* بدلًا من متابعة عدة دورات متفرقة، احصل على كل شيء منظمًا في مكان واحد.",
@@ -1743,9 +1780,9 @@ const allCourses : Course[] = [
                     h2: "Why Take a Personalized Course?",
                     h2Ar: "لماذا تأخذ دورة مخصصة؟",
                     content: [
-                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
-                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
-                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                        "- *Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "- *One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "- *Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
                     ],
                     contentAr: [
                         "*تعلم مركز:* بدلًا من متابعة عدة دورات متفرقة، احصل على كل شيء منظمًا في مكان واحد.",
@@ -1874,9 +1911,9 @@ const allCourses : Course[] = [
                     h2: "Why Take a Personalized Course?",
                     h2Ar: "لماذا تأخذ دورة مخصصة؟",
                     content: [
-                        "*Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
-                        "*One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
-                        "*Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
+                        "- *Focused Learning:* Instead of multiple disconnected courses, get everything structured in one place.",
+                        "- *One-on-One Guidance:* Direct support to ensure you apply what you learn effectively.",
+                        "- *Career Impact:* Gain skills that help you *finish your research faster, improve job prospects, and increase your salary potential*.",
                     ],
                     contentAr: [
                         "*تعلم مركز:* بدلًا من متابعة عدة دورات متفرقة، احصل على كل شيء منظمًا في مكان واحد.",
