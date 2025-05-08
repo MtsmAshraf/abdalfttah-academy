@@ -185,7 +185,7 @@ const CourseId = ({
             {
               course.innerPage.divs ? course.innerPage.divs.map((div: OptionalDiv, ind: number) => {
                 return(
-                  <div key={ind}>
+                  <div className={styles.mappedDiv} key={ind}>
                     {
                       locale === "ar" && div.contentAr ?  
                       <>
@@ -467,7 +467,7 @@ const CourseId = ({
                         course.innerPage.details.discount && course.innerPage.details.price
                         ?
                         <>
-                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ {currency}</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
+                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ EGP</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
                         </>
                         // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
                         :
@@ -476,20 +476,21 @@ const CourseId = ({
                         "Free"}
                       </h5>
                       :
-                      <h5>{
-                        course.innerPage.details.priceUsd
-                        ?
-                        course.innerPage.details.discount && course.innerPage.details.priceUsd
-                        ?
-                        <>
-                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ {currency}</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
-                        </>
-                        // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
-                        :
-                        `${course.innerPage.details.priceUsd} EGP` 
-                        :
-                        "Free"}
-                      </h5>
+                      null
+                      // <h5>{
+                      //   course.innerPage.details.priceUsd
+                      //   ?
+                      //   course.innerPage.details.discount && course.innerPage.details.priceUsd
+                      //   ?
+                      //   <>
+                      //       {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ EGP</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
+                      //   </>
+                      //   // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
+                      //   :
+                      //   `${course.innerPage.details.priceUsd} EGP` 
+                      //   :
+                      //   "Free"}
+                      // </h5>
                     }
                   </li>
                 </ul>
