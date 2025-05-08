@@ -377,7 +377,7 @@ const allCourses : Course[] = [
                                 "Focus areas:",
                                 "- *DNA Structure*",
                                 "- *DNA Replication*",
-                                "- *DNA Transcription*",
+                                "- *RNA Transcription*",
                                 "- *RNA Translation*",
                             ]
                         },
