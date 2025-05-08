@@ -188,6 +188,12 @@
 .course > div:nth-child(2) .scroll > div h3{
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
 }
 .course > div:nth-child(2) .scroll .mappedDiv{
     border-bottom: 1px solid var(--main-light-color);

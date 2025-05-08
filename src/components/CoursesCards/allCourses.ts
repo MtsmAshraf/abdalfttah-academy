@@ -374,7 +374,6 @@ const allCourses : Course[] = [
                             heading: "Preparation Phase (Daily for 30 Days)",
                             paragraphs: [
                                 "Independent study to build foundational knowledge.",
-                                "Here you mention the three courses of (DNA Structure, DNA Replication, RNA Transcription)",
                                 "Focus areas:",
                                 "- *DNA Structure*",
                                 "- *DNA Replication*",
