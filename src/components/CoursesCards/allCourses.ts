@@ -376,7 +376,7 @@ const allCourses : Course[] = [
                                 "Independent study to build foundational knowledge.",
                                 "Here you mention the three courses of (DNA Structure, DNA Replication, RNA Transcription)",
                                 "Focus areas:",
-                                "*DNA Structure*",
+                                "- *DNA Structure*",
                                 "- *DNA Replication*",
                                 "- *DNA Transcription*",
                                 "- *RNA Translation*",
