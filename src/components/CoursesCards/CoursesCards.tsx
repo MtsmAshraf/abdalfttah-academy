@@ -46,21 +46,21 @@ const CoursesCards = ({
   
     useEffect(() => {
         // Fetch user's location based on IP
-    fetch('https://ipapi.co/json/')
-    .then(response => response.json())
-    .then(data => {
-        if (data.country === 'EG') {
-        setEgyptian(true);
-        setCurrency('EGP');
-        } else {
-        setEgyptian(false);
-        setCurrency('USD');
-        }
-    })
-    .catch(() => {
-        // Fallback if API fails
-        setEgyptian(true);
-        setCurrency('EGP');
+        fetch("/api/geo")
+        .then(response => response.json())
+        .then(data => {
+            if(data.country === "EG"){
+            setEgyptian(true);
+            setCurrency("EGP");
+            }else{
+            setEgyptian(false);
+            setCurrency("USD");
+            }
+        })
+        .catch(() => {
+            // Fallback if API fails
+            setEgyptian(true);
+            setCurrency('L.E.');
         });
     }, []);
 
