@@ -110,25 +110,25 @@ const CourseId = ({
 
 
     const [egyptian, setEgyptian] = useState(true)
-    const [currency, setCurrency] = useState('USD');
+    const [currency, setCurrency] = useState('EGP');
   
     useEffect(() => {
       // Fetch user's location based on IP
-      fetch('https://ipapi.co/json/')
+      fetch("/api/geo")
         .then(response => response.json())
         .then(data => {
-          if (data.country === 'EG') {
+          if(data.country === "EG"){
             setEgyptian(true);
-            setCurrency('EGP');
-          } else {
+            setCurrency("EGP");
+          }else{
             setEgyptian(false);
-            setCurrency('USD');
+            setCurrency("USD");
           }
         })
         .catch(() => {
           // Fallback if API fails
-          setEgyptian(false);
-          setCurrency('EGP');
+          setEgyptian(true);
+          setCurrency('L.E.');
         });
     }, []);
 
