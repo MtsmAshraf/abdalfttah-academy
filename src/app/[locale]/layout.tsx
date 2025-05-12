@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Abdalfttah Academy",
   description: "Abdalfttah Academy official website",
   icons: icon.src,  
+  
 };
 
 export default async function RootLayout({

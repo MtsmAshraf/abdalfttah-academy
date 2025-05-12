@@ -69,6 +69,7 @@ export type Course = {
     src: StaticImageData,
     innerSrc?: StaticImageData
     featured?: boolean,
+    openGraphUrl?: string,
     innerPage: {
         details: {
             noOfVideos?: string,
@@ -355,6 +356,7 @@ const allCourses : Course[] = [
         priceUsd: "100",
         src: image1,
         featured: true,
+        openGraphUrl: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FIntroductionToCancerBiology.9a01ba47.jpg&w=3840&q=75",
         innerPage: {
             details: {
                 when: "July 2025",

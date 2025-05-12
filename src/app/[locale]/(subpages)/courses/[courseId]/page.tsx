@@ -27,6 +27,7 @@ const CourseId = ({
   }>) => {
 
 
+
   const crs: any = useRef(null)
   const [crsScrolled, setCrsScrolled] = useState(false)
     
