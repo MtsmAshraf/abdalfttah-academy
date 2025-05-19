@@ -42,7 +42,7 @@ const CoursesCards = ({
     },[])
 
     const [egyptian, setEgyptian] = useState(true)
-    const [currency, setCurrency] = useState('USD');
+    const [currency, setCurrency] = useState('EUR');
   
     useEffect(() => {
         // Fetch user's location based on IP
@@ -54,7 +54,7 @@ const CoursesCards = ({
             setCurrency("EGP");
             }else{
             setEgyptian(false);
-            setCurrency("USD");
+            setCurrency("EUR");
             }
         })
         .catch(() => {

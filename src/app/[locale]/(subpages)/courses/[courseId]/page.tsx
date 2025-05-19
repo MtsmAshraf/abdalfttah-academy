@@ -122,7 +122,7 @@ const CourseId = ({
             setCurrency("EGP");
           }else{
             setEgyptian(false);
-            setCurrency("USD");
+            setCurrency("EUR");
           }
         })
         .catch(() => {
@@ -483,11 +483,11 @@ const CourseId = ({
                         course.innerPage.details.discount && course.innerPage.details.priceUsd
                         ?
                         <>
-                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ USD</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ USD`}
+                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ EUR</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EUR`}
                         </>
-                        // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } USD` 
+                        // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EUR` 
                         :
-                        `${course.innerPage.details.priceUsd} USD` 
+                        `${course.innerPage.details.priceUsd} EUR` 
                         :
                         "Free"}
                       </h5>

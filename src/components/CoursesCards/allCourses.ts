@@ -352,8 +352,8 @@ const allCourses : Course[] = [
         enrollType: "google form",
         title: "Introduction to Cancer Biology",
         category: "Advanced Biology",
-        price: "1000",
-        priceUsd: "100",
+        price: "2000",
+        priceUsd: "200",
         src: image1,
         featured: true,
         openGraphUrl: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FIntroductionToCancerBiology.9a01ba47.jpg&w=3840&q=75",
@@ -362,8 +362,8 @@ const allCourses : Course[] = [
                 when: "July 2025",
                 duration: "12 weeks",
                 location: "Online",
-                price: "1000",
-                priceUsd: "100"
+                price: "2000",
+                priceUsd: "200"
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
