@@ -367,7 +367,7 @@ const allCourses : Course[] = [
             },
             heading: "Welcome to the Introduction to Cancer Biology Course!",
             description: "This course is structured to give participants a deep understanding of cancer biology, exploring everything from fundamental principles to advanced research topics. Each week, we will cover different aspects of cancer biology, from cellular mechanisms to therapeutic strategies.",
-            courseLink: "https://docs.google.com/forms/d/e/1FAIpQLSd4OuY113tq2_DSRG7IvKOBQEblRGh0so_PXIsGXZil61QD3Q/viewform?usp=header",
+            courseLink: "https://docs.google.com/forms/d/1EOdHNlqPGZLXC7PjRscA1RdvwWt3PZk8pAuZumtxvE0/edit?ts=682c9622",
             divs:[
                 {
                     h2: "Course Structure",

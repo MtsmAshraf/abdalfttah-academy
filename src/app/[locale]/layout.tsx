@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   title: "Abdalfttah Academy",
   description: "Abdalfttah Academy official website",
   icons: icon.src,  
-  
+  openGraph:{
+    title: "Abdalfttah Academy",
+    url:"https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcourse.d2a5fcc6.webp&w=3840&q=75"
+  }
 };
 
 export default async function RootLayout({
