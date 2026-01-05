@@ -121,7 +121,7 @@ const allCourses : Course[] = [
         src: bootstrapImg,
         innerSrc: bootstrapImg,
         featured: true,
-        openGraphUrl: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbootstrap.4e6654fe.jpg&w=3840&q=75",
+        openGraphUrl: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbootcamp.5a7cfdf0.jpg&w=1920&q=75",
         innerPage: {
             heading: "Afaaq Bootcamp – 15-Day Academic & Research Career Program",
 
