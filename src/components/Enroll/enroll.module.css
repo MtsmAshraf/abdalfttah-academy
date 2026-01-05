@@ -132,6 +132,11 @@
     .enroll.paid form label svg{
         font-size: 16px;
     }
+    .enroll ul li p{
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+    }
 }
 .enroll.paid form input{
     background-color: var(--bg-color);
