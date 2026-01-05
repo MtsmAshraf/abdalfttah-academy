@@ -16,6 +16,7 @@ const Courses = ({
   return (  
     <section className={styles.courses}>
       {/* <CoursesCards lo={locale} all={true} category={"Workshop"}></CoursesCards> */}
+      <CoursesCards lo={locale} all={true} category={"Bootcamp"}></CoursesCards>
       <CoursesCards lo={locale} all={true} category={"Advanced Biology"}></CoursesCards>
       <CoursesCards lo={locale} all={true} category={"Data Analysis and Technologies"}></CoursesCards>
       <CoursesCards lo={locale} all={true} category={"Basics"}></CoursesCards>

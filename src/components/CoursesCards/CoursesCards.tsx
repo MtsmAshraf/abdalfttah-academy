@@ -91,7 +91,7 @@ const CoursesCards = ({
                                             {
                                                 egyptian ? 
                                                 <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" || course.enrollType === "external payment" 
                                                 ?
                                                 course.discount && course.price
                                                 ?
@@ -105,7 +105,7 @@ const CoursesCards = ({
                                                 </div>
                                                 :
                                                 <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" || course.enrollType === "external payment"  
                                                     ?
                                                     course.discount && course.priceUsd
                                                     ?
@@ -136,7 +136,7 @@ const CoursesCards = ({
                                             {
                                                 egyptian ? 
                                                 <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form"  || course.enrollType === "external payment" 
                                                     ?
                                                     course.discount && course.price
                                                     ?
@@ -150,7 +150,7 @@ const CoursesCards = ({
                                                 </div>
                                                 :
                                                 <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                    <p>{course.enrollType === "paid" || course.enrollType === "google form"  || course.enrollType === "external payment" 
                                                     ?
                                                     course.discount && course.priceUsd
                                                     ?
@@ -184,7 +184,7 @@ const CoursesCards = ({
                                         {
                                             egyptian ? 
                                             <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" || course.enrollType === "external payment"  
                                                 ?
                                                 course.discount && course.price
                                                 ?
@@ -198,7 +198,7 @@ const CoursesCards = ({
                                             </div>
                                             :
                                             <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                                <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                                <p>{course.enrollType === "paid" || course.enrollType === "google form"  || course.enrollType === "external payment"  
                                                 ?
                                                 course.discount && course.priceUsd
                                                 ?
@@ -226,7 +226,7 @@ const CoursesCards = ({
                                     <div>
                                         <h4>{course.title}</h4>
                                         <div style={{ pointerEvents: course.enrollType === "coming soon" ? "none" : "unset" }}>
-                                            <p>{course.enrollType === "paid" || course.enrollType === "google form" 
+                                            <p>{course.enrollType === "paid" || course.enrollType === "google form"  || course.enrollType === "external payment" 
                                             ?
                                             course.discount && course.price
                                             ?

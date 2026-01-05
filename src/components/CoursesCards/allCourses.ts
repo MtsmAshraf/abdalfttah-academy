@@ -15,6 +15,7 @@ import alumni6 from "../../../public/images/alumni-6.webp"
 import alumni7 from "../../../public/images/alumni-7.webp"
 import alumni8 from "../../../public/images/alumni-8.webp"
 
+import bootstrapImg from "../../../public/images/bootstrap.jpg"
 
 
 
@@ -103,11 +104,11 @@ const allCourses : Course[] = [
         id: "afaaq-bootcamp",
         enrollType: "external payment",
         title: "Afaaq Academic Bootcamp",
-        category: "bootcamp",
-        price: "2000 EGP",
-        priceUsd: "100 EUR",
-        src: image2,
-        innerSrc: image2,
+        category: "Bootcamp",
+        price: "2000",
+        priceUsd: "100",
+        src: bootstrapImg,
+        innerSrc: bootstrapImg,
         featured: true,
         openGraphUrl: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FIntroductionToCancerBiology.9a01ba47.jpg&w=3840&q=75",
         innerPage: {

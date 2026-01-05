@@ -17,8 +17,8 @@ import Enroll from '@/components/Enroll/Enroll'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import BoldText from '@/components/BoldText/BoldText'
 import { notFound } from 'next/navigation'
-const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
+const Alumni = dynamic(() => import("@/components/Alumni/Alumni"), { ssr: false });
 
 const CourseId = ({
     params,
