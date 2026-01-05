@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from "./insructor.module.css"
+import styles from "./instructor.module.css"
 import profile from "../../../public/images/profile.png"
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuildingColumns, faGraduationCap, faHotel } from '@fortawesome/free-solid-svg-icons'
 
-const Insructor = ({
+const Instructor = ({
     lo,
     showAr
 } : {
@@ -13,7 +13,7 @@ const Insructor = ({
     showAr?: boolean
 }) => {
     const classNames = [
-        styles.insructor,
+        styles.instructor,
         lo === "ar" && showAr ? styles.ar : ""
     ]
   return (
@@ -70,4 +70,4 @@ const Insructor = ({
   )
 }
 
-export default Insructor
+export default Instructor

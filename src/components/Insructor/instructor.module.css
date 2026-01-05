@@ -1,14 +1,14 @@
-.insructor{
+.instructor{
     border-top: 1px solid var(--main-light-color);
     padding-top: 20px;
 }
-.insructor .details{
+.instructor .details{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-.insructor .details .profile{
+.instructor .details .profile{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
     width: 260px;
     align-items: center;
 }
-.insructor .details .img{
+.instructor .details .img{
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -29,11 +29,11 @@
     box-shadow: var(--main-shadow);
     background-color: var(--main-color);
 }
-.insructor .details .img img{
+.instructor .details .img img{
     object-fit: contain;
     height: 100%;
 }
-.insructor .details .profile h3{
+.instructor .details .profile h3{
     color: var(--important-text-color);
     color: #fff !important;
     background-image: var(--main-heading-gradient);
@@ -41,12 +41,12 @@
     border-radius: 20px;
     /* margin-bottom: 10px; */
 }
-.insructor .details .profile span{
+.instructor .details .profile span{
     font-size: 14px;
 }
-.insructor .details .text{
+.instructor .details .text{
 }
-.insructor .details .text p{
+.instructor .details .text p{
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -56,13 +56,13 @@
     border-radius: 30px;
     width: fit-content;
 }
-.insructor .details .text p span{
+.instructor .details .text p span{
     padding: 5px 20px 5px 10px;
 }
-.insructor.ar .details .text p span{
+.instructor.ar .details .text p span{
     padding: 5px 10px 5px 20px;
 }
-.insructor .details .text div{
+.instructor .details .text div{
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -72,15 +72,15 @@
     width: fit-content;
     /* gap: 10px; */
 }
-.insructor .details .text div{
+.instructor .details .text div{
 }
-.insructor .details .text div span{
+.instructor .details .text div span{
     padding: 5px 20px 5px 10px;
 }
-.insructor.ar .details .text div span{
+.instructor.ar .details .text div span{
     padding: 5px 10px 5px 20px;
 }
-.insructor .details .text svg{
+.instructor .details .text svg{
     border: 1px solid var(--main-light-color);
     width: 20px;
     height: 20px;
@@ -90,15 +90,15 @@
     color: #fff;
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-    .insructor .details{
+    .instructor .details{
         flex-direction: column;
         align-items: center;
     }
-    .insructor .details .profile{
+    .instructor .details .profile{
         width: 100%;
     }
-    .insructor .details .text p,
-    .insructor .details .text div{
+    .instructor .details .text p,
+    .instructor .details .text div{
         margin-right: auto;
         margin-left: auto;
         flex-direction: column;
@@ -107,23 +107,23 @@
         background-color: transparent;
     }
     
-    .insructor .details .text p span,
-    .insructor .details .text div span{
+    .instructor .details .text p span,
+    .instructor .details .text div span{
         background-color: var(--features-card-bg);
         padding: 5px 20px !important;
         border-radius: 20px;
     }
 }
 @media (max-width: 767px) {
-    .insructor .details{
+    .instructor .details{
         flex-direction: column;
         align-items: center;
     }
-    .insructor .details .profile{
+    .instructor .details .profile{
         width: 100%;
     }
-    .insructor .details .text p,
-    .insructor .details .text div{
+    .instructor .details .text p,
+    .instructor .details .text div{
         margin-right: auto;
         margin-left: auto;
         flex-direction: column;
@@ -132,8 +132,8 @@
         background-color: transparent;
     }
     
-    .insructor .details .text p span,
-    .insructor .details .text div span{
+    .instructor .details .text p span,
+    .instructor .details .text div span{
         background-color: var(--features-card-bg);
         padding: 5px 20px !important;
         border-radius: 20px;
