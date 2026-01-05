@@ -620,7 +620,7 @@ const classNames = [
                                     <FontAwesomeIcon icon={faBank} />
                                 </span>
                                 <p>
-                                    <h4>التحويل البنكي (بالجنيه)</h4>
+                                    <div>التحويل البنكي (بالجنيه)</div>
                                     IBAN: EG820002051405140333000040067
                                 </p>
                             </li>
@@ -629,7 +629,7 @@ const classNames = [
                                     <FontAwesomeIcon icon={faBank} />
                                 </span>
                                 <p>
-                                    <h4>التحويل البنكي (يالدولار)</h4>
+                                    <div>التحويل البنكي (يالدولار)</div>
                                     IBAN: ES13 1583 0001 1390 3238 0419
                                 </p>
                             </li>
@@ -638,7 +638,7 @@ const classNames = [
                                     <Image src={vodafoneCashLogo} alt='Vodafone Cash logo'></Image>
                                 </span>
                                 <p>
-                                    <h4>فوافون كاش</h4>01123118870
+                                    <div>فوافون كاش</div>01123118870
                                 </p>
                             </li>
                             <li>
@@ -646,7 +646,7 @@ const classNames = [
                                     <Image src={instaPayCashLogo} alt='InstaPay logo'></Image>
                                 </span>
                                 <p>
-                                    <h4>إنستاباي</h4>01123118870
+                                    <div>إنستاباي</div>01123118870
                                 </p>
                             </li>
                             <li>
@@ -654,7 +654,7 @@ const classNames = [
                                     <FontAwesomeIcon icon={faPaypal} />
                                 </span>
                                 <p>
-                                    <h4>باي بال</h4>mohamed.biotech98@gmail.com  (Mohamed Abdalfttah)
+                                    <div>باي بال</div>mohamed.biotech98@gmail.com  (Mohamed Abdalfttah)
                                 </p>
                             </li>
                         </ul>
@@ -700,7 +700,7 @@ const classNames = [
                                     <FontAwesomeIcon icon={faBank} />
                                 </span>
                                 <p>
-                                    <h4>Bank Transfer (EGP)</h4>
+                                    <div>Bank Transfer (EGP)</div>
                                     IBAN: EG820002051405140333000040067
                                 </p>
                             </li>
@@ -709,7 +709,7 @@ const classNames = [
                                     <FontAwesomeIcon icon={faBank} />
                                 </span>
                                 <p>
-                                    <h4>Bank Transfer (USD)</h4>
+                                    <div>Bank Transfer (USD)</div>
                                     IBAN: ES13 1583 0001 1390 3238 0419
                                 </p>
                             </li>
@@ -718,7 +718,7 @@ const classNames = [
                                     <Image src={vodafoneCashLogo} alt='Vodafone Cash logo'></Image>
                                 </span>
                                 <p>
-                                    <h4>Vodafone Cash</h4>01123118870
+                                    <div>Vodafone Cash</div>01123118870
                                 </p>
                             </li>
                             <li>
@@ -726,7 +726,7 @@ const classNames = [
                                     <Image src={instaPayCashLogo} alt='InstaPay logo'></Image>
                                 </span>
                                 <p>
-                                    <h4>InstaPay</h4>01123118870
+                                    <div>InstaPay</div>01123118870
                                 </p>
                             </li>
                             <li>
@@ -734,7 +734,7 @@ const classNames = [
                                     <FontAwesomeIcon icon={faPaypal} />
                                 </span>
                                 <p>
-                                    <h4>PayPal</h4>mohamed.biotech98@gmail.com  (Mohamed Abdalfttah)
+                                    <div>PayPal</div>mohamed.biotech98@gmail.com  (Mohamed Abdalfttah)
                                 </p>
                             </li>
                         </ul>

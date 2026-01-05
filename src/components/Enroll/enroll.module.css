@@ -48,7 +48,8 @@
     align-items: center;
     gap: 10px;
 }
-.enroll ul li p h4{
+.enroll ul li p div{
+    font-weight: bold;
     color: var(--important-text-color) !important;
 }
 .enroll.ar ul li p{
