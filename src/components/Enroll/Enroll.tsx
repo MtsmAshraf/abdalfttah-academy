@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./enroll.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faFileInvoice, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons'
-import { faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import instaPay from "../../../public/images/instapay.png"
-import vodafoneCash from "../../../public/images/vodafone-cash.png"
+import { faBank, faBookOpen, faBullseye, faDollarSign, faEnvelope, faEye, faFileInvoice, faMoneyBillTransfer, faPhone, faQuestion, faRocket, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faPaypal, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import vodafoneCashLogo from "../../../public/images/vodafone-cash.png"
+import instaPayCashLogo from "../../../public/images/InstaPay_Logo.png"
 import Select from "react-select";
 
 import Image from 'next/image'
@@ -593,6 +593,145 @@ const classNames = [
                                 </h4>
                             </a>
                             <a className={styles.whatsapp} href="https://wa.me/123123123123" target='_blank'>
+                                <span>
+                                    <FontAwesomeIcon icon={faWhatsapp} />
+                                </span>
+                                <h4>
+                                Whatsapp
+                                </h4>
+                            </a>
+                        </div>
+                    </>
+                }
+            </div>
+        )
+    }else if(enrollType === "external payment"){
+        return (
+            <div id='enroll' className={classNames.length > 1 ? classNames.join(" ") : classNames[0]}>
+                {
+                    lo === "ar" && showAr ? 
+                    <>
+                        <h2>لطلب الدورة</h2> 
+                        <p>أرسل <span>بريدًا إلكترونيًا</span> أو <span>رسالة</span> توضح فيها:</p>
+                        <ul className={styles.steps}>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faQuestion} />
+                                </span>
+                                <p>
+                                    لماذا تحتاج إلى هذه الدورة؟
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faBookOpen} />
+                                </span>
+                                <p>
+                                    ما هو البحث أو العمل الذي تقوم به حاليًا؟
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faBullseye} />
+                                </span>
+                                <p>
+                                    كيف ستساعدك هذه الدورة في تحقيق أهدافك؟
+                                </p>
+                            </li>
+                        </ul>
+                        <p>
+                            <span>الخطوة التالية: </span>
+                            بمجرد استلام طلبك <span> سنقوم بجدولة اجتماع لوضع خطة تعليمية مخصصة </span>تناسب احتياجاتك البحثية والمهنية
+                        </p>
+                        <div>
+                            <a className={styles.email} href={`mailto:mohamed.biotech98@gmail.com?subject=${courseName} Course Enroll Request&body=Name%3A%0A%0A-%20I%20need%20this%20course%20to%3A%0A-%20I%20am%20currently%20working%20on%3A%0A-%20This%20course%20will%20help%20me%20achieve%3A`} target='_blank'>
+                                <span>
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                </span>
+                                <h4>
+                                    بريد إلكتروني
+                                </h4>
+                            </a>
+                            <a className={styles.whatsapp} href="https://wa.me/123123123123" target='_blank'>
+                                <span>
+                                    <FontAwesomeIcon icon={faWhatsapp} />
+                                </span>
+                                <h4>
+                                    واتساب
+                                </h4>
+                            </a>
+                        </div>
+                    </>
+                    :
+                    <>
+                        <h2>Want to join?</h2>
+                        <p>Please note: Places are <span>limited</span> and assigned on a first come, first served basis</p>
+                        <h3>Payment Options</h3>
+                        <ul className={styles.steps}>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faBank} />
+                                </span>
+                                <p>
+                                    <h4>Bank Transfer (EGP)</h4>
+                                    IBAN: EG820002051405140333000040067
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faBank} />
+                                </span>
+                                <p>
+                                    <h4>Bank Transfer (USD)</h4>
+                                    IBAN: ES13 1583 0001 1390 3238 0419
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <Image src={vodafoneCashLogo} alt='Vodafone Cash logo'></Image>
+                                </span>
+                                <p>
+                                    <h4>Vodafone Cash</h4>01123118870
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <Image src={instaPayCashLogo} alt='InstaPay logo'></Image>
+                                </span>
+                                <p>
+                                    <h4>InstaPay</h4>01123118870
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faPaypal} />
+                                </span>
+                                <p>
+                                    <h4>PayPal</h4>mohamed.biotech98@gmail.com  (Mohamed Abdalfttah)
+                                </p>
+                            </li>
+                        </ul>
+                        <h2>How to Confirm Your Payment</h2>
+                        <p style={{ textAlign: "left" }}>
+                            Send a WhatsApp message to <span>+20 1010931309</span> Or click <span><a  href="https://wa.me/+201010931309" target='_blank' style={{ textDecoration: "underline" }}>here</a></span> including: <br />
+                            - Your <span>full name</span> <br />
+                            - A <span>screenshot</span> of the payment <br />
+                            Thatʼs it — your registration will be confirmed.
+                        </p>
+                        <h2>More Details?</h2>
+                        <p>
+                            Feel free to reach out via email or WhatsApp for any questions or additional information.
+                        </p>
+                        <div>
+                            <a className={styles.email} href={`mailto:courses@abdalfttah-academy.com`} target='_blank'>
+                                <span>
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                </span>
+                                <h4>
+                                    Email
+                                </h4>
+                            </a>
+                            <a className={styles.whatsapp} href="https://wa.me/+201010931309" target='_blank'>
                                 <span>
                                     <FontAwesomeIcon icon={faWhatsapp} />
                                 </span>

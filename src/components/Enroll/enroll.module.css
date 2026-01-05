@@ -44,6 +44,12 @@
 .enroll ul li p{
     padding: 5px 20px 5px 10px;
     width: calc(100% - 70px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.enroll ul li p h4{
+    color: var(--important-text-color) !important;
 }
 .enroll.ar ul li p{
     padding: 5px 10px 5px 20px;
@@ -52,6 +58,11 @@
 .enroll ul li p span{
     font-weight: bold;
     color: var(--important-text-color);
+}
+.enroll ul li span img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 .enroll ul li p a{
     color: var(--important-text-color);

@@ -245,42 +245,50 @@ const CourseId = ({
                 )
               }) : null
             }
-            {/* <div>
-              <h2>
-                Why Take This Course?
-                </h2>
-                <ul className={styles.more}>
-                  {
-                    course.innerPage.why.map((li: string, index: number) => {
-                      const splittedLi = li.split("*");
-                      const text1 = splittedLi[0];
-                      const boldText1 = splittedLi[1];
-                      const text2 = splittedLi[2];
-                      const boldText2 = splittedLi[3] ? splittedLi[3] : null;
-                      return(
-                        <li key={index}>
-                          <p>
-                            {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
-                          </p>
-                        </li>
-                      )
-                    })
-                  }
-                </ul>
-            </div> */}
+            {
+              course.innerPage.why ? 
+              <div>
+                <h2>
+                  Why Take This Course?
+                  </h2>
+                  <ul className={styles.more}>
+                    {
+                      course.innerPage.why.map((li: string, index: number) => {
+                        const splittedLi = li.split("*");
+                        const text1 = splittedLi[0];
+                        const boldText1 = splittedLi[1];
+                        const text2 = splittedLi[2];
+                        const boldText2 = splittedLi[3] ? splittedLi[3] : null;
+                        return(
+                          <li key={index}>
+                            <p>
+                              {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
+                            </p>
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+              </div> : null
+            }
             {
               course.innerPage.content ? 
               <div>
-                <h2>Course Content</h2>
+                <h2>Content</h2>
                 {Object.keys(course.innerPage.content[0])[0] === "heading" ?  
                   course.innerPage.content.map((part: any, index) => {
                     return(
                       <Fragment key={index}>
                       <h2><BoldText text={part.heading} /> </h2>
-                      <div className={styles.partDetails}>
-                        <span>{part.vids} videos</span>
-                        <span>{part.duration}</span>
-                        <span><a href={part.partLink} target='_blank'><FontAwesomeIcon icon={faYoutube} /> Watch</a></span></div>
+                      {
+                        (part.vids || part.duration || part.partLink) ? 
+                        <div className={styles.partDetails}>
+                          <span>{part.vids} videos</span>
+                          <span>{part.duration}</span>
+                          <span><a href={part.partLink} target='_blank'><FontAwesomeIcon icon={faYoutube} /> Watch</a>
+                          </span>
+                        </div> : null
+                      }
                       <ol className={styles.content} id='content'>
                         {
                           part.contentPieces.map((piece: GeneralContent | Content | any, index: number) => {
@@ -511,30 +519,34 @@ const CourseId = ({
             </div>
           </div>
         </div>
-        <Alumni lo={locale}>
-          {
-            course.innerPage.people.map((person: Person, index: number) => {
-              const flagSrc = `https://flagcdn.com/w2560/${person.countryCode.toLocaleLowerCase()}.png`
-              const delay = (Math.random() + 0.2).toFixed(2).toString()
-              return(
-                <div style={{ transitionDelay: `${delay === "0" ? "0.1" : delay}s` }} key={index}>
-                  <div>
+        {
+          course.innerPage.people ? course.innerPage.people.length > 0 &&
+          <Alumni lo={locale}>
+            {
+              course.innerPage.people.map((person: Person, index: number) => {
+                const flagSrc = `https://flagcdn.com/w2560/${person.countryCode.toLocaleLowerCase()}.png`
+                const delay = (Math.random() + 0.2).toFixed(2).toString()
+                return(
+                  <div style={{ transitionDelay: `${delay === "0" ? "0.1" : delay}s` }} key={index}>
                     <div>
-                    <Image src={person.src} alt={`Alumni: ${person.name} picture`}  width={2560} height={2560}></Image>
+                      <div>
+                      <Image src={person.src} alt={`Alumni: ${person.name} picture`}  width={2560} height={2560}></Image>
+                      </div>
+                      <span>
+                        <Image src={flagSrc} alt={`${person.country} flag image`}  width={2560} height={2560}></Image>
+                      </span>
                     </div>
-                    <span>
-                      <Image src={flagSrc} alt={`${person.country} flag image`}  width={2560} height={2560}></Image>
-                    </span>
+                    <div>
+                      <h4>{person.name}</h4>
+                      <span>{person.title} </span>
+                    </div>
                   </div>
-                  <div>
-                    <h4>{person.name}</h4>
-                    <span>{person.title} </span>
-                  </div>
-                </div>
-              )
-            })
-          }
-        </Alumni>
+                )
+              })
+            }
+          </Alumni> : null
+        }
+
         <CoursesCards lo={locale}></CoursesCards>
         <Testimonials lo={locale} parentEl='courses' />
         <Loader></Loader>

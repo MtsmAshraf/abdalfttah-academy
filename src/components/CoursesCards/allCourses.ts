@@ -18,6 +18,7 @@ import alumni8 from "../../../public/images/alumni-8.webp"
 
 
 
+
 export type Person = {
     id: string,
     name: string,
@@ -38,9 +39,9 @@ export type Content = {
 
 export type GeneralContent = {
     heading: string,
-    vids:string,
-    duration: string,
-    partLink:string,
+    vids?:string,
+    duration?: string,
+    partLink?:string,
     contentPieces: Content[]
 }
 export type WhoNote = {
@@ -89,13 +90,154 @@ export type Course = {
         content?: (Content | GeneralContent)[],
         who: (string | WhoNote)[],
         whoAr?: (string | WhoNote)[],
-        people: Person[],
+        people?: Person[],
         courseLink?: string,
     }
 }
 
 
 const allCourses : Course[] = [
+    {
+        id: "afaaq-bootcamp",
+        enrollType: "external payment",
+        title: "Afaaq Academic Bootcamp",
+        category: "bootcamp",
+        price: "2000 EGP",
+        priceUsd: "100 EUR",
+        src: image2,
+        innerSrc: image2,
+        featured: true,
+        openGraphUrl: "https://www.abdalfttah-academy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FIntroductionToCancerBiology.9a01ba47.jpg&w=3840&q=75",
+        innerPage: {
+            heading: "Afaaq Bootcamp – 15-Day Academic & Research Career Program",
+
+            description: [
+                `Welcome to *Afaaq*, a complete academic bootcamp designed to guide students 
+                step-by-step toward opportunities in ^Masterʼs programs, PhD positions, 
+                Research Assistant roles, and international internships.*`,
+                `Across 15 days, Afaaq combines *intensive teaching, personal feedback*, and 
+                *practical exercises* to help you build a strong academic profile, write winning 
+                documents, and contact professors with confidence.`,
+                `Our goal is simple: *to open new horizons for your academic future* — *clearly*, 
+                *realistically, and professionally.*`,
+                `With Afaaq, you learn exactly what you need to start building an academic 
+                career outside Egypt — *in just 15 days.*`,
+                `*Without Afaaq, the same fundamentals often take 1-2 years* of trial and error, 
+                scattered resources, and constant adjustments — without clear guidance.`
+            ],
+
+            descriptionAr: [
+            "آفاق هو بوتكامب أكاديمي متكامل معمول علشان ينقلك خطوة بخطوة لفرص حقيقية في الماجستير، الدكتوراه، وظائف الباحث المساعد، والتدريبات الدولية.",
+            "البرنامج بيجمع بين شرح منظم، جلسات تقييم شخصية، وتطبيق عملي خلال 15 يوم."
+            ],
+
+            details: {
+                when: "31 Jan 2026",
+                duration: "15 Days",
+                location: "Online",
+                parts: "7 Teaching Sessions + 7 Feedback Sessions",
+                price: "2000",
+                priceUsd: "100"
+            },
+
+            why: [
+                "1. We replace random personal stories with clear, actionable steps",
+                "2. No more scattered information — everything is in one structured program",
+                "3. A fully systematic approach",
+                "4. Comprehensive content covering ALL major academic needs",
+                "5. Not based on one personʼs experience",
+                "6. We donʼt just show opportunities — we teach you how to approach them correctly",
+                "7. Sessions donʼt become random Q&A",
+                "8. Interactive, live sessions — not pre-recorded videos",
+                "9. Dedicated feedback sessions for deep, personalized help",
+            ],
+
+            content: [
+                {
+                    heading: "Bootcamp Structure: 7 Teaching Sessions (Main Content)",
+                    contentPieces: [
+                    {
+                        button: "Understanding Academic Pathways",
+                        subList: [
+                            "Masterʼs, PhD, RA, internships, funding, and how to choose your path."
+                        ]
+                    },
+                    {
+                        button: "Where & How to Find Opportunities",
+                        subList: [
+                            "Scholarships, fully funded programs, RA positions, lab websites, and academic platforms."
+                        ]
+                    },
+                    {
+                        button: "Academic CV & Research Resume Masterclass",
+                        subList: [
+                            "How to structure and write a competitive CV for MSc/PhD/RA applications.",
+                        ]
+                    },
+                    {
+                        button: "Emailing Professors",
+                        subList: [
+                            "How to find supervisors and send strong, professional emails that get replies.",
+                        ]
+                    },
+                    {
+                        button: "SOP, Motivation Letter & Research Statement",
+                        subList: [
+                            "How to write convincing application documents tailored to your goals.",
+                        ]
+                    },
+                    {
+                        button: "Recommendation Letters Strategy",
+                        subList: [
+                            "Choosing referees, requesting LORs, templates, and follow-up etiquette.",
+                        ]
+                    },
+                    {
+                        button: "Interviews, Visa, Housing & Career Planning",
+                        subList: [
+                            "How to prepare for academic interviews, relocate abroad, and plan your long term career.",
+                        ]
+                    },
+                    ]
+                },
+                {
+                    heading: "7 Personalized Feedback Sessions",
+
+                    contentPieces: [
+                        {
+                            button: "After each main teaching session, students attend a dedicated feedback session where they receive:",
+                            subList: [
+                                "CV review",
+                                "SOP and email corrections",
+                                "Personalized guidance based on their profile",
+                                "Direct answers to their questions",
+                                "Step-by-step instructions for their next actions"
+                            ]
+                        },
+                        {
+                            button: "These sessions ensure that students apply what they learn and get individual support, not just information.",
+                        }
+                    ]
+                },
+            ],
+
+            who: [
+                "Students who want to apply for *Masterʼs* or *PhD* abroad",
+                "Students seeking *RA positions*",
+                "Students with *weak CVs* who want to rebuild their academic profile",
+                "Students who need guidance on *emailing professors* and writing *SOPs*",
+                "Anyone who wants clear steps toward an academic future"
+            ],
+
+            whoAr: [
+            "طلاب عايزين يقدموا ماجستير أو دكتوراه بره مصر",
+            "طلاب بيدوروا على وظائف باحث مساعد",
+            "طلاب محتاجين يعيدوا بناء السيرة الذاتية الأكاديمية",
+            "أي شخص عايز طريق واضح لمستقبله الأكاديمي"
+            ],
+        courseLink: "https://wa.me/message/FPB5F66DVE4YA1"
+        },
+    },
     // {
     //     id: "0",
     //     enrollType: "google form",

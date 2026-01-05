@@ -35,7 +35,7 @@
 }
 .insructor .details .profile h3{
     color: var(--important-text-color);
-    color: #fff;
+    color: #fff !important;
     background-image: var(--main-heading-gradient);
     padding: 2px 20px;
     border-radius: 20px;
