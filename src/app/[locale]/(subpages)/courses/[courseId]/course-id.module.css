@@ -275,13 +275,20 @@
     cursor: pointer;
     gap: 10px;
     color: var(--text-color);
-    font-family: "Poppins", sans-serif;
+    font-family: inherit;
     /* font-weight: bold; */
     font-size: 18px;
     text-align: left;
     /* width: 100%; */
     flex-grow: 1;
     margin-bottom: 10px;
+}
+.course > div:nth-child(2) .scroll > div .content > li button.ar{
+    text-align: right;
+}
+.course > div:nth-child(2) .scroll > div .content > li:has(button.ar)::before{
+    right: unset;
+    left: calc(100% + 8px);
 }
 .course > div:nth-child(2) .scroll > div .content > li button p{
     flex: 1;
@@ -319,6 +326,8 @@
     /* margin-top: 10px; */
     /* transition: var(--main-transition); */
     /* transition-duration: 0.4s; */
+        transition: var(--main-transition);
+
     background-color: var(--features-card-bg);
     border-radius: 0px 20px 20px 20px;
     padding: 0px 20px;

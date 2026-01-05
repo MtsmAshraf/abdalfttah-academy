@@ -611,53 +611,81 @@ const classNames = [
                 {
                     lo === "ar" && showAr ? 
                     <>
-                        <h2>لطلب الدورة</h2> 
-                        <p>أرسل <span>بريدًا إلكترونيًا</span> أو <span>رسالة</span> توضح فيها:</p>
+                        <h2>كيف تشترك؟</h2>
+                        <p>Please note: Places are <span>limited</span> and assigned on a first come, first served basis</p>
+                        <p>ملحوظة: الأماكن <span>محدودة</span> والاشتراك بأسبقية الحجز</p>
+                        <h3>وسائل الدفع المتاحة</h3>
                         <ul className={styles.steps}>
                             <li>
                                 <span>
-                                    <FontAwesomeIcon icon={faQuestion} />
+                                    <FontAwesomeIcon icon={faBank} />
                                 </span>
                                 <p>
-                                    لماذا تحتاج إلى هذه الدورة؟
+                                    <h4>التحويل البنكي (بالجنيه)</h4>
+                                    IBAN: EG820002051405140333000040067
                                 </p>
                             </li>
                             <li>
                                 <span>
-                                    <FontAwesomeIcon icon={faBookOpen} />
+                                    <FontAwesomeIcon icon={faBank} />
                                 </span>
                                 <p>
-                                    ما هو البحث أو العمل الذي تقوم به حاليًا؟
+                                    <h4>التحويل البنكي (يالدولار)</h4>
+                                    IBAN: ES13 1583 0001 1390 3238 0419
                                 </p>
                             </li>
                             <li>
                                 <span>
-                                    <FontAwesomeIcon icon={faBullseye} />
+                                    <Image src={vodafoneCashLogo} alt='Vodafone Cash logo'></Image>
                                 </span>
                                 <p>
-                                    كيف ستساعدك هذه الدورة في تحقيق أهدافك؟
+                                    <h4>فوافون كاش</h4>01123118870
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <Image src={instaPayCashLogo} alt='InstaPay logo'></Image>
+                                </span>
+                                <p>
+                                    <h4>إنستاباي</h4>01123118870
+                                </p>
+                            </li>
+                            <li>
+                                <span>
+                                    <FontAwesomeIcon icon={faPaypal} />
+                                </span>
+                                <p>
+                                    <h4>باي بال</h4>mohamed.biotech98@gmail.com  (Mohamed Abdalfttah)
                                 </p>
                             </li>
                         </ul>
+                        <h2>كيفية تأكيد الدفع
+                        </h2>
+                        <p style={{ textAlign: "right" }}>
+                            قم بإرسال رسالة واتساب إلى<span>00201010931309</span> أو قم بالضغط <span><a  href="https://wa.me/+201010931309" target='_blank' style={{ textDecoration: "underline" }}>هنا</a></span> وأرسل: <br />
+                            - <span>الاسم بالكامل</span> <br />
+                            - <span>صورة (سكرين شوت)</span> لعملية الدفع <br />
+                            بهذه البساطة يكون قد تم تأكيد الدفع.
+                        </p>
+                        <h2>للمزيد من الاستفسارات</h2>
                         <p>
-                            <span>الخطوة التالية: </span>
-                            بمجرد استلام طلبك <span> سنقوم بجدولة اجتماع لوضع خطة تعليمية مخصصة </span>تناسب احتياجاتك البحثية والمهنية
+                            لا تتردد في التواصل عبر البريد الإلكتروني أو الواتساب لأي أسئلة أو معلومات إضافية.
                         </p>
                         <div>
-                            <a className={styles.email} href={`mailto:mohamed.biotech98@gmail.com?subject=${courseName} Course Enroll Request&body=Name%3A%0A%0A-%20I%20need%20this%20course%20to%3A%0A-%20I%20am%20currently%20working%20on%3A%0A-%20This%20course%20will%20help%20me%20achieve%3A`} target='_blank'>
+                            <a className={styles.email} href={`mailto:courses@abdalfttah-academy.com`} target='_blank'>
                                 <span>
                                     <FontAwesomeIcon icon={faEnvelope} />
                                 </span>
                                 <h4>
-                                    بريد إلكتروني
+                                    Email
                                 </h4>
                             </a>
-                            <a className={styles.whatsapp} href="https://wa.me/123123123123" target='_blank'>
+                            <a className={styles.whatsapp} href="https://wa.me/+201010931309" target='_blank'>
                                 <span>
                                     <FontAwesomeIcon icon={faWhatsapp} />
                                 </span>
                                 <h4>
-                                    واتساب
+                                Whatsapp
                                 </h4>
                             </a>
                         </div>

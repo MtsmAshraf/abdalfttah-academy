@@ -246,7 +246,7 @@ const CourseId = ({
               }) : null
             }
             {
-              course.innerPage.why ? 
+              locale === "en" && course.innerPage.why ? 
               <div>
                 <h2>
                   Why Take This Course?
@@ -272,7 +272,33 @@ const CourseId = ({
               </div> : null
             }
             {
-              course.innerPage.content ? 
+              locale === "ar"  && course.innerPage.whyAr ? 
+              <div>
+                <h2 style={{ direction:"ltr" }}>
+                  لماذا تشترك في هذه الدورة؟
+                </h2>
+                  <ul className={styles.more}>
+                    {
+                      course.innerPage.whyAr.map((li: string, index: number) => {
+                        const splittedLi = li.split("*");
+                        const text1 = splittedLi[0];
+                        const boldText1 = splittedLi[1];
+                        const text2 = splittedLi[2];
+                        const boldText2 = splittedLi[3] ? splittedLi[3] : null;
+                        return(
+                          <li key={index}>
+                            <p>
+                              {text1} <b>{boldText1}</b> {text2} {boldText2 && <b>{boldText2}</b>}
+                            </p>
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+              </div> : null
+            }
+            {
+              locale === "en" && course.innerPage.content ? 
               <div>
                 <h2>Content</h2>
                 {Object.keys(course.innerPage.content[0])[0] === "heading" ?  
@@ -295,6 +321,113 @@ const CourseId = ({
                               return(
                                 <li key={index}>
                                   <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                                  <BoldText text={piece.button} /> {piece.subList && <FontAwesomeIcon icon={faChevronDown} />}
+                                  </button>
+                                  {
+                                    piece.subList &&
+                                    <ul>
+                                      {piece.subList.map((li: string | ContentList, index: number) => {
+                                        return(
+                                          <li key={index}>
+                                              {typeof(li) === "object" ? 
+                                                <>
+                                                  <BoldText text={li.heading} />  
+                                                  <ul>
+                                                    {li.list.map((item: string, index) => {
+                                                      return(
+                                                        <li key={index}>
+                                                        <BoldText text={item} />
+                                                        {/* {item} */}
+                                                        </li>
+                                                      )
+                                                    })}
+                                                  </ul>
+                                                </>
+                                                : 
+                                                <BoldText text={li} />
+                                                }
+                                          </li>
+                                        )
+                                      })}
+                                    </ul>
+                                  }
+                                </li>
+                              )
+                          })
+                        }
+                      </ol>
+                      </Fragment>
+                      
+
+                    )
+                  })
+                : 
+                <ol className={styles.content} id='content'>
+                  {
+                    course.innerPage.content?.map((part: GeneralContent | Content | any, index: number) => {
+                        return(
+                          <li key={index}>
+                            <button onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
+                            <BoldText text={part.button} /> <FontAwesomeIcon icon={faChevronDown} />
+                            </button>
+                            <ul>
+                              {part.subList.map((li: string | ContentList, index: number) => {
+                                return(
+                                  <li key={index}>
+                                      {typeof(li) === "object" ? 
+                                        <>
+                                          <BoldText text={li.heading} />  
+                                          <ul>
+                                            {li.list.map((item: string, index) => {
+                                              return(
+                                                <li key={index}>
+                                                <BoldText text={item} />
+                                                {/* {item} */}
+                                                </li>
+                                              )
+                                            })}
+                                          </ul>
+                                        </>
+                                        : 
+                                        <BoldText text={li} />
+                                        }
+                                  </li>
+                                )
+                              })}
+                            </ul>
+                          </li>
+                        )
+                    })
+                  }
+                </ol>
+                }
+              </div>
+              : null
+            }
+            {
+              locale === "ar" && course.innerPage.contentAr ? 
+              <div style={{ direction: "rtl" }}>
+                <h2>المحتوى</h2>
+                {Object.keys(course.innerPage.contentAr[0])[0] === "heading" ?  
+                  course.innerPage.contentAr.map((part: any, index) => {
+                    return(
+                      <Fragment key={index}>
+                      <h2><BoldText text={part.heading} /> </h2>
+                      {
+                        (part.vids || part.duration || part.partLink) ? 
+                        <div className={styles.partDetails}>
+                          <span>{part.vids} videos</span>
+                          <span>{part.duration}</span>
+                          <span><a href={part.partLink} target='_blank'><FontAwesomeIcon icon={faYoutube} /> Watch</a>
+                          </span>
+                        </div> : null
+                      }
+                      <ol className={styles.content} id='content' style={{ direction: "rtl" }} >
+                        {
+                          part.contentPieces.map((piece: GeneralContent | Content | any, index: number) => {
+                              return(
+                                <li key={index}>
+                                  <button className={styles.ar} onClick={(e: HTMLElement | any) => {e.target.classList.toggle(styles.clicked)}}>
                                   <BoldText text={piece.button} /> {piece.subList && <FontAwesomeIcon icon={faChevronDown} />}
                                   </button>
                                   {
@@ -434,7 +567,7 @@ const CourseId = ({
               <Image loading='lazy' src={course.innerSrc ? course.innerSrc : course.src} alt={`${course?.title} `}></Image>
             </div>
             {
-              (course.enrollType === "free" || course.enrollType === "paid" || course.enrollType === "google form") &&  <div className={styles.overview}>
+              (course.enrollType === "free" || course.enrollType === "paid" || course.enrollType === "google form" || course.enrollType === "external payment") &&  <div className={styles.overview}>
                 <ul className={styles.basicUl}>
                   <li>
                     {
