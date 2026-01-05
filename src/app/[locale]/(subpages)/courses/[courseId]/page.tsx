@@ -189,11 +189,11 @@ const CourseId = ({
                 return(
                   <div className={styles.mappedDiv} key={ind}>
                     {
-                      locale === "ar" && div.contentAr ?  
+                      false && div.content ?  
                       <>
                         <h2>{div.h2Ar}</h2>
                         {
-                          div.contentAr.map((part: OptionalDivContent | string, index: number) => {
+                          div.content.map((part: OptionalDivContent | string, index: number) => {
                             return(
                               <div key={index}>{
                                 typeof(part) === "string" ? 
