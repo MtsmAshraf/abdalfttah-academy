@@ -95,7 +95,8 @@ const CourseId = ({
 
     const classNames = [
       styles.course,
-      crsScrolled ? styles.loaded : ''
+      crsScrolled ? styles.loaded : '',
+      locale === "ar" ? styles.ar : ''
     ]
 
     const validIds: string[] = [];
@@ -184,7 +185,69 @@ const CourseId = ({
               
             </div>
             {
-              course.innerPage.divs ? course.innerPage.divs.map((div: OptionalDiv, ind: number) => {
+              locale === "en" && course.innerPage.divs ? course.innerPage.divs.map((div: OptionalDiv, ind: number) => {
+                return(
+                  <div className={styles.mappedDiv} key={ind}>
+                    {
+                      locale === "ar" && div.contentAr ?  
+                      <>
+                        <h2>{div.h2Ar}</h2>
+                        {
+                          div.contentAr.map((part: OptionalDivContent | string, index: number) => {
+                            return(
+                              <div key={index}>{
+                                typeof(part) === "string" ? 
+                                <ul>
+                                  <li><BoldText text={`${part}`} /></li>
+                                </ul> 
+                                :
+                                <>
+                                  <h3><BoldText text={`${part.heading}`} /></h3>
+                                  <ul>{part.paragraphs.map((p: string, i: number) => {
+                                    return(
+                                      <li key={i}><BoldText text={`${p}`} /></li>
+                                    )
+                                  })}
+                                  </ul>
+                                </>
+                              }</div>
+                            )
+                          })
+                        }
+                      </>
+                      : 
+                      <>
+                        <h2>{div.h2}</h2>
+                        {
+                          div.content.map((part: OptionalDivContent | string, index: number) => {
+                            return(
+                              <div key={index}>{
+                                typeof(part) === "string" ? 
+                                <ul>
+                                  <li><BoldText text={`${part}`} /></li>
+                                </ul> 
+                                :
+                                <>
+                                  <h3><BoldText text={`${part.heading}`} /></h3>
+                                  <ul>{part.paragraphs.map((p: string, i: number) => {
+                                    return(
+                                      <li key={i}><BoldText text={`${p}`} /></li>
+                                    )
+                                  })}
+                                  </ul>
+                                </>
+                              }</div>
+                            )
+                          })
+                        }
+                      </>
+                    }
+                  </div>
+                )
+              }) : null
+            }
+            {
+              locale === "ar" && course.innerPage.divsAr ? course.innerPage.divsAr.map((div: OptionalDiv, ind: number) => {
                 return(
                   <div className={styles.mappedDiv} key={ind}>
                     {
@@ -567,74 +630,148 @@ const CourseId = ({
               <Image loading='lazy' src={course.innerSrc ? course.innerSrc : course.src} alt={`${course?.title} `}></Image>
             </div>
             {
-              (course.enrollType === "free" || course.enrollType === "paid" || course.enrollType === "google form" || course.enrollType === "external payment") &&  <div className={styles.overview}>
-                <ul className={styles.basicUl}>
-                  <li>
-                    {
-                      course.innerPage.details.noOfVideos ? 
-                      <>
-                        <span><FontAwesomeIcon icon={faVideo} /></span>
-                        <h5>{course.innerPage.details.noOfVideos} Videos 
-                          {
-                            course.innerPage.details.parts && <>
-                              {/* <br /> */}
-                              &nbsp; / {course.innerPage.details.parts} parts
-                            </>
-                          }
+              (course.enrollType === "free" || course.enrollType === "paid" || course.enrollType === "google form" || course.enrollType === "external payment") &&  
+              <div className={styles.overview}>
+                {
+                  locale === "en" && course.innerPage.details ? 
+                  <ul className={styles.basicUl}>
+                    <li>
+                      {
+                        course.innerPage.details.noOfVideos ? 
+                        <>
+                          <span><FontAwesomeIcon icon={faVideo} /></span>
+                          <h5>{course.innerPage.details.noOfVideos} Videos 
+                            {
+                              course.innerPage.details.parts && <>
+                                {/* <br /> */}
+                                &nbsp; / {course.innerPage.details.parts} parts
+                              </>
+                            }
+                          </h5>
+                        </>
+                        :
+                        course.innerPage.details.when ? 
+                        <>
+                          <span><FontAwesomeIcon icon={faClock} /></span>
+                          <h5>{course.innerPage.details.when}</h5>
+                        </> : null
+                      }
+                    </li>
+                    <li>
+                      <span><FontAwesomeIcon icon={faLocationPin} /></span>
+                      <h5>{course.innerPage.details.location}</h5>
+                    </li>
+                    <li>
+                      <span><FontAwesomeIcon icon={faHourglass1} /></span>
+                      <h5>{course.innerPage.details.duration}</h5>
+                    </li>
+                    <li>
+                      <span><FontAwesomeIcon icon={faDollar} /></span>
+                      {
+                        egyptian ? 
+                        <h5>{
+                          course.innerPage.details.price
+                          ?
+                          course.innerPage.details.discount && course.innerPage.details.price
+                          ?
+                          <>
+                              {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ EGP</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
+                          </>
+                          // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
+                          :
+                          `${course.innerPage.details.price} EGP` 
+                          :
+                          "Free"}
                         </h5>
-                      </>
-                      :
-                      course.innerPage.details.when ? 
-                      <>
-                        <span><FontAwesomeIcon icon={faClock} /></span>
-                        <h5>{course.innerPage.details.when}</h5>
-                      </> : null
-                    }
-                  </li>
-                  <li>
-                    <span><FontAwesomeIcon icon={faLocationPin} /></span>
-                    <h5>{course.innerPage.details.location}</h5>
-                  </li>
-                  <li>
-                    <span><FontAwesomeIcon icon={faHourglass1} /></span>
-                    <h5>{course.innerPage.details.duration}</h5>
-                  </li>
-                  <li>
-                    <span><FontAwesomeIcon icon={faDollar} /></span>
-                    {
-                      egyptian ? 
-                      <h5>{
-                        course.innerPage.details.price
-                        ?
-                        course.innerPage.details.discount && course.innerPage.details.price
-                        ?
+                        :
+                        <h5>{
+                          course.innerPage.details.priceUsd
+                          ?
+                          course.innerPage.details.discount && course.innerPage.details.priceUsd
+                          ?
+                          <>
+                              {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ EUR</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EUR`}
+                          </>
+                          // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EUR` 
+                          :
+                          `${course.innerPage.details.priceUsd} EUR` 
+                          :
+                          "Free"}
+                        </h5>
+                      }
+                    </li>
+                  </ul>: null
+                }
+                {
+                  locale === "ar" && course.innerPage.detailsAr ? 
+                  <ul className={styles.basicUl}>
+                    <li>
+                      {
+                        course.innerPage.detailsAr.noOfVideos ? 
                         <>
-                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.price}$ EGP</s> <br />{`${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EGP`}
+                          <span><FontAwesomeIcon icon={faVideo} /></span>
+                          <h5>{course.innerPage.detailsAr.noOfVideos} Videos 
+                            {
+                              course.innerPage.detailsAr.parts && <>
+                                {/* <br /> */}
+                                &nbsp; / {course.innerPage.detailsAr.parts} parts
+                              </>
+                            }
+                          </h5>
                         </>
-                        // `${parseInt(course.innerPage.details.price) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EGP` 
                         :
-                        `${course.innerPage.details.price} EGP` 
-                        :
-                        "Free"}
-                      </h5>
-                      :
-                      <h5>{
-                        course.innerPage.details.priceUsd
-                        ?
-                        course.innerPage.details.discount && course.innerPage.details.priceUsd
-                        ?
+                        course.innerPage.detailsAr.when ? 
                         <>
-                            {`${course.innerPage.details.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.details.priceUsd}$ EUR</s> <br />{`${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01}$ EUR`}
-                        </>
-                        // `${parseInt(course.innerPage.details.priceUsd) * (100 - parseInt(course.innerPage.details.discount)) * 0.01 } EUR` 
+                          <span><FontAwesomeIcon icon={faClock} /></span>
+                          <h5>{course.innerPage.detailsAr.when}</h5>
+                        </> : null
+                      }
+                    </li>
+                    <li>
+                      <span><FontAwesomeIcon icon={faLocationPin} /></span>
+                      <h5>{course.innerPage.detailsAr.location}</h5>
+                    </li>
+                    <li>
+                      <span><FontAwesomeIcon icon={faHourglass1} /></span>
+                      <h5>{course.innerPage.detailsAr.duration}</h5>
+                    </li>
+                    <li>
+                      <span><FontAwesomeIcon icon={faDollar} /></span>
+                      {
+                        egyptian ? 
+                        <h5>{
+                          course.innerPage.detailsAr.price
+                          ?
+                          course.innerPage.detailsAr.discount && course.innerPage.detailsAr.price
+                          ?
+                          <>
+                              {`${course.innerPage.detailsAr.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.detailsAr.price}$ EGP</s> <br />{`${parseInt(course.innerPage.detailsAr.price) * (100 - parseInt(course.innerPage.detailsAr.discount)) * 0.01}$ EGP`}
+                          </>
+                          // `${parseInt(course.innerPage.detailsAr.price) * (100 - parseInt(course.innerPage.detailsAr.discount)) * 0.01 } EGP` 
+                          :
+                          `${course.innerPage.detailsAr.price} EGP` 
+                          :
+                          "Free"}
+                        </h5>
                         :
-                        `${course.innerPage.details.priceUsd} EUR` 
-                        :
-                        "Free"}
-                      </h5>
-                    }
-                  </li>
-                </ul>
+                        <h5>{
+                          course.innerPage.detailsAr.priceUsd
+                          ?
+                          course.innerPage.detailsAr.discount && course.innerPage.detailsAr.priceUsd
+                          ?
+                          <>
+                              {`${course.innerPage.detailsAr.discount}% off`} <br /> <s style={{ opacity: 0.7 }}>{course.innerPage.detailsAr.priceUsd}$ EUR</s> <br />{`${parseInt(course.innerPage.detailsAr.priceUsd) * (100 - parseInt(course.innerPage.detailsAr.discount)) * 0.01}$ EUR`}
+                          </>
+                          // `${parseInt(course.innerPage.detailsAr.priceUsd) * (100 - parseInt(course.innerPage.detailsAr.discount)) * 0.01 } EUR` 
+                          :
+                          `${course.innerPage.detailsAr.priceUsd} EUR` 
+                          :
+                          "Free"}
+                        </h5>
+                      }
+                    </li>
+                  </ul>: null
+                }
               </div>
             }
             <div className={styles.enroll}>

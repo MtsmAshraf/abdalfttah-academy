@@ -612,7 +612,6 @@ const classNames = [
                     lo === "ar" && showAr ? 
                     <>
                         <h2>كيف تشترك؟</h2>
-                        <p>Please note: Places are <span>limited</span> and assigned on a first come, first served basis</p>
                         <p>ملحوظة: الأماكن <span>محدودة</span> والاشتراك بأسبقية الحجز</p>
                         <h3>وسائل الدفع المتاحة</h3>
                         <ul className={styles.steps}>

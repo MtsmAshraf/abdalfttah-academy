@@ -83,10 +83,21 @@ export type Course = {
             priceUsd?: string,
             discount?: string,
         },
+        detailsAr?: {
+            noOfVideos?: string,
+            parts?: string,
+            when?: string,
+            duration?: string,
+            location?: string,
+            price?: string,
+            priceUsd?: string,
+            discount?: string,
+        },
         heading: string,
         description: string | string[],
         descriptionAr?: string | string[],
         divs?: OptionalDiv[],
+        divsAr?: OptionalDiv[],
         why?: string[],
         whyAr?: string[],
         content?: (Content | GeneralContent)[],
@@ -116,8 +127,8 @@ const allCourses : Course[] = [
 
             description: [
                 `Welcome to *Afaaq*, a complete academic bootcamp designed to guide students 
-                step-by-step toward opportunities in ^Masterʼs programs, PhD positions, 
-                Research Assistant roles, and international internships.*`,
+                step-by-step toward opportunities in *Masterʼs programs, PhD positions,*
+                *Research Assistant roles, and international internships*.`,
                 `Across 15 days, Afaaq combines *intensive teaching, personal feedback*, and 
                 *practical exercises* to help you build a strong academic profile, write winning 
                 documents, and contact professors with confidence.`,
@@ -126,21 +137,92 @@ const allCourses : Course[] = [
                 `With Afaaq, you learn exactly what you need to start building an academic 
                 career outside Egypt — *in just 15 days.*`,
                 `*Without Afaaq, the same fundamentals often take 1-2 years* of trial and error, 
-                scattered resources, and constant adjustments — without clear guidance.`
+                scattered resources, and constant adjustments — without clear guidance.`,
+                `While we cannot guarantee time for every student in every session, we will cover 
+                as many cases as we realistically can, offering practical corrections, guidance, 
+                and live improvements to CVs, SOPs, and emails`
             ],
-
+            
             descriptionAr: [
                 `آفاق هو بوتكامب أكاديمي متكامل معمول علشان ينقلك من الحيرة والتش تّت إلى وضوح الطريق والخطوات.`,
                 `بدل ما تضيع شهور وسنين , بتجرّب, بتغلط, وبتجمع معلومات متفرقة ، آفاق بيديك نظام واضح وخارطة طريق كاملة`,
                 `تبدأ من فهم المسارات الأكاديمية وتنتهي بالتقديم بثقة واحتراف على فرص حقيقية `,
                 `مع آفاق هتاخد كل اللي محتاجه علشان تبدأ طريقك الأكاديمي في 15 يوم بس`,
-                `من غير آفاق نفس الرحلة ممكن تاخد منك من سنة لثلاث سنين ما بين تجربة وخطأ، تعلّم، وتعديل مستمر`
+                `من غير آفاق نفس الرحلة ممكن تاخد منك من سنة لثلاث سنين ما بين تجربة وخطأ، تعلّم، وتعديل مستمر`,
+                `آفاق هو بوتكامب أكاديمي متكامل معمول علشان يوصّلك خطوة بخطوة لفرص حقيقية بره مصر في:`,
+                `- ماجستير`,
+                `- دكتوراه`,
+                `- باحث مساعد`,
+                `- تدريبات وبعثات دولية`,
+                `*هدفنا اننا نفتحلك آفاق جديدة لمستقبلك الأكاديمي — بشكل واقعي، واضح، واحترافي*`,
             ],
+
+            divs: [
+                {
+                    h2: "Afaaq solves these problems by giving you:",
+                    content: [
+                        "- A clear system, not scattered information",
+                        "- Practical steps, not personal stories",
+                        "- Comprehensive content, not missing pieces",
+                        "- Real guidance, not random posts",
+                        "- Two sessions per topic: one for teaching, one for personal feedback"
+                    ]
+                },
+                {
+                    h2: "What You Will Achieve by the End",
+                    content: [
+                        "- A clear academic pathway (MSc / PhD / RA)",
+                        "- A complete, professional academic CV",
+                        "- A strong SOP or motivation letter",
+                        "- A structure email ready to send to professors",
+                        "- Knowledge of where to find opportunities",
+                        "- Interview preparation",
+                    ]
+                },
+                {
+                    h2: "Finally",
+                    content: [
+                        {
+                            heading: "",
+                            paragraphs: [
+                                "Usually it takes *months to learn the basics, many more months to understand funding and applications*, and sometimes *one or two years* to feel confident about choosing the right path and avoiding mistakes.",
+                                "This isnʼt because students are slow — itʼs simply because the information is scattered, the process is confusing, and most people donʼt have someone to guide them step by step",
+                                "*Afaaq was created to make this journey easier.*",
+                                "Instead of spending a full year trying to collect this knowledge on your own, the bootcamp brings everything together in *15 focused days and 2000 EGP*",
+                                "We donʼt claim to “give you everythingˮ instantly, but we guide you through the most important concepts, tools, strategies, and decisions — in a clear and practical way.",
+                                "Our goal is simple: *To save you time, reduce your stress, and help you move forward with confidence.*",
+                            ]
+                        }
+                    ]
+                }
+            ],
+            divsAr: [
+                {
+                    h2: "هتحقق إيه في نهاية البوتكامب؟",
+                    content: [
+                        "- مسار أكاديمي واضح",
+                        "- سيرة ذاتية أكاديمية احترافية كاملة",
+                        "- بيان غرض أو خطاب حافز قوي",
+                        "- إيميل مُهيّأ للإرسال للمشرفين",
+                        "- معرفة أماكن الفرص",
+                        "- استعداد للمقابلات الأكاديمية",
+                    ]
+                }
+            ],
+
 
             details: {
                 when: "31 Jan 2026",
                 duration: "15 Days",
                 location: "Online",
+                parts: "7 Teaching Sessions + 7 Feedback Sessions",
+                price: "2000",
+                priceUsd: "100"
+            },
+            detailsAr: {
+                when: "31 يناير 2026",
+                duration: "15 يوما",
+                location: "أونلاين",
                 parts: "7 Teaching Sessions + 7 Feedback Sessions",
                 price: "2000",
                 priceUsd: "100"

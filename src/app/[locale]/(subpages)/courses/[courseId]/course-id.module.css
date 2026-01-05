@@ -56,12 +56,18 @@
     margin-bottom: 40px;
     max-height: calc(100% / 5);
 }
+.course.ar > div:nth-child(2) .fixed > div .basicUl{
+}
 .course > div:nth-child(2) .fixed > div .basicUl li{
     width: calc(100% / 4);
     text-align: center;
 }
 .course > div:nth-child(2) .fixed > div .basicUl li:not(:last-child){
     border-right: 1px solid var(--icon-color);
+}
+.course.ar > div:nth-child(2) .fixed > div .basicUl li:not(:last-child){
+    border-right: none;
+    border-left: 1px solid var(--icon-color);
 }
 .course > div:nth-child(2) .fixed > div .basicUl li span{
     font-size: 30px;
@@ -149,6 +155,9 @@
     }
     .course > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
         border-right: none;
+    }
+    .course.ar > div:nth-child(2) .fixed > div .basicUl li:nth-child(2){
+        border-left: none;
     }
 }
 .course > div:nth-child(2) .scroll{
@@ -238,6 +247,10 @@
     .course > div:nth-child(2) .scroll > div .content{
         margin-left: 40px;
     }
+    .course.ar > div:nth-child(2) .scroll > div .content{
+        margin-right: 40px;
+        margin-left: unset;
+    }
 }
 .course > div:nth-child(2) .scroll > div .content > li{
     font-size: 16px;
@@ -249,7 +262,6 @@
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    
     width: 100%;
 }
 .course > div:nth-child(2) .scroll > div .content > li::before{
