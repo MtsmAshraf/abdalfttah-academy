@@ -134,78 +134,85 @@ const allCourses : Course[] = [
                 documents, and contact professors with confidence.`,
                 `Our goal is simple: *to open new horizons for your academic future* — *clearly*, 
                 *realistically, and professionally.*`,
-                `With Afaaq, you learn exactly what you need to start building an academic 
-                career outside Egypt — *in just 15 days.*`,
-                `*Without Afaaq, the same fundamentals often take 1-2 years* of trial and error, 
-                scattered resources, and constant adjustments — without clear guidance.`,
-                `While we cannot guarantee time for every student in every session, we will cover 
-                as many cases as we realistically can, offering practical corrections, guidance, 
-                and live improvements to CVs, SOPs, and emails`
             ],
             
             descriptionAr: [
-                `آفاق هو بوتكامب أكاديمي متكامل معمول علشان ينقلك من الحيرة والتش تّت إلى وضوح الطريق والخطوات.`,
-                `بدل ما تضيع شهور وسنين , بتجرّب, بتغلط, وبتجمع معلومات متفرقة ، آفاق بيديك نظام واضح وخارطة طريق كاملة`,
+                `*آفاق* هو بوتكامب أكاديمي متكامل معمول علشان ينقلك من الحيرة والتش تّت إلى وضوح الطريق والخطوات.`,
+                `بدل ما تضيع شهور وسنين , بتجرّب, بتغلط, وبتجمع معلومات متفرقة ، *آفاق* بيديك نظام واضح وخارطة طريق كاملة`,
                 `تبدأ من فهم المسارات الأكاديمية وتنتهي بالتقديم بثقة واحتراف على فرص حقيقية `,
-                `مع آفاق هتاخد كل اللي محتاجه علشان تبدأ طريقك الأكاديمي في 15 يوم بس`,
-                `من غير آفاق نفس الرحلة ممكن تاخد منك من سنة لثلاث سنين ما بين تجربة وخطأ، تعلّم، وتعديل مستمر`,
-                `آفاق هو بوتكامب أكاديمي متكامل معمول علشان يوصّلك خطوة بخطوة لفرص حقيقية بره مصر في:`,
-                `- ماجستير`,
-                `- دكتوراه`,
-                `- باحث مساعد`,
-                `- تدريبات وبعثات دولية`,
                 `*هدفنا اننا نفتحلك آفاق جديدة لمستقبلك الأكاديمي — بشكل واقعي، واضح، واحترافي*`,
             ],
 
             divs: [
                 {
+                    h2: "",
+                    content: [
+                        {
+                            heading: `With Afaaq, you learn exactly what you need to start building an academic career outside Egypt — in just 15 days.`,
+                            paragraphs: [""],
+                        },
+                        {
+                            heading: `Without Afaaq, the same fundamentals often take 1-2 years of trial and error, scattered resources, and constant adjustments — without clear guidance.`,
+                            paragraphs: [ `While we cannot guarantee time for every student in every session, we will cover 
+                                        as many cases as we realistically can, offering practical corrections, guidance, 
+                                        and live improvements to CVs, SOPs, and emails`],
+                        },
+                    ],
+                },
+                {
                     h2: "Afaaq solves these problems by giving you:",
                     content: [
-                        "- A clear system, not scattered information",
-                        "- Practical steps, not personal stories",
-                        "- Comprehensive content, not missing pieces",
-                        "- Real guidance, not random posts",
-                        "- Two sessions per topic: one for teaching, one for personal feedback"
+                        "A clear system, not scattered information",
+                        "Practical steps, not personal stories",
+                        "Comprehensive content, not missing pieces",
+                        "Real guidance, not random posts",
+                        "Two sessions per topic: one for teaching, one for personal feedback"
                     ]
                 },
                 {
                     h2: "What You Will Achieve by the End",
                     content: [
-                        "- A clear academic pathway (MSc / PhD / RA)",
-                        "- A complete, professional academic CV",
-                        "- A strong SOP or motivation letter",
-                        "- A structure email ready to send to professors",
-                        "- Knowledge of where to find opportunities",
-                        "- Interview preparation",
-                    ]
-                },
-                {
-                    h2: "Finally",
-                    content: [
-                        {
-                            heading: "",
-                            paragraphs: [
-                                "Usually it takes *months to learn the basics, many more months to understand funding and applications*, and sometimes *one or two years* to feel confident about choosing the right path and avoiding mistakes.",
-                                "This isnʼt because students are slow — itʼs simply because the information is scattered, the process is confusing, and most people donʼt have someone to guide them step by step",
-                                "*Afaaq was created to make this journey easier.*",
-                                "Instead of spending a full year trying to collect this knowledge on your own, the bootcamp brings everything together in *15 focused days and 2000 EGP*",
-                                "We donʼt claim to “give you everythingˮ instantly, but we guide you through the most important concepts, tools, strategies, and decisions — in a clear and practical way.",
-                                "Our goal is simple: *To save you time, reduce your stress, and help you move forward with confidence.*",
-                            ]
-                        }
+                        "A clear academic pathway (MSc / PhD / RA)",
+                        "A complete, professional academic CV",
+                        "A strong SOP or motivation letter",
+                        "A structure email ready to send to professors",
+                        "Knowledge of where to find opportunities",
+                        "Interview preparation",
                     ]
                 }
             ],
             divsAr: [
                 {
+                    h2: "",
+                    content: [
+                        {
+                            heading: `مع *آفاق* هتاخد كل اللي محتاجه علشان تبدأ طريقك الأكاديمي في 15 يوم بس`,
+                            paragraphs: [""],
+                        },
+                        {
+                            heading: `من غير *آفاق* نفس الرحلة ممكن تاخد منك من سنة لثلاث سنين ما بين تجربة وخطأ، تعلّم، وتعديل مستمر`,
+                            paragraphs: [""],
+                        },
+                    ],
+                },
+                {
+                    h2: "آفاق هو بوتكامب أكاديمي متكامل معمول علشان يوصّلك خطوة بخطوة لفرص حقيقية بره مصر في:",
+                    content: [    
+                        `ماجستير`,
+                        `دكتوراه`,
+                        `باحث مساعد`,
+                        `تدريبات وبعثات دولية`,
+                    ]
+                },
+                {
                     h2: "هتحقق إيه في نهاية البوتكامب؟",
                     content: [
-                        "- مسار أكاديمي واضح",
-                        "- سيرة ذاتية أكاديمية احترافية كاملة",
-                        "- بيان غرض أو خطاب حافز قوي",
-                        "- إيميل مُهيّأ للإرسال للمشرفين",
-                        "- معرفة أماكن الفرص",
-                        "- استعداد للمقابلات الأكاديمية",
+                        "مسار أكاديمي واضح",
+                        "سيرة ذاتية أكاديمية احترافية كاملة",
+                        "بيان غرض أو خطاب حافز قوي",
+                        "إيميل مُهيّأ للإرسال للمشرفين",
+                        "معرفة أماكن الفرص",
+                        "استعداد للمقابلات الأكاديمية",
                     ]
                 }
             ],
@@ -229,32 +236,41 @@ const allCourses : Course[] = [
             },
 
             why: [
-                "1. We replace random personal stories with clear, actionable steps",
-                "2. No more scattered information — everything is in one structured program",
-                "3. A fully systematic approach",
-                "4. Comprehensive content covering ALL major academic needs",
-                "5. Not based on one personʼs experience",
-                "6. We donʼt just show opportunities — we teach you how to approach them correctly",
-                "7. Sessions donʼt become random Q&A",
-                "8. Interactive, live sessions — not pre-recorded videos",
-                "9. Dedicated feedback sessions for deep, personalized help",
+                "We replace random personal stories with clear, actionable steps",
+                "No more scattered information — everything is in one structured program",
+                "A fully systematic approach",
+                "Comprehensive content covering ALL major academic needs",
+                "Not based on one personʼs experience",
+                "We donʼt just show opportunities — we teach you how to approach them correctly",
+                "Sessions donʼt become random Q&A",
+                "Interactive, live sessions — not pre-recorded videos",
+                "Dedicated feedback sessions for deep, personalized help",
+                // "1. We replace random personal stories with clear, actionable steps",
+                // "2. No more scattered information — everything is in one structured program",
+                // "3. A fully systematic approach",
+                // "4. Comprehensive content covering ALL major academic needs",
+                // "5. Not based on one personʼs experience",
+                // "6. We donʼt just show opportunities — we teach you how to approach them correctly",
+                // "7. Sessions donʼt become random Q&A",
+                // "8. Interactive, live sessions — not pre-recorded videos",
+                // "9. Dedicated feedback sessions for deep, personalized help",
             ],
 
             whyAr: [
-                `1. لأننا بنستبدل القصص الشخصية العشوائية بخطوات عملية واضحة`,
-                `2. لأنك مش محتاج تجمع معلومات مُتفرقة من مصادر مختلفة.`,
-                `3. لأن آفاق بيعتمد على منهجية متسلسلة وواضحة.`,
-                `4. لأن المحتوى شامل كل الاحتياجات الأكاديمية الأساسية.`,
-                `5. لأن المعسكر مش مبني على تجربة شخص واحد.`,
-                `6. لأننا مش بس بنعرض الفرص، بنعلمك تتعامل معاها صح.`,
-                `7. لأن المحاضرات مش مُجرد اسئلة وأجوبة عشوائية.`,
-                `8. لأن الجلسات مباشرة وتفاعلية مش فيديوهات مُسجلة.`,
-                `9. لأننا بنعمل جلسات تقييم شخصي بعد كل محاضرة`,
+                `لأننا بنستبدل القصص الشخصية العشوائية بخطوات عملية واضحة`,
+                `لأنك مش محتاج تجمع معلومات مُتفرقة من مصادر مختلفة.`,
+                `لأن *آفاق* بيعتمد على منهجية متسلسلة وواضحة.`,
+                `لأن المحتوى شامل كل الاحتياجات الأكاديمية الأساسية.`,
+                `لأن المعسكر مش مبني على تجربة شخص واحد.`,
+                `لأننا مش بس بنعرض الفرص، بنعلمك تتعامل معاها صح.`,
+                `لأن المحاضرات مش مُجرد اسئلة وأجوبة عشوائية.`,
+                `لأن الجلسات مباشرة وتفاعلية مش فيديوهات مُسجلة.`,
+                `لأننا بنعمل جلسات تقييم شخصي بعد كل محاضرة`,
             ],
 
             content: [
                 {
-                    heading: "Bootcamp Structure: 7 Teaching Sessions (Main Content)",
+                    heading: "Part 1: 7 Teaching Sessions",
                     contentPieces: [
                     {
                         button: "Understanding Academic Pathways",
@@ -301,7 +317,7 @@ const allCourses : Course[] = [
                     ]
                 },
                 {
-                    heading: "7 Personalized Feedback Sessions",
+                    heading: "Part 2: 7 Personalized Feedback Sessions",
 
                     contentPieces: [
                         {
@@ -313,9 +329,6 @@ const allCourses : Course[] = [
                                 "Direct answers to their questions",
                                 "Step-by-step instructions for their next actions"
                             ]
-                        },
-                        {
-                            button: "These sessions ensure that students apply what they learn and get individual support, not just information.",
                         }
                     ]
                 },
@@ -381,9 +394,6 @@ const allCourses : Course[] = [
                                 "خطوات واضحة للمرحلة التالية (Next Actions)",
                                 "تعليمات خطوة بخطوة لإجراءاتهم التالية"
                             ]
-                        },
-                        {
-                            button: "الجلسات دي بتضمن إنك تط بّق فعل يًا وتاخد دعم شخصي، مش مجرد معلومات",
                         }
                     ]
                 },

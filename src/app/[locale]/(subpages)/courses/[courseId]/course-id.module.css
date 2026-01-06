@@ -2,6 +2,9 @@
     padding-top: 100px;
     background-image: var(--overlay-gradient);
 }
+.course h2:empty{
+    display: none;
+}
 .course:has(.welcomeAr){
     direction: rtl;
     font-family: "Zain", sans-serif;
@@ -214,6 +217,24 @@
     margin-bottom: 10px;
     line-height: 1.6;
 }
+.course > div:nth-child(2) .scroll .mappedDiv ul li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.course > div:nth-child(2) .scroll .mappedDiv ul li span{
+    color: #fff;
+    background-image: var(--main-heading-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    height: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
 .course > div:nth-child(2) .scroll  ul li:last-child{
 }
 .course > div:nth-child(2) .scroll p{
@@ -227,11 +248,49 @@
 }
 .course > div:nth-child(2) .more{
     /* list-style: disc !important */
+    counter-reset: more-counter;
 }
 .course > div:nth-child(2) .more li{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    counter-increment: more-counter;
+    position: relative;
+    padding-left: 35px;
+    padding-right: 1px;
+    padding: 5px 5px 5px 35px;
+    background-color: var(--text-color);
+    background-color: #fff;
+    color: var(--bg-color);
+    color: #000;
+    border-radius: 10px 0px 0px 10px;
+}
+.course.ar > div:nth-child(2) .more li{
+    padding: 5px 35px 5px 5px;
+    border-radius: 0px 10px 10px 0px;
+}
+.course > div:nth-child(2) .more li::before{
+    content: "" counter(more-counter) " ";
+    content: "✶";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    height: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.course.ar > div:nth-child(2) .more li::before{
+    left: unset;
+    right: 15px;
+    top: 50%;
+    transform: translate(50%, -50%);
 }
 .course > div:nth-child(2) .more li span{
     font-weight: bold;
@@ -251,6 +310,12 @@
         margin-right: 40px;
         margin-left: unset;
     }
+}
+.course > div:nth-child(2) .scroll > div  h2.contentH2{
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    border-radius: 40px;
 }
 .course > div:nth-child(2) .scroll > div .content > li{
     font-size: 16px;
@@ -279,6 +344,9 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+}
+.course > div:nth-child(2) .scroll > div .content > li:first-child:last-child::before{
+    display: none;
 }
 .course > div:nth-child(2) .scroll > div .content > li button{
     display: flex;

@@ -198,7 +198,7 @@ const CourseId = ({
                               <div key={index}>{
                                 typeof(part) === "string" ? 
                                 <ul>
-                                  <li><BoldText text={`${part}`} /></li>
+                                  <li><span>✶</span><BoldText text={`${part}`} /></li>
                                 </ul> 
                                 :
                                 <>
@@ -224,7 +224,7 @@ const CourseId = ({
                               <div key={index}>{
                                 typeof(part) === "string" ? 
                                 <ul>
-                                  <li><BoldText text={`${part}`} /></li>
+                                  <li><span>✶</span><BoldText text={`${part}`} /></li>
                                 </ul> 
                                 :
                                 <>
@@ -260,7 +260,7 @@ const CourseId = ({
                               <div key={index}>{
                                 typeof(part) === "string" ? 
                                 <ul>
-                                  <li><BoldText text={`${part}`} /></li>
+                                  <li><span>✶</span><BoldText text={`${part}`} /></li>
                                 </ul> 
                                 :
                                 <>
@@ -286,7 +286,7 @@ const CourseId = ({
                               <div key={index}>{
                                 typeof(part) === "string" ? 
                                 <ul>
-                                  <li><BoldText text={`${part}`} /></li>
+                                  <li><span>✶</span><BoldText text={`${part}`} /></li>
                                 </ul> 
                                 :
                                 <>
@@ -363,7 +363,7 @@ const CourseId = ({
             {
               locale === "en" && course.innerPage.content ? 
               <div>
-                <h2>Content</h2>
+                <h2 className={styles.contentH2}>Structure</h2>
                 {Object.keys(course.innerPage.content[0])[0] === "heading" ?  
                   course.innerPage.content.map((part: any, index) => {
                     return(
@@ -470,7 +470,7 @@ const CourseId = ({
             {
               locale === "ar" && course.innerPage.contentAr ? 
               <div style={{ direction: "rtl" }}>
-                <h2>المحتوى</h2>
+                <h2 className={styles.contentH2}>المحتوى</h2>
                 {Object.keys(course.innerPage.contentAr[0])[0] === "heading" ?  
                   course.innerPage.contentAr.map((part: any, index) => {
                     return(
@@ -592,7 +592,7 @@ const CourseId = ({
                       if(typeof(li) === "string"){
                         return(
                           <li key={index}>
-                            <BoldText text={`- ${li}`} />
+                            <BoldText text={`${li}`} />
                           </li>
                         )
                       }else if(typeof(li) === "object"){
@@ -608,7 +608,7 @@ const CourseId = ({
                       if(typeof(li) === "string"){
                         return(
                           <li key={index}>
-                            <BoldText text={`- ${li}`} />
+                            <BoldText text={`${li}`} />
                           </li>
                         )
                       }else if(typeof(li) === "object"){

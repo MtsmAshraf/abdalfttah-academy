@@ -621,7 +621,7 @@ const classNames = [
                                 </span>
                                 <p>
                                     <div>التحويل البنكي (بالجنيه)</div>
-                                    IBAN: EG820002051405140333000040067
+                                    EG820002051405140333000040067
                                 </p>
                             </li>
                             <li>
@@ -630,7 +630,7 @@ const classNames = [
                                 </span>
                                 <p>
                                     <div>التحويل البنكي (يالدولار)</div>
-                                    IBAN: ES13 1583 0001 1390 3238 0419
+                                    ES13 1583 0001 1390 3238 0419
                                 </p>
                             </li>
                             <li>
@@ -701,7 +701,7 @@ const classNames = [
                                 </span>
                                 <p>
                                     <div>Bank Transfer (EGP)</div>
-                                    IBAN: EG820002051405140333000040067
+                                    EG820002051405140333000040067
                                 </p>
                             </li>
                             <li>
@@ -710,7 +710,7 @@ const classNames = [
                                 </span>
                                 <p>
                                     <div>Bank Transfer (USD)</div>
-                                    IBAN: ES13 1583 0001 1390 3238 0419
+                                    ES13 1583 0001 1390 3238 0419
                                 </p>
                             </li>
                             <li>
